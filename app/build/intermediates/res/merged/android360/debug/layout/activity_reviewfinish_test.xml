@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".task.activity.TaskReviewprogressActivity"
+    android:background="@color/white">
+
+    <include
+        layout="@layout/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/release_state_line"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_on1"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOff4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_on4"
+        />
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOff2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintEnd_toStartOf="@+id/uploadAudioStateOff3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/uploadAudioStateOn1"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_on2"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOff3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintEnd_toStartOf="@+id/uploadAudioStateOff4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/uploadAudioStateOff2"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_on3"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/led_the_task"
+        android:textColor="@color/color_FEB06B"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOn1"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOn1"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOn1"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/upload_audit_materials"
+        android:textColor="@color/color_FE6C6F"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOff2"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOff2"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOff2"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/the_review_process"
+        android:textColor="@color/mediumslateblue"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOff3"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOff3"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOff3"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="8dp"
+        android:text="@string/review_the_results"
+        android:textColor="@color/edit_bg"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOff4"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOff4"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOff4"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioBg"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioTv2"
+        app:srcCompat="@color/color_F3F3F3"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="90dp"
+            android:paddingBottom="30dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+
+
+            <ImageView
+                android:id="@+id/uploadAudioBg1"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioCountDownValueTv"
+                app:srcCompat="@drawable/dotted_line"/>
+
+
+            <ImageView
+                android:id="@+id/uploadAudioImg2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/shenhetongguo"/>
+
+            <TextView
+                android:id="@+id/fail_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/color_c51"
+                android:textSize="16dp"
+                android:text="@string/reviewunfinish"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioImg2"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/success_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/color_9296AB"
+                android:textSize="16dp"
+                android:text="@string/string_reviewfinish"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioContent1"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

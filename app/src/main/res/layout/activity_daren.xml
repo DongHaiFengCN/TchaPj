@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bag"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/white_radiu_bg">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_daren_shenfen" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_one"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:maxLines="1"
+            android:text="完善达人资料"
+            android:textSize="14sp"
+            android:textColor="@color/color34"/>
+
+        <TextView
+            android:id="@+id/daren_wanshan_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/subscribe_rule_channel_tag_pressed2"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+            <TextView
+                android:id="@+id/daren_refuse_tv"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text=""
+                android:background="@color/white"
+                android:paddingLeft="15dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center_vertical"
+                android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:background="@color/main_bag"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_two"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:maxLines="1"
+            android:text="添加您的媒体资料"
+            android:textSize="14sp"
+            android:textColor="@color/color34"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="选择最具宣传效果的渠道添加到您的媒体资料中，会给您带来最大的收益"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/daren_media_resources_wechat_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/ic_py_select_normal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:text="朋友圈"
+            android:textSize="14sp"
+            android:textColor="#222D5B"/>
+        <LinearLayout
+            android:id="@+id/daren_pyadd_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+        <TextView
+            android:id="@+id/add_tvpyq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+            
+            <TextView
+                android:id="@+id/daren_media_resources_state_wechat_tv"
+                android:layout_width="76dp"
+                android:layout_height="29dp"
+                android:background="@mipmap/bg_daren_media_resourse_state"
+                android:text="添加信息"
+                android:textColor="@color/daren_media_resourse_state_tv"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/daren_media_resources_wb_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/ic_wb_select_normal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:text="微博"
+            android:textSize="14sp"
+            android:textColor="#222D5B"/>
+        <LinearLayout
+            android:id="@+id/daren_wbadd_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+        <TextView
+            android:id="@+id/add_tvwb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/daren_media_resources_state_wb_tv"
+                android:layout_width="76dp"
+                android:layout_height="29dp"
+                android:background="@mipmap/bg_daren_media_resourse_state"
+                android:text="添加信息"
+                android:textColor="@color/daren_media_resourse_state_tv"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/white_radiu_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:id="@+id/daren_media_resources_dy_iv"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:src="@mipmap/ic_dy_select_normal" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="抖音"
+                    android:textColor="#222D5B"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/daren_dyadd_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/add_tvdy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/daren_media_resources_state_dy_tv"
+                        android:layout_width="76dp"
+                        android:layout_height="29dp"
+                        android:background="@mipmap/bg_daren_media_resourse_state"
+                        android:text="添加信息"
+                        android:textColor="@color/daren_media_resourse_state_tv"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/daren_media_resources_ws_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/ic_ws_select_normal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:text="微视"
+            android:textSize="14sp"
+            android:textColor="#222D5B"/>
+        <LinearLayout
+            android:id="@+id/daren_wsadd_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+        <TextView
+            android:id="@+id/add_tvws"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+            <TextView
+                android:id="@+id/daren_media_resources_state_ws_tv"
+                android:layout_width="76dp"
+                android:layout_height="29dp"
+                android:background="@mipmap/bg_daren_media_resourse_state"
+                android:text="添加信息"
+                android:textColor="@color/daren_media_resourse_state_tv"
+                android:gravity="center"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/daren_media_resources_other_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/ic_other_select_normal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:text="其他"
+            android:textSize="14sp"
+            android:textColor="#222D5B"/>
+        <LinearLayout
+            android:id="@+id/daren_otheradd_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+        <TextView
+            android:id="@+id/add_tv_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/daren_media_resources_state_other_tv"
+                android:layout_width="76dp"
+                android:layout_height="29dp"
+                android:background="@mipmap/bg_daren_media_resourse_state"
+                android:text="添加信息"
+                android:textColor="@color/daren_media_resourse_state_tv"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:background="@color/main_bag"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/white_radiu_bg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_three"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:maxLines="1"
+            android:text="媒体资料审核通过自动激活"
+            android:textSize="14sp"
+            android:textColor="@color/color34"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:background="@color/main_bag"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

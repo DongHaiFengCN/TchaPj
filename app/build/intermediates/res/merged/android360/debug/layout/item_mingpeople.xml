@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/ll_mingpeople"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:id="@+id/iv_lv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:src="@mipmap/ic_lv1"/>
+
+        <TextView
+            android:id="@+id/tv_ph"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="3"
+            android:textSize="16sp"
+            android:textColor="#9490fe"
+            android:visibility="gone"/>
+
+        <com.application.tchapj.utils2.CircleImageView
+            android:id="@+id/iv_portrait"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_media_head_default" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="田慧"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:textColor="#9490fe"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="活跃值："
+            android:textSize="14sp"
+            android:textColor="#9490fe"/>
+
+        <TextView
+            android:id="@+id/tv_velue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="556"
+            android:textSize="16sp"
+            android:textColor="#9490fe"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/main_bag" />
+
+</LinearLayout>

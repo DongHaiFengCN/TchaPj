@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:clipToPadding="true"
+    android:background="#fff"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/login_main_back_iv"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_fork_back"
+        android:padding="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_head_default3" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white">
+
+        <RadioGroup
+            android:id="@+id/my_logon_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/my_shouji_logon"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="手机快捷登录"
+                android:textSize="14sp"
+                android:textColor="@drawable/top_r_text2"
+                android:textColorHighlight="#48BAF3"/>
+
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/radiobutton_background3" />
+
+            <RadioButton
+                android:id="@+id/my_mima_logon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-1dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="账号密码登录"
+                android:textColor="@drawable/top_r_text2"
+                android:textColorHighlight="#48BAF3"
+                android:textSize="14sp" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/my_logon_content"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

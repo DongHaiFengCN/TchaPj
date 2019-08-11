@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/values-854x480/values-854x480.xml",
+            "map": [
+                {
+                    "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/values-854x480/dimens.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,5,5,6,6",
+                        "startOffsets": "57,116,174,224,273,323",
+                        "endColumns": "57,55,44,44,47,46",
+                        "endOffsets": "110,167,213,263,314,363"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,113,169,213,257,303",
+                        "endColumns": "57,55,43,43,45,44",
+                        "endOffsets": "108,164,208,252,298,343"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/incremental/mergeAndroid360DebugResources/merged.dir/values-854x480/values-854x480.xml",
+            "map": [
+                {
+                    "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/values-854x480/dimens.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,5,5,6,6",
+                        "startOffsets": "57,116,174,224,273,323",
+                        "endColumns": "57,55,44,44,47,46",
+                        "endOffsets": "110,167,213,263,314,363"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,113,169,213,257,303",
+                        "endColumns": "57,55,43,43,45,44",
+                        "endOffsets": "108,164,208,252,298,343"
+                    }
+                }
+            ]
+        }
+    ]
+}

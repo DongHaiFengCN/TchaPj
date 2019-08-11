@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/opinion_bg">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        android:theme="@style/ToolbarTheme"
+        app:navigationIcon="@drawable/nav_icon_back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+    </android.support.v7.widget.Toolbar>
+
+    <master.flame.danmaku.ui.widget.DanmakuView
+        android:id="@+id/danmakuView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
+
+    <EditText
+        android:id="@+id/danmu_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="发表意见"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:lines="1"
+        android:textSize="16sp"
+        android:background="@drawable/bg_change_clarity_checked2"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignBottom="@+id/btnAddDanmu"
+        android:layout_toStartOf="@+id/btnAddDanmu" />
+
+    <ImageView
+        android:id="@+id/btnAddDanmu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/danmu_bt"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/danmakuView"
+        android:layout_alignEnd="@+id/danmakuView" />
+
+</RelativeLayout>

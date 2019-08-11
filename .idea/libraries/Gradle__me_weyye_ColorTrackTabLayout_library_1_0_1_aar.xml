@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: me.weyye.ColorTrackTabLayout:library:1.0.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.weyye.ColorTrackTabLayout/library/1.0.1/6a9096ad90b5494b16339a6c576d925bd2b70d82/library-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

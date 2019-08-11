@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: net.wujingchao.android.view:simple-tag-imageview:1.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/simple-tag-imageview-1.0.1.aar/071a62162d054e9bbf1bafcf0395a0c2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/simple-tag-imageview-1.0.1.aar/071a62162d054e9bbf1bafcf0395a0c2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.wujingchao.android.view/simple-tag-imageview/1.0.1/1ccf93234d7b1afa8d60fb8ce2fb7d723455362f/simple-tag-imageview-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/personDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv01"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_message_text_default"/>
+
+    <LinearLayout
+        android:layout_below="@+id/iv01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="王乐乐"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/color66"/>
+
+
+
+        <TextView
+            android:id="@+id/tv_introduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="青年歌手、演员"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@mipmap/ic_red_v2"
+            android:textSize="12sp"
+            android:textColor="@color/text_head_line"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

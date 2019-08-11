@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:97
+-keep class com.application.tchapj.App { <init>(...); }
+

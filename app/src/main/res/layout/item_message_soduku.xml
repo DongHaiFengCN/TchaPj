@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.application.tchapj.utils2.CircleImageView
+                android:id="@+id/iv_head"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/ic_media_head_default" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@+id/iv_head"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        style="@style/consultation_name_tag"
+                        android:layout_marginRight="5dp"
+                        android:src="@mipmap/ic_red_v2" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="王乐乐"
+                        android:textColor="@color/consultation_item_txt_color"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_explain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_head"
+                    android:layout_gravity="bottom"
+                    android:layout_toRightOf="@+id/iv_head"
+                    android:ellipsize="end"
+                    android:maxEms="12"
+                    android:paddingTop="8dp"
+                    android:singleLine="true"
+                    android:text="金种子创投基金合伙人"
+                    android:textColor="@color/consultation_item_dsc_color"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="2018-03-20"
+                android:textColor="@color/color99"
+                android:textSize="14sp" />
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_yellow_v"-->
+            <!--android:layout_toRightOf="@+id/tv_name"-->
+            <!--android:layout_marginLeft="3dp"-->
+            <!--android:layout_alignTop="@+id/tv_name"/>-->
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="1111"
+            android:textColor="@color/consultation_item_txt_color"
+            android:lineSpacingExtra="3dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_expand_or_fold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
+            android:text="全文"
+            android:textColor="#697A9F"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <!--<android.support.v7.widget.RecyclerView
+            android:id="@+id/item_nice9_imagerl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:itemMargin="5dp" />-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/item_nice9_imagerl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-5dp"
+            android:layout_marginTop="5dp"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:scrollbarStyle="outsideOverlay"
+            app:layoutManager="android.support.v7.widget.GridLayoutManager"
+            app:spanCount="3" />
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_hot2" />
+
+            <!--<TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/color99"
+                android:text="2018-03-20"
+                android:layout_marginLeft="5dp"/>-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="3dp"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical"
+            android:paddingTop="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <!--android:text="1小时前"-->
+                <TextView
+                    android:id="@+id/album_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textColor="#989898"
+                    android:textSize="14sp" />
+
+                <!--android:text="删除"-->
+
+                <TextView
+                    android:id="@+id/tv_delete"
+                    android:text="删除"
+                    android:gravity="center"
+                    style="@style/consultation_info_adapter_delete_style"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/tv_delete"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:id="@+id/album_praise_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/linearlayout_comment"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/album_praise"
+                            android:layout_width="22dp"
+                            android:layout_height="20.5dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@mipmap/circle_dynamic_praise_n" />
+
+                        <TextView
+                            android:id="@+id/album_praise_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#989898"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal"
+                        android:paddingLeft="11.5dp">
+
+
+                        <ImageView
+                            android:id="@+id/album_comment"
+                            android:layout_width="22.5dp"
+                            android:layout_height="21.5dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@mipmap/circle_dynamic_comment" />
+
+                        <TextView
+                            android:id="@+id/album_comment_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#989898"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayoutAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@mipmap/message_soduku_comment_bg"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="24dp">
+
+            <LinearLayout
+                android:id="@+id/album_praise_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/parise_icon"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@mipmap/praise_icon_s"
+                    android:visibility="gone" />
+
+               <!-- <TextView
+                    android:id="@+id/parise_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="点赞的名字"
+                    android:textColor="#7780FA"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="8dp"
+                    android:visibility="gone" />-->
+
+                <com.application.tchapj.widiget.PraiseListView
+                    android:id="@+id/praiseListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:lineSpacingMultiplier="1.1"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/praise_item_default"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#dcdcdc"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"/>
+
+            <com.application.tchapj.widiget.CommentListView
+                android:id="@+id/commentList"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:listSelector="#d9d9d9"
+                android:orientation="vertical"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="none"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@color/colore6" />-->
+
+</LinearLayout>
+

@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-nodpi-v4/checkbox_checked.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-nodpi/checkbox_checked.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-nodpi-v4/transparent.9.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-nodpi/transparent.9.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-nodpi-v4/checkbox_normal.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-nodpi/checkbox_normal.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-nodpi-v4/checkbox_style.xml",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-nodpi/checkbox_style.xml"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-nodpi-v4/couritz_right.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-nodpi/couritz_right.png"
+    }
+]

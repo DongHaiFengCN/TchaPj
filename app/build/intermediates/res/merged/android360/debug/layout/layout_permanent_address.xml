@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/permanent_address_city_rl">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="常驻地域"
+        android:textColor="@color/text_media"
+        android:textSize="12sp"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/address_icon"
+        android:layout_toLeftOf="@+id/permanent_address_city_name_tv"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:id="@+id/permanent_address_city_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:text="请选择"
+        android:textColor="@color/text_media"
+        android:textSize="12sp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

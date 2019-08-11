@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.application.tchapj"
+    android:versionCode="14"
+    android:versionName="4.2.6" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="27" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 允许应用读取外部存储 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 微信登陆所需 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 允许应用挂载/卸载外部文件系统 -->
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许应用在手机屏幕关闭后后台进程仍然运行 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许应用获取网络信息状态，如当前的网络连接是否有效 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="com.android.voicemail.permission.ADD_VOICEMAIL" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CELL_BROADCASTS" />
+
+    <!-- ShareSDK需要权限start -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许应用写入外部存储 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许应用访问手机状态。 -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <!-- 允许程序访问额外的定位提供者指令获取模拟定位信息 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- 百度统计权限开始 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> <!-- 允许应用读写系统设置项 -->
+    <!-- 百度统计限结束 -->
+
+
+    <!-- 极光推送权限开始 -->
+    <uses-permission
+        android:name="com.application.tchapj.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" /> <!-- 官方定义的权限，允许应用接收 JPush 内部代码发送的广播消息。 -->
+    <user-permission android:name="ndroid.permission.RECEIVE_USER_PRESENT" /> <!-- 允许应用可以接收点亮屏幕或解锁广播。 -->
+
+
+    <!-- 极光推送权限结束 -->
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <!-- OpenGLES 2.0 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <permission
+        android:name="com.application.tchapj.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" /> <!-- Optional for location -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name="com.application.tchapj.App"
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <receiver android:name="com.application.tchapj.utils2.download.NotificationCancelReceiver" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.application.tchapj.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.application.tchapj.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/WelcomeActivityStyle"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.application.tchapj.main.activity.StartUpAdvertActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.application.tchapj.guide.GuideActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.login.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.login.activity.LoginMainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 侧滑返回空白BUG  @style/AppTheme.Transparent -->
+        <activity
+            android:name="com.application.tchapj.login.activity.PassWordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.login.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.application.tchapj.consultation.activity.ChannelActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.search.activity.SearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.search.activity.SearchInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.search.activity.SearchInfoMostActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.main.activity.PersonActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.main.activity.MingPeopleListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.main.activity.CircleActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.main.activity.MessagenotificationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.SettingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.MyMoneyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.MyMoneyMingXiActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.application.tchapj.my.activity.FrozenListActivity" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskSquareInfoActivity2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskSquareDyYcActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskSquareDyYcHzActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskSquareDyGpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskSquareWsGpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskSquareWsYcActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.FriendReleaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.application.tchapj.task.activity.CollarTaskCircleFriendLinkActivity" />
+        <activity
+            android:name="com.application.tchapj.task.activity.ImagePreviewBaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.ImagePreviewCopyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskReviewfinishActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskReviewprogressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.UploadAuditActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskSquareInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!--
+        <activity android:name=".task.activity.TaskSquareInfoActivity3"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+             />
+
+        <activity android:name=".task.activity.TaskSquareInfoActivity4"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+             />
+
+        <activity android:name=".task.activity.TaskSquareInfoActivity5"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+             />
+        -->
+
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskDyMainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskWsMainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskPyqActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 发图文任务 -->
+        <activity android:name="com.application.tchapj.task.activity.ReleaseTaskImgTextActivity" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskWbActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.TaskQtActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.task.activity.WebActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.application.tchapj.utils2.agentweb.ActionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:launchMode="standard"
+            android:theme="@style/actionActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name="com.application.tchapj.my.activity.MyjibenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.WhbyMemberActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.SettingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.IdentityActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.DanmuActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.ContactActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!--
+        &lt;!&ndash;小微号认证&ndash;&gt;
+        <activity
+            android:name=".my.activity.MicroNumberActivity"
+            android:screenOrientation="portrait"
+             
+            android:windowSoftInputMode="adjustPan" />
+        -->
+
+        <activity
+            android:name="com.application.tchapj.my.activity.DarenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.GuanggaoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.MingrenActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.MeitiActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.DarenDataOneActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.DarenDyAddActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.ContentManagerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.AttentionListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.FansListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.TaskAnalysisActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.DarenPyqAddActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.DarenWbAddActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.DarenWsAddActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.my.activity.DarenOtherAddActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.alipay.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" >
+        </activity>
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.application.tchapj.utils2.imagepicker.ui.ImagePreviewDelActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerThemeFullScreen" />
+        <activity android:name="com.application.tchapj.utils2.imagepicker.ui.ImageBaseActivity" />
+        <activity
+            android:name="com.application.tchapj.utils2.imagepicker.ui.ImageGridActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerTheme" />
+        <activity
+            android:name="com.application.tchapj.utils2.imagepicker.ui.ImageCropActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="false"
+            android:theme="@style/ImagePickerTheme" />
+        <activity
+            android:name="com.application.tchapj.utils2.imagepicker.ui.ImagePreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerThemeFullScreen" />
+        <activity
+            android:name="com.application.tchapj.utils2.picture.PictureSelectorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/activity.Theme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.utils2.picture.PictureBaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.application.tchapj.utils2.picture.PicturePreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.application.tchapj.utils2.picture.PictureVideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name="com.application.tchapj.utils2.picture.PictureExternalPreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.application.tchapj.utils2.picture.PicturePlayAudioActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.application.tchapj.my.activity.MicroInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.application.tchapj.WebViewActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true" />
+        <activity android:name="com.application.tchapj.consultation.activity.UploadVideoActivity" />
+        <activity android:name="com.application.tchapj.consultation.activity.FindDetailActivity" />
+        <activity android:name="com.application.tchapj.consultation.activity.CommentReplyListActivity" />
+        <activity android:name="com.application.tchapj.my.activity.CityListActivity" />
+        <activity android:name="com.application.tchapj.task.activity.LeadTaskWechatActivity" />
+        <activity android:name="com.application.tchapj.login.activity.BindingPhoneActivity" />
+
+        <!-- ShareSDK的activity -->
+        <!-- Mob_ShareSdk 所需Activity<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- qq分享 -->
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1107929182" />
+            </intent-filter>
+        </activity>
+
+        <!-- //微信分享 -->
+        <!-- 设置 android:noHistory="true"后，该Activity在statck中不留历史痕迹。默认的值是false。防止微信登录后在小米手机上有微呼百应app空进程 -->
+        <activity
+            android:name="com.application.tchapj.wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/wx_login_style" />
+
+        <!-- &gt;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="2852eb4cb9e6c" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="01d8b4243867d3ea8e7b2cbbea21df9f" />
+        <!-- &gt;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!--
+        &lt;!&ndash; ###################添加UmengAppkey###################### &ndash;&gt;
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="577c404367e58e6b1f001a40">
+        </meta-data>
+        -->
+
+        <provider
+            android:name="com.application.tchapj.utils2.imagepicker.ImagePickerProvider"
+            android:authorities="com.application.tchapj.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/provider_paths" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- 定位服务 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="ppxteUiorLoCEXzGFgQR09s5LwTKIf5M" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <!--
+        &lt;!&ndash;个人笔记本key&ndash;&gt;
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="q15II3HCManyKopRDhvGTysXi8wEHojb" />
+        -->
+
+
+        <!-- ali -->
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="116845-1" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="1fe3cf1999804309603925bfebb2b9f1" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCdtEsW/RAnD8Dkre29W1hmM6nFWQ/69GIHEfn1PyjpZQGT2wXcprlNnezFmMObq63jCGB/WHNoTmqAmpwtzgNppNqAlKJ1wZ+42W0ZQWL1Wmx6xWeN1UFdIoWKTlnqznCgIIiHjn7+pM4qd4s0obXF0OdoiJmlgrcNCk7pHNJAlYQ6GKdWG9zF05yJ3N26PHvpYHyvxDNksQ+iJPelXsJXjpEZ5PkBnKJSkGlS8tuQgJHtEFlCoIird7YKwAFQf3Avg/i9FSYe8IgWtxg2lDUK5QafVTBdTrOKqFU9LpqYOSDDf2eJoYv2C4nxY4QiuB3Q1IXZG9S2wgk+PZug2hCDAgMBAAECggEAc4akz1VY5NSEgMDs/J8S1eOYxWnl6/fka7t+eWroRHlqu25iD+7Opg4/aczr1njgbAUx83fPKyTungEk0eUt2NEcA79ed5b8s4QLiMm+fW/dMd60alFDjb+BRfz5n6nVFWhfu7XmUBJYuQFTp52itCPBsXEH5RgpklLv1ZL4brgveY8l+Z7QpLasg6eOlBVg6IbIL/SekhXFQj/PRaVD9lPLtaffAN5tgRi3Adf/1lN7YI8Ta1jbJo5X3x36I0cFWRwIxUMp8HBd032HKouBn6KF0x+24INgxRv4z1absbcxYVZtkjmr+6jwv70pCACp49iyz87IBGgZjLzEs4bGuQKBgQDn3Zb4FltDPSpboPS9T3XlycumL6U3r1ACq0cPxZKyQpmIAY0gATP58Qup5RWUYFPsB+ytokVLqLw1sWBSkanch9dzQT8Fugw7VkjcfKQ76lnU4S7JhzYWEm9e9hMlgqtxjK8F3aKvc+vZLkDWeGGJBraGv2/WGykuNqAcp+1ulwKBgQCuHpAYUur5cZYhbmgbUkCnfGcpo2aZWDM5BRvvG5XxFPQAODzypsk2sVpjHOHWw82+pyNMGchnj3zGXDYcQRS9gfz/ZTIY+T8QvK4Zuhq80VNnrQZnAXfOccsH8+pQfJXdHK0IssmjYvZIYNGBZ/k+nyKrX+aegep7sZ51c9vW9QKBgQCyIaYzUJGqlZouLPj5W8uazy56rU4D+tbARi/g6QvrkYj8WRy/wszYr5wjWRD8Hgk7Y1csimcsWiTGJ1B1/tx9xYr7S9wMHUP6bi6p3cQbF88N4jYcs5kU2fLgBLLu9XWbVda87epnWuqNvqAnZPKh4BtoaDiWR+WaUHMvsL+TXwKBgCJjxvIG7oH1/UD9HXLH/B0YZQfETi9bTEKmz62aNTM4gDjK4r7KUlOLE98fhTt10N0nBcGyFfLeVDaZX9aUxBPp6J5IzmxATkRv/7L1HvLMJT0E347Yq2EK+J7Jfi4HbVIOp95f8ZNjqGEDPl3gu0mzBJX0iwgjgLyNiE6KY5FBAoGAB2ca3oF2rJHFx4JpeJk537oTpY8bWvxdNcelmupHddkW156PhDiLi2aha7ObNrps33ujIreAiAnJliqDXb+O/RRxEMRq4GGbjaSZlNsywY2Q2mGQGKYlr2sZwAE+En2vRulI4QaUh9MIL1UBSiqKK6Z3zY6vTWDOGYNcz9z2g5s=" />
+        <!-- /ali -->
+
+
+        <!-- 百度统计业务配置 -->
+        <!-- 您从百度网站获取的APP KEY，根据实际您的APP申请的APP_KEY进行修改 -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="b24b3e33e5" />
+
+        <!-- 渠道商编号 -->
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="Baidu Market" />
+
+        <!-- 是否开启错误日志统计，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="true" />
+
+        <!-- 日志仅在wifi网络下发送，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="false" />
+
+        <!-- 是否获取基站位置信息 ,默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+
+        <!-- 是否获取GPS位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true" />
+
+        <!-- 是否获取WIFI位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true" />
+
+        <!-- 极光推送start -->
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置 android:process 参数将 PushService 放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 3.0.9 Required SDK 核心功能 -->
+        <provider
+            android:name="cn.jpush.android.service.DataProvider"
+            android:authorities="com.application.tchapj.DataProvider"
+            android:exported="false"
+            android:process=":pushcore" />
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的 JPush 服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，或把 enabled 设置成 false ；拉起服务被关闭，App 不会通过拉起服务拉起其他的 App，也不会被其他 App 拉起。 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="com.application.tchapj" />
+            </intent-filter>
+        </service>
+
+        <!-- since 3.1.0 Required SDK 核心功能 -->
+        <provider
+            android:name="cn.jpush.android.service.DownloadProvider"
+            android:authorities="com.application.tchapj.DownloadProvider"
+            android:exported="true" />
+
+        <!-- Required SDK 核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter android:priority="1000" >
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+
+                <category android:name="com.application.tchapj" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK 核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.application.tchapj" />
+            </intent-filter>
+        </activity>
+        <!-- SDK 核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.application.tchapj" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK 核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+
+        <!-- Required SDK 核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- Required since 3.0.7 -->
+        <!-- 新的 tag/alias 接口结果返回需要开发者配置一个自定的广播 -->
+        <!-- 该广播需要继承 JPush 提供的 JPushMessageReceiver 类, 并如下新增一个 Intent-Filter -->
+        <receiver
+            android:name="com.application.tchapj.receiver.MyJPushMessageReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.application.tchapj" />
+            </intent-filter>
+        </receiver>
+
+        <!-- User defined. 用户自定义的广播接收器 -->
+        <receiver
+            android:name="com.application.tchapj.receiver.MyJPushReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+
+                <!-- Required 用户注册 SDK 的 intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收 SDK 消息的 intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收 SDK 通知栏信息的 intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的 intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.application.tchapj" />
+            </intent-filter>
+        </receiver>
+
+        <!-- User defined. 用户自定义 Receiver 接收被拉起回调 -->
+        <!-- 自定义 Receiver 组件，继承cn.jpush.android.service.WakedResultReceiver类,复写onWake(int wakeType)或 onWake(Context context, int wakeType)方法以监听被拉起 -->
+        <!-- <receiver android:name="com.application.tchapj.receiver.MyWakedResultReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="cn.jpush.android.intent.WakedReceiver" /> -->
+        <!-- <category android:name="${applicationId}" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+
+        <!-- Required. For publish channel feature -->
+        <!-- JPUSH_CHANNEL 是为了方便开发者统计 APK 分发渠道。 -->
+        <!-- 例如: -->
+        <!-- 发到 Google Play 的 APK 可以设置为 google-play; -->
+        <!-- 发到其他市场的 APK 可以设置为 xxx-market。 -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <!-- Required. AppKey copied from Portal -->
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="bb4c9c38ae5b09ae29aeb275" />
+        <!-- 极光推送end -->
+
+
+        <!-- Beta Activity -->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" /> <!-- Custom FileProvider for 7.x -->
+        <provider
+            android:name="com.tencent.bugly.beta.utils.BuglyFileProvider"
+            android:authorities="com.application.tchapj.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider> <!-- 配置tinker合成结果service -->
+        <service
+            android:name="com.tencent.bugly.beta.tinker.TinkerResultService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <provider
+            android:name="com.just.agentweb.AgentWebFileProvider"
+            android:authorities="com.application.tchapj.AgentWebFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/web_files_paths" />
+        </provider>
+
+        <activity
+            android:name="com.just.agentweb.ActionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:launchMode="standard"
+            android:theme="@style/actionActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" >
+        </activity>
+
+        <receiver android:name="com.just.agentweb.DownLoader$NotificationBroadcastReceiver" />
+    </application>
+
+</manifest>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <!--android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"-->
+
+    <com.application.tchapj.utils2.imagenice9layout.nice9.ImageNice9Layout
+        android:id="@+id/item_nice9_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:nice9_candrag="false"
+        app:nice9_itemMargin="5dp" />
+
+</LinearLayout>
+
+
+    <!--
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+            &lt;!&ndash;android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"&ndash;&gt;
+
+            <com.application.tchapj.utils2.imagenice9layout.nice9.ImageNice9Layout
+                android:id="@+id/item_nice9_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:nice9_candrag="false"
+                app:nice9_itemMargin="5dp" />
+
+        </LinearLayout>
+
+        <com.application.tchapj.utils2.imagewatcher.ImageWatcher
+            android:id="@+id/v_image_watcher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>-->

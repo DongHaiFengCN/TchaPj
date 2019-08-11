@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="28dp"
+    android:paddingRight="28dp"
+    android:paddingTop="26dp"
+    android:paddingBottom="26dp"
+    android:background="@drawable/bg_dialog_consultation_verify_identity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="充值金额"
+        android:textSize="15sp"
+        android:textColor="#22202A"/>
+
+    <EditText
+        android:id="@+id/my_money_recharge_edt"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="@drawable/bg_dialog_my_money_recharge"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/my_money_discount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="优惠：9折"
+        android:textSize="15sp"
+        android:textColor="#22202A"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="17dp"/>
+
+    <include layout="@layout/line_dotted"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总计："
+            android:textSize="15sp"
+            android:textColor="#22202A"
+            android:layout_marginTop="17dp"/>
+
+        <TextView
+            android:id="@+id/my_money_total_money_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="99.99"
+            android:textSize="23sp"
+            android:textColor="#FD3B0E"
+            android:gravity="right"
+            android:layout_marginTop="14dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/my_money_submit_recharge_tv"
+        android:layout_width="145dp"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_dialog_my_money_recharge_submit"
+        android:layout_marginTop="25dp"
+        android:text="确认充值"/>
+
+</LinearLayout>

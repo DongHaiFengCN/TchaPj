@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <com.application.tchapj.utils2.poptabview.PopTabView
+            android:id="@+id/expandpop"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_view_shape" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="18dp"
+            android:background="#dddddd" />
+
+        <com.application.tchapj.utils2.poptabview.PopTabView
+            android:id="@+id/expandpop2"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_view_shape" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/person_appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/person_collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="50dp"
+                app:expandedTitleMarginStart="50dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:id="@+id/ph_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@mipmap/ic_ph_bg">
+
+                    <LinearLayout
+                        android:id="@+id/ll_hot_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="right"
+                        android:gravity="center_vertical"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="8dp">
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="9dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:src="@mipmap/ic_hot_more"/>
+
+                        <TextView
+                            android:id="@+id/hot_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="更多"
+                            android:textColor="#F25E53"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="15dp"
+                            android:textSize="13sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="58dp"
+                                android:layout_height="58dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@mipmap/ic_ph_nobg2"
+                                android:gravity="center">
+
+                                <com.application.tchapj.utils2.CircleImageView
+                                    android:id="@+id/iv_hot2"
+                                    android:layout_width="58dp"
+                                    android:layout_height="58dp"
+                                    android:src="@mipmap/ic_media_head_default" />
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="15dp"
+                                android:layout_marginTop="-13dp"
+                                android:src="@mipmap/ic_ph_no2" />
+
+                            <TextView
+                                android:id="@+id/tv_hot2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="王乐乐"
+                                android:textColor="@color/person_name_color"
+                                android:textSize="10sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="15dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/selector_bg_button5"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="活跃值："
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="7sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_hot2_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="活跃值"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="7sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="68dp"
+                                android:layout_height="68dp"
+                                android:layout_marginTop="0dp"
+                                android:background="@mipmap/ic_ph_nobg1"
+                                android:gravity="center">
+
+                                <com.application.tchapj.utils2.CircleImageView
+                                    android:id="@+id/iv_hot1"
+                                    android:layout_width="68dp"
+                                    android:layout_height="68dp"
+                                    android:src="@mipmap/ic_media_head_default" />
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="15dp"
+                                android:layout_marginTop="-13dp"
+                                android:src="@mipmap/ic_ph_no1" />
+
+                            <TextView
+                                android:id="@+id/tv_hot1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="王乐乐"
+                                android:textColor="@color/person_name_color"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="17dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/selector_bg_button4"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp">>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="活跃值："
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="8sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_hot1_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="活跃值"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="8sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="58dp"
+                                android:layout_height="58dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@mipmap/ic_ph_nobg3"
+                                android:gravity="center">
+
+                                <com.application.tchapj.utils2.CircleImageView
+                                    android:id="@+id/iv_hot3"
+                                    android:layout_width="58dp"
+                                    android:layout_height="58dp"
+                                    android:src="@mipmap/ic_media_head_default" />
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="15dp"
+                                android:layout_marginTop="-13dp"
+                                android:src="@mipmap/ic_ph_no3" />
+
+                            <TextView
+                                android:id="@+id/tv_hot3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="王乐乐"
+                                android:textColor="@color/person_name_color"
+                                android:textSize="10sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="15dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/selector_bg_button6"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp">>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="活跃值："
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="7sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_hot3_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="活跃值"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="7sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/list_split_color">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/list_split_color"
+                    android:overScrollMode="never" />
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+            <ImageView
+                android:id="@+id/person_iv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_empty"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/main_bag_line" />
+
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

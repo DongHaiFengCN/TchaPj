@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".audit.UploadAuditActivity"
+    android:background="@color/white">
+
+    <include
+        layout="@layout/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/release_state_line"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_on1"/>
+
+
+    <ImageView
+        android:id="@+id/orginalstateLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/release_state_line"/>
+
+    <ImageView
+        android:id="@+id/releasefStateOn1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/orginalstateLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/orginalstateLine"
+        app:srcCompat="@drawable/release_state_on1"/>
+
+    <ImageView
+        android:id="@+id/releasefStateOff4"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/orginalstateLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/orginalstateLine"
+        app:srcCompat="@drawable/release_state_off_3"
+        />
+
+    <ImageView
+        android:id="@+id/releasefStateOff2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/orginalstateLine"
+        app:layout_constraintEnd_toStartOf="@+id/releasefStateOff4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/releasefStateOn1"
+        app:layout_constraintTop_toTopOf="@+id/orginalstateLine"
+        android:src="@drawable/release_state_on2"/>
+
+
+    <TextView
+        android:id="@+id/releasefTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/hair_circle_of_douyinoriginal"
+        android:textColor="@color/color_FEB06B"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/releasefStateOn1"
+        app:layout_constraintStart_toStartOf="@+id/releasefStateOn1"
+        app:layout_constraintTop_toBottomOf="@+id/releasefStateOn1"/>
+
+    <TextView
+        android:id="@+id/originalfTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/contact_cooperation"
+        android:textColor="@color/orangered"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/releasefStateOff2"
+        app:layout_constraintStart_toStartOf="@+id/releasefStateOff2"
+        app:layout_constraintTop_toBottomOf="@+id/releasefStateOff2"/>
+
+
+    <TextView
+        android:id="@+id/originalfTv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="8dp"
+        android:text="@string/cooperated"
+        android:textColor="@color/gainsboro"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/releasefStateOff4"
+        app:layout_constraintStart_toStartOf="@+id/releasefStateOff4"
+        app:layout_constraintTop_toBottomOf="@+id/releasefStateOff4"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioBg"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/originalfTv3"
+        app:srcCompat="@color/color_F3F3F3"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="120dp"
+            android:paddingBottom="30dp"
+            android:visibility="gone">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraint_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/uploadAudioImg"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@color/gainsboro"/>
+
+            <ImageView
+                android:id="@+id/uploadAudioImg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/uploadAudioImg"
+                app:layout_constraintStart_toEndOf="@+id/uploadAudioImg"
+                app:srcCompat="@drawable/friend_circle"/>
+
+            <TextView
+                android:id="@+id/uploadAudioTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="TextView"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/uploadAudioImg1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/uploadAudioImg1"
+                app:layout_constraintTop_toTopOf="@+id/uploadAudioImg1"/>
+
+            <TextView
+                android:id="@+id/uploadAudioNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/uploadAudioImg"
+                app:layout_constraintTop_toTopOf="@+id/uploadAudioImg"/>
+
+            <TextView
+                android:id="@+id/uploadAudioCountDownTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/task_time"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/uploadAudioImg"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioImg"/>
+
+            <TextView
+                android:id="@+id/uploadAudioCountDownValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@+id/uploadAudioCountDownTv"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioCountDownTv"/>
+
+            <ImageView
+                android:id="@+id/uploadAudioBg1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioCountDownValueTv"
+                app:srcCompat="@drawable/dotted_line"/>
+        </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/uploadAudioImg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/lianxihezuo"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

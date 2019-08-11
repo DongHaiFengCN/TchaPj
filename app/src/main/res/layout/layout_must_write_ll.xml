@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textColor="#fffd2222"
+        android:layout_marginRight="6dp"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/must_write_ll_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传朋友圈页面截图"
+        android:textColor="@color/daren_data_one_title_tag"
+        android:textSize="14sp"
+        android:layout_gravity="center_vertical"
+        />
+
+</LinearLayout>

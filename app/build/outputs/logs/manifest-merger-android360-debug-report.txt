@@ -1,0 +1,1704 @@
+-- Merging decision tree log ---
+provider#android.support.v4.content.FileProvider
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:105:9-113:20
+	android:grantUriPermissions
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:109:13-47
+	android:authorities
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:107:13-60
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:108:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:106:13-67
+provider#com.application.tchapj.utils2.imagepicker.ImagePickerProvider
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:636:9-644:20
+	android:grantUriPermissions
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:640:13-47
+	android:authorities
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:638:13-60
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:639:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:637:13-67
+manifest
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+MERGED from [com.android.support:multidex:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/33e85067486ead65a6ab9dfd1b2beb52/AndroidManifest.xml:17:1-22:12
+MERGED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:2:1-19:12
+MERGED from [com.bigkoo:convenientbanner:2.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/convenientbanner-2.0.5.aar/e0c219ea337288154b6ee64efa87e33a/AndroidManifest.xml:2:1-9:12
+MERGED from [com.ashokvarma.android:bottom-navigation-bar:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/bottom-navigation-bar-1.4.1.aar/b5462eeaf68fcae302e690992b27588c/AndroidManifest.xml:2:1-15:12
+MERGED from [com.hannesdorfmann.mosby:viewstate:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewstate-2.0.1.aar/dfe4b6ba804755533ce0c1ae6346a84d/AndroidManifest.xml:2:1-13:12
+MERGED from [com.hannesdorfmann.mosby:mvp:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/mvp-2.0.1.aar/a603ba0ae5c7bbb4c928319c5053546f/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.pinguo-zhouwei:CustomPopwindow:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/CustomPopwindow-2.1.1.aar/5f68f2e7fcea90feafe5ade1f8fd077b/AndroidManifest.xml:2:1-17:12
+MERGED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:2:1-13:12
+MERGED from [com.lzy.widget:view-core:0.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/view-core-0.2.1.aar/fcfd070fda58026e28ce9c1b8999ad37/AndroidManifest.xml:2:1-12:12
+MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:2:1-19:12
+MERGED from [com.github.florent37:viewanimator:1.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewanimator-1.0.5.aar/1f538a289ab0f4411f91a2d45f0a835d/AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:design:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7710c06094e2f93e9fc96311e924cc08/AndroidManifest.xml:2:1-11:12
+MERGED from [io.reactivex:rxandroid:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/9e84f0f24bb6354087be25277246a3a3/AndroidManifest.xml:15:1-21:12
+MERGED from [jp.wasabeef:glide-transformations:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/glide-transformations-2.0.1.aar/cf456b42fe7aafd7566dfa391f699ddb/AndroidManifest.xml:2:1-12:12
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/fd8f647b47c3b2bc4138b13da6d488e4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.aakira:expandable-layout:1.4.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/expandable-layout-1.4.3.aar/6b4ec6fa5b17c6ffa6d324f4d98d4f82/AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.Aspsine:SwipeToLoadLayout:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/SwipeToLoadLayout-1.0.4.aar/7012cff268446ee122949df4cd716a80/AndroidManifest.xml:2:1-14:12
+MERGED from [com.jude:easyrecyclerview:4.3.7] /Users/dong/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/d121f1333b4ac6ca12dfcebc05edd0d3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:2:1-47:12
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/nativecrashreport-3.7.1.aar/0b9711eb0f33a6866534a685171d196a/AndroidManifest.xml:2:1-9:12
+MERGED from [com.jakewharton:butterknife:8.5.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/butterknife-8.5.1.aar/6139af5ffabb5f24a3073075d66cfc2a/AndroidManifest.xml:2:1-7:12
+MERGED from [com.king.thread:nevercrash:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/nevercrash-1.0.0.aar/fd389b8dd072ceced9dc1a7e40e6dfe3/AndroidManifest.xml:2:1-17:12
+MERGED from [cn.bingoogolapple:bga-swipebacklayout:1.0.8] /Users/dong/.gradle/caches/transforms-1/files-1.1/bga-swipebacklayout-1.0.8.aar/5697fb74e95fc163769f03d2d7405ad8/AndroidManifest.xml:2:1-10:12
+MERGED from [com.zhy:base-rvadapter:3.0.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-rvadapter-3.0.3.aar/8513efbdf6ea4a431df189ca672f936a/AndroidManifest.xml:2:1-12:12
+MERGED from [com.alibaba.android:vlayout:1.2.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/vlayout-1.2.2.aar/afbce04291e20aa47da73726637ca880/AndroidManifest.xml:25:1-35:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/f687ca60effcd01630e425f6035b9fda/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:2:1-16:12
+MERGED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:2:1-37:12
+MERGED from [com.youth.banner:banner:1.4.10] /Users/dong/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/d990656b84ef3f2b1af20c3d54c06d12/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] /Users/dong/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0-alpha1.aar/258f4536cd4d17953d2d086bab6368fe/AndroidManifest.xml:17:1-23:12
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1] /Users/dong/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.0-alpha-1.aar/615c6696bdf35d2f2a772008fca3c71d/AndroidManifest.xml:2:1-17:12
+MERGED from [com.hyman:flowlayout-lib:1.1.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/flowlayout-lib-1.1.2.aar/a5cb031472a53a1ec2e80115ddd9cbad/AndroidManifest.xml:2:1-12:12
+MERGED from [com.zhy:okhttputils:2.6.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/okhttputils-2.6.2.aar/05c08da3012ee94313ef6d632bec0291/AndroidManifest.xml:2:1-11:12
+MERGED from [me.drakeet.materialdialog:library:1.3.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/59d3749cf7ff842ff211472924058b1c/AndroidManifest.xml:2:1-12:12
+MERGED from [net.wujingchao.android.view:simple-tag-imageview:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/simple-tag-imageview-1.0.1.aar/071a62162d054e9bbf1bafcf0395a0c2/AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.zhaokaiqiang.klog:library:1.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.4.0.aar/b1c33aa3df48ae14409b00c380b40522/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-8.4.0.aar/f069028868fd31ab43e3e5075ddce4f1/AndroidManifest.xml:16:1-20:12
+MERGED from [com.github.chaychan:MultipleItemRvAdapter:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/MultipleItemRvAdapter-1.0.4.aar/9e4a5e871807b993dd7032fa8b4bccd0/AndroidManifest.xml:2:1-11:12
+MERGED from [org.litepal.android:core:1.5.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/core-1.5.0.aar/25ab6e486875e527fb36b4fbdc8167b9/AndroidManifest.xml:2:1-16:12
+MERGED from [cn.bingoogolapple:bga-badgeview:1.1.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/bga-badgeview-1.1.3.aar/56caa3a7fcee517255afd21842f2f9c5/AndroidManifest.xml:2:1-10:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-java-0.8.3.aar/c33b177e010ffc4dc008ff5683a27800/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv7a-0.8.3.aar/25c40c337fe99ed68ca476d3189b43a5/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv5-0.8.3.aar/dd3b8db6ce0e7bc6498db1e9ba81eaf8/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86-0.8.3.aar/43c064eef8faa2665b3ddcba7d147714/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.ctiao:dfm:0.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/dfm-0.4.1.aar/84b8f0ef8984deae1015ce472678bac1/AndroidManifest.xml:17:1-26:12
+MERGED from [org.xutils:xutils:3.3.36] /Users/dong/.gradle/caches/transforms-1/files-1.1/xutils-3.3.36.aar/9598b836ffa9ec632034d75ce7d33b63/AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.4.aar/c7e1244003569bd76a21b435b8e40068/AndroidManifest.xml:2:1-11:12
+MERGED from [com.orhanobut:logger:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/logger-2.1.1.aar/f8a2e437e27278728e3507d1c65004af/AndroidManifest.xml:2:1-8:12
+MERGED from [com.tencent.sonic:sdk:2.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/sdk-2.0.0.aar/ddb053d9f517c5d49ace4b1fcb6e2823/AndroidManifest.xml:2:1-12:12
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:2:1-134:12
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/3c9b329f130d8763336bb370ed84536d/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:transition:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/2f3d00d6214dbb7747d3ae1a850848ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-base:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-base-8.4.0.aar/cb809e3095a2bc7f101a84fe5e7abc79/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-basement-8.4.0.aar/b3ad184c20a48068bda8faadbfb74517/AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/dcf5eeb57c800d85ff30686c5160b3e6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6530b02235979b5a3105cbbdbac16f10/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/54bf922b9830a20dd9e350e319aea86c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/93e53dcb115ea32278b56c7658d47dfc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/8680dd793e93cc672b0bbcdbfbed399f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/878132045d988214a4efea495140d930/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/daf75fdf9f761a2e4fe5579b5d1d4c1f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ce48bcd60c29abf17084cf0593a2527b/AndroidManifest.xml:17:1-22:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/2e335231b038c113252a3ad209eb87a7/AndroidManifest.xml:15:1-21:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.7.4.aar/77d929259529e2a5d05248a68559d5f2/AndroidManifest.xml:2:1-9:12
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.7.4.aar/25e51d35542491949dee6e376cb07612/AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/429bf78faa5b729f3ae6b31cc34014b2/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4099e843012d4be15e796c344911b23e/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fb00c6c3677b878123a7e6512ce51c74/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/77aa02aa8cd40b25592311801575fd74/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+	package
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:4:5-37
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:1-872:12
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:6:5-80
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:22:5-80
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:22:5-80
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:6:22-77
+uses-permission#android.permission.CAMERA
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:7:22-62
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_MEDIA_STORAGE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:12:5-78
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:12:22-75
+uses-permission#android.permission.GET_PACKAGE_SIZE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:14:5-75
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:14:22-72
+uses-permission#android.permission.CLEAR_APP_CACHE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:15:5-74
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:15:22-71
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:16:5-84
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:25:5-84
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:25:5-84
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:16:22-81
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:18:5-79
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:35:5-79
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:35:5-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:18:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:19:5-76
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:32:5-76
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:32:5-76
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:19:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:20:5-67
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:12:5-67
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:12:5-67
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:12:5-67
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:12:5-67
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:18:5-67
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:18:5-67
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:20:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:21:5-68
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:19:5-68
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:19:5-68
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:21:22-65
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:22:5-79
+MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:13:5-79
+MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:13:5-79
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:13:5-79
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:13:5-79
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:11:5-79
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:11:5-79
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:26:5-79
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:22:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:23:5-76
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:14:5-76
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:14:5-76
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:27:5-76
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:27:5-76
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:23:22-73
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:24:5-81
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:31:5-81
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:31:5-81
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:24:22-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:25:22-65
+uses-permission#android.permission.READ_LOGS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:26:5-68
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:15:5-68
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:15:5-68
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:26:22-65
+uses-permission#android.permission.SET_WALLPAPER
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:28:5-72
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:28:22-69
+uses-permission#com.android.launcher.permission.INSTALL_SHORTCUT
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:30:5-88
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:30:22-85
+uses-permission#com.android.launcher.permission.READ_SETTINGS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:31:5-85
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:31:22-82
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:34:5-71
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:34:22-68
+uses-permission#android.permission.CALL_PHONE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:36:5-69
+MERGED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:11:5-69
+MERGED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:11:5-69
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:36:22-66
+uses-permission#android.permission.PROCESS_OUTGOING_CALLS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:37:5-81
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:37:22-78
+uses-permission#com.android.voicemail.permission.ADD_VOICEMAIL
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:38:5-86
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:38:22-83
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:40:5-79
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:33:5-79
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:33:5-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:40:22-76
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:42:5-71
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:42:22-68
+uses-permission#android.permission.RECEIVE_WAP_PUSH
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:44:5-75
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:44:22-72
+uses-permission#android.permission.SEND_SMS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:45:5-67
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:45:22-64
+uses-permission#android.permission.READ_CELL_BROADCASTS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:46:5-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:46:22-76
+uses-permission#android.permission.GET_TASKS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:49:5-68
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:49:22-65
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:54:5-81
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:16:5-81
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:16:5-81
+MERGED from [com.github.zhaokaiqiang.klog:library:1.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.4.0.aar/b1c33aa3df48ae14409b00c380b40522/AndroidManifest.xml:11:5-81
+MERGED from [com.github.zhaokaiqiang.klog:library:1.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.4.0.aar/b1c33aa3df48ae14409b00c380b40522/AndroidManifest.xml:11:5-81
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:21:5-81
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:21:5-81
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:54:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:55:5-75
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:11:5-75
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:11:5-75
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:20:5-75
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:20:5-75
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:55:22-72
+uses-permission#android.permission.MANAGE_ACCOUNTS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:56:5-74
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:56:22-71
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:60:5-74
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:60:22-71
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:63:5-66
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:24:5-66
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:24:5-66
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:63:22-63
+uses-permission#android.permission.ACCESS_GPS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:65:5-69
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:65:22-66
+uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:67:5-89
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:34:5-89
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:34:5-89
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:67:22-86
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:69:5-99
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:17:5-83
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:17:5-83
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:69:22-80
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:72:5-73
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:23:5-73
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:23:5-73
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:72:22-70
+uses-permission#com.application.tchapj.permission.JPUSH_MESSAGE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:76:5-77:46
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:16:5-81
+	android:protectionLevel
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:77:9-44
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:76:22-84
+user-permission
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:78:5-77
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:78:22-75
+supports-screens
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:82:5-87:39
+	android:largeScreens
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:84:9-36
+	android:smallScreens
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:87:9-36
+	android:normalScreens
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:85:9-37
+	android:resizeable
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:86:9-34
+	android:anyDensity
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:83:9-34
+uses-feature#0x00020000
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:90:5-92:35
+	android:glEsVersion
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:91:9-41
+	android:required
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:92:9-32
+application
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:94:5-870:19
+MERGED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:13:5-17:19
+MERGED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:13:5-17:19
+MERGED from [com.ashokvarma.android:bottom-navigation-bar:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/bottom-navigation-bar-1.4.1.aar/b5462eeaf68fcae302e690992b27588c/AndroidManifest.xml:11:5-13:38
+MERGED from [com.ashokvarma.android:bottom-navigation-bar:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/bottom-navigation-bar-1.4.1.aar/b5462eeaf68fcae302e690992b27588c/AndroidManifest.xml:11:5-13:38
+MERGED from [com.hannesdorfmann.mosby:viewstate:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewstate-2.0.1.aar/dfe4b6ba804755533ce0c1ae6346a84d/AndroidManifest.xml:11:5-20
+MERGED from [com.hannesdorfmann.mosby:viewstate:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewstate-2.0.1.aar/dfe4b6ba804755533ce0c1ae6346a84d/AndroidManifest.xml:11:5-20
+MERGED from [com.hannesdorfmann.mosby:mvp:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/mvp-2.0.1.aar/a603ba0ae5c7bbb4c928319c5053546f/AndroidManifest.xml:11:5-20
+MERGED from [com.hannesdorfmann.mosby:mvp:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/mvp-2.0.1.aar/a603ba0ae5c7bbb4c928319c5053546f/AndroidManifest.xml:11:5-20
+MERGED from [com.github.pinguo-zhouwei:CustomPopwindow:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/CustomPopwindow-2.1.1.aar/5f68f2e7fcea90feafe5ade1f8fd077b/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.pinguo-zhouwei:CustomPopwindow:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/CustomPopwindow-2.1.1.aar/5f68f2e7fcea90feafe5ade1f8fd077b/AndroidManifest.xml:11:5-15:19
+MERGED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/AndroidManifest.xml:11:5-15:19
+MERGED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:11:5-20
+MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:11:5-20
+MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:15:5-17:38
+MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:15:5-17:38
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7710c06094e2f93e9fc96311e924cc08/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7710c06094e2f93e9fc96311e924cc08/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/fd8f647b47c3b2bc4138b13da6d488e4/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/fd8f647b47c3b2bc4138b13da6d488e4/AndroidManifest.xml:9:5-20
+MERGED from [com.github.aakira:expandable-layout:1.4.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/expandable-layout-1.4.3.aar/6b4ec6fa5b17c6ffa6d324f4d98d4f82/AndroidManifest.xml:12:5-20
+MERGED from [com.github.aakira:expandable-layout:1.4.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/expandable-layout-1.4.3.aar/6b4ec6fa5b17c6ffa6d324f4d98d4f82/AndroidManifest.xml:12:5-20
+MERGED from [com.github.Aspsine:SwipeToLoadLayout:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/SwipeToLoadLayout-1.0.4.aar/7012cff268446ee122949df4cd716a80/AndroidManifest.xml:12:5-20
+MERGED from [com.github.Aspsine:SwipeToLoadLayout:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/SwipeToLoadLayout-1.0.4.aar/7012cff268446ee122949df4cd716a80/AndroidManifest.xml:12:5-20
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:20:5-45:19
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:20:5-45:19
+MERGED from [com.king.thread:nevercrash:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/nevercrash-1.0.0.aar/fd389b8dd072ceced9dc1a7e40e6dfe3/AndroidManifest.xml:11:5-15:19
+MERGED from [com.king.thread:nevercrash:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/nevercrash-1.0.0.aar/fd389b8dd072ceced9dc1a7e40e6dfe3/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:14:5-20
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:14:5-20
+MERGED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:11:5-35:19
+MERGED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:11:5-35:19
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1] /Users/dong/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.0-alpha-1.aar/615c6696bdf35d2f2a772008fca3c71d/AndroidManifest.xml:11:5-15:19
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1] /Users/dong/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.0-alpha-1.aar/615c6696bdf35d2f2a772008fca3c71d/AndroidManifest.xml:11:5-15:19
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-8.4.0.aar/f069028868fd31ab43e3e5075ddce4f1/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-8.4.0.aar/f069028868fd31ab43e3e5075ddce4f1/AndroidManifest.xml:19:5-20
+MERGED from [org.litepal.android:core:1.5.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/core-1.5.0.aar/25ab6e486875e527fb36b4fbdc8167b9/AndroidManifest.xml:11:5-14:19
+MERGED from [org.litepal.android:core:1.5.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/core-1.5.0.aar/25ab6e486875e527fb36b4fbdc8167b9/AndroidManifest.xml:11:5-14:19
+MERGED from [org.xutils:xutils:3.3.36] /Users/dong/.gradle/caches/transforms-1/files-1.1/xutils-3.3.36.aar/9598b836ffa9ec632034d75ce7d33b63/AndroidManifest.xml:12:5-20
+MERGED from [org.xutils:xutils:3.3.36] /Users/dong/.gradle/caches/transforms-1/files-1.1/xutils-3.3.36.aar/9598b836ffa9ec632034d75ce7d33b63/AndroidManifest.xml:12:5-20
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:37:5-132:19
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:37:5-132:19
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/3c9b329f130d8763336bb370ed84536d/AndroidManifest.xml:11:5-12:19
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/3c9b329f130d8763336bb370ed84536d/AndroidManifest.xml:11:5-12:19
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-basement-8.4.0.aar/b3ad184c20a48068bda8faadbfb74517/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-basement-8.4.0.aar/b3ad184c20a48068bda8faadbfb74517/AndroidManifest.xml:20:5-24:19
+	android:supportsRtl
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:99:9-35
+	android:label
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:98:9-41
+	android:icon
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:97:9-39
+	android:allowBackup
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:96:9-35
+		REJECTED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:14:9-35
+		REJECTED from [com.ashokvarma.android:bottom-navigation-bar:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/bottom-navigation-bar-1.4.1.aar/b5462eeaf68fcae302e690992b27588c/AndroidManifest.xml:12:9-35
+		REJECTED from [com.github.pinguo-zhouwei:CustomPopwindow:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/CustomPopwindow-2.1.1.aar/5f68f2e7fcea90feafe5ade1f8fd077b/AndroidManifest.xml:12:9-35
+		REJECTED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/AndroidManifest.xml:12:9-35
+		REJECTED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:12:9-35
+		REJECTED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:16:9-35
+		REJECTED from [com.king.thread:nevercrash:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/nevercrash-1.0.0.aar/fd389b8dd072ceced9dc1a7e40e6dfe3/AndroidManifest.xml:12:9-35
+		REJECTED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:12:9-35
+		REJECTED from [org.litepal.android:core:1.5.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/core-1.5.0.aar/25ab6e486875e527fb36b4fbdc8167b9/AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:100:9-40
+	tools:replace
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:101:9-44
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:95:9-28
+receiver#com.application.tchapj.utils2.download.NotificationCancelReceiver
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:103:9-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:103:19-77
+activity#com.application.tchapj.WelcomeActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:115:9-125:20
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:117:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:118:13-52
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:119:13-56
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:116:13-44
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:121:13-124:29
+action#android.intent.action.MAIN
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:122:17-69
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:122:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:123:17-77
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:123:27-74
+activity#com.application.tchapj.main.activity.StartUpAdvertActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:127:9-131:20
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:129:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:130:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:128:13-64
+activity#com.application.tchapj.guide.GuideActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:133:9-136:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:135:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:136:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:134:13-48
+activity#com.application.tchapj.login.activity.LoginActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:138:9-142:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:140:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:141:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:139:13-57
+activity#com.application.tchapj.login.activity.LoginMainActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:144:9-148:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:146:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:147:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:145:13-61
+activity#com.application.tchapj.login.activity.PassWordActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:151:9-155:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:153:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:155:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:152:13-60
+activity#com.application.tchapj.login.activity.RegisterActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:157:9-161:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:159:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:161:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:158:13-60
+activity#com.application.tchapj.MainActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:163:9-165:51
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:165:13-49
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:164:13-41
+activity#com.application.tchapj.consultation.activity.ChannelActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:167:9-171:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:169:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:171:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:168:13-66
+activity#com.application.tchapj.search.activity.SearchActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:173:9-177:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:175:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:177:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:174:13-59
+activity#com.application.tchapj.search.activity.SearchInfoActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:179:9-183:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:181:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:183:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:180:13-63
+activity#com.application.tchapj.search.activity.SearchInfoMostActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:185:9-189:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:187:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:189:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:186:13-67
+activity#com.application.tchapj.main.activity.PersonActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:191:9-195:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:193:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:195:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:192:13-57
+activity#com.application.tchapj.main.activity.MingPeopleListActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:197:9-201:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:199:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:201:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:198:13-65
+activity#com.application.tchapj.main.activity.CircleActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:203:9-207:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:205:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:207:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:204:13-57
+activity#com.application.tchapj.main.activity.MessagenotificationActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:209:9-213:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:211:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:213:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:210:13-70
+activity#com.application.tchapj.my.activity.SettingActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:215:9-219:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:217:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:219:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:216:13-56
+activity#com.application.tchapj.my.activity.MyMoneyActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:221:9-225:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:223:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:225:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:222:13-56
+activity#com.application.tchapj.my.activity.MyMoneyMingXiActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:227:9-231:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:229:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:231:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:228:13-62
+activity#com.application.tchapj.my.activity.FrozenListActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:233:9-234:61
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:234:13-59
+activity#com.application.tchapj.task.activity.TaskSquareInfoActivity2
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:236:9-240:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:238:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:240:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:237:13-66
+activity#com.application.tchapj.task.activity.TaskSquareDyYcActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:242:9-245:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:243:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:244:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:242:19-71
+activity#com.application.tchapj.task.activity.TaskSquareDyYcHzActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:247:9-250:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:248:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:249:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:247:19-73
+activity#com.application.tchapj.task.activity.TaskSquareDyGpActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:252:9-255:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:253:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:254:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:252:19-71
+activity#com.application.tchapj.task.activity.TaskSquareWsGpActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:256:9-259:15
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:257:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:258:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:256:19-71
+activity#com.application.tchapj.task.activity.TaskSquareWsYcActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:260:9-263:15
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:261:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:262:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:260:19-71
+activity#com.application.tchapj.task.activity.FriendReleaseActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:266:9-269:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:267:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:268:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:266:19-70
+activity#com.application.tchapj.task.activity.CollarTaskCircleFriendLinkActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:270:9-85
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:270:19-83
+activity#com.application.tchapj.task.activity.ImagePreviewBaseActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:272:9-275:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:273:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:274:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:272:19-73
+activity#com.application.tchapj.task.activity.ImagePreviewCopyActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:277:9-280:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:278:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:279:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:277:19-73
+activity#com.application.tchapj.task.activity.TaskReviewfinishActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:282:9-285:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:283:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:284:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:282:19-73
+activity#com.application.tchapj.task.activity.TaskReviewprogressActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:287:9-290:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:288:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:289:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:287:19-75
+activity#com.application.tchapj.task.activity.UploadAuditActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:292:9-295:16
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:293:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:294:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:292:19-68
+activity#com.application.tchapj.task.activity.TaskSquareInfoActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:297:9-301:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:299:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:301:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:298:13-65
+activity#com.application.tchapj.task.activity.TaskDyMainActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:318:9-320:54
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:320:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:319:13-61
+activity#com.application.tchapj.task.activity.TaskWsMainActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:322:9-325:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:324:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:325:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:323:13-61
+activity#com.application.tchapj.task.activity.TaskPyqActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:327:9-331:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:329:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:331:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:328:13-58
+activity#com.application.tchapj.task.activity.ReleaseTaskImgTextActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:334:9-335:71
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:335:13-69
+activity#com.application.tchapj.task.activity.TaskWbActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:337:9-341:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:339:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:341:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:338:13-57
+activity#com.application.tchapj.task.activity.TaskQtActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:343:9-347:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:345:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:347:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:344:13-57
+activity#com.application.tchapj.task.activity.WebActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:349:9-353:45
+	android:launchMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:353:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:352:13-47
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:351:13-59
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:350:13-54
+activity#com.application.tchapj.utils2.agentweb.ActionActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:355:9-361:74
+	android:launchMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:359:13-42
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:361:13-72
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:358:13-37
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:357:13-74
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:360:13-50
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:356:13-59
+activity#com.application.tchapj.my.activity.MyjibenActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:363:9-367:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:365:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:367:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:364:13-56
+activity#com.application.tchapj.my.activity.WhbyMemberActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:369:9-373:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:371:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:373:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:370:13-59
+activity#com.application.tchapj.my.activity.IdentityActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:382:9-386:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:384:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:386:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:383:13-57
+activity#com.application.tchapj.my.activity.DanmuActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:388:9-392:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:390:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:392:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:389:13-54
+activity#com.application.tchapj.my.activity.ContactActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:394:9-398:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:396:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:398:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:395:13-56
+activity#com.application.tchapj.my.activity.DarenActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:407:9-411:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:409:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:411:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:408:13-54
+activity#com.application.tchapj.my.activity.GuanggaoActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:413:9-417:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:415:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:417:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:414:13-57
+activity#com.application.tchapj.my.activity.MingrenActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:419:9-423:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:421:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:423:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:420:13-56
+activity#com.application.tchapj.my.activity.MeitiActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:425:9-429:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:427:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:429:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:426:13-54
+activity#com.application.tchapj.my.activity.DarenDataOneActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:431:9-435:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:433:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:435:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:432:13-61
+activity#com.application.tchapj.my.activity.DarenDyAddActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:437:9-441:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:439:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:441:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:438:13-59
+activity#com.application.tchapj.my.activity.ContentManagerActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:443:9-446:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:445:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:446:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:444:13-63
+activity#com.application.tchapj.my.activity.AttentionListActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:448:9-451:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:450:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:451:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:449:13-62
+activity#com.application.tchapj.my.activity.FansListActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:452:9-455:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:454:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:455:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:453:13-57
+activity#com.application.tchapj.my.activity.TaskAnalysisActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:458:9-461:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:460:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:461:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:459:13-61
+activity#com.application.tchapj.my.activity.DarenPyqAddActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:464:9-468:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:466:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:468:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:465:13-60
+activity#com.application.tchapj.my.activity.DarenWbAddActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:470:9-474:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:472:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:474:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:471:13-59
+activity#com.application.tchapj.my.activity.DarenWsAddActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:476:9-479:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:478:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:479:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:477:13-59
+activity#com.application.tchapj.my.activity.DarenOtherAddActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:481:9-484:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:483:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:484:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:482:13-62
+activity#com.application.tchapj.alipay.H5PayActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:487:9-492:20
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:491:13-47
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:490:13-37
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:489:13-74
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:488:13-71
+activity#com.alipay.sdk.app.H5PayActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:495:9-501:20
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:499:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:500:13-67
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:498:13-37
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:497:13-85
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:496:13-60
+activity#com.alipay.sdk.app.H5AuthActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:503:9-509:20
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:507:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:508:13-67
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:506:13-37
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:505:13-74
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:504:13-61
+activity#com.application.tchapj.utils2.imagepicker.ui.ImagePreviewDelActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:511:9-514:65
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:513:13-59
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:514:13-62
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:512:13-74
+activity#com.application.tchapj.utils2.imagepicker.ui.ImageBaseActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:516:9-517:71
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:517:13-68
+activity#com.application.tchapj.utils2.imagepicker.ui.ImageGridActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:518:9-521:54
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:520:13-59
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:521:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:519:13-68
+activity#com.application.tchapj.utils2.imagepicker.ui.ImageCropActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:522:9-526:54
+	android:hardwareAccelerated
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:525:13-48
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:524:13-59
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:526:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:523:13-68
+activity#com.application.tchapj.utils2.imagepicker.ui.ImagePreviewActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:527:9-530:65
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:529:13-59
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:530:13-62
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:528:13-71
+activity#com.application.tchapj.utils2.picture.PictureSelectorActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:533:9-537:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:535:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:537:13-52
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:536:13-50
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:534:13-67
+activity#com.application.tchapj.utils2.picture.PictureBaseActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:538:9-540:52
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:540:13-49
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:539:13-63
+activity#com.application.tchapj.utils2.picture.PicturePreviewActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:541:9-543:52
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:543:13-49
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:542:13-66
+activity#com.application.tchapj.utils2.picture.PictureVideoPlayActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:544:9-547:50
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:547:13-47
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:546:13-74
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:545:13-68
+activity#com.application.tchapj.utils2.picture.PictureExternalPreviewActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:548:9-550:52
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:550:13-49
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:549:13-74
+activity#com.application.tchapj.utils2.picture.PicturePlayAudioActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:551:9-554:72
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:553:13-49
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:554:13-69
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:552:13-68
+activity#com.application.tchapj.my.activity.MicroInfoActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:556:9-560:55
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:558:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:560:13-52
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:557:13-58
+activity#com.application.tchapj.WebViewActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:562:9-565:50
+	android:hardwareAccelerated
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:565:13-47
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:564:13-59
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:563:13-44
+activity#com.application.tchapj.consultation.activity.UploadVideoActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:567:9-568:73
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:568:13-70
+activity#com.application.tchapj.consultation.activity.FindDetailActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:570:9-571:72
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:571:13-69
+activity#com.application.tchapj.consultation.activity.CommentReplyListActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:573:9-574:78
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:574:13-75
+activity#com.application.tchapj.my.activity.CityListActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:576:9-66
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:576:19-63
+activity#com.application.tchapj.task.activity.LeadTaskWechatActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:577:9-73
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:577:19-71
+activity#com.application.tchapj.login.activity.BindingPhoneActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:578:9-72
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:578:19-70
+activity#com.mob.tools.MobUIShell
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:583:9-594:20
+	android:windowSoftInputMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:587:13-67
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:586:13-74
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:585:13-72
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:584:13-52
+intent-filter#action:name:com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY+category:name:android.intent.category.DEFAULT
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:590:13-593:29
+action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:591:17-92
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:591:25-89
+category#android.intent.category.DEFAULT
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:592:17-76
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:592:27-73
+activity#cn.sharesdk.tencent.qq.ReceiveActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:597:9-607:20
+	android:launchMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:599:13-44
+	android:noHistory
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:600:13-38
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:598:13-66
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tencent1107929182
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:601:13-606:29
+action#android.intent.action.VIEW
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:602:17-69
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:602:25-66
+category#android.intent.category.BROWSABLE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:604:17-78
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:604:27-75
+data
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:605:17-60
+	android:scheme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:605:23-57
+activity#com.application.tchapj.wxapi.WXEntryActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:611:9-615:77
+	android:launchMode
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:613:13-44
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:612:13-36
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:615:13-74
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:614:13-50
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:611:19-78
+meta-data#Mob-AppKey
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:620:9-77
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:620:46-75
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:620:20-45
+meta-data#Mob-AppSecret
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:621:9-99
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:621:49-97
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:621:20-48
+activity#com.tencent.connect.common.AssistActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:624:9-628:75
+	android:screenOrientation
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:627:13-49
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:626:13-74
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:628:13-72
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:625:13-69
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:646:9-648:54
+	android:resource
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:648:13-51
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:647:13-63
+meta-data#com.google.android.gms.version
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:650:9-652:69
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-basement-8.4.0.aar/b3ad184c20a48068bda8faadbfb74517/AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-basement-8.4.0.aar/b3ad184c20a48068bda8faadbfb74517/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:652:13-66
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:651:13-58
+meta-data#com.baidu.lbsapi.API_KEY
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:655:9-657:64
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:657:13-61
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:656:13-52
+service#com.baidu.location.f
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:659:9-663:19
+	android:process
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:662:13-38
+	android:enabled
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:661:13-35
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:660:13-48
+meta-data#com.taobao.android.hotfix.IDSECRET
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:673:9-675:40
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:675:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:674:13-62
+meta-data#com.taobao.android.hotfix.APPSECRET
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:677:9-679:64
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:679:13-61
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:678:13-63
+meta-data#com.taobao.android.hotfix.RSASECRET
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:681:9-683:1656
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:683:13-1653
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:682:13-63
+meta-data#BaiduMobAd_STAT_ID
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:688:9-690:42
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:690:13-39
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:689:13-46
+meta-data#BaiduMobAd_CHANNEL
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:693:9-695:44
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:695:13-41
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:694:13-46
+meta-data#BaiduMobAd_EXCEPTION_LOG
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:698:9-700:36
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:700:13-33
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:699:13-52
+meta-data#BaiduMobAd_ONLY_WIFI
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:703:9-705:37
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:705:13-34
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:704:13-48
+meta-data#BaiduMobAd_CELL_LOCATION
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:708:9-710:36
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:710:13-33
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:709:13-52
+meta-data#BaiduMobAd_GPS_LOCATION
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:713:9-715:36
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:715:13-33
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:714:13-51
+meta-data#BaiduMobAd_WIFI_LOCATION
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:718:9-720:36
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:720:13-33
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:719:13-52
+service#cn.jpush.android.service.PushService
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:725:9-735:19
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:60:9-71:19
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:60:9-71:19
+	android:process
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:64:13-40
+	android:enabled
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:727:13-35
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:728:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:726:13-64
+intent-filter#action:name:cn.jpush.android.intent.PUSH_TIME+action:name:cn.jpush.android.intent.PushService+action:name:cn.jpush.android.intent.REGISTER+action:name:cn.jpush.android.intent.REPORT
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:729:13-734:29
+action#cn.jpush.android.intent.REGISTER
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:730:17-75
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:730:25-72
+action#cn.jpush.android.intent.REPORT
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:731:17-73
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:731:25-70
+action#cn.jpush.android.intent.PushService
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:732:17-78
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:732:25-75
+action#cn.jpush.android.intent.PUSH_TIME
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:733:17-76
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:733:25-73
+provider#cn.jpush.android.service.DataProvider
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:739:9-743:15
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:113:9-117:43
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:113:9-117:43
+	android:process
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:117:13-40
+	android:authorities
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:740:13-70
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:742:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:741:13-65
+service#cn.jpush.android.service.DaemonService
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:747:9-755:19
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:75:9-84:19
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:75:9-84:19
+	android:enabled
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:749:13-35
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:750:13-36
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:748:13-66
+intent-filter#action:name:cn.jpush.android.intent.DaemonService+category:name:com.application.tchapj
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:751:13-754:29
+action#cn.jpush.android.intent.DaemonService
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:752:17-80
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:752:25-77
+category#com.application.tchapj
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:753:17-66
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:753:27-64
+provider#cn.jpush.android.service.DownloadProvider
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:758:9-762:15
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:119:9-122:39
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:119:9-122:39
+	android:authorities
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:759:13-74
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:761:13-36
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:760:13-69
+receiver#cn.jpush.android.service.PushReceiver
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:765:9-782:20
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:87:9-106:20
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:87:9-106:20
+	android:enabled
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:767:13-35
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:90:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:766:13-65
+intent-filter#action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+category:name:com.application.tchapj
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:768:13-771:29
+	android:priority
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:768:28-51
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:769:17-94
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:769:25-91
+intent-filter#action:name:android.intent.action.USER_PRESENT+action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:772:13-775:29
+action#android.intent.action.USER_PRESENT
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:773:17-77
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:773:25-74
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:774:17-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:774:25-76
+intent-filter#action:name:android.intent.action.PACKAGE_ADDED+action:name:android.intent.action.PACKAGE_REMOVED+data:scheme:package
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:777:13-781:29
+action#android.intent.action.PACKAGE_ADDED
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:778:17-78
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:778:25-75
+action#android.intent.action.PACKAGE_REMOVED
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:779:17-80
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:779:25-77
+activity#cn.jpush.android.ui.PushActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:785:9-795:20
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:46:9-57:20
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:46:9-57:20
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:789:13-37
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:787:13-63
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:788:13-60
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:786:13-60
+intent-filter#action:name:cn.jpush.android.ui.PushActivity+category:name:android.intent.category.DEFAULT+category:name:com.application.tchapj
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:790:13-794:29
+action#cn.jpush.android.ui.PushActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:791:17-75
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:791:25-72
+activity#cn.jpush.android.ui.PopWinActivity
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:797:9-806:20
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:40:9-43:52
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:40:9-43:52
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:800:13-37
+	android:configChanges
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:799:13-63
+	android:theme
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:801:13-49
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:798:13-62
+intent-filter#category:name:android.intent.category.DEFAULT+category:name:com.application.tchapj
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:802:13-805:29
+service#cn.jpush.android.service.DownloadService
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:809:9-813:19
+	android:enabled
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:811:13-35
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:812:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:810:13-68
+receiver#cn.jpush.android.service.AlarmReceiver
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:816:9-75
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:109:9-111:40
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:109:9-111:40
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:111:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:816:19-72
+receiver#com.application.tchapj.receiver.MyJPushMessageReceiver
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:821:9-829:20
+	android:enabled
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:823:13-35
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:824:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:822:13-60
+intent-filter#action:name:cn.jpush.android.intent.RECEIVE_MESSAGE+category:name:com.application.tchapj
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:825:13-828:29
+action#cn.jpush.android.intent.RECEIVE_MESSAGE
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:826:17-82
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:826:25-79
+receiver#com.application.tchapj.receiver.MyJPushReceiver
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:832:9-849:20
+	android:enabled
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:834:13-35
+	android:exported
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:835:13-37
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:833:13-53
+intent-filter#action:name:cn.jpush.android.intent.CONNECTION+action:name:cn.jpush.android.intent.MESSAGE_RECEIVED+action:name:cn.jpush.android.intent.NOTIFICATION_OPENED+action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED+action:name:cn.jpush.android.intent.REGISTRATION+category:name:com.application.tchapj
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:836:13-848:29
+action#cn.jpush.android.intent.REGISTRATION
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:838:17-79
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:838:25-76
+action#cn.jpush.android.intent.MESSAGE_RECEIVED
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:840:17-83
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:840:25-80
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:842:17-88
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:842:25-85
+action#cn.jpush.android.intent.NOTIFICATION_OPENED
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:844:17-86
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:844:25-83
+action#cn.jpush.android.intent.CONNECTION
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:846:17-77
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:846:25-74
+meta-data#JPUSH_CHANNEL
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:865:9-84
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:125:9-127:48
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:125:9-127:48
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:865:49-82
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:865:20-48
+meta-data#JPUSH_APPKEY
+ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:867:9-90
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:128:9-130:47
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:128:9-130:47
+	android:value
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:867:48-88
+	android:name
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:867:20-47
+uses-sdk
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/33e85067486ead65a6ab9dfd1b2beb52/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/33e85067486ead65a6ab9dfd1b2beb52/AndroidManifest.xml:20:5-43
+MERGED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.king.base:base:2.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.bigkoo:convenientbanner:2.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/convenientbanner-2.0.5.aar/e0c219ea337288154b6ee64efa87e33a/AndroidManifest.xml:7:5-44
+MERGED from [com.bigkoo:convenientbanner:2.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/convenientbanner-2.0.5.aar/e0c219ea337288154b6ee64efa87e33a/AndroidManifest.xml:7:5-44
+MERGED from [com.ashokvarma.android:bottom-navigation-bar:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/bottom-navigation-bar-1.4.1.aar/b5462eeaf68fcae302e690992b27588c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.ashokvarma.android:bottom-navigation-bar:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/bottom-navigation-bar-1.4.1.aar/b5462eeaf68fcae302e690992b27588c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.hannesdorfmann.mosby:viewstate:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewstate-2.0.1.aar/dfe4b6ba804755533ce0c1ae6346a84d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.hannesdorfmann.mosby:viewstate:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewstate-2.0.1.aar/dfe4b6ba804755533ce0c1ae6346a84d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.hannesdorfmann.mosby:mvp:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/mvp-2.0.1.aar/a603ba0ae5c7bbb4c928319c5053546f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.hannesdorfmann.mosby:mvp:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/mvp-2.0.1.aar/a603ba0ae5c7bbb4c928319c5053546f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.pinguo-zhouwei:CustomPopwindow:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/CustomPopwindow-2.1.1.aar/5f68f2e7fcea90feafe5ade1f8fd077b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.pinguo-zhouwei:CustomPopwindow:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/CustomPopwindow-2.1.1.aar/5f68f2e7fcea90feafe5ade1f8fd077b/AndroidManifest.xml:7:5-9:41
+MERGED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/AndroidManifest.xml:7:5-9:41
+MERGED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:7:5-9:41
+MERGED from [com.lzy.widget:view-core:0.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/view-core-0.2.1.aar/fcfd070fda58026e28ce9c1b8999ad37/AndroidManifest.xml:8:5-10:41
+MERGED from [com.lzy.widget:view-core:0.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/view-core-0.2.1.aar/fcfd070fda58026e28ce9c1b8999ad37/AndroidManifest.xml:8:5-10:41
+MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:8:5-11:104
+MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:8:5-11:104
+MERGED from [com.github.florent37:viewanimator:1.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewanimator-1.0.5.aar/1f538a289ab0f4411f91a2d45f0a835d/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.florent37:viewanimator:1.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewanimator-1.0.5.aar/1f538a289ab0f4411f91a2d45f0a835d/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:design:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7710c06094e2f93e9fc96311e924cc08/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7710c06094e2f93e9fc96311e924cc08/AndroidManifest.xml:5:5-7:41
+MERGED from [io.reactivex:rxandroid:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/9e84f0f24bb6354087be25277246a3a3/AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex:rxandroid:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-1.2.1.aar/9e84f0f24bb6354087be25277246a3a3/AndroidManifest.xml:19:5-43
+MERGED from [jp.wasabeef:glide-transformations:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/glide-transformations-2.0.1.aar/cf456b42fe7aafd7566dfa391f699ddb/AndroidManifest.xml:8:5-10:41
+MERGED from [jp.wasabeef:glide-transformations:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/glide-transformations-2.0.1.aar/cf456b42fe7aafd7566dfa391f699ddb/AndroidManifest.xml:8:5-10:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/fd8f647b47c3b2bc4138b13da6d488e4/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/fd8f647b47c3b2bc4138b13da6d488e4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.aakira:expandable-layout:1.4.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/expandable-layout-1.4.3.aar/6b4ec6fa5b17c6ffa6d324f4d98d4f82/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.aakira:expandable-layout:1.4.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/expandable-layout-1.4.3.aar/6b4ec6fa5b17c6ffa6d324f4d98d4f82/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.Aspsine:SwipeToLoadLayout:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/SwipeToLoadLayout-1.0.4.aar/7012cff268446ee122949df4cd716a80/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.Aspsine:SwipeToLoadLayout:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/SwipeToLoadLayout-1.0.4.aar/7012cff268446ee122949df4cd716a80/AndroidManifest.xml:8:5-10:41
+MERGED from [com.jude:easyrecyclerview:4.3.7] /Users/dong/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/d121f1333b4ac6ca12dfcebc05edd0d3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.jude:easyrecyclerview:4.3.7] /Users/dong/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/d121f1333b4ac6ca12dfcebc05edd0d3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:6:5-8:41
+MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:6:5-8:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/nativecrashreport-3.7.1.aar/0b9711eb0f33a6866534a685171d196a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/nativecrashreport-3.7.1.aar/0b9711eb0f33a6866534a685171d196a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.jakewharton:butterknife:8.5.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/butterknife-8.5.1.aar/6139af5ffabb5f24a3073075d66cfc2a/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.5.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/butterknife-8.5.1.aar/6139af5ffabb5f24a3073075d66cfc2a/AndroidManifest.xml:5:5-43
+MERGED from [com.king.thread:nevercrash:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/nevercrash-1.0.0.aar/fd389b8dd072ceced9dc1a7e40e6dfe3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.king.thread:nevercrash:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/nevercrash-1.0.0.aar/fd389b8dd072ceced9dc1a7e40e6dfe3/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.bingoogolapple:bga-swipebacklayout:1.0.8] /Users/dong/.gradle/caches/transforms-1/files-1.1/bga-swipebacklayout-1.0.8.aar/5697fb74e95fc163769f03d2d7405ad8/AndroidManifest.xml:6:5-8:41
+MERGED from [cn.bingoogolapple:bga-swipebacklayout:1.0.8] /Users/dong/.gradle/caches/transforms-1/files-1.1/bga-swipebacklayout-1.0.8.aar/5697fb74e95fc163769f03d2d7405ad8/AndroidManifest.xml:6:5-8:41
+MERGED from [com.zhy:base-rvadapter:3.0.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-rvadapter-3.0.3.aar/8513efbdf6ea4a431df189ca672f936a/AndroidManifest.xml:8:5-10:41
+MERGED from [com.zhy:base-rvadapter:3.0.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/base-rvadapter-3.0.3.aar/8513efbdf6ea4a431df189ca672f936a/AndroidManifest.xml:8:5-10:41
+MERGED from [com.alibaba.android:vlayout:1.2.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/vlayout-1.2.2.aar/afbce04291e20aa47da73726637ca880/AndroidManifest.xml:31:5-33:41
+MERGED from [com.alibaba.android:vlayout:1.2.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/vlayout-1.2.2.aar/afbce04291e20aa47da73726637ca880/AndroidManifest.xml:31:5-33:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/f687ca60effcd01630e425f6035b9fda/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/f687ca60effcd01630e425f6035b9fda/AndroidManifest.xml:20:5-44
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:7:5-9:41
+MERGED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.youth.banner:banner:1.4.10] /Users/dong/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/d990656b84ef3f2b1af20c3d54c06d12/AndroidManifest.xml:7:5-9:41
+MERGED from [com.youth.banner:banner:1.4.10] /Users/dong/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/d990656b84ef3f2b1af20c3d54c06d12/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] /Users/dong/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0-alpha1.aar/258f4536cd4d17953d2d086bab6368fe/AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] /Users/dong/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0-alpha1.aar/258f4536cd4d17953d2d086bab6368fe/AndroidManifest.xml:21:5-44
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1] /Users/dong/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.0-alpha-1.aar/615c6696bdf35d2f2a772008fca3c71d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1] /Users/dong/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.0-alpha-1.aar/615c6696bdf35d2f2a772008fca3c71d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.hyman:flowlayout-lib:1.1.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/flowlayout-lib-1.1.2.aar/a5cb031472a53a1ec2e80115ddd9cbad/AndroidManifest.xml:8:5-10:41
+MERGED from [com.hyman:flowlayout-lib:1.1.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/flowlayout-lib-1.1.2.aar/a5cb031472a53a1ec2e80115ddd9cbad/AndroidManifest.xml:8:5-10:41
+MERGED from [com.zhy:okhttputils:2.6.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/okhttputils-2.6.2.aar/05c08da3012ee94313ef6d632bec0291/AndroidManifest.xml:7:5-9:41
+MERGED from [com.zhy:okhttputils:2.6.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/okhttputils-2.6.2.aar/05c08da3012ee94313ef6d632bec0291/AndroidManifest.xml:7:5-9:41
+MERGED from [me.drakeet.materialdialog:library:1.3.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/59d3749cf7ff842ff211472924058b1c/AndroidManifest.xml:8:5-10:41
+MERGED from [me.drakeet.materialdialog:library:1.3.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/59d3749cf7ff842ff211472924058b1c/AndroidManifest.xml:8:5-10:41
+MERGED from [net.wujingchao.android.view:simple-tag-imageview:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/simple-tag-imageview-1.0.1.aar/071a62162d054e9bbf1bafcf0395a0c2/AndroidManifest.xml:8:5-10:41
+MERGED from [net.wujingchao.android.view:simple-tag-imageview:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/simple-tag-imageview-1.0.1.aar/071a62162d054e9bbf1bafcf0395a0c2/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.zhaokaiqiang.klog:library:1.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.4.0.aar/b1c33aa3df48ae14409b00c380b40522/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.zhaokaiqiang.klog:library:1.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.4.0.aar/b1c33aa3df48ae14409b00c380b40522/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-8.4.0.aar/f069028868fd31ab43e3e5075ddce4f1/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-8.4.0.aar/f069028868fd31ab43e3e5075ddce4f1/AndroidManifest.xml:18:5-42
+MERGED from [com.github.chaychan:MultipleItemRvAdapter:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/MultipleItemRvAdapter-1.0.4.aar/9e4a5e871807b993dd7032fa8b4bccd0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chaychan:MultipleItemRvAdapter:1.0.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/MultipleItemRvAdapter-1.0.4.aar/9e4a5e871807b993dd7032fa8b4bccd0/AndroidManifest.xml:7:5-9:41
+MERGED from [org.litepal.android:core:1.5.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/core-1.5.0.aar/25ab6e486875e527fb36b4fbdc8167b9/AndroidManifest.xml:7:5-9:41
+MERGED from [org.litepal.android:core:1.5.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/core-1.5.0.aar/25ab6e486875e527fb36b4fbdc8167b9/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.bingoogolapple:bga-badgeview:1.1.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/bga-badgeview-1.1.3.aar/56caa3a7fcee517255afd21842f2f9c5/AndroidManifest.xml:6:5-8:41
+MERGED from [cn.bingoogolapple:bga-badgeview:1.1.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/bga-badgeview-1.1.3.aar/56caa3a7fcee517255afd21842f2f9c5/AndroidManifest.xml:6:5-8:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-java-0.8.3.aar/c33b177e010ffc4dc008ff5683a27800/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-java:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-java-0.8.3.aar/c33b177e010ffc4dc008ff5683a27800/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv7a-0.8.3.aar/25c40c337fe99ed68ca476d3189b43a5/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv7a-0.8.3.aar/25c40c337fe99ed68ca476d3189b43a5/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv5-0.8.3.aar/dd3b8db6ce0e7bc6498db1e9ba81eaf8/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-armv5-0.8.3.aar/dd3b8db6ce0e7bc6498db1e9ba81eaf8/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86-0.8.3.aar/43c064eef8faa2665b3ddcba7d147714/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86:0.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86-0.8.3.aar/43c064eef8faa2665b3ddcba7d147714/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.ctiao:dfm:0.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/dfm-0.4.1.aar/84b8f0ef8984deae1015ce472678bac1/AndroidManifest.xml:22:5-24:41
+MERGED from [com.github.ctiao:dfm:0.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/dfm-0.4.1.aar/84b8f0ef8984deae1015ce472678bac1/AndroidManifest.xml:22:5-24:41
+MERGED from [org.xutils:xutils:3.3.36] /Users/dong/.gradle/caches/transforms-1/files-1.1/xutils-3.3.36.aar/9598b836ffa9ec632034d75ce7d33b63/AndroidManifest.xml:8:5-10:41
+MERGED from [org.xutils:xutils:3.3.36] /Users/dong/.gradle/caches/transforms-1/files-1.1/xutils-3.3.36.aar/9598b836ffa9ec632034d75ce7d33b63/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.4.aar/c7e1244003569bd76a21b435b8e40068/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.4.aar/c7e1244003569bd76a21b435b8e40068/AndroidManifest.xml:7:5-9:41
+MERGED from [com.orhanobut:logger:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/logger-2.1.1.aar/f8a2e437e27278728e3507d1c65004af/AndroidManifest.xml:6:5-43
+MERGED from [com.orhanobut:logger:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/logger-2.1.1.aar/f8a2e437e27278728e3507d1c65004af/AndroidManifest.xml:6:5-43
+MERGED from [com.tencent.sonic:sdk:2.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/sdk-2.0.0.aar/ddb053d9f517c5d49ace4b1fcb6e2823/AndroidManifest.xml:8:5-10:41
+MERGED from [com.tencent.sonic:sdk:2.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/sdk-2.0.0.aar/ddb053d9f517c5d49ace4b1fcb6e2823/AndroidManifest.xml:8:5-10:41
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/3c9b329f130d8763336bb370ed84536d/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/3c9b329f130d8763336bb370ed84536d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:transition:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/2f3d00d6214dbb7747d3ae1a850848ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/2f3d00d6214dbb7747d3ae1a850848ca/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-base-8.4.0.aar/cb809e3095a2bc7f101a84fe5e7abc79/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-base-8.4.0.aar/cb809e3095a2bc7f101a84fe5e7abc79/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-basement-8.4.0.aar/b3ad184c20a48068bda8faadbfb74517/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/play-services-basement-8.4.0.aar/b3ad184c20a48068bda8faadbfb74517/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/dcf5eeb57c800d85ff30686c5160b3e6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/dcf5eeb57c800d85ff30686c5160b3e6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6530b02235979b5a3105cbbdbac16f10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6530b02235979b5a3105cbbdbac16f10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/54bf922b9830a20dd9e350e319aea86c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/54bf922b9830a20dd9e350e319aea86c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/93e53dcb115ea32278b56c7658d47dfc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/93e53dcb115ea32278b56c7658d47dfc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/8680dd793e93cc672b0bbcdbfbed399f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/8680dd793e93cc672b0bbcdbfbed399f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/878132045d988214a4efea495140d930/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/878132045d988214a4efea495140d930/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/daf75fdf9f761a2e4fe5579b5d1d4c1f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/daf75fdf9f761a2e4fe5579b5d1d4c1f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ce48bcd60c29abf17084cf0593a2527b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ce48bcd60c29abf17084cf0593a2527b/AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/2e335231b038c113252a3ad209eb87a7/AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/2e335231b038c113252a3ad209eb87a7/AndroidManifest.xml:19:5-43
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.7.4.aar/77d929259529e2a5d05248a68559d5f2/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.7.4.aar/77d929259529e2a5d05248a68559d5f2/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.7.4.aar/25e51d35542491949dee6e376cb07612/AndroidManifest.xml:5:5-7:41
+MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.7.4.aar/25e51d35542491949dee6e376cb07612/AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/429bf78faa5b729f3ae6b31cc34014b2/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/429bf78faa5b729f3ae6b31cc34014b2/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4099e843012d4be15e796c344911b23e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4099e843012d4be15e796c344911b23e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fb00c6c3677b878123a7e6512ce51c74/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fb00c6c3677b878123a7e6512ce51c74/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/77aa02aa8cd40b25592311801575fd74/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/77aa02aa8cd40b25592311801575fd74/AndroidManifest.xml:20:5-44
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:11:9-101
+	android:targetSdkVersion
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
+activity#com.tencent.bugly.beta.ui.BetaActivity
+ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:23:9-27:56
+	android:configChanges
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:25:13-81
+	android:theme
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:26:13-61
+	tools:replace
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:27:13-53
+	android:name
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:24:13-66
+provider#com.tencent.bugly.beta.utils.BuglyFileProvider
+ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:29:9-39:20
+	android:grantUriPermissions
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:33:13-47
+	android:authorities
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:31:13-64
+	android:exported
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:32:13-37
+	tools:replace
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:34:13-74
+	android:name
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:30:13-74
+service#com.tencent.bugly.beta.tinker.TinkerResultService
+ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:41:9-44:72
+	android:exported
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:43:13-37
+	android:permission
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:44:13-69
+	android:name
+		ADDED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:42:13-77
+provider#com.just.agentweb.AgentWebFileProvider
+ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:15:9-23:20
+	android:grantUriPermissions
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:19:13-47
+	android:authorities
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:17:13-72
+	android:exported
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:16:13-66
+activity#com.just.agentweb.ActionActivity
+ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:25:9-32:20
+	android:launchMode
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:29:13-42
+	android:windowSoftInputMode
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:31:13-72
+	android:exported
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:28:13-37
+	android:configChanges
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:27:13-74
+	android:theme
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:30:13-50
+	android:name
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:26:13-60
+receiver#com.just.agentweb.DownLoader$NotificationBroadcastReceiver
+ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:34:9-95
+	android:name
+		ADDED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:34:19-92
+permission#${JPUSH_PKGNAME}.permission.JPUSH_MESSAGE
+ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:11:5-13:47
+	android:protectionLevel
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:13:9-44
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:12:9-65
+permission#com.application.tchapj.permission.JPUSH_MESSAGE
+ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:11:5-13:47
+	android:protectionLevel
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:13:9-44
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:12:9-65
+uses-permission#${JPUSH_PKGNAME}.permission.JPUSH_MESSAGE
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:16:5-81
+uses-permission#android.permission.RECEIVE_USER_PRESENT
+ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:17:5-79
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:17:22-76
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:30:5-78
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/0c7206a5bc2cc67ba5c4ee85e40ac4bc/AndroidManifest.xml:30:22-75

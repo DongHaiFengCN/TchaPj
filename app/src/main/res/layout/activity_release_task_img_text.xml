@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:layout_marginBottom="100dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="27dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="任务引导"
+                    android:textColor="@color/consultation_item_txt_color"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/fa_pyq_ydet"
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_release_task_edit"
+                    android:lineSpacingExtra="6dp"
+                    android:padding="15dp"
+                    android:text="1.一键复制文案和图片。
+2.打开QQ朋友圈或者微博，按照要求发布图文。
+3.达到任务要求后回传截图，即可获得奖励。"
+                    android:textColor="#B0B0B1"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    android:text="任务要求"
+                    android:textColor="@color/consultation_item_txt_color"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/release_task_img_text_task_require"
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_release_task_edit"
+                    android:lineSpacingExtra="6dp"
+                    android:padding="15dp"
+                    android:text="1.发布后至少保留10天
+2.对所有人可见
+3.朋友圈点赞达到10个"
+                    android:textColor="#B0B0B1"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    android:text="准备任务素材"
+                    android:textColor="@color/consultation_item_txt_color"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:text="文案"
+                    android:textColor="#ff959596"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/fa_pyq_waet"
+                    android:layout_width="match_parent"
+                    android:layout_height="97dp"
+                    android:background="@drawable/bg_release_task_edit"
+                    android:gravity="top"
+                    android:hint="请输入活动文案"
+                    android:lineSpacingExtra="6dp"
+                    android:padding="15dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="19dp"
+                    android:paddingBottom="20dp"
+                    android:text="配图(最多9张)"
+                    android:textColor="#ff959596"
+                    android:textSize="15sp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fa_pyq_image_nanerv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:choiceMode="singleChoice"
+                    android:divider="@null"
+                    android:fadingEdge="none"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbarStyle="outsideOverlay"
+                    app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                    app:spanCount="3"
+                    tools:listitem="@layout/list_item_image"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    android:text="选择投放渠道"
+                    android:textColor="@color/consultation_item_txt_color"
+                    android:textSize="15sp" />
+
+                <com.application.tchapj.widiget.FlowTagLayout
+                    android:id="@+id/release_task_img_text_select_channel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    android:text="标题和封面"
+                    android:textColor="@color/consultation_item_txt_color"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="22dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/fa_pyq_titlet"
+                            android:layout_width="match_parent"
+                            android:layout_height="54dp"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/bg_release_task_edit_radius5"
+                            android:hint="请输入活动标题"
+                            android:padding="15dp"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/white_radiu_bg"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="起"
+                                android:textColor="#0D143C"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/fa_pyq_start"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_release_task_edit"
+                                android:gravity="center"
+                                android:hint="开始时间"
+                                android:textSize="11sp" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="9dp"
+                                android:text="至"
+                                android:textColor="#0D143C"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/fa_pyq_end"
+                                android:layout_width="0dp"
+                                android:layout_height="20dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_release_task_edit"
+                                android:gravity="center"
+                                android:hint="结束时间"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/fa_pyq_imagerv"
+                        android:layout_width="112dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:choiceMode="singleChoice"
+                        android:divider="@null"
+                        android:fadingEdge="none"
+                        android:listSelector="@android:color/transparent"
+                        android:scrollbarStyle="outsideOverlay"
+                        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                        app:spanCount="1" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    android:text="奖励设置"
+                    android:textColor="@color/consultation_item_txt_color"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/white_radiu_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="单价:"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/fa_pyq_djet"
+                        android:layout_width="109dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/bg_release_task_edit_radius12"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="元/条"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/white_radiu_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="数量:"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/fa_pyq_slet"
+                        android:layout_width="109dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/bg_release_task_edit_radius12"
+                        android:inputType="number"
+                        android:paddingLeft="10dp"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="条"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/white_radiu_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="折扣:"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/fa_pyqtask_discount_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text=""
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:visibility="gone">
+
+                    <Button
+
+                        android:id="@+id/fa_pyq_bt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:background="@drawable/search_bg"
+                        android:text="下    单"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E5E5E5"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="17dp"
+                        android:text="合计："
+                        android:textColor="#0D143C"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/fa_pyq_price_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text=""
+                        android:textColor="#F51515"
+                        android:textSize="23sp" />
+
+                    <com.application.tchapj.widiget.ObliqueLineTextView
+                        android:id="@+id/fa_pyqtask_original_price_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text=""
+                        android:textColor="#9296AB"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/release_task_img_text_preview_task_tv"
+                    android:layout_width="139dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/search_bg"
+                    android:gravity="center"
+                    android:text="预览任务"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+            <!--android:id="@+id/release_task_img_text_submit_text"-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

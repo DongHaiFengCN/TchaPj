@@ -1,0 +1,336 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'org.greenrobot.greendao'
+
+ext {
+    isLibrary = false
+}
+
+android {
+
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+
+    // key值与包名做了修改 发布时做包名修改
+    defaultConfig {
+        applicationId "com.application.tchapj"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 14
+        versionName "4.2.6"
+        flavorDimensions "default"
+        multiDexEnabled true    //突破65535 short的最大值是65535
+        manifestPlaceholders = [UMENG_CHANNEL_CALUE: "umeng"]       //默认为uMeng
+        vectorDrawables.useSupportLibrary = true
+        aaptOptions.cruncherEnabled = false
+        aaptOptions.useNewCruncher = false
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a',
+                    'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "bb4c9c38ae5b09ae29aeb275", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+        // 避免打包时报错
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
+
+        aaptOptions {
+            cruncherEnabled = false
+            useNewCruncher = false
+        }
+
+    }
+
+    allprojects {
+        repositories {
+            maven {
+                url 'https://maven.google.com/'
+                name 'Google'
+            }
+            jcenter()
+            //这句才是加上的，上面的自带 的
+            maven { url "https://jitpack.io" }
+        }
+
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/ASL2.0'
+    }
+
+    //添加签名即证书
+//    signingConfigs {
+//        debug {
+//            //storeFile file("E:/TchaPj/tchapj.keystore")
+//            storeFile file("D:/project/TchaPj/sqb.jks")
+//            storePassword "et13406962398"
+//            keyAlias "key"
+//            keyPassword "et13406962398"
+//        }
+//        release {
+//            storeFile file("D:/project/TchaPj/sqb.jks")
+//            storePassword "et13406962398"
+//            keyAlias "key"
+//            keyPassword "et13406962398"
+//        }
+//    }
+
+    repositories {
+        maven { url "https://jitpack.io" }
+
+    }
+
+    buildTypes {
+
+        release {
+
+            //混淆
+            minifyEnabled false
+            zipAlignEnabled true  // Zipalign优化
+            shrinkResources false // 移除无用的resource文件,必须和minifyEnabled 一起使用
+            //signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            //输出的为渠道包的名字，例如 xiaomi.apk
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outFile = output.outputFile
+                    if (outFile != null && outFile.name.endsWith(".apk")) {
+                        def fileName = "${variant.productFlavors[0].name}" + ".apk"
+//                        def fileName = "微呼百应" + ".apk"
+                    //    output.outputFile = new File(outFile.parent, fileName);
+                    }
+                }
+
+            }
+        }
+    }
+
+    //渠道
+    productFlavors {
+        googleplay {}
+        huawei {}
+        xiaomi {}
+        wandoujia {}
+        baidu {}
+        yingyongbao {}
+        android360 {}
+        uc {}
+        umeng {}
+        meizu {}
+        //批量配置
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/jniLibs']
+        }
+    }
+
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+repositories {
+    flatDir(dirs: 'libs')
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    api 'com.android.support:appcompat-v7:25.0.0'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    api 'com.hannesdorfmann.mosby:viewstate:2.0.1'
+    api 'io.reactivex:rxandroid:1.2.1'
+    api 'jp.wasabeef:glide-transformations:2.0.1'
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+    api 'de.hdodenhof:circleimageview:2.1.0'
+    api 'com.king.base:base:2.0'
+    api 'com.qiniu:happy-dns:0.2.+'
+    api 'com.github.aakira:expandable-layout:1.4.3@aar'
+    // 轮播图
+    api 'com.bigkoo:convenientbanner:2.0.5'
+    api 'com.github.Aspsine:SwipeToLoadLayout:1.0.4'
+    api 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    // easyrecyclerview
+    api 'com.jude:easyrecyclerview:4.3.7'
+    // 底部导航栏
+    api 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
+    // optional, help to generate the final applicatio
+
+    // provided('com.tencent.tinker:tinker-android-anno:1.7.7')
+
+    // tinker's main Android lib
+
+    // compile 'com.tencent.tinker:tinker-android-lib:1.7.7'
+
+    // 多dex配置 优化可执行文件 保存到缓存
+
+    // short的最大值是65535
+
+    // app数据库全量更新 数据库版本更新
+    api 'com.android.support:multidex:1.0.1'
+    // sdk 版本更新
+    api 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    // ndk 版本更新
+    api 'com.tencent.bugly:nativecrashreport:latest.release'
+    //api files('libs/volley.jar')
+    // MVP框架
+    api 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    // 性能高，号称Android最快的关系型数据库
+    api 'org.greenrobot:greendao:3.2.0'
+    compileOnly 'org.greenrobot:greendao-generator:3.2.0'
+    // RxJava 的优势也是简洁  逻辑的简洁  即  观察者模式的事件消息交互框架
+    api 'io.reactivex:rxjava:1.1.6'
+    // android中的通讯框架,用于高效发送http请求
+    api 'com.squareup.retrofit2:retrofit:2.1.0'
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    // Dagger2依赖注入框架App的接口类对象
+    api 'com.google.dagger:dagger:2.9'
+    // annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
+    // annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    api 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    // 全局异常处理
+    api 'com.king.thread:nevercrash:1.0.0'
+    // 侧滑返回
+    api 'cn.bingoogolapple:bga-swipebacklayout:1.0.8'
+    // 侧滑返回依赖
+    //api 'com.android.support:support-v4:25.1.0'
+    // recyclerview
+    api 'com.android.support:recyclerview-v7:23.0.1'
+    // 添加友盟依赖
+    api 'com.umeng.analytics:analytics:latest.integration'
+   // api files('libs/BmobSDK_V3.4.7_0527.jar')
+    //微信登陆
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2'
+    //网络环境
+    api 'com.github.pwittchen:reactivenetwork-rx2:0.11.0'
+    api 'com.just.agentweb:agentweb:3.1.0'
+    api files('libs/Android-AdvancedWebView.jar')
+    // 轮播图
+    api 'com.youth.banner:banner:1.4.10'
+    api 'com.android.support:cardview-v7:28.0.0-alpha1'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-1'
+    api 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
+    api 'com.hyman:flowlayout-lib:1.1.2'
+    api 'com.zhy:okhttputils:2.6.2'
+    api 'me.drakeet.materialdialog:library:1.3.1'
+    api 'com.android.support:design:27.1.1'
+    // 左上角标签
+    api 'net.wujingchao.android.view:simple-tag-imageview:1.0.1'
+    // 日志
+    api 'com.github.zhaokaiqiang.klog:library:1.4.0'
+    api 'com.google.android.gms:play-services-appindexing:8.4.0'
+    // 频道管理
+    api 'me.weyye.ColorTrackTabLayout:library:1.0.1'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    api 'com.android.support.constraint:constraint-layout:1.0.1'
+    api 'com.squareup.retrofit2:retrofit:2.1.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    api 'org.greenrobot:eventbus:3.0.0'
+    api 'com.nineoldandroids:library:2.4.0'
+    api 'com.github.chaychan:SlideCloseLib:1.0.0'
+    api 'com.github.nukc.stateview:library:1.2.1'
+    api 'com.github.chaychan:MultipleItemRvAdapter:1.0.4'
+    api 'org.litepal.android:core:1.5.0'
+    api 'com.zhy:base-rvadapter:3.0.3'
+    api 'cn.bingoogolapple:bga-badgeview:1.1.3@aar'
+    // 视频播放+弹幕
+    api 'tv.danmaku.ijk.media:ijkplayer-java:0.8.3'
+    //    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.8.3'
+    api 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3'
+    api 'tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3'
+    //    compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.8.3'
+    api 'tv.danmaku.ijk.media:ijkplayer-x86:0.8.3'
+    //    compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.3'
+    //api files('libs/BaiduLBS_Android.jar')
+    api files('libs/IndoorscapeAlbumPlugin.jar')
+    api 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    api 'com.github.ctiao:dfm:0.4.1'
+    api 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    api 'org.xutils:xutils:3.3.36'
+    api 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    api 'com.lzy.widget:view-core:0.2.1'
+    api 'com.squareup.picasso:picasso:2.5.2'
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    //七牛
+    api 'com.qiniu:happy-dns:0.2.13'
+    api 'com.qiniu:qiniu-android-sdk:7.3.+'
+
+    api 'fm.jiecao:jiecaovideoplayer:4.8.3'
+    api 'com.github.bumptech.glide:glide:3.7.0'
+    //api files('libs/android-async-http-1.4.9.jar')
+    //api files('libs/qiniu-android-sdk-7.0.9.jar')
+    //api files('libs/happy-dns-0.2.4.jar')
+    //api files('libs/httpclient-4.3.6.jar')
+    api 'com.github.chrisbanes.photoview:library:1.2.4'
+    // glide图片处理
+    api 'com.github.bumptech.glide:glide:4.2.0'
+    api 'com.orhanobut:logger:2.1.1'
+    api('com.alibaba.android:vlayout:1.2.2@aar') {
+        transitive = true
+    }
+    api files('libs/alipaySdk-20180601.jar')
+    api 'com.alibaba:fastjson:1.1.56.android'
+    api 'com.github.florent37:viewanimator:1.0.5'
+    api files('src/jniLibs/BaiduLBS_Android.jar')
+
+    api files('libs/MobCommons-2017.1024.1907.jar')
+    api files('libs/MobTools-2017.1024.1907.jar')
+    api files('libs/ShareSDK-Core-3.1.1.jar')
+    api files('libs/ShareSDK-QQ-3.1.1.jar')
+    api files('libs/ShareSDK-QZone-3.1.1.jar')
+    api files('libs/ShareSDK-SinaWeibo-3.1.1.jar')
+    api files('libs/ShareSDK-Wechat-3.1.1.jar')
+    api files('libs/ShareSDK-Wechat-Core-3.1.1.jar')
+    api files('libs/ShareSDK-Wechat-Favorite-3.1.1.jar')
+    api files('libs/ShareSDK-Wechat-Moments-3.1.1.jar')
+
+    api 'com.tencent.sonic:sdk:2.0.0'
+    api 'com.baidu.mobstat:mtj-sdk:latest.integration'//百度统计
+
+    api 'cn.jiguang.sdk:jpush:3.1.6'  // JPush 极光推送
+    api 'cn.jiguang.sdk:jcore:1.2.5'  // JCore 极光推送
+
+    //annotationProcessor 'fm.jiecao:jiecaovideoplayer:5.5'//视频tab页-视频播放
+}
+

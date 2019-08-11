@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="15dp">
+
+    <com.application.tchapj.utils2.CircleImageView
+        android:id="@+id/layout_item_fans_list_head_iv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_media_head_default"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/layout_item_fans_list_head_nick_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="标题标题"
+        android:textSize="16sp"
+        android:textColor="#333333"/>
+
+</LinearLayout>

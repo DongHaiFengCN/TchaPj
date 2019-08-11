@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--渐变背景色-->
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_filter"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    style="@style/filter_tag"
+    android:layout_margin="5dp"
+    android:maxLines="1"
+    android:text="sss"
+    android:textSize="12sp"
+    android:textAlignment="center"
+    android:ellipsize="end" />
+

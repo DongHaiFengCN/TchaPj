@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <include
+        layout="@layout/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--审核被拒，拒绝理由显示-->
+    <TextView
+        android:id="@+id/lead_task_wechat_audit_refuse_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff5d3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="#BB582B"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text=""
+        android:visibility="gone"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/lead_task_wechat_top_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_audit_refuse_tv">
+
+    <ImageView
+        android:id="@+id/taskdygenpaiStateLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/release_state_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/taskdyStateOn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/taskdygenpaiStateLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/taskdygenpaiStateLine"
+        app:srcCompat="@drawable/release_state_on1"/>
+
+    <ImageView
+        android:id="@+id/taskdyStateoff4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/taskdygenpaiStateLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/taskdygenpaiStateLine"
+        app:srcCompat="@drawable/release_state_off4"
+        />
+
+    <ImageView
+        android:id="@+id/taskdyStateOff2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/taskdygenpaiStateLine"
+        app:layout_constraintEnd_toStartOf="@+id/taskdyStateOff3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/taskdyStateOn1"
+        app:layout_constraintTop_toTopOf="@+id/taskdygenpaiStateLine"
+        app:srcCompat="@drawable/release_state_off2"/>
+
+    <ImageView
+        android:id="@+id/taskdyStateOff3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/taskdygenpaiStateLine"
+        app:layout_constraintEnd_toStartOf="@+id/taskdyStateoff4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/taskdyStateOff2"
+        app:layout_constraintTop_toTopOf="@+id/taskdygenpaiStateLine"
+        app:srcCompat="@drawable/release_state_off_3"/>
+
+    <TextView
+        android:id="@+id/taskdyfTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/led_the_task"
+        android:textColor="@color/color_FEB06B"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/taskdyStateOn1"
+        app:layout_constraintStart_toStartOf="@+id/taskdyStateOn1"
+        app:layout_constraintTop_toBottomOf="@+id/taskdyStateOn1"/>
+
+    <TextView
+        android:id="@+id/taskdyfTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/upload_audit_materials"
+        android:textColor="@color/gainsboro"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/taskdyStateOff2"
+        app:layout_constraintStart_toStartOf="@+id/taskdyStateOff2"
+        app:layout_constraintTop_toBottomOf="@+id/taskdyStateOff2"/>
+
+    <TextView
+        android:id="@+id/taskdyfTv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/the_review_process"
+        android:textColor="@color/gainsboro"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/taskdyStateOff3"
+        app:layout_constraintStart_toStartOf="@+id/taskdyStateOff3"
+        app:layout_constraintTop_toBottomOf="@+id/taskdyStateOff3"/>
+
+    <TextView
+        android:id="@+id/taskdyfTv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="8dp"
+        android:text="@string/review_the_results"
+        android:textColor="@color/gainsboro"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/taskdyStateoff4"
+        app:layout_constraintStart_toStartOf="@+id/taskdyStateoff4"
+        app:layout_constraintTop_toBottomOf="@+id/taskdyStateoff4"/>
+
+    <ImageView
+        android:id="@+id/releasefBg"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskdyfTv2"
+        app:srcCompat="@color/color_F3F3F3"/>
+    </android.support.constraint.ConstraintLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_top_progress">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="70dp"
+            android:paddingLeft="15dp">
+
+            <ImageView
+                android:id="@+id/releasefImg"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@color/gainsboro" />
+
+            <!--任务要求-->
+            <LinearLayout
+                android:id="@+id/lead_task_wechat_task_requirement_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/bg_lead_task_wechat_task_requirement"
+                android:orientation="vertical"
+                android:paddingLeft="18dp"
+                android:paddingTop="100dp"
+                android:paddingRight="18dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintStart_toStartOf="@+id/releasefImg"
+                app:layout_constraintTop_toBottomOf="@+id/releasefImg">
+
+                <TextView
+                    android:id="@+id/lead_task_wechat_task_requirement_tip_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:text="活动要求："
+                    android:textColor="#ff4b4b"
+                    android:textSize="15.5sp" />
+
+                <TextView
+                    android:id="@+id/lead_task_wechat_task_requirement_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="2dp"
+                    android:text=""
+                    android:textColor="#A40E0E"
+                    android:textSize="14sp" />
+
+                <View xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/lead_task_wechat_task_requirement_dotted_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/dotted_line_shap"
+                    android:layerType="software"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/lead_task_wechat_activity_guide_tip_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="活动引导："
+                    android:textColor="#ff4b4b"
+                    android:textSize="15.5sp" />
+
+                <TextView
+                    android:id="@+id/lead_task_wechat_activity_guide_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#A40E0E"
+                    android:lineSpacingExtra="2dp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/friendCircleImg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/releasefImg"
+                app:layout_constraintStart_toEndOf="@+id/releasefImg"
+                android:layout_marginLeft="15dp"
+                app:srcCompat="@mipmap/ic_py_select" />
+
+            <TextView
+                android:id="@+id/friendCircleTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="TextView"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/friendCircleImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/friendCircleImg"
+                app:layout_constraintTop_toTopOf="@+id/friendCircleImg"
+                android:layout_marginLeft="2dp"/>
+
+            <TextView
+                android:id="@+id/releasefNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintStart_toEndOf="@+id/releasefImg"
+                app:layout_constraintTop_toTopOf="@+id/releasefImg" />
+
+            <TextView
+                android:id="@+id/activityTimeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/activity_countdown"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/lead_task_wechat_task_requirement_ll"
+                app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_task_requirement_ll" />
+
+            <TextView
+                android:id="@+id/activityTimeValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@+id/activityTimeTv"
+                app:layout_constraintTop_toBottomOf="@+id/activityTimeTv" />
+
+            <View
+                android:id="@+id/releasefBg3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/dotted_line_shap"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activityTimeValueTv"
+                android:layerType="software"
+                android:layout_marginRight="15dp"/>
+
+            <LinearLayout
+                android:id="@+id/lead_task_wechat_task_status_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefBg3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="任务状态"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/lead_task_wechat_task_status_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    android:textColor="@color/color_9296AB"
+                    android:textSize="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/activityTimeTv"
+                    app:layout_constraintTop_toBottomOf="@+id/activityTimeTv"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="15dp"/>
+
+
+                <include layout="@layout/line_dotted"/>
+
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/releasefBountyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/the_bounty"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_task_status_ll" />
+
+            <ImageView
+                android:id="@+id/releasefMoneyImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/ic_red_v3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefBountyTv" />
+
+            <TextView
+                android:id="@+id/releasefMoneyValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="TextView"
+                android:textColor="@color/color_FF5E5E"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/releasefMoneyImg"
+                app:layout_constraintLeft_toRightOf="@+id/releasefMoneyImg"
+                app:layout_constraintTop_toTopOf="@+id/releasefMoneyImg" />
+
+            <TextView
+                android:id="@+id/releasefMoneyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/money_times"
+                android:textColor="@color/color_FF5E5E"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/releasefMoneyImg"
+                app:layout_constraintLeft_toRightOf="@+id/releasefMoneyValueTv"
+                app:layout_constraintTop_toTopOf="@+id/releasefMoneyImg" />
+
+
+            <View
+                android:id="@+id/releasefBg7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/dotted_line_shap"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefMoneyTv"
+                android:layerType="software"
+                android:layout_marginRight="15dp" />
+
+
+
+            <TextView
+                android:id="@+id/releasefDownloadTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/download_activity_materials"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefBg7" />
+
+            <TextView
+                android:id="@+id/releasefCopywritingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefDownloadTv" />
+
+            <TextView
+                android:id="@+id/releasefDownloadValueTv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="文案"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefCopywritingTv" />
+
+            <TextView
+                android:id="@+id/coypTv"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_ellipse_blue"
+                android:gravity="center"
+                android:text="@string/copy"
+                android:textColor="@color/color_AADFF7"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/releasefCopywritingTv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/releasefCopywritingTv" />
+
+            <TextView
+                android:id="@+id/releasefMapTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="配图"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefDownloadValueTv1" />
+
+            <RelativeLayout
+                android:id="@+id/releaseRL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releasefMapTv">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/releasefValueRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lead_task_wechat_auto_save_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/lead_task_automatic_save_txt"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releaseRL" />
+
+
+            <!--做任务第2步,提交审核资料-->
+            <LinearLayout
+                android:id="@+id/lead_task_wechat_submit_data_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_auto_save_tv"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/uploadAudioSubmitTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/submit_audit_materials"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="@+id/uploadAudioBg1"
+                    app:layout_constraintTop_toBottomOf="@+id/uploadAudioBg1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/lead_task_wechat_upload_remind_txt"
+                    android:textColor="@color/color_9296AB"
+                    android:gravity="center"
+                    android:textSize="13dp"/>
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/lead_task_wechat_screenshot_rv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:choiceMode="singleChoice"
+                        android:divider="@null"
+                        android:fadingEdge="none"
+                        android:listSelector="@android:color/transparent"
+                        android:scrollbarStyle="outsideOverlay"
+                        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                        app:spanCount="1"
+                        tools:listitem="@layout/layout_item_upload_img"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="center_horizontal"/>
+
+
+            </LinearLayout>
+
+            <!--领任务第3步,审核中-->
+            <LinearLayout
+                android:id="@+id/lead_task_wechat_audit_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_submit_data_ll"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="审核状态"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/lead_task_wechat_audit_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="审核中"
+                    android:textColor="@color/color_9296AB"
+                    android:textSize="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/activityTimeTv"
+                    app:layout_constraintTop_toBottomOf="@+id/activityTimeTv"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="15dp"/>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lead_task_wechat_submit_tv_count_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                android:text=""
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_audit_ll"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/lead_task_wechat_submit_tv"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_gradient1"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_submit_tv_count_down"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/lead_task_wechat_task_remind_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#8e80fe"
+                android:textSize="13dp"
+                android:text="@string/lead_task_examine_txt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lead_task_wechat_submit_tv"
+                android:visibility="gone"/>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <!--任务下单-->
+    <LinearLayout
+        android:id="@+id/place_order_task_ll"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E5E5E5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="17dp"
+                    android:text="合计："
+                    android:textColor="#0D143C"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/place_order_task_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textColor="#F51515"
+                    android:textSize="23sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/place_order_task_submit_tv"
+                android:layout_width="139dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_bg"
+                android:gravity="center"
+                android:text="提交订单"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <!--android:id="@+id/release_task_img_text_submit_text"-->
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

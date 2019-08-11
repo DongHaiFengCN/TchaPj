@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-mdpi-v4/ic_launcher_round.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    }
+]

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="93dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:background="@drawable/bg_release_task_img_text"
+        android:textColor="@drawable/selector_color_release_task_tag"
+        android:textSize="15sp"
+        />
+
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dialog_consultation_verify_identity">
+
+
+    <FrameLayout
+        android:id="@+id/dialog_consultation_verify_identity_fl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_consultation_verify_identity_cancel"
+            android:layout_margin="11.5dp"/>
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp"
+        android:paddingBottom="25dp">
+
+        <TextView
+            android:id="@+id/dialog_consultation_verify_identity_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_consultation_verify_identity_title_str"
+            android:textColor="#7252FE"
+            android:textSize="15sp"
+            android:paddingTop="25dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/dialog_consultation_verify_identity_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_consultation_verify_identity_content_str"
+            android:textColor="#99999A"
+            android:textSize="14sp"
+            android:paddingTop="19dp"
+            android:lineSpacingExtra="7dp"/>
+
+        <LinearLayout
+            android:id="@+id/dialog_consultation_verify_identity_rdo_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="25dp"
+            android:visibility="gone">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/dialog_consultation_verify_identity_rdo_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我已阅读并同意"
+                    android:textColor="#BEBEBF"
+                    android:button="@drawable/select_bg_dialog_consultation_verify_identity"
+                    android:textSize="12sp"
+                    android:paddingLeft="7dp"
+                    android:checked="true"
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/dialog_consultation_verify_identity_agreement_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《微呼百应号运营规范》"
+                android:textSize="12sp"
+                android:textColor="#46A6FF"
+                android:paddingLeft="2dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dialog_consultation_verify_identity_tip_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="系统中没有您的身份信息，您需要先激活一个身份"
+            android:textSize="12sp"
+            android:textColor="#BEBEBF"
+            android:paddingTop="29dp"
+            android:paddingBottom="5dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/dialog_consultation_verify_identity_confirm_tv"
+            android:layout_width="145dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="7dp"
+            android:textSize="15sp"
+            android:textColor="#FDFDFE"
+            android:text=""
+            android:background="@drawable/bg_dialog_consultation_verify_identity_confirm"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include
+        layout="@layout/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/release_state_line"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_on1"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOff4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_off4"
+        />
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOff2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintEnd_toStartOf="@+id/uploadAudioStateOff3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/uploadAudioStateOn1"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_on2"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioStateOff3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadAudioStateLine"
+        app:layout_constraintEnd_toStartOf="@+id/uploadAudioStateOff4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/uploadAudioStateOff2"
+        app:layout_constraintTop_toTopOf="@+id/uploadAudioStateLine"
+        app:srcCompat="@drawable/release_state_off_3"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/led_the_task"
+        android:textColor="@color/color_FEB06B"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOn1"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOn1"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOn1"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/upload_audit_materials"
+        android:textColor="@color/color_FE6C6F"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOff2"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOff2"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOff2"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/the_review_process"
+        android:textColor="@color/gainsboro"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOff3"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOff3"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOff3"/>
+
+    <TextView
+        android:id="@+id/uploadAudioTv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="8dp"
+        android:text="@string/review_the_results"
+        android:textColor="@color/gainsboro"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadAudioStateOff4"
+        app:layout_constraintStart_toStartOf="@+id/uploadAudioStateOff4"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioStateOff4"/>
+
+    <ImageView
+        android:id="@+id/uploadAudioBg"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioTv2"
+        app:srcCompat="@color/color_F3F3F3"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAudioBg">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp">
+
+            <ImageView
+                android:id="@+id/uploadAudioImg"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@color/gainsboro"/>
+
+            <ImageView
+                android:id="@+id/uploadAudioImg1"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/uploadAudioImg"
+                app:layout_constraintStart_toEndOf="@+id/uploadAudioImg"
+                />
+
+            <TextView
+                android:id="@+id/uploadAudioTv"
+                android:layout_width="0dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/uploadAudioImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/uploadAudioImg1"/>
+
+            <TextView
+                android:id="@+id/uploadAudioNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/uploadAudioImg"
+                app:layout_constraintTop_toTopOf="@+id/uploadAudioImg"/>
+
+            <TextView
+                android:id="@+id/uploadAudioCountDownTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/activity_countdown"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/uploadAudioImg"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioImg"/>
+
+            <TextView
+                android:id="@+id/uploadAudioCountDownValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@+id/uploadAudioCountDownTv"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioCountDownTv"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/activity_data_cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/uploadAudioCountDownValueTv"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioCountDownValueTv"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/releasefDownloadTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/download_activity_materials"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/releasefCopywritingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="文案："
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/releasefDownloadTv"
+                    app:layout_constraintTop_toBottomOf="@+id/releasefDownloadTv" />
+
+                <TextView
+                    android:id="@+id/releasefDownloadValueTv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    android:textColor="@color/color_9296AB"
+                    android:textSize="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/releasefCopywritingTv"
+                    app:layout_constraintTop_toBottomOf="@+id/releasefCopywritingTv" />
+
+                <TextView
+                    android:id="@+id/coypTv"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/bg_ellipse_blue"
+                    android:gravity="center"
+                    android:text="@string/copy"
+                    android:textColor="@color/color_AADFF7"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/releasefCopywritingTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/releasefCopywritingTv" />
+
+                <TextView
+                    android:id="@+id/releasefMapTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="配图："
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/releasefDownloadValueTv1"
+                    app:layout_constraintTop_toBottomOf="@+id/releasefDownloadValueTv1" />
+
+                <RelativeLayout
+                    android:id="@+id/releaseRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:descendantFocusability="blocksDescendants"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/releasefMapTv">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/releasefValueRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </RelativeLayout>
+
+            </android.support.constraint.ConstraintLayout>
+            <ImageView
+                android:id="@+id/uploadAudioBg1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activity_data_cl"
+                app:srcCompat="@drawable/dotted_line"/>
+
+            <TextView
+                android:id="@+id/uploadAudioSubmitTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/submit_audit_materials"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@+id/uploadAudioBg1"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioBg1"/>
+
+            <TextView
+                android:id="@+id/uploadAudioSubmitValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="@+id/uploadAudioSubmitTv"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioSubmitTv"/>
+
+            <!--<ImageView
+                android:id="@+id/uploadAudioImg2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioSubmitValueTv"
+                app:srcCompat="@drawable/updatevideo"/>-->
+
+            <LinearLayout
+                android:id="@+id/up_vido_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_radiu_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioSubmitValueTv">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/vido_rl"
+                    android:layout_width="129dp"
+                    android:layout_height="129dp"
+                    android:choiceMode="singleChoice"
+                    android:divider="@null"
+                    android:fadingEdge="none"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbarStyle="outsideOverlay"
+                    app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                    app:spanCount="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/uploadAudioContent1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                android:text="@string/upload_audit_content1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/up_vido_ll"/>
+
+
+            <Button
+                android:id="@+id/uploadAudioBtn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_gradient1"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioContent1"/>
+
+            <TextView
+                android:id="@+id/uploadAudioBtnTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color_9296AB"
+                android:textSize="13dp"
+                android:text="@string/upload_audit_time_str"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadAudioBtn"/>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

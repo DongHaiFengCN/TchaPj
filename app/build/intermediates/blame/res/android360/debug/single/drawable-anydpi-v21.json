@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-anydpi-v21/ic_file_download_black_24dp.xml",
+        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/res/drawable-anydpi-v21/ic_file_download_black_24dp.xml"
+    }
+]

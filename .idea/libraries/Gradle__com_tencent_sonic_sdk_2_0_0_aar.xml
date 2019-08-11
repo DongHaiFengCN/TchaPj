@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tencent.sonic:sdk:2.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-2.0.0.aar/ddb053d9f517c5d49ace4b1fcb6e2823/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-2.0.0.aar/ddb053d9f517c5d49ace4b1fcb6e2823/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.sonic/sdk/2.0.0/63e3cee47421047b718476b730dc2cbae150706b/sdk-2.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

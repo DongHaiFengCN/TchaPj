@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:text="找媒体"
+            android:textColor="#293056"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/media_more"
+            android:layout_width="45dp"
+            android:layout_height="23dp"
+            android:text="更多"
+            android:textColor="#fff"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/subscribe_rule_channel_tag_pressed2"
+            android:textSize="12sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/media_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/media_ll_dot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</LinearLayout>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+android:orientation="vertical"
+android:padding="10dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="找媒体"
+        android:textSize="16sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#293056"/>
+
+    <TextView
+        android:id="@+id/media_more"
+        android:layout_width="45dp"
+        android:layout_height="23dp"
+        android:text="更多"
+        android:textColor="#fff"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/subscribe_rule_channel_tag_pressed2"
+        android:textSize="12sp"/>
+
+</RelativeLayout>
+
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/media_recycle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    android:background="@color/white"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp" />
+
+
+&lt;!&ndash; <android.support.v4.view.ViewPager
+     android:id="@+id/media_vpg"
+     android:layout_marginTop="5dp"
+     android:layout_width="match_parent"
+     android:layout_height="150dp"
+     android:scrollbars="none" />
+
+ &lt;!&ndash;最下方小圆点布局&ndash;&gt;
+ <LinearLayout
+     android:id="@+id/ll_icon"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:layout_marginBottom="5dp"
+     android:gravity="center">
+
+ </LinearLayout>
+&ndash;&gt;
+</LinearLayout>-->

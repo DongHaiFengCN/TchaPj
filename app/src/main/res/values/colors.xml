@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#FB5553</color>
+    <color name="colorAccent">#FB5553</color>
+
+    <!--http://whby.bawuxiu.com/CreateMedia/html/index.html?appType=app-->
+    <color name="tab_text_color_normal">#565B74</color>
+    <color name="tab_text_color_normal2">#797c8f</color>
+    <color name="tab_text_color_selected">#FB5553</color>
+    <color name="progress_color">#FB5553</color>
+    <color name="bg_red_color">#FB5553</color>
+    <color name="bg_red_color_pressed">#FFEEF0</color>
+
+    <color name="room_table_text_color">#808080</color>
+    <color name="room_lable_title_color">#333333</color>
+    <color name="room_lable_color">#9296AB</color>
+    <color name="room_lable_content_color">#666666</color>
+
+    <color name="progressBarColor">#7fFB5553</color>
+
+    <color name="text_error_color">#7f000000</color>
+
+    <color name="third_party_text_color">#999999</color>
+
+    <color name="default_bg_color">#f0f0f0</color>
+    <color name="tool_bar_lift">#c388fe</color>
+    <color name="tool_bar_right">#7C75F0</color>
+    <color name="room_edit_bg">#f8f8f8</color>
+    <color name="title_bg_color">#fafafa</color>
+    <color name="mine_follower_bg">#1f000000</color>
+    <color name="line_bg">#e5e5e5</color>
+
+    <color name="item_pressed">#8f8f8f</color>
+
+    <color name="lightYellow">#FFFFF0</color>
+    <color name="lightCyan">#E1FFFF</color>
+
+    <!--新颜色-->
+    <color name="colorPrimary2">#3390ec</color>
+    <color name="main_text_select">#2F78FF</color>
+    <color name="line_1px">#E1E1E1</color>
+    <color name="colore6">#e6e6e6</color>
+    <color name="color99">#999999</color>
+    <color name="color44">#444444</color>
+    <color name="colorF4">#F4F4F4</color>
+    <color name="color66">#666666</color>
+    <color name="color9b">#A5A7A6</color>
+    <color name="main_bag">#F2F2F2</color>
+    <color name="main_bag_line">#f4f4f4</color>
+    <color name="text_head_line">#888888</color>
+    <color name="text_media">#0D143C</color>
+    <color name="color34">@color/text_media</color>
+    <color name="color88">@color/text_head_line</color>
+    <color name="page_bg">#efefef</color>
+    <color name="personlist_new">#2f78ff</color>
+    <color name="main_text_normal">@color/color66</color>
+
+    <!-- 文本颜色 -->
+    <color name="text_normal">#4d4d4d</color>
+
+    <!-- 次文本颜色 -->
+    <color name="text_secondary">#858585</color>
+
+    <color name="divider">#dadada</color>
+
+    <color name="while_most_color">#e4e4e4</color>
+    <color name="deep_red">#dc3b1f</color>
+    <color name="light_red">#e26d2e</color>
+
+    <color name="user_icon_1">#ff00bcd4</color><!-- cyan 500 -->
+    <color name="user_icon_2">#ff3f51b5</color><!-- indigo 500 -->
+    <color name="user_icon_3">#ff4285f4</color><!-- blue 500 -->
+    <color name="user_icon_4">#ffe91e63</color><!-- pink 500 -->
+    <color name="user_icon_5">#ff0f9d58</color><!-- green 500 -->
+    <color name="user_icon_6">#ff8bc34a</color><!-- light green 500 -->
+    <color name="user_icon_7">#ffff9800</color><!-- orange 500 -->
+    <color name="user_icon_8">#ffff5722</color><!-- deep orange 500 -->
+    <color name="user_icon_default_gray">#ff9e9e9e</color><!-- gray 500 -->
+    <color name="user_icon_default_white">#ffffffff</color><!-- white -->
+
+    <!-- Default profile badge colors -->
+    <color name="profile_badge_1">#ff1A73E8</color><!-- Blue -->
+
+    <color name="dialog_background">#ffffff</color>
+
+    <color name="color333">#333333</color>
+    <color name="product_color">#f04848</color>
+    <color name="color666">#666666</color>
+    <color name="colorddd">#dddddd</color>
+    <color name="coloreee">#eeeeee</color>
+    <color name="colordc">#dcdcdc</color>
+    <color name="color48">#f04848</color>
+    <color name="colorf6">#f6f6f6</color>
+    <color name="tab_black">#000000</color>
+
+    <color name="tool_bar_lift2">#ffbf74</color>
+    <color name="tool_bar_right2">#ff6d7e</color>
+
+    <color name="secondary_text">#8a000000</color>
+    <color name="alpha_05_black">#0D000000</color>
+    <color name="primary_text">#de000000</color>
+
+    <color name="alpha_40_white">#66FFFFFF</color>
+    <color name="alpha_40_black">#66000000</color>
+
+    <color name="translucent">#aa000000</color>
+
+    <color name="color_D33D3C">#D33D3C</color>
+    <color name="color_BDBDBD">#BDBDBD</color>
+    <color name="color_F3F5F4">#F3F5F4</color>
+    <color name="color_515051">#515051</color>
+    <color name="color_F2F4F3">#F2F4F3</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_e6e6e6">#e6e6e6</color>
+    <color name="color_e8e8e8">#e8e8e8</color>
+    <color name="color_d43d3d">#d43d3d</color>
+    <color name="color_1a1b1d">#1a1b1d</color>
+    <color name="color_b11919">#b11919</color>
+    <color name="color_F96B6B">#F96B6B</color>
+    <color name="color_3091D8">#3091D8</color>
+    <color name="color_d8d8d8">#d8d8d8</color>
+    <color name="color_f4f5f6">#f4f5f6</color>
+    <color name="color_406599">#406599</color>
+    <color name="color_cacaca">#cacaca</color>
+    <color name="color_505050">#505050</color>
+    <color name="color_C1C1C1">#C1C1C1</color>
+    <color name="color_f85959">#f85959</color>
+    <color name="color_D5E8F6">#D5E8F6</color>
+    <color name="color_4592C6">#4592C6</color>
+    <color name="color_1affffff">#1affffff</color>
+    <color name="color_E6E8E7">#E6E8E7</color>
+
+    <color name="transparent10_white">#1Affffff</color>
+    <color name="transparent90_white">#E5ffffff</color>
+    <color name="transparent10">#1A000000</color>
+    <color name="subscribe_category_bar_bg_night">#cc363636</color>
+    <color name="text_grey">#AEAEAE</color>
+    <color name="selector_grey">#DDDDDD</color>
+    <color name="placeholder_color">#1A000000</color>
+
+    <item name="subscribe_item_text_color_normal_night" type="color">@color/default_text_night</item>
+
+    <color name="default_text_night">#ff747474</color>
+    <color name="subscribe_item_text_color_pressed_night">#ff303030</color>
+    <color name="subscribe_item_selected_stroke_night">#ffbc494d</color>
+    <color name="subscribe_item_drag_stroke">#ffd2d2d2</color>
+    <color name="subscribe_item_drag_bg">#fff5f5f5</color>
+    <color name="subscribe_item_selected_bg">#ffffffff</color>
+    <color name="subscribe_item_selected_stroke">#ffcc3131</color>
+    <color name="subscribe_item_disabled_stroke">#ffd9d9d9</color>
+    <color name="subscribe_item_disabled_bg">#ffefefef</color>
+    <color name="subscribe_item_pressed_stroke">#ffcdcdcd</color>
+    <color name="subscribe_item_pressed_bg">#fff9f9f9</color>
+    <color name="subscribe_item_normal_stroke">#ffcdcdcd</color>
+    <color name="subscribe_item_normal_bg">#fff5f5f5</color>
+
+    <item name="subscribe_item_text_color_normal" type="color">@color/default_text</item>
+
+    <color name="default_text">#ff454545</color>
+    <color name="subscribe_item_text_color_pressed">#ffb9b9b9</color>
+    <color name="category_subscribe_text">#ffffffff</color>
+    <color name="drawer_item_bg">#ff5d5d5d</color>
+    <color name="drawer_line_color">#ff444444</color>
+    <color name="title_text_color">#ffffffff</color>
+    <color name="subscribe_tip_text">#ff2e2e2e</color>
+    <color name="subscribe_activity_bg">#ffefefef</color>
+    <color name="subscribe_bg">#fff5f5f5</color>
+    <color name="subscribe_seperate_line">#ffcdcdcd</color>
+
+    <color name="content_color">#64ce9d</color>
+    <color name="statusbar_color">#8dbece</color>
+    <color name="drak_blue">#17b6e2</color>
+    <color name="item_tag_stokre_nor">#989898</color>
+    <color name="item_tag_stokre_pre">#8dbece</color>
+    <color name="item_tag_stokre_unavailable">#c8c9ca</color>
+    <color name="item_tag_bg_unavailable">#338e8e91</color>
+    <color name="item_tag_bg_unavailable_pre">#33000001</color>
+    <color name="category_banner_view_bg">#4ea6ed</color>
+
+    <color name="swipe_back_shadow">#33000001</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="dark">#4c4b4b</color>
+
+    <color name="dialog_bg">#bc000000</color>
+
+    <color name="color_14805E">#14805E</color>
+    <color name="color_666666">#666666</color>
+
+    <color name="ic_back_press">#323336</color>
+    <color name="ip_color_primary">#393A3F</color>
+    <color name="ip_color_primary_dark">#303135</color>
+    <color name="ip_color_primary_trans">#ec2f3335</color>
+    <color name="ip_color_press">#ffe0e0e0</color>
+    <color name="ip_camera_pre">#353535</color>
+    <color name="ip_color_accent">#1AAD19</color>
+    <color name="ip_text_secondary_inverted">#66ffffff</color>
+    <color name="ip_text_primary_inverted">#ffffff</color>
+
+    <color name="bar_grey">#393a3e</color>
+    <color name="color_69">#999999</color>
+    <color name="image_overlay_true">#80000000</color>
+    <color name="image_overlay_false">#20000000</color>
+    <color name="line_color">#EEEEEE</color>
+    <color name="color_fa">#FAFAFA</color>
+    <color name="tab_color_true">#FA632D</color>
+    <color name="tab_color_false">#9b9b9b</color>
+    <color name="color_f2">#F2F2F2</color>
+    <color name="transparent_white">#F0FFFFFF</color>
+    <color name="transparent_db">#E0DBDBDB</color>
+    <color name="color_53">#53575e</color>
+    <color name="color_f0">#F0F0F0</color>
+    <color name="bar_grey_90">#dd393a3e</color>
+    <color name="color_4d">#4d4d4d</color>
+    <color name="color_orange">#E0FF6100</color>
+
+    <color name="color_f6">#f6f6f6</color>
+    <color name="color_c51">#f94c51</color>
+    <color name="grey_bg">#EDEDED</color>
+
+    <color name="comment_line">#dddddd</color>
+
+    <color name="clear">#00000000</color>
+
+    <color name="block">#60000000</color>
+
+    <color name="color_FEB06B">#FEB06B</color>
+    <color name="color_FE6C6F">#FE6C6F</color>
+    <color name="color_C97FFE">#C97FFE</color>
+    <color name="color_8196FF">#8196FF</color>
+    <color name="color_F3F3F3">#F3F3F3</color>
+    <color name="color_9296AB">#9296AB</color>
+    <color name="color_FF5E5E">#FF5E5E</color>
+    <color name="color_AADFF7">#AADFF7</color>
+    <color name="color_BB89FD">#BB89FD</color>
+    <color name="color_8993FD">#8993FD</color>
+
+    <color name="click_bg">#e9e9e9</color>
+    <color name="praise_item">#7780FA</color>
+    <color name="default_clickable_color">#cccccc</color>
+    <color name="praise_item_default">#7780FA</color>
+    <color name="praise_item_selector_default">#cccccc</color>
+    <color name="color_8290AF">#7eb158</color>
+
+    <color name="public_corner_border_color">#B7B7B7</color>
+    <color name="gray_txt">#FF606060</color>
+    <color name="gray_txt_light">#FFC8C8C8</color>
+
+    <color name="tool_bar_lift3">#ff5e75</color>
+    <color name="tool_bar_right3">#ffa154</color>
+
+    <color name="blue_color">#1B9AF7</color>
+    <color name="blue_color_light">#58b2f2</color>
+
+    <color name="colorPrimary_light_trsp" >#7b393a3f</color>
+
+    <color name="person_name_color">#781135</color>
+    <color name="person_item_name_color">#293056</color>
+    <color name="person_item_desc_color">#9296AB</color>
+    <color name="person_item_right_tag_color">#8A85FC</color>
+    <color name="list_split_color">#F3F3F3</color>
+    <color name="fragment_consultation_divider_color">#E6E6E6</color>
+    <color name="consultation_item_txt_color">#0D143C</color>
+    <color name="consultation_item_dsc_color">#9296AB</color>
+    <color name="button_center_shap_blue_color">#50B0FB</color>
+    <color name="app_default_color">#c388fe</color>
+    <color name="daren_data_one_title_tag">#ff9999a3</color>
+    <color name="daren_media_resourse_state_tv">#FD734D</color>
+
+</resources>

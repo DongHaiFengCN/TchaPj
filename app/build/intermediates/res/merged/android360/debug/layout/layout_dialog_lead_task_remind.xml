@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B3000000"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="40dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:paddingBottom="45dp"
+        android:background="@drawable/bg_dialog_consultation_verify_identity">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_whby"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:textColor="#0D143C"
+            android:textSize="15dp"
+            android:text="@string/lead_task_examine_txt"
+            android:paddingLeft="33dp"
+            android:paddingRight="33dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/dialog_lead_task_remind_confirm_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:background="@mipmap/bg_dialog_lead_task_remind"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="23dp"/>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

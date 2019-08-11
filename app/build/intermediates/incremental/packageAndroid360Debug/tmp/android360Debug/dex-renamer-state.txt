@@ -1,0 +1,10 @@
+#Mon Aug 12 00:59:34 CST 2019
+path.2=classes2.dex
+path.1=classes.dex
+path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.2=/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/transforms/dexMerger/android360/debug/1
+base.1=/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/transforms/dexMerger/android360/debug/0
+base.0=/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/transforms/dexMerger/android360/debug/1

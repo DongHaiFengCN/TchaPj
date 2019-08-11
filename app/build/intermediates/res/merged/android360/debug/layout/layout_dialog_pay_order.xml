@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="25dp"
+    android:paddingBottom="17dp"
+    android:background="@drawable/bg_dialog_consultation">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支付订单"
+        android:textSize="15sp"
+        android:textColor="#7252FE"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/my_money_total_money_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="99.99"
+        android:textSize="33sp"
+        android:textColor="#FD3B0E"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择支付方式"
+        android:textSize="15sp"
+        android:textColor="#221E34"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="17dp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_dialog_pay_order">
+       <RadioGroup
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:paddingLeft="20dp"
+           >
+
+           <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="48dp"
+               android:text="推广金"
+               android:textSize="14sp"
+               android:textColor="#767383"
+               android:paddingRight="10dp"
+               android:paddingLeft="10dp"
+               android:button="@drawable/bg_dialog_pay_order_rdb"/>
+
+           <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="48dp"
+               android:text="支付宝"
+               android:textSize="14sp"
+               android:textColor="#767383"
+               android:paddingRight="10dp"
+               android:paddingLeft="10dp"
+               android:button="@drawable/bg_dialog_pay_order_rdb"/>
+
+
+       </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/dotted_line_shap"
+            android:layerType="software"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="99.99"
+            android:textColor="#767383"
+            android:textSize="14sp"
+            android:paddingTop="18dp"
+            android:paddingRight="23dp"
+            android:layout_alignParentRight="true"/>
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="99.99"-->
+            <!--android:textColor="#767383"-->
+            <!--android:textSize="14sp"-->
+            <!--android:paddingBottom="18dp"-->
+            <!--android:paddingRight="23dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentBottom="true"/>-->
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/my_money_submit_pay_tv"
+        android:layout_width="145dp"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_dialog_my_money_recharge_submit"
+        android:layout_marginTop="25dp"
+        android:text="确认支付"/>
+
+</LinearLayout>

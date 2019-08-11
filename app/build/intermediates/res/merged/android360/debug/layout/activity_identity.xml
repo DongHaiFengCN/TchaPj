@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_bag"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/item_daren_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/white_radiu_bg"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/item_daren_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_radiu_bg"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.application.tchapj.utils2.CircleImageView
+                        android:id="@+id/daren_iv_head"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/ic_daren" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/daren_iv_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_iv_head"
+                        android:text="达人"
+                        android:textColor="@color/color34"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/daren_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/daren_iv_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_iv_head"
+                        android:ellipsize="end"
+                        android:maxEms="18"
+                        android:maxLines="1"
+                        android:text="适合在抖音,头条号等自媒体平台有一些粉丝用户"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.application.tchapj.my.wigiter.CornerLabelView
+                android:id="@+id/daren_clv"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                app:clvFillColor="@color/white"
+                app:clvText2="未激活"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@id/item_daren_ll"/>
+
+        <RelativeLayout
+            android:id="@+id/daren_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line1">
+
+
+            <ImageView
+                android:id="@+id/daren_py_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="115dp"
+                android:src="@mipmap/ic_py_select_normal" />
+
+            <ImageView
+                android:id="@+id/daren_wb_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="90dp"
+                android:src="@mipmap/ic_wb_select_normal" />
+
+            <ImageView
+                android:id="@+id/daren_dy_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginEnd="65dp"
+                android:src="@mipmap/ic_dy_select_normal" />
+
+            <ImageView
+                android:id="@+id/daren_ws_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="40dp"
+                android:src="@mipmap/ic_ws_select_normal" />
+
+            <ImageView
+                android:id="@+id/daren_other_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:src="@mipmap/ic_other_select_normal" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/daren_rl"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_guangao_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/white_radiu_bg"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/item_guangao_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_radiu_bg"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.application.tchapj.utils2.CircleImageView
+                        android:id="@+id/daren_guangao_head"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/ic_guangao" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/daren_guangao_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_guangao_head"
+                        android:text="广告主"
+                        android:textColor="@color/color34"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/daren_guangao_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_guangao_head"
+                        android:ellipsize="end"
+                        android:maxEms="18"
+                        android:maxLines="1"
+                        android:text="适合有营销需求的正规企业或工商单位"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.application.tchapj.my.wigiter.CornerLabelView
+                android:id="@+id/guangao_clv"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                app:clvFillColor="@color/white"
+                app:clvText2="未激活"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@id/item_guangao_ll"/>
+
+        <RelativeLayout
+            android:id="@+id/guangao_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line2">
+
+            <ImageView
+                android:id="@+id/guangao_dy_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="60dp"
+                android:src="@mipmap/ic_dy_select"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/guangao_py_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="35dp"
+                android:src="@mipmap/ic_py_select"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/guangao_wb_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="12dp"
+                android:src="@mipmap/ic_wb_select"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/guangao_rl"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_mingren_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/white_radiu_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/item_mingren_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_radiu_bg"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.application.tchapj.utils2.CircleImageView
+                        android:id="@+id/mingren_iv_head"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/ic_mingren" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/mingren_iv_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/mingren_iv_head"
+                        android:text="名人"
+                        android:textColor="@color/color34"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/mingren_iv_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/mingren_iv_head"
+                        android:ellipsize="end"
+                        android:maxEms="18"
+                        android:maxLines="1"
+                        android:text="适合有一定曝光度的明星"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.application.tchapj.my.wigiter.CornerLabelView
+                android:id="@+id/mingren_clv"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                app:clvFillColor="@color/white"
+                app:clvText2="未激活"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@id/item_mingren_ll"/>
+
+        <RelativeLayout
+            android:id="@+id/mingren_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line3">
+
+            <ImageView
+                android:id="@+id/mingren_dy_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="60dp"
+                android:src="@mipmap/ic_dy_select"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/mingren_py_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="35dp"
+                android:src="@mipmap/ic_py_select"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/mingren_wb_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="12dp"
+                android:src="@mipmap/ic_wb_select"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/mingren_rl"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_meiti_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/white_radiu_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/item_meiti_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_radiu_bg"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.application.tchapj.utils2.CircleImageView
+                        android:id="@+id/daren_meiti_head"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/ic_meiti" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/daren_meiti_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_meiti_head"
+                        android:text="媒体"
+                        android:textColor="@color/color34"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/daren_meiti_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_meiti_head"
+                        android:ellipsize="end"
+                        android:maxEms="18"
+                        android:maxLines="1"
+                        android:text="适合传统网络媒体,自媒体等"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.application.tchapj.my.wigiter.CornerLabelView
+                android:id="@+id/meiti_clv"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                app:clvFillColor="@color/white"
+                app:clvText2="未激活"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@id/item_meiti_ll"/>
+
+        <RelativeLayout
+            android:id="@+id/meiti_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line4">
+
+            <ImageView
+                android:id="@+id/meiti_dy_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="60dp"
+                android:src="@mipmap/ic_dy_select"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/meiti_py_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="35dp"
+                android:src="@mipmap/ic_py_select"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/meiti_wb_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="12dp"
+                android:src="@mipmap/ic_wb_select"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/meiti_rl"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_bag"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

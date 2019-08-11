@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.Aspsine:SwipeToLoadLayout:1.0.4@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SwipeToLoadLayout-1.0.4.aar/7012cff268446ee122949df4cd716a80/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SwipeToLoadLayout-1.0.4.aar/7012cff268446ee122949df4cd716a80/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.Aspsine/SwipeToLoadLayout/1.0.4/1b0a57f648c92ae0d09a57b44086c88c578cf690/SwipeToLoadLayout-1.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

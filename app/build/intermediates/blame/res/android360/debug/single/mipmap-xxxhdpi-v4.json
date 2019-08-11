@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/more.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/more.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/ic_launcher_round.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/no_net.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/no_net.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/back.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/back.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/cha.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/cha.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/ic_person_bg2.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/ic_person_bg2.png"
+    }
+]

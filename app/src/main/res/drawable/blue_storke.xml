@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <stroke android:color="@color/person_item_right_tag_color"
+            android:width="0.5dp"/>
+
+    <corners
+        android:radius="18dp" />
+
+    <padding
+        android:left="9dp"
+        android:right="9dp" />
+             
+</shape>

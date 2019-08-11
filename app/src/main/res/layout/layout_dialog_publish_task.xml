@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_dialog_consultation"
+    android:id="@+id/layout_dialog_consultation"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/dialog_consultation_ll_other"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="35dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/ic_qt"/>
+
+            <TextView
+                android:id="@+id/dialog_consultation_tv_graphic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ADACAC"
+                android:layout_marginTop="7dp"
+                android:text="其他"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_consultation_ll_dy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="35dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/ic_dy_select"/>
+
+            <TextView
+                android:id="@+id/dialog_consultation_tv_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ADACAC"
+                android:layout_marginTop="7dp"
+                android:text="抖音"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_consultation_ll_circle_friends"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="35dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/ic_py_select"/>
+
+            <TextView
+                android:id="@+id/dialog_consultation_tv_long_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ADACAC"
+                android:layout_marginTop="7dp"
+                android:text="图文"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_consultation_ll_wb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="35dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/ic_wb_select"/>
+
+            <TextView
+                android:id="@+id/dialog_consultation_tv_reprint_graphic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ADACAC"
+                android:layout_marginTop="7dp"
+                android:text="微博"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialog_consultation_ll_ws"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="35dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/ic_ws_select"/>
+
+            <TextView
+                android:id="@+id/dialog_consultation_tv_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ADACAC"
+                android:layout_marginTop="7dp"
+                android:text="微视"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/dialog_consultation_fl_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="23dp">
+
+        <ImageView
+            android:id="@+id/dialog_consultation_iv_cancel"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_consultation_cancel"/>
+    </FrameLayout>
+
+
+
+</LinearLayout>

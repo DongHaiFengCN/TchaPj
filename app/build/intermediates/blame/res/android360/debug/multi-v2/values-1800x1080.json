@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/incremental/mergeAndroid360DebugResources/merged.dir/values-1800x1080/values-1800x1080.xml",
+            "map": [
+                {
+                    "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/values-1800x1080/dimens.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "21",
+                        "endColumns": "44",
+                        "endOffsets": "61"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "44",
+                        "endOffsets": "95"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/values-1800x1080/values-1800x1080.xml",
+            "map": [
+                {
+                    "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/values-1800x1080/dimens.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "21",
+                        "endColumns": "44",
+                        "endOffsets": "61"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "44",
+                        "endOffsets": "95"
+                    }
+                }
+            ]
+        }
+    ]
+}
