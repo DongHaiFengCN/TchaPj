@@ -239,50 +239,50 @@
             android:paddingRight="10dp"
             android:layout_below="@id/item_guangao_ll"/>
 
-        <RelativeLayout
-            android:id="@+id/guangao_rl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/line2">
+        <!--       <RelativeLayout
+                   android:id="@+id/guangao_rl"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/line2">
 
-            <ImageView
-                android:id="@+id/guangao_dy_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="60dp"
-                android:src="@mipmap/ic_dy_select"
-                android:visibility="invisible"/>
+                   <ImageView
+                       android:id="@+id/guangao_dy_iv"
+                       android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:layout_alignParentEnd="true"
+                       android:layout_marginRight="60dp"
+                       android:src="@mipmap/ic_dy_select"
+                       android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/guangao_py_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="35dp"
-                android:src="@mipmap/ic_py_select"
-                android:visibility="invisible"/>
+                   <ImageView
+                       android:id="@+id/guangao_py_iv"
+                       android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:layout_alignParentEnd="true"
+                       android:layout_marginRight="35dp"
+                       android:src="@mipmap/ic_py_select"
+                       android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/guangao_wb_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="12dp"
-                android:src="@mipmap/ic_wb_select"
-                android:visibility="invisible"/>
+                   <ImageView
+                       android:id="@+id/guangao_wb_iv"
+                       android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:layout_alignParentEnd="true"
+                       android:layout_marginEnd="12dp"
+                       android:src="@mipmap/ic_wb_select"
+                       android:visibility="invisible"/>
 
-        </RelativeLayout>
+               </RelativeLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@id/guangao_rl"
-            android:layout_marginTop="8dp"
-            android:background="@color/main_bag"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:layout_alignParentEnd="true"
+                   android:layout_below="@id/guangao_rl"
+                   android:layout_marginTop="8dp"
+                   android:background="@color/main_bag"
+                   android:paddingLeft="10dp"
+                   android:paddingRight="10dp" />-->
 
     </RelativeLayout>
 
@@ -367,7 +367,7 @@
             android:paddingRight="10dp"
             android:layout_below="@id/item_mingren_ll"/>
 
-        <RelativeLayout
+        <!--<RelativeLayout
             android:id="@+id/mingren_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -410,7 +410,7 @@
             android:layout_marginTop="8dp"
             android:background="@color/main_bag"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp" />-->
 
     </RelativeLayout>
 
@@ -495,50 +495,134 @@
             android:paddingRight="10dp"
             android:layout_below="@id/item_meiti_ll"/>
 
-        <RelativeLayout
-            android:id="@+id/meiti_rl"
+        <!--
+                <RelativeLayout
+                    android:id="@+id/meiti_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line4">
+
+                    <ImageView
+                        android:id="@+id/meiti_dy_iv"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="60dp"
+                        android:src="@mipmap/ic_dy_select"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/meiti_py_iv"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="35dp"
+                        android:src="@mipmap/ic_py_select"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/meiti_wb_iv"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="12dp"
+                        android:src="@mipmap/ic_wb_select"
+                        android:visibility="invisible"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/meiti_rl"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/main_bag"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp" />
+        -->
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/item_smrz_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/white_radiu_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/item_smrz_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/line4">
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/meiti_dy_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="60dp"
-                android:src="@mipmap/ic_dy_select"
-                android:visibility="invisible"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_radiu_bg"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
 
-            <ImageView
-                android:id="@+id/meiti_py_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="35dp"
-                android:src="@mipmap/ic_py_select"
-                android:visibility="invisible"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/meiti_wb_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="12dp"
-                android:src="@mipmap/ic_wb_select"
-                android:visibility="invisible"/>
+                    <com.application.tchapj.utils2.CircleImageView
+                        android:id="@+id/daren_smrz_head"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/sm_head" />
 
-        </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/daren_smrz_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_smrz_head"
+                        android:text="实名认证"
+                        android:textColor="@color/color34"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/daren_smrz_head"
+                        android:layout_marginLeft="11dp"
+                        android:layout_toRightOf="@id/daren_smrz_head"
+                        android:ellipsize="end"
+                        android:maxEms="18"
+                        android:maxLines="1"
+                        android:text="用于大额提现"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <com.application.tchapj.my.wigiter.CornerLabelView
+                android:id="@+id/smrz_clv"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                app:clvFillColor="@color/white"
+                app:clvText2="未激活"/>
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@id/meiti_rl"
+            android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:background="@color/main_bag"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp"
+            android:layout_below="@id/item_smrz_ll"/>
 
     </RelativeLayout>
 

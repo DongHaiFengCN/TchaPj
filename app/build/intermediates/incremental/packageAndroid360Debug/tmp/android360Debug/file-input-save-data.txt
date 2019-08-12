@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Aug 12 11:25:17 CST 2019
+#Mon Aug 12 12:05:46 CST 2019
 60.set=NATIVE_RESOURCE
 52.set=NATIVE_RESOURCE
 53.base=/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/transforms/stripDebugSymbol/android360/debug/0

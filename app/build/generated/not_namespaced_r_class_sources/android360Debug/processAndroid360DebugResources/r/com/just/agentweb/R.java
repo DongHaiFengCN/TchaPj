@@ -32,7 +32,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int agentweb_error_page = 0x7f040067;
+        public static final int agentweb_error_page = 0x7f040068;
     }
     public static final class string {
         private string() {}

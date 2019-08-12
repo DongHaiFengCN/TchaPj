@@ -196,6 +196,10 @@
         "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/d121f1333b4ac6ca12dfcebc05edd0d3/res/layout/layout_progress_recyclerview.xml"
     },
     {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/password_login_fragment.xml",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/password_login_fragment.xml"
+    },
+    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/fragment_sy_item.xml",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/fragment_sy_item.xml"
     },
@@ -458,6 +462,10 @@
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/activity_release_task_img_text.xml",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/activity_release_task_img_text.xml"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/activity_authentication.xml",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/activity_authentication.xml"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/pay_main.xml",
@@ -1390,10 +1398,6 @@
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/activity_identity.xml",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/activity_identity.xml"
-    },
-    {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/password_logon_fragment.xml",
-        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/password_logon_fragment.xml"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/activity_startup_advert.xml",

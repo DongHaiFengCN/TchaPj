@@ -38,6 +38,8 @@ public class IdentityActivity_ViewBinding implements Unbinder {
     target.mingren_clv = Utils.findRequiredViewAsType(source, R.id.mingren_clv, "field 'mingren_clv'", CornerLabelView.class);
     target.item_meiti_rl = Utils.findRequiredViewAsType(source, R.id.item_meiti_rl, "field 'item_meiti_rl'", RelativeLayout.class);
     target.meiti_clv = Utils.findRequiredViewAsType(source, R.id.meiti_clv, "field 'meiti_clv'", CornerLabelView.class);
+    target.smrz_clv = Utils.findRequiredViewAsType(source, R.id.smrz_clv, "field 'smrz_clv'", CornerLabelView.class);
+    target.smrz_rl = Utils.findRequiredViewAsType(source, R.id.item_smrz_rl, "field 'smrz_rl'", RelativeLayout.class);
   }
 
   @Override
@@ -60,5 +62,7 @@ public class IdentityActivity_ViewBinding implements Unbinder {
     target.mingren_clv = null;
     target.item_meiti_rl = null;
     target.meiti_clv = null;
+    target.smrz_clv = null;
+    target.smrz_rl = null;
   }
 }

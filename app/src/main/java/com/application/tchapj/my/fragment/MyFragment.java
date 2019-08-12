@@ -1,9 +1,13 @@
 package com.application.tchapj.my.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AlertDialog;
@@ -15,8 +19,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.application.tchapj.App;
+import com.application.tchapj.DataManager;
 import com.application.tchapj.H5UrlData;
 import com.application.tchapj.R;
 import com.application.tchapj.WebViewActivity;
@@ -25,7 +30,7 @@ import com.application.tchapj.bean.UserInfo;
 import com.application.tchapj.login.activity.LoginMainActivity;
 import com.application.tchapj.main.bean.NewsInfo;
 import com.application.tchapj.my.activity.AttentionListActivity;
-import com.application.tchapj.my.activity.ContactActivity;
+
 import com.application.tchapj.my.activity.ContentManagerActivity;
 import com.application.tchapj.my.activity.DanmuActivity;
 import com.application.tchapj.my.activity.FansListActivity;
@@ -38,18 +43,16 @@ import com.application.tchapj.my.activity.WhbyMemberActivity;
 import com.application.tchapj.my.bean.UserModel;
 import com.application.tchapj.my.presenter.MyPresenter;
 import com.application.tchapj.my.view.IMyView;
-import com.application.tchapj.rxbus.ChangeAnswerEvent;
-import com.application.tchapj.rxbus.RxBus;
 import com.application.tchapj.utils.ToastUtil;
 import com.application.tchapj.utils2.CircleImageView;
-import com.application.tchapj.utils2.share.SharedPreferencesUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.king.base.util.LogUtils;
-import com.king.base.util.StringUtils;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,7 +60,8 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import me.drakeet.materialdialog.MaterialDialog;
 import rx.Subscription;
-import rx.functions.Action1;
+
+import static com.application.tchapj.DataManager.getDataManager;
 
 // 我的页Fragment
 public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements IMyView {
@@ -106,14 +110,16 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
     @BindView(R.id.fragment_my_fans_tv)
     TextView fragment_my_fans_tv;
 
-
     Subscription mSubscription;
     Unbinder unbinder;
 
     private String user_id;
     private MaterialDialog dialog;
 
-    private UserInfo user;
+    //private UserInfo user;
+    private LocalBroadcastManager localBroadcastManager = null;
+
+    private BroadcastReceiver flushLocalReceiver;
 
     RequestOptions headImgOptions = new RequestOptions()
             .centerCrop()
@@ -131,21 +137,90 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         return fragment;
     }
 
+
     @Override
     public int getRootViewId() {
         return R.layout.fragment_my;
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+        String nickName = getDataManager().quickGetMetaData(R.string.nickName, String.class);
+        String attentions = String.valueOf(getDataManager().quickGetMetaData(R.string.attentions, Integer.class));
+        String fans = getDataManager().quickGetMetaData(R.string.fans, String.class);
+        String headUrl = getDataManager().quickGetMetaData(R.string.headimgurl, String.class);
+
+        if (!"".equals(nickName)) {
+            my_logon_tv.setText(nickName);
+        } else {
+            my_logon_tv.setText("点击登录");
+        }
+
+        if (!"".equals(attentions)) {
+            fragment_my_attentions_tv.setText("关注：" + attentions);
+        } else {
+            fragment_my_attentions_tv.setText("关注：0");
+        }
+
+        if (!"".equals(fans)) {
+            fragment_my_fans_tv.setText("粉丝：" + fans);
+        } else {
+            fragment_my_fans_tv.setText("粉丝：0");
+        }
+        if ("".equals(headUrl)) {
+            Glide.with(getActivity()).load(R.mipmap.ic_media_head_default).into(my_top_iv);
+        } else {
+
+            Glide.with(getActivity())
+                    .asBitmap()
+                    .apply(headImgOptions)
+                    .load(headUrl)
+                    .into(new BitmapImageViewTarget(my_top_iv) {
+                        @Override
+                        protected void setResource(Bitmap resource) {
+                            RoundedBitmapDrawable circularBitmapDrawable =
+                                    RoundedBitmapDrawableFactory.
+                                            create(getActivity().getResources(), resource);
+                            my_top_iv.setImageDrawable(circularBitmapDrawable);
+                        }
+                    });
+
+
+        }
+    }
+
+    @Override
     public void initUI() {
 
-        user_id = App.getId();
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(DataManager.ACTION_FLUSH);
+
+        flushLocalReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+
+                if (intent.getBooleanExtra("flush", false)) {
+
+                    //这里进行数据的重新填写
+                    Log.e("DOAING", "刷新数据成功！");
+
+                } else {
+                    Toast.makeText(getActivity(), "刷新缓存失败", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        localBroadcastManager = LocalBroadcastManager.getInstance(Objects.requireNonNull(getActivity()));
+        localBroadcastManager.registerReceiver(flushLocalReceiver, intentFilter);
+
+        user_id = getDataManager().quickGetMetaData(R.string.id, String.class);
 
         my_logon_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), LoginMainActivity.class);
-
                 startActivity(intent);
             }
         });
@@ -177,6 +252,9 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             }
         });
 
+        /**
+         * 身份管理启动方法
+         */
         my_shenfen_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,89 +263,23 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), IdentityActivity.class);
-
-                    if (user.getLingState() == null) {
-                        intent.putExtra("darenState", "0");
-                    } else {
-                        intent.putExtra("darenState", user.getLingState());
-                    }
-
-                    if (user.getFaState() == null) {
-                        intent.putExtra("guanggaozhuState", "0");
-                    } else {
-                        intent.putExtra("guanggaozhuState", user.getFaState());
-                        Log.e("达人状态", "url===" + user.getId());
-                    }
-
-                    if (user.getMrState() == null) {
-                        intent.putExtra("mingrenState", "0");
-                    } else {
-                        intent.putExtra("mingrenState", user.getMrState());
-                    }
-
-                    if (user.getMtState() == null) {
-                        intent.putExtra("meitiState", "0");
-                    } else {
-                        intent.putExtra("meitiState", user.getMtState());
-                    }
-
-                    if (user.getDyState() == null) {
-                        intent.putExtra("dyState", "0");
-                    } else {
-                        intent.putExtra("dyState", user.getDyState());
-                    }
-
-                    if (user.getPyqState() == null) {
-                        intent.putExtra("pyqState", "0");
-                    } else {
-                        intent.putExtra("pyqState", user.getPyqState());
-                    }
-
-                    if (user.getWbState() == null) {
-                        intent.putExtra("wbState", "0");
-                    } else {
-                        intent.putExtra("wbState", user.getWbState());
-                    }
-
-                    if (user.getWsState() == null) {
-                        intent.putExtra("wsState", "0");
-                    } else {
-                        intent.putExtra("wsState", user.getWsState());
-                    }
-
                     startActivity(intent);
 
                 }
             }
         });
 
-        /*my_renzheng_rl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(user_id==null){
-                    dialogs();
-                }else {
-                    Intent intent = new Intent(getContext(), MicroNumberActivity.class);
-
-                    startActivity(intent);
-                }
-
-            }
-        });*/
-
 
         my_xiaohb_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*FeedbackAPI.openFeedbackActivity(); // 意见反馈*/
-                if (user_id == null) {
+                if (user_id == null || "".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), DanmuActivity.class);
 
-                    intent.putExtra("memberId", user.getId());
-                    intent.putExtra("nickName", user.getNickName());
+                    intent.putExtra("memberId", user_id);
+                    intent.putExtra("nickName", getDataManager().quickGetMetaData(R.string.nickName, String.class));
 
                     startActivity(intent);
                 }
@@ -279,7 +291,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             @Override
             public void onClick(View v) {
 
-                if (user_id == null) {
+                if (user_id == null || "".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), SettingActivity.class);
@@ -294,31 +306,17 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getContext(), ContactActivity.class);
+          /*      Intent intent = new Intent(getContext(), ContactActivity.class);
 
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
 
-        // 添加的
-        mSubscription = RxBus.getDefault().toObserverable(ChangeAnswerEvent.class)
-                .subscribe(new Action1<ChangeAnswerEvent>() {
-                    @Override
-                    public void call(ChangeAnswerEvent changeAnswerEvent) {
-
-                        if (changeAnswerEvent.getAnswer().equals("1")) {
-                            getPresenter().getUserModelResult(App.getId());
-                            getPresenter().getNewsInfo(App.getId());
-                        }
-                    }
-
-                });
 
     }
 
     @Override
     public void initData() {
-        getPresenter().getNewsInfo(App.getId());
     }
 
     @Override
@@ -331,82 +329,54 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
     public void onGetUserModelResult(UserModel userModelBean) {
 
         if ("000".equals(userModelBean.getCode())) {
-            user = userModelBean.getData();
-
-            App.TaskApplyId = user.getTaskApplyId();
-            App.DyState = user.getDyState();
-            App.PyqState = user.getPyqState();
-            App.WbState = user.getWbState();
-            App.WsState = user.getWsState();
-            App.OtherState = user.getOtherState();
-
-            App.alipay = user.getAlipay();
-
-            App.LingTaskStatus = user.getLingState();
+            //user = userModelBean.getData();
 
             if (user_id != null) {
 
-                if(user.getIsAuthor() != null && "1".equals(user.getIsAuthor())){
+                if ("1".equals(getDataManager().quickGetMetaData(R.string.authState, String.class))) {
                     my_whbyh_rl.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     my_whbyh_rl.setVisibility(View.GONE);
                 }
 
                 my_top_name.setVisibility(View.VISIBLE);
                 fragment_my_attentions_fans_ll.setVisibility(View.VISIBLE);
                 my_logon_tv.setVisibility(View.GONE);
+                my_top_name.setText(getDataManager().quickGetMetaData(R.string.nickName, String.class));
 
-                if (SharedPreferencesUtils.getInstance().getNickName() == null) {
-                    my_top_name.setText(user.getNickName());
+                String headUrl = getDataManager().quickGetMetaData(R.string.headimgurl, String.class);
+                if ("".equals(headUrl)) {
+                    Glide.with(getActivity()).load(R.mipmap.ic_media_head_default).into(my_top_iv);
                 } else {
-                    my_top_name.setText(SharedPreferencesUtils.getInstance().getNickName());
-                }
 
-                if (!StringUtils.isEmpty(user.getHeadimgurl())) {
                     Glide.with(getActivity())
                             .asBitmap()
                             .apply(headImgOptions)
-                            .load(user.getHeadimgurl())
+                            .load(headUrl)
                             .into(new BitmapImageViewTarget(my_top_iv) {
                                 @Override
                                 protected void setResource(Bitmap resource) {
                                     RoundedBitmapDrawable circularBitmapDrawable =
                                             RoundedBitmapDrawableFactory.
                                                     create(getActivity().getResources(), resource);
-                                    //circularBitmapDrawable.setCornerRadius(8); // 圆角
                                     my_top_iv.setImageDrawable(circularBitmapDrawable);
                                 }
                             });
-                } else {
-                    Glide.with(getActivity()).load(R.mipmap.ic_media_head_default).into(my_top_iv);
                 }
 
-                if (StringUtils.isEmpty(user.getAttentions())) {
+                String attentions = getDataManager().quickGetMetaData(R.string.attentions, String.class);
+                if ("".equals(attentions)) {
                     fragment_my_attentions_tv.setText("关注：0");
                 } else {
-                    fragment_my_attentions_tv.setText("关注：" + user.getAttentions());
-                }
-
-                if (StringUtils.isEmpty(user.getFans())) {
-                    fragment_my_fans_tv.setText("粉丝：0");
-                } else {
-                    fragment_my_fans_tv.setText("粉丝：" + user.getFans());
+                    fragment_my_attentions_tv.setText("关注：" + attentions);
                 }
 
 
-                if (SharedPreferencesUtils.getInstance().getUserInfo().getSex() == null) {
-                    if (user.getSex().equals("男")) {
-                        my_top_sex.setVisibility(View.VISIBLE);
-                        my_top_sex2.setVisibility(View.GONE);
-                        my_top_sex.setBackgroundResource(R.mipmap.sex);
+                String sex = getDataManager().quickGetMetaData(R.string.sex, String.class);
+                if ("".equals(sex)) {
 
-                    } else {
-                        my_top_sex.setVisibility(View.GONE);
-                        my_top_sex2.setVisibility(View.VISIBLE);
-                        my_top_sex2.setBackgroundResource(R.mipmap.sex2);
-                    }
                 } else {
-                    if (SharedPreferencesUtils.getInstance().getUserInfo().getSex().equals("男")) {
+                    if ("".equals(sex)) {
                         my_top_sex.setVisibility(View.VISIBLE);
                         my_top_sex2.setVisibility(View.GONE);
                         my_top_sex.setBackgroundResource(R.mipmap.sex);
@@ -417,7 +387,6 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
                         my_top_sex2.setBackgroundResource(R.mipmap.sex2);
                     }
                 }
-
 
             } else {
 
@@ -453,13 +422,6 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
 
 
     @Override
-    public void onResume() {
-        super.onResume();
-        getPresenter().getUserModelResult(App.getId());//刷新个人信息
-        getPresenter().getNewsInfo(App.getId());
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         unbinder = ButterKnife.bind(this, rootView);
@@ -470,6 +432,8 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        localBroadcastManager.unregisterReceiver(flushLocalReceiver);
+
     }
 
     @Override
@@ -505,22 +469,17 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage("请先进行登录");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
-                /*BmobUpdateAgent.setDefault();
-                mActivity.finish();
-                System.exit(0);*/
+
 
                 Intent intent = new Intent(getContext(), LoginMainActivity.class);
 
-                    /*intent.putExtra("id", user.getId());
-                    intent.putExtra("nickName", user.getNickName());
-                    intent.putExtra("sex", user.getSex());
-                    intent.putExtra("headimgurl", user.getHeadimgurl());
-*/
                 startActivity(intent);
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.dismiss();
             }
@@ -534,6 +493,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage("请绑定支付宝");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
 
                 Intent intent = new Intent(getContext(), MyjibenActivity.class);
@@ -541,6 +501,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.dismiss();
             }
@@ -562,13 +523,11 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.fragment_my_wallet_ll:
+
                 if (user_id == null) {
                     dialogs();
-                } else if (App.alipay.equals("0")) {
-                    dialogs2();
                 } else {
                     Intent intent = new Intent(getContext(), MyMoneyActivity.class);
-                    intent.putExtra("headimgurl", user.getHeadimgurl());
                     startActivity(intent);
                 }
                 break;
@@ -598,6 +557,9 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             case R.id.fragment_my_fans_tv:
                 //粉丝
                 FansListActivity.start(getActivity());
+                break;
+
+            default:
                 break;
         }
     }

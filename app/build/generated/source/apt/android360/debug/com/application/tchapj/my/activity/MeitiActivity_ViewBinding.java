@@ -20,7 +20,7 @@ import java.lang.Override;
 public class MeitiActivity_ViewBinding implements Unbinder {
   private MeitiActivity target;
 
-  private View view2131756323;
+  private View view2131756318;
 
   @UiThread
   public MeitiActivity_ViewBinding(MeitiActivity target) {
@@ -43,7 +43,7 @@ public class MeitiActivity_ViewBinding implements Unbinder {
     target.meiti_radiogroup = Utils.findRequiredViewAsType(source, R.id.meiti_radiogroup, "field 'meiti_radiogroup'", RadioGroup.class);
     target.permanentCityNameTv = Utils.findRequiredViewAsType(source, R.id.permanent_address_city_name_tv, "field 'permanentCityNameTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.permanent_address_city_rl, "method 'onViewClicked'");
-    view2131756323 = view;
+    view2131756318 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -70,7 +70,7 @@ public class MeitiActivity_ViewBinding implements Unbinder {
     target.meiti_radiogroup = null;
     target.permanentCityNameTv = null;
 
-    view2131756323.setOnClickListener(null);
-    view2131756323 = null;
+    view2131756318.setOnClickListener(null);
+    view2131756318 = null;
   }
 }

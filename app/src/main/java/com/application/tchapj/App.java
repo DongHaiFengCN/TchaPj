@@ -173,6 +173,8 @@ public class App extends Application {
         // 侧滑返回管理器
         //BGASwipeBackManager.getInstance().init(this);
 
+        DataManager.init(this);
+
         registToWX();
 
         /*//初始化logger
@@ -187,6 +189,10 @@ public class App extends Application {
         StatService.start(this);//百度统计
 
         getStartInitiationData();
+
+        App.setId(DataManager.getDataManager().quickGetMetaData(R.string.id,String.class));
+
+        SharedPreferences.getInstance().init(this);
 
     }
 

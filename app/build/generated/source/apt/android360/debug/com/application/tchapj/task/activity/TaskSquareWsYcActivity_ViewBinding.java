@@ -18,7 +18,7 @@ import java.lang.Override;
 public class TaskSquareWsYcActivity_ViewBinding implements Unbinder {
   private TaskSquareWsYcActivity target;
 
-  private View view2131755509;
+  private View view2131755514;
 
   @UiThread
   public TaskSquareWsYcActivity_ViewBinding(TaskSquareWsYcActivity target) {
@@ -53,7 +53,7 @@ public class TaskSquareWsYcActivity_ViewBinding implements Unbinder {
     target.releasefMoneyValueTv = Utils.findRequiredViewAsType(source, R.id.releasefMoneyValueTv, "field 'releasefMoneyValueTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.hairFriendsBtn, "field 'hairFriendsBtn' and method 'onViewClicked'");
     target.hairFriendsBtn = Utils.castView(view, R.id.hairFriendsBtn, "field 'hairFriendsBtn'", Button.class);
-    view2131755509 = view;
+    view2131755514 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -94,7 +94,7 @@ public class TaskSquareWsYcActivity_ViewBinding implements Unbinder {
     target.hairFriendsBtn = null;
     target.ScrollView = null;
 
-    view2131755509.setOnClickListener(null);
-    view2131755509 = null;
+    view2131755514.setOnClickListener(null);
+    view2131755514 = null;
   }
 }

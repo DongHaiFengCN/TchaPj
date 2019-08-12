@@ -17,7 +17,7 @@ import java.lang.Override;
 public class CollarTaskCircleFriendLinkActivity_ViewBinding implements Unbinder {
   private CollarTaskCircleFriendLinkActivity target;
 
-  private View view2131755315;
+  private View view2131755320;
 
   @UiThread
   public CollarTaskCircleFriendLinkActivity_ViewBinding(CollarTaskCircleFriendLinkActivity target) {
@@ -38,7 +38,7 @@ public class CollarTaskCircleFriendLinkActivity_ViewBinding implements Unbinder 
     target.taskInfoFirstLl = Utils.findRequiredViewAsType(source, R.id.collar_task_circle_friend_task_info_first_ll, "field 'taskInfoFirstLl'", LinearLayout.class);
     target.taskInfoSecondLl = Utils.findRequiredViewAsType(source, R.id.collar_task_circle_friend_task_info_second_ll, "field 'taskInfoSecondLl'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.collar_task_circle_friend_task_link_share_btn, "method 'onViewClicked'");
-    view2131755315 = view;
+    view2131755320 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -63,7 +63,7 @@ public class CollarTaskCircleFriendLinkActivity_ViewBinding implements Unbinder 
     target.taskInfoFirstLl = null;
     target.taskInfoSecondLl = null;
 
-    view2131755315.setOnClickListener(null);
-    view2131755315 = null;
+    view2131755320.setOnClickListener(null);
+    view2131755320 = null;
   }
 }

@@ -23,14 +23,13 @@ public final class Constants {
 //    public static final String BASE_URL2 = "http://124.133.43.12:8081/whby-api/";
 
     // 测试库
-   public static final String BASE_URL2 = "http://124.133.43.12:8084/whby-api3/";
+    // public static final String BASE_URL2 = "http://124.133.43.12:8084/whby-api3/";
+    public static final String BASE_URL2 = "http://192.168.15.149:8080/whby-api/";
 
 
-     //public static final String BASE_URL2 = "http://192.168.0.91:8080/whby-api/";//测试库，文文电脑IP
+    //public static final String BASE_URL2 = "http://192.168.0.91:8080/whby-api/";//测试库，文文电脑IP
 
 //    public static final String BASE_URL2 = "http://192.168.0.108:8080/whby-api/";//测试库，郭老师电脑IP
-
-
 
 
     //h5链接正式地址
@@ -72,8 +71,8 @@ public final class Constants {
     public static String ACCOUNT_NUMBER_AGREEMENT = "https://docs.qq.com/doc/DVWtpV2xVb3lHREJj";
 
     /**
-    * 我发的任务详情页H5地址
-    */
+     * 我发的任务详情页H5地址
+     */
     public static String MY_RELEASE_TASK_DETAIL_URL = "http://api.whby.ctrl.cn/weihubaiying/tubiao.html?memberId=";
 
     /**
@@ -89,23 +88,31 @@ public final class Constants {
         return params;
     }
 
-    /**已选中频道的json*/
+    /**
+     * 已选中频道的json
+     */
     public static String SELECTED_CHANNEL_JSON = "selectedChannelJson";
-    /**w未选频道的json*/
+    /**
+     * w未选频道的json
+     */
     public static String UNSELECTED_CHANNEL_JSON = "unselectChannelJson";
 
-    /**频道对应的请求参数*/
+    /**
+     * 频道对应的请求参数
+     */
     public static final String CHANNEL_CODE = "channelCode";
     public static final String IS_VIDEO_LIST = "isVideoList";
 
     public static final String ARTICLE_GENRE_VIDEO = "video";
-    public static final String  ARTICLE_GENRE_AD = "ad";
+    public static final String ARTICLE_GENRE_AD = "ad";
 
     public static final String TAG_MOVIE = "video_movie";
 
     public static final String URL_VIDEO = "/video/urls/v/1/toutiao/mp4/%s?r=%s";
 
-    /**获取评论列表每页的数目*/
+    /**
+     * 获取评论列表每页的数目
+     */
     public static final int COMMENT_PAGE_SIZE = 20;
 
     public static final String DATA_SELECTED = "dataSelected";
@@ -148,7 +155,6 @@ public final class Constants {
     public static final String RSA2_PRIVATE = "RSA2_PRIVATE"; // 私钥
 
     public static final String WEISHI_PACKAGE_NAME = "com.tencent.weishi";
-
 
 
 }

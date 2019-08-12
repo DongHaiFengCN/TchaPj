@@ -16,7 +16,7 @@ import java.lang.Override;
 public class CityListActivity_ViewBinding implements Unbinder {
   private CityListActivity target;
 
-  private View view2131755296;
+  private View view2131755301;
 
   @UiThread
   public CityListActivity_ViewBinding(CityListActivity target) {
@@ -32,7 +32,7 @@ public class CityListActivity_ViewBinding implements Unbinder {
     target.cityListPositionNameDescTv = Utils.findRequiredViewAsType(source, R.id.city_list_position_name_desc_tv, "field 'cityListPositionNameDescTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.city_list_again_position_tv, "field 'cityListAgainPositionTv' and method 'onViewClicked'");
     target.cityListAgainPositionTv = Utils.castView(view, R.id.city_list_again_position_tv, "field 'cityListAgainPositionTv'", TextView.class);
-    view2131755296 = view;
+    view2131755301 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -54,7 +54,7 @@ public class CityListActivity_ViewBinding implements Unbinder {
     target.cityListAgainPositionTv = null;
     target.listView = null;
 
-    view2131755296.setOnClickListener(null);
-    view2131755296 = null;
+    view2131755301.setOnClickListener(null);
+    view2131755301 = null;
   }
 }

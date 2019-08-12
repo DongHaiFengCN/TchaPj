@@ -18,9 +18,9 @@ import java.lang.Override;
 public class FriendReleaseActivity_ViewBinding implements Unbinder {
   private FriendReleaseActivity target;
 
-  private View view2131755504;
-
   private View view2131755509;
+
+  private View view2131755514;
 
   @UiThread
   public FriendReleaseActivity_ViewBinding(FriendReleaseActivity target) {
@@ -41,7 +41,7 @@ public class FriendReleaseActivity_ViewBinding implements Unbinder {
     target.releasefDownloadValueTv1 = Utils.findRequiredViewAsType(source, R.id.releasefDownloadValueTv1, "field 'releasefDownloadValueTv1'", TextView.class);
     view = Utils.findRequiredView(source, R.id.coypTv, "field 'coypTv' and method 'onViewClicked'");
     target.coypTv = Utils.castView(view, R.id.coypTv, "field 'coypTv'", TextView.class);
-    view2131755504 = view;
+    view2131755509 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -51,7 +51,7 @@ public class FriendReleaseActivity_ViewBinding implements Unbinder {
     target.releasefValueRv = Utils.findRequiredViewAsType(source, R.id.releasefValueRv, "field 'releasefValueRv'", RecyclerView.class);
     view = Utils.findRequiredView(source, R.id.hairFriendsBtn, "field 'hairFriendsBtn' and method 'onViewClicked'");
     target.hairFriendsBtn = Utils.castView(view, R.id.hairFriendsBtn, "field 'hairFriendsBtn'", Button.class);
-    view2131755509 = view;
+    view2131755514 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -88,9 +88,9 @@ public class FriendReleaseActivity_ViewBinding implements Unbinder {
     target.releasefContentTv = null;
     target.requireTv = null;
 
-    view2131755504.setOnClickListener(null);
-    view2131755504 = null;
     view2131755509.setOnClickListener(null);
     view2131755509 = null;
+    view2131755514.setOnClickListener(null);
+    view2131755514 = null;
   }
 }

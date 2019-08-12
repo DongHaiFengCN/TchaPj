@@ -4,7 +4,10 @@ package com.application.tchapj.http;
 import com.application.tchapj.base.BaseBean;
 import com.application.tchapj.base.BaseModel;
 import com.application.tchapj.bean.BindingPhoneBean;
+import com.application.tchapj.bean.MemberInfo;
 import com.application.tchapj.bean.MemberInfoBean;
+import com.application.tchapj.bean.PromotionPayResultBean;
+import com.application.tchapj.bean.PromotionResultBean;
 import com.application.tchapj.bean.SmsCodeBean;
 import com.application.tchapj.consultation.bean.AddNewsCommentResultBean;
 import com.application.tchapj.consultation.bean.CommentsResultBean;
@@ -396,6 +399,10 @@ public interface APIService {
     Observable<UserModel> getUserModelResult(@Query("memberId") String memberId, @Query("appKey") String appKey
             , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
 
+    // 个人中心
+    @POST("app?method=pm.member.get")
+    Observable<MemberInfo> getMember(@Query("memberId") String memberId, @Query("appKey") String appKey
+            , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
 
     // 支付宝私钥 参数
     @POST("app?method=alipay.app.privatekey")
@@ -739,6 +746,101 @@ public interface APIService {
     Observable<BaseBean<FrozenListBean>> getFrozenToBalanceResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
             , @Query("format") String format, @Query("memberId") String memberId, @Query("id") String id, @Query("amount") String amount);
+
+
+
+    /**
+     * 生成推广金预付订单
+     *
+     * @param appKey   app唯一标记
+     * @param v        版本号
+     * @param secret   密钥
+     * @param format   格式
+     * @param sign     令牌
+     * @param type     客户端类型（"1":Android、 "2":IOS、 "3":WEB）
+     * @param memberId 用户id
+     * @param amount   充值金额
+     * @param name     用户名
+     * @return
+     */
+    @POST("app?method=promotion.app.recharge")
+    Observable<BaseBean<PromotionResultBean>> promotionAdvanceOrder(
+            @Query("appKey") String appKey
+            , @Query("secret") String secret
+            , @Query("method") String method
+            , @Query("v") String v
+            , @Query("format") String format
+            , @Query("sign") String sign
+            , @Query("memberId") String memberId
+            , @Query("amount") String amount
+            , @Query("name") String name
+            , @Query("type") String type
+
+    );
+
+    @POST("app?method=promotion.app.alipay.success")
+    Observable<BaseBean<PromotionResultBean>> promotionOrderSuccess(
+            @Query("appKey") String appKey
+            , @Query("secret") String secret
+            , @Query("method") String method
+            , @Query("v") String v
+            , @Query("format") String format
+            , @Query("sign") String sign
+            , @Query("memberId") String memberId
+            , @Query("amount") String amount
+            , @Query("name") String name
+            , @Query("type") String type
+            , @Query("ordernumber") String ordernumber
+
+    );
+
+    /**
+     * 推广金支付
+     *
+     * @param appKey
+     * @param secret
+     * @param method
+     * @param v
+     * @param format
+     * @param sign
+     * @param type
+     * @param amount
+     * @param Id
+     * @param memberId
+     * @return
+     */
+    @POST("app?method=promotion.app.pay")
+    Observable<PromotionPayResultBean> promotionPayOrder(
+            @Query("appKey") String appKey
+            , @Query("secret") String secret
+            , @Query("method") String method
+            , @Query("v") String v
+            , @Query("format") String format
+            , @Query("sign") String sign
+            , @Query("type") String type
+            , @Query("amount") String amount
+            , @Query("Id") String Id
+            , @Query("memberId") String memberId
+    );
+    @POST("app?method=pm.member.updateIdentity")
+    Observable<BaseBean> updateIndetity(
+            @Query("appKey") String appKey
+            , @Query("secret") String secret
+            , @Query("method") String method
+            , @Query("v") String v
+            , @Query("format") String format
+            , @Query("sign") String sign
+            , @Query("type") String type
+            , @Query("memberId") String memberId
+            , @Query("identity") String identity
+            , @Query("realname") String realname
+    );
+
+
+    // 用户信息
+    @POST("app?method=pm.member.get")
+    Observable<MemberInfo> getMemberModelResult(@Query("memberId") String memberId, @Query("appKey") String appKey
+            , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
 
 
 }

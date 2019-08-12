@@ -1,6 +1,7 @@
 package com.application.tchapj.login.presenter;
 
 import com.application.tchapj.App;
+import com.application.tchapj.R;
 import com.application.tchapj.base.BaseBean;
 import com.application.tchapj.base.BaseMvpPresenter;
 import com.application.tchapj.base.BaseMvpView;
@@ -19,6 +20,8 @@ import java.util.regex.Pattern;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+
+import static com.application.tchapj.DataManager.getDataManager;
 
 public class BindingPhonePresenter extends BasePresenter<IBindingPhoneView> {
 
@@ -72,7 +75,7 @@ public class BindingPhonePresenter extends BasePresenter<IBindingPhoneView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .onThirdLoginBindingResult(phone, App.getId(),"002","1.0","","JSON") // 得到登录接口
+                .onThirdLoginBindingResult(phone, getDataManager().quickGetMetaData(R.string.id,String.class),"002","1.0","","JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<BaseBean<BindingPhoneBean>>() {  // 将数据绑定到实体类的操作

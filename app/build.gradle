@@ -219,8 +219,8 @@ dependencies {
     // RxJava 的优势也是简洁  逻辑的简洁  即  观察者模式的事件消息交互框架
     api 'io.reactivex:rxjava:1.1.6'
     // android中的通讯框架,用于高效发送http请求
-    api 'com.squareup.retrofit2:retrofit:2.1.0'
-    api 'com.squareup.retrofit2:converter-gson:2.1.0'
+    api 'com.squareup.retrofit2:retrofit:2.5.0'
+    api 'com.squareup.retrofit2:converter-gson:2.5.0'
     api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     // Dagger2依赖注入框架App的接口类对象
     api 'com.google.dagger:dagger:2.9'
@@ -264,7 +264,7 @@ dependencies {
     api 'me.weyye.ColorTrackTabLayout:library:1.0.1'
     api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     api 'com.android.support.constraint:constraint-layout:1.0.1'
-    api 'com.squareup.retrofit2:retrofit:2.1.0'
+    api 'com.squareup.retrofit2:retrofit:2.5.0'
     api 'com.squareup.okhttp3:logging-interceptor:3.8.1'
     api 'org.greenrobot:eventbus:3.0.0'
     api 'com.nineoldandroids:library:2.4.0'
@@ -297,7 +297,6 @@ dependencies {
     api 'com.qiniu:qiniu-android-sdk:7.3.+'
 
     api 'fm.jiecao:jiecaovideoplayer:5.5'
-    api 'com.github.bumptech.glide:glide:3.7.0'
     //api files('libs/android-async-http-1.4.9.jar')
     //api files('libs/qiniu-android-sdk-7.0.9.jar')
     //api files('libs/happy-dns-0.2.4.jar')
@@ -330,6 +329,7 @@ dependencies {
 
     api 'cn.jiguang.sdk:jpush:3.1.6'  // JPush 极光推送
     api 'cn.jiguang.sdk:jcore:1.2.5'  // JCore 极光推送
+
 
     //annotationProcessor 'fm.jiecao:jiecaovideoplayer:5.5'//视频tab页-视频播放
 }

@@ -35,17 +35,9 @@ public class CommonDialogUtil {
         builder.setMessage("请先进行登录");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                /*BmobUpdateAgent.setDefault();
-                mActivity.finish();
-                System.exit(0);*/
 
                 Intent intent = new Intent(context, LoginMainActivity.class);
 
-                    /*intent.putExtra("id", user.getId());
-                    intent.putExtra("nickName", user.getNickName());
-                    intent.putExtra("sex", user.getSex());
-                    intent.putExtra("headimgurl", user.getHeadimgurl());
-*/
                 context.startActivity(intent);
             }
         });

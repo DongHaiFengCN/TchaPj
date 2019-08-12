@@ -19,17 +19,17 @@ import java.lang.Override;
 public class MyFragment_ViewBinding implements Unbinder {
   private MyFragment target;
 
+  private View view2131755946;
+
+  private View view2131755947;
+
+  private View view2131755948;
+
+  private View view2131755949;
+
   private View view2131755950;
 
   private View view2131755951;
-
-  private View view2131755952;
-
-  private View view2131755953;
-
-  private View view2131755954;
-
-  private View view2131755955;
 
   @UiThread
   public MyFragment_ViewBinding(final MyFragment target, View source) {
@@ -56,7 +56,7 @@ public class MyFragment_ViewBinding implements Unbinder {
     target.fragment_my_attentions_fans_ll = Utils.findRequiredViewAsType(source, R.id.fragment_my_attentions_fans_ll, "field 'fragment_my_attentions_fans_ll'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.fragment_my_attentions_tv, "field 'fragment_my_attentions_tv' and method 'onViewClicked'");
     target.fragment_my_attentions_tv = Utils.castView(view, R.id.fragment_my_attentions_tv, "field 'fragment_my_attentions_tv'", TextView.class);
-    view2131755950 = view;
+    view2131755946 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -65,7 +65,7 @@ public class MyFragment_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.fragment_my_fans_tv, "field 'fragment_my_fans_tv' and method 'onViewClicked'");
     target.fragment_my_fans_tv = Utils.castView(view, R.id.fragment_my_fans_tv, "field 'fragment_my_fans_tv'", TextView.class);
-    view2131755951 = view;
+    view2131755947 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -73,7 +73,7 @@ public class MyFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_my_wallet_ll, "method 'onViewClicked'");
-    view2131755952 = view;
+    view2131755948 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -81,7 +81,7 @@ public class MyFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_my_content_manager_ll, "method 'onViewClicked'");
-    view2131755953 = view;
+    view2131755949 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -89,7 +89,7 @@ public class MyFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_my_content_analysis_ll, "method 'onViewClicked'");
-    view2131755954 = view;
+    view2131755950 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -97,7 +97,7 @@ public class MyFragment_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.fragment_my_task_analysis_ll, "method 'onViewClicked'");
-    view2131755955 = view;
+    view2131755951 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -134,17 +134,17 @@ public class MyFragment_ViewBinding implements Unbinder {
     target.fragment_my_attentions_tv = null;
     target.fragment_my_fans_tv = null;
 
+    view2131755946.setOnClickListener(null);
+    view2131755946 = null;
+    view2131755947.setOnClickListener(null);
+    view2131755947 = null;
+    view2131755948.setOnClickListener(null);
+    view2131755948 = null;
+    view2131755949.setOnClickListener(null);
+    view2131755949 = null;
     view2131755950.setOnClickListener(null);
     view2131755950 = null;
     view2131755951.setOnClickListener(null);
     view2131755951 = null;
-    view2131755952.setOnClickListener(null);
-    view2131755952 = null;
-    view2131755953.setOnClickListener(null);
-    view2131755953 = null;
-    view2131755954.setOnClickListener(null);
-    view2131755954 = null;
-    view2131755955.setOnClickListener(null);
-    view2131755955 = null;
   }
 }

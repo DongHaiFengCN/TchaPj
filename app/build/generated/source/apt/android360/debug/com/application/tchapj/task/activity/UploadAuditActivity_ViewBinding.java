@@ -19,9 +19,9 @@ import java.lang.Override;
 public class UploadAuditActivity_ViewBinding implements Unbinder {
   private UploadAuditActivity target;
 
-  private View view2131755772;
+  private View view2131755768;
 
-  private View view2131755504;
+  private View view2131755509;
 
   @UiThread
   public UploadAuditActivity_ViewBinding(UploadAuditActivity target) {
@@ -42,7 +42,7 @@ public class UploadAuditActivity_ViewBinding implements Unbinder {
     target.uploadAudioBtnTime = Utils.findRequiredViewAsType(source, R.id.uploadAudioBtnTime, "field 'uploadAudioBtnTime'", TextView.class);
     view = Utils.findRequiredView(source, R.id.uploadAudioBtn, "field 'uploadAudioBtn' and method 'onViewClicked'");
     target.uploadAudioBtn = Utils.castView(view, R.id.uploadAudioBtn, "field 'uploadAudioBtn'", Button.class);
-    view2131755772 = view;
+    view2131755768 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -55,7 +55,7 @@ public class UploadAuditActivity_ViewBinding implements Unbinder {
     target.copywritingTv = Utils.findRequiredViewAsType(source, R.id.releasefDownloadValueTv1, "field 'copywritingTv'", TextView.class);
     target.saveImgRv = Utils.findRequiredViewAsType(source, R.id.releasefValueRv, "field 'saveImgRv'", RecyclerView.class);
     view = Utils.findRequiredView(source, R.id.coypTv, "method 'onViewClicked'");
-    view2131755504 = view;
+    view2131755509 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -85,9 +85,9 @@ public class UploadAuditActivity_ViewBinding implements Unbinder {
     target.copywritingTv = null;
     target.saveImgRv = null;
 
-    view2131755772.setOnClickListener(null);
-    view2131755772 = null;
-    view2131755504.setOnClickListener(null);
-    view2131755504 = null;
+    view2131755768.setOnClickListener(null);
+    view2131755768 = null;
+    view2131755509.setOnClickListener(null);
+    view2131755509 = null;
   }
 }

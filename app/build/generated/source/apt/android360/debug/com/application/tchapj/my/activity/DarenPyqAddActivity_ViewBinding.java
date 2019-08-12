@@ -18,7 +18,7 @@ import java.lang.Override;
 public class DarenPyqAddActivity_ViewBinding implements Unbinder {
   private DarenPyqAddActivity target;
 
-  private View view2131755721;
+  private View view2131755717;
 
   @UiThread
   public DarenPyqAddActivity_ViewBinding(DarenPyqAddActivity target) {
@@ -38,7 +38,7 @@ public class DarenPyqAddActivity_ViewBinding implements Unbinder {
     target.pyq_add_vieo_rl = Utils.findRequiredViewAsType(source, R.id.pyq_add_vieo_rl, "field 'pyq_add_vieo_rl'", RecyclerView.class);
     target.pyq_add_bt = Utils.findRequiredViewAsType(source, R.id.pyq_add_bt, "field 'pyq_add_bt'", Button.class);
     view = Utils.findRequiredView(source, R.id.pyq_add_example_tv, "method 'onViewClicked'");
-    view2131755721 = view;
+    view2131755717 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -62,7 +62,7 @@ public class DarenPyqAddActivity_ViewBinding implements Unbinder {
     target.pyq_add_vieo_rl = null;
     target.pyq_add_bt = null;
 
-    view2131755721.setOnClickListener(null);
-    view2131755721 = null;
+    view2131755717.setOnClickListener(null);
+    view2131755717 = null;
   }
 }

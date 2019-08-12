@@ -396,8 +396,8 @@ public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSqua
         } else {
 
             if (SharedPreferencesUtils.getInstance().getUserInfo() != null) {
-                if (SharedPreferencesUtils.getInstance().getUserInfo().getFaState() != null
-                        && SharedPreferencesUtils.getInstance().getUserInfo().getFaState().equals("2")) {
+                if (SharedPreferencesUtils.getInstance().getUserInfo().getFaTaskStatus() != null
+                        && SharedPreferencesUtils.getInstance().getUserInfo().getFaTaskStatus().equals("2")) {
                     showPublishDialog();
                 }else{
                     CommonDialogUtil.identityDialog(getActivity(), "请先申请广告主身份");

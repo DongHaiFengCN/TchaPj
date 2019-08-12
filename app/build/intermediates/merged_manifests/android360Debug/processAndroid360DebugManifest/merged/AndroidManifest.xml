@@ -129,8 +129,7 @@
         <activity
             android:name="com.application.tchapj.main.activity.StartUpAdvertActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.application.tchapj.guide.GuideActivity"
             android:screenOrientation="portrait"
@@ -364,6 +363,7 @@
             android:name="com.application.tchapj.my.activity.DarenDyAddActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.application.tchapj.my.activity.AuthenticationActivity" />
         <activity
             android:name="com.application.tchapj.my.activity.ContentManagerActivity"
             android:screenOrientation="portrait"
@@ -400,8 +400,7 @@
             android:name="com.application.tchapj.alipay.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" >
-        </activity>
+            android:screenOrientation="behind" />
 
         <!-- alipay sdk begin -->
         <activity
@@ -409,15 +408,13 @@
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="com.alipay.sdk.app.H5AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="com.application.tchapj.utils2.imagepicker.ui.ImagePreviewDelActivity"
             android:configChanges="orientation|screenSize"
@@ -564,8 +561,7 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
-        </service>
+            android:process=":remote" />
 
         <!--
         &lt;!&ndash;个人笔记本key&ndash;&gt;
@@ -718,8 +714,7 @@
         <service
             android:name="cn.jpush.android.service.DownloadService"
             android:enabled="true"
-            android:exported="false" >
-        </service>
+            android:exported="false" />
 
         <!-- Required SDK 核心功能 -->
         <receiver

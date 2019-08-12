@@ -19,7 +19,7 @@ import java.lang.Override;
 public class FindDetailActivity_ViewBinding implements Unbinder {
   private FindDetailActivity target;
 
-  private View view2131755472;
+  private View view2131755477;
 
   @UiThread
   public FindDetailActivity_ViewBinding(FindDetailActivity target) {
@@ -38,7 +38,7 @@ public class FindDetailActivity_ViewBinding implements Unbinder {
     target.addCommentEdt = Utils.findRequiredViewAsType(source, R.id.find_detail_comment_add_edt, "field 'addCommentEdt'", EditText.class);
     view = Utils.findRequiredView(source, R.id.find_detail_comment_add_tv, "field 'addCommentTv' and method 'onViewClicked'");
     target.addCommentTv = Utils.castView(view, R.id.find_detail_comment_add_tv, "field 'addCommentTv'", TextView.class);
-    view2131755472 = view;
+    view2131755477 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -61,7 +61,7 @@ public class FindDetailActivity_ViewBinding implements Unbinder {
     target.addCommentEdt = null;
     target.addCommentTv = null;
 
-    view2131755472.setOnClickListener(null);
-    view2131755472 = null;
+    view2131755477.setOnClickListener(null);
+    view2131755477 = null;
   }
 }

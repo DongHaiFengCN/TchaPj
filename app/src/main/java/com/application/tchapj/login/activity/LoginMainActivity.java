@@ -10,7 +10,7 @@ import android.widget.RadioButton;
 
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseActvity;
-import com.application.tchapj.login.fragment.PasswordLogonFragment;
+import com.application.tchapj.login.fragment.PasswordLoginFragment;
 import com.application.tchapj.login.fragment.PhoneLogonFragment;
 import com.application.tchapj.widiget.ToolbarHelper;
 
@@ -36,7 +36,7 @@ public class LoginMainActivity extends BaseActvity {
 
     // 得到Fragment对象
     private PhoneLogonFragment phoneLogonFragment;
-    private PasswordLogonFragment passwordLogonFragment;
+    private PasswordLoginFragment passwordLoginFragment;
 
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
@@ -96,12 +96,12 @@ public class LoginMainActivity extends BaseActvity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         hideAllFragment(fragmentTransaction);
-        if(passwordLogonFragment == null){
-            passwordLogonFragment = PasswordLogonFragment.newInstance("passwordLogonFragment");
-            fragmentTransaction.add(R.id.my_logon_content,passwordLogonFragment);
+        if(passwordLoginFragment == null){
+            passwordLoginFragment = new PasswordLoginFragment();
+            fragmentTransaction.add(R.id.my_logon_content, passwordLoginFragment);
         }
 
-        commitShowFragment(fragmentTransaction,passwordLogonFragment);
+        commitShowFragment(fragmentTransaction, passwordLoginFragment);
 
     }
 
@@ -114,7 +114,7 @@ public class LoginMainActivity extends BaseActvity {
     // 隐藏所有Fragment
     public void hideAllFragment(FragmentTransaction fragmentTransaction){
         hideFragment(fragmentTransaction,phoneLogonFragment);
-        hideFragment(fragmentTransaction,passwordLogonFragment);
+        hideFragment(fragmentTransaction, passwordLoginFragment);
 
     }
 

@@ -17,7 +17,7 @@ import java.lang.Override;
 public class DarenWbAddActivity_ViewBinding implements Unbinder {
   private DarenWbAddActivity target;
 
-  private View view2131755783;
+  private View view2131755779;
 
   @UiThread
   public DarenWbAddActivity_ViewBinding(DarenWbAddActivity target) {
@@ -35,7 +35,7 @@ public class DarenWbAddActivity_ViewBinding implements Unbinder {
     target.wb_add_rv = Utils.findRequiredViewAsType(source, R.id.wb_add_rv, "field 'wb_add_rv'", RecyclerView.class);
     target.wb_add_bt = Utils.findRequiredViewAsType(source, R.id.wb_add_bt, "field 'wb_add_bt'", Button.class);
     view = Utils.findRequiredView(source, R.id.wb_add_example_tv, "method 'onViewClicked'");
-    view2131755783 = view;
+    view2131755779 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -57,7 +57,7 @@ public class DarenWbAddActivity_ViewBinding implements Unbinder {
     target.wb_add_rv = null;
     target.wb_add_bt = null;
 
-    view2131755783.setOnClickListener(null);
-    view2131755783 = null;
+    view2131755779.setOnClickListener(null);
+    view2131755779 = null;
   }
 }

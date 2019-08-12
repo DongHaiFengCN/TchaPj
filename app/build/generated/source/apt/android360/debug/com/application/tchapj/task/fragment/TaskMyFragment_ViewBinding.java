@@ -18,7 +18,7 @@ import java.lang.Override;
 public class TaskMyFragment_ViewBinding implements Unbinder {
   private TaskMyFragment target;
 
-  private View view2131756003;
+  private View view2131755999;
 
   @UiThread
   public TaskMyFragment_ViewBinding(final TaskMyFragment target, View source) {
@@ -34,7 +34,7 @@ public class TaskMyFragment_ViewBinding implements Unbinder {
     target.taskSquareRvMy = Utils.findRequiredViewAsType(source, R.id.task_square_rv_my, "field 'taskSquareRvMy'", RecyclerView.class);
     target.taskSquareRlMy = Utils.findRequiredViewAsType(source, R.id.task_square_rl_my, "field 'taskSquareRlMy'", SmartRefreshLayout.class);
     view = Utils.findRequiredView(source, R.id.add_task_button, "method 'onViewClicked'");
-    view2131756003 = view;
+    view2131755999 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -59,7 +59,7 @@ public class TaskMyFragment_ViewBinding implements Unbinder {
     target.taskSquareRvMy = null;
     target.taskSquareRlMy = null;
 
-    view2131756003.setOnClickListener(null);
-    view2131756003 = null;
+    view2131755999.setOnClickListener(null);
+    view2131755999 = null;
   }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
@@ -47,6 +48,11 @@ public class WelcomeActivity extends SplashActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //刷新配置
+        DataManager.getDataManager()
+                .disposeMember(new Up());
+
+
     }
 
     @Override
@@ -77,9 +83,9 @@ public class WelcomeActivity extends SplashActivity {
 //                        });
 //                ivBg.setImageResource(R.mipmap.icon_lead);
 
-                ((App)getApplication()).getAppComponent()
+                ((App) getApplication()).getAppComponent()
                         .getAPIService() // 所有接口对象
-                        .getFlashScreenResult(APIService.APP_KEY,APIService.V,APIService.SIGN,APIService.FORMAT) //得到闪屏页数据
+                        .getFlashScreenResult(APIService.APP_KEY, APIService.V, APIService.SIGN, APIService.FORMAT) //得到闪屏页数据
                         .subscribeOn(Schedulers.io()) // 订阅方式
                         .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                         .subscribe(new Subscriber<BaseBean<FlashScreenBean>>() {  // 将数据绑定到实体类的操作
@@ -95,9 +101,9 @@ public class WelcomeActivity extends SplashActivity {
 
                             @Override // 得到数据
                             public void onNext(BaseBean<FlashScreenBean> baseBean) {
-                                if(baseBean != null && baseBean.getCode().equals("000") && baseBean.getData() != null){
+                                if (baseBean != null && baseBean.getCode().equals("000") && baseBean.getData() != null) {
                                     String startUpAdvertUrl = baseBean.getData().getOpenPageImg();//闪屏页图片url
-                                    if(!StringUtils.isEmpty(startUpAdvertUrl)){
+                                    if (!StringUtils.isEmpty(startUpAdvertUrl)) {
                                         isShowStartUpAdvert = true;
                                         flashScreenBean = baseBean.getData();
                                     }
@@ -128,13 +134,13 @@ public class WelcomeActivity extends SplashActivity {
                     edit.commit();
                 } else {
 
-                    if(isShowStartUpAdvert){
+                    if (isShowStartUpAdvert) {
                         intent = new Intent(WelcomeActivity.this, StartUpAdvertActivity.class);
-                        if(flashScreenBean != null){
+                        if (flashScreenBean != null) {
                             intent.putExtra("flash_screen_bean", flashScreenBean);
                         }
                         startActivity(intent);
-                    }else{
+                    } else {
                         intent = new Intent(WelcomeActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
@@ -150,4 +156,19 @@ public class WelcomeActivity extends SplashActivity {
         };
     }
 
+
+    public static class Up implements DataManager.UpDataListener{
+        @Override
+        public void updata(boolean getDataSuccess) {
+
+            if(getDataSuccess){
+
+                Log.e("DOAING","更新成功");
+
+            }else {
+                Log.e("DOAING","更新失败");
+            }
+
+        }
+    }
 }

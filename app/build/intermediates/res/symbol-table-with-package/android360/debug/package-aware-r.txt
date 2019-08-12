@@ -3118,6 +3118,7 @@ id daren_py_iv
 id daren_pyadd_ll
 id daren_refuse_tv
 id daren_rl
+id daren_smrz_head
 id daren_tag_iv
 id daren_tv
 id daren_wanshan_tv
@@ -3393,15 +3394,11 @@ id guangao_bv
 id guangao_clv
 id guangao_code_et
 id guangao_code_tv
-id guangao_dy_iv
 id guangao_gsjcname_et
 id guangao_gsname_et
 id guangao_name_et
-id guangao_py_iv
-id guangao_rl
 id guangao_rv
 id guangao_shouji_et
-id guangao_wb_iv
 id guangao_zhiz_et
 id guanggao_industry_fl
 id guidance_tv
@@ -3460,6 +3457,8 @@ id item_mulit_image
 id item_nice9_image
 id item_nice9_imagerl
 id item_person
+id item_smrz_ll
+id item_smrz_rl
 id item_touch_helper_previous_elevation
 id item_tv
 id iv
@@ -3653,16 +3652,12 @@ id media_ll_dot
 id media_more
 id media_view_pager
 id meiti_clv
-id meiti_dy_iv
 id meiti_img_tv
 id meiti_name_et
-id meiti_py_iv
 id meiti_radiogroup
 id meiti_rdo
 id meiti_rdo2
-id meiti_rl
 id meiti_shouji_et
-id meiti_wb_iv
 id message
 id message_content_root
 id message_content_view
@@ -3695,18 +3690,14 @@ id middle
 id mingpeople_recyclerview
 id mingren_celebrity_fl
 id mingren_clv
-id mingren_dy_iv
 id mingren_iv_head
 id mingren_mima_et
 id mingren_name_et
 id mingren_name_tv
-id mingren_py_iv
-id mingren_rl
 id mingren_selfie_rv
 id mingren_sfz_et
 id mingren_shenfen_tv
 id mingren_shouji_et
-id mingren_wb_iv
 id mingzi_tv
 id mini
 id mode_default
@@ -3764,6 +3755,7 @@ id my_xiaohb_iv
 id my_xiaohb_rl
 id my_zdy_money
 id name
+id nameEt
 id navigation_header_container
 id nc_name
 id nc_rl
@@ -3787,6 +3779,7 @@ id notification_main_column
 id notification_main_column_container
 id numIndicator
 id numIndicatorInside
+id numberEt
 id orginalstateLine
 id originalfTv2
 id originalfTv3
@@ -4037,6 +4030,7 @@ id showHome
 id showTitle
 id simpleRipple
 id smallLabel
+id smrz_clv
 id snackbar_action
 id snackbar_text
 id snap
@@ -4079,6 +4073,7 @@ id state_touch_scale
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
+id submit_auth
 id subscribe_main_layout
 id success_tv
 id surface_container
@@ -4405,6 +4400,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_attention_fan
+layout activity_authentication
 layout activity_binding_phone
 layout activity_channel
 layout activity_circle
@@ -4677,7 +4673,7 @@ layout notification_template_part_time
 layout page_loading
 layout page_net_error
 layout pager_no_comment
-layout password_logon_fragment
+layout password_login_fragment
 layout pay_external
 layout pay_main
 layout phone_login_fragment
@@ -5004,6 +5000,7 @@ mipmap qq_icon
 mipmap sex
 mipmap sex2
 mipmap shadow_add_titlebar_new
+mipmap sm_head
 mipmap sousuo
 mipmap sousuo2
 mipmap text_indicator
