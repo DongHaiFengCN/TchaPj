@@ -58,9 +58,9 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int action_settings = 0x7f0a012f;
-        public static final int app_name = 0x7f0a014b;
-        public static final int hello_world = 0x7f0a0192;
+        public static final int action_settings = 0x7f0a0130;
+        public static final int app_name = 0x7f0a014d;
+        public static final int hello_world = 0x7f0a019b;
     }
     public static final class style {
         private style() {}

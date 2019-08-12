@@ -33,8 +33,6 @@ public class HomeFragment_ViewBinding implements Unbinder {
 
   private View view2131755930;
 
-  private View view2131755026;
-
   private View view2131756249;
 
   private View view2131756251;
@@ -99,14 +97,6 @@ public class HomeFragment_ViewBinding implements Unbinder {
     target.media_view_pager = Utils.findRequiredViewAsType(source, R.id.media_view_pager, "field 'media_view_pager'", ViewPager.class);
     target.media_ll_dot = Utils.findRequiredViewAsType(source, R.id.media_ll_dot, "field 'media_ll_dot'", LinearLayout.class);
     target.circle_recycle = Utils.findRequiredViewAsType(source, R.id.circle_recycle, "field 'circle_recycle'", RecyclerView.class);
-    view = Utils.findRequiredView(source, R.id.home, "method 'onViewClicked'");
-    view2131755026 = view;
-    view.setOnClickListener(new DebouncingOnClickListener() {
-      @Override
-      public void doClick(View p0) {
-        target.onViewClicked(p0);
-      }
-    });
     view = Utils.findRequiredView(source, R.id.follow_more, "method 'onViewClicked'");
     view2131756249 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
@@ -182,8 +172,6 @@ public class HomeFragment_ViewBinding implements Unbinder {
     view2131755925 = null;
     view2131755930.setOnClickListener(null);
     view2131755930 = null;
-    view2131755026.setOnClickListener(null);
-    view2131755026 = null;
     view2131756249.setOnClickListener(null);
     view2131756249 = null;
     view2131756251.setOnClickListener(null);

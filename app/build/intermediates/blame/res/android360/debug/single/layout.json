@@ -4,16 +4,16 @@
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/fragment_squareinfo_test5.xml"
     },
     {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/abc_alert_dialog_title_material.xml",
-        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/res/layout/abc_alert_dialog_title_material.xml"
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/activity_friend_release.xml",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/activity_friend_release.xml"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/progress_error_view.xml",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/progress_error_view.xml"
     },
     {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/activity_friend_release.xml",
-        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/activity_friend_release.xml"
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/notification_template_big_media.xml",
@@ -24,12 +24,12 @@
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/fragment_channel.xml"
     },
     {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/include_viewpager.xml",
-        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/convenientbanner-2.0.5.aar/e0c219ea337288154b6ee64efa87e33a/res/layout/include_viewpager.xml"
-    },
-    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/item_text_list.xml",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/layout/item_text_list.xml"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/include_viewpager.xml",
+        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/convenientbanner-2.0.5.aar/e0c219ea337288154b6ee64efa87e33a/res/layout/include_viewpager.xml"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/layout/activity_danmu.xml",

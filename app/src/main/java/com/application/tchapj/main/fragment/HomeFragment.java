@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
@@ -29,6 +31,7 @@ import android.widget.ViewFlipper;
 import com.application.tchapj.App;
 import com.application.tchapj.Constants;
 import com.application.tchapj.H5UrlData;
+import com.application.tchapj.MainActivity;
 import com.application.tchapj.R;
 import com.application.tchapj.WebViewActivity;
 import com.application.tchapj.base.BaseMvpFragment;
@@ -53,6 +56,8 @@ import com.application.tchapj.my.bean.AlipayPrivateKeyBean;
 import com.application.tchapj.my.bean.QiniuBean;
 import com.application.tchapj.search.activity.SearchActivity;
 import com.application.tchapj.utils.UpdateManager;
+import com.application.tchapj.utils.Utils;
+import com.application.tchapj.utils2.SharedPreferences;
 import com.application.tchapj.utils2.TypeTextView;
 import com.application.tchapj.utils2.share.SharedPreferencesUtils;
 import com.application.tchapj.widiget.DensityUtil;
@@ -195,18 +200,19 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
 
     @Override
     public void initUI() {
+     /*   int statusBarHeight = Utils.getStatusBarHeight(getActivity());
+        ((MainActivity) getActivity()).setTopBarMarginTop(statusBarHeight);*/
 
         ScrollView.smoothScrollTo(0, 0);//设置scrollview焦点在顶部
         follow_recycle.setFocusable(false);
         circle_recycle.setFocusable(false);
 
-
-        if(SharedPreferencesUtils.getInstance().getUserInfo() != null && SharedPreferencesUtils.getInstance().getUserInfo().getInfo() != null
-                && !SharedPreferencesUtils.getInstance().getUserInfo().getInfo().equals("0")){
+ /*       if (SharedPreferencesUtils.getInstance().getUserInfo() != null && SharedPreferencesUtils.getInstance().getUserInfo() != null
+                && !SharedPreferencesUtils.getInstance().getUserInfo().equals("0")) {
             ic_spot.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             ic_spot.setVisibility(View.GONE);
-        }
+        }*/
 
         Titles.add("找名人为产品做品牌代言？");
         Titles.add("找媒体为企业做营销策划？");
@@ -214,39 +220,8 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
         Titles.add("点击搜索名人、媒体、圈子达人");
 
         et_search.start("查找名人、平台、个人自媒体");
-
-        /*et_search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    et_search.setHint("");
-                } else {
-                    et_search.setHint("查找名人、平台、个人自媒体");
-                }
-            }
-        });
-
-        et_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    //hideSoftInput();
-//                    Toast.makeText(getContext(),et_search.getText().toString(),Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getContext(), WebViewActivity.class);
-                    intent.putExtra(WebViewActivity.URL_KEY, H5UrlData.SEARCH_LIST + et_search.getText().toString() + "&member=" + App.getId() + "&phone=13345122570");
-                    intent.putExtra(WebViewActivity.TITLE, "");
-                    startActivity(intent);
-                    et_search.setText("");
-                    return true;
-                }
-                return false;
-            }
-        });
-*/
         headerHeight = getResources().getDimension(R.dimen.dimen_160);
         minHeaderHeight = getResources().getDimension(R.dimen.abc_action_bar_default_height_material);
-
-        //setActionBar();
 
     }
 
@@ -254,16 +229,16 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
      * @param view
      */
     // 点击事件  R.id.circle_more, 老版本找圈子的更多
-    @OnClick({R.id.home, R.id.search_rl, R.id.follow_more, R.id.person_more
+    @OnClick({R.id.search_rl, R.id.follow_more, R.id.person_more
             , R.id.media_more, R.id.ll_person, R.id.ll_media
             , R.id.ll_circle, R.id.ll_response, R.id.ic_message})
     public void onViewClicked(View view) {
         Intent intent;
         hideSoftInput();
         switch (view.getId()) {
-            case R.id.home:
+         /*   case R.id.home:
                 hideSoftInput();
-                break;
+                break;*/
 
             case R.id.search_rl: // 搜索
                 intent = new Intent(getActivity(), SearchActivity.class);
@@ -318,10 +293,10 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
                 break;
             case R.id.ic_message: //消息
 
-                if (App.getId()==null) {
+                if (App.getId() == null) {
                     intent = new Intent(getActivity(), LoginMainActivity.class);
                     startActivity(intent);
-                } else  {
+                } else {
                     intent = new Intent(getActivity(), MessagenotificationActivity.class);
                     startActivity(intent);
                 }
@@ -350,7 +325,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
      */
     private void getNewestVersion() {
         StartInitiationDataModel startInitiationDataModel = SharedPreferencesUtils.getInstance().getStartInitiationData();
-        if(startInitiationDataModel != null && startInitiationDataModel.getVersionInfo() != null){
+        if (startInitiationDataModel != null && startInitiationDataModel.getVersionInfo() != null) {
             checkUpdateApk(startInitiationDataModel.getVersionInfo().getVersionCode(), startInitiationDataModel.getVersionInfo().getApkUrl());
         }
     }
@@ -376,7 +351,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
     // 轮播图
     private void initBannerView(final List<HomeTopData.HomeTopDataResult.HomeBanner> bannerList) {
 
-        if(bannerList.size()>0){
+        if (bannerList.size() > 0) {
             banners = bannerList;
 
             banner.setPages(new CBViewHolderCreator() {
@@ -402,7 +377,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
                     String shareContent = banners.get(position).getIntro();
                     String shareSmallImg = banners.get(position).getLitimg();
                     //startWeb("http://124.133.43.12:8087/weihubaiying/gh5.html", "");
-                    WebViewActivity.startShare(getActivity(), "All", href, name, shareContent,shareSmallImg );
+                    WebViewActivity.startShare(getActivity(), "All", href, name, shareContent, shareSmallImg);
                 }
             });
         }
@@ -421,7 +396,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
     // 初始化滚动 头条
     private void initViewFlipper(final List<HomeTopData.HomeTopDataResult.HomeTopNews> news) {
 
-        if(news.size()>0){
+        if (news.size() > 0) {
 
             final int size = news.size();
 
@@ -463,7 +438,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
                         for (int i = 0; i < 3; i++) {
                             Thread.sleep(6000);//先休眠3秒
 
-                            if(et_search != null) {
+                            if (et_search != null) {
                                 et_search.start(Titles.get(i));//开始展示
                             }
                         }
@@ -548,18 +523,23 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         int pos = position + curIndex * pageSize;
 
-                        if(App.getId()==null){
+                        if (App.getId() == null) {
                             Intent intent = new Intent(getActivity(), WebViewActivity.class);
 
                             intent.putExtra(WebViewActivity.URL_KEY
                                     , H5UrlData.PEROSNDETAILS2 + mingrenList.get(pos).getId() + "&memberId=");
+                    /*        intent.putExtra(WebViewActivity.URL_KEY
+                                    ,  mingrenList.get(pos).getId());*/
+
                             intent.putExtra(WebViewActivity.TITLE, "");
                             startActivity(intent);
-                        }else {
+                        } else {
                             Intent intent = new Intent(getActivity(), WebViewActivity.class);
 
                             intent.putExtra(WebViewActivity.URL_KEY
                                     , H5UrlData.PEROSNDETAILS2 + mingrenList.get(pos).getId() + "&memberId=" + App.getId());
+                   /*         intent.putExtra(WebViewActivity.URL_KEY
+                                    ,  mingrenList.get(pos).getId());*/
                             intent.putExtra(WebViewActivity.TITLE, "");
                             startActivity(intent);
                         }
@@ -609,7 +589,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
             inflater2 = LayoutInflater.from(getApp());
             //总的页数=总数/每页数量，并取整
             pageCount = (int) Math.ceil(mediaList.size() * 1.0 / pageSize2);
-            List<View>  mPagerList = new ArrayList<View>();
+            List<View> mPagerList = new ArrayList<View>();
             for (int i = 0; i < pageCount; i++) {
                 //每个页面都是inflate出一个新实例
                 GridView gridView = (GridView) inflater2.inflate(R.layout.gridview2, media_view_pager, false);
@@ -621,14 +601,14 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         int pos = position + curIndex * pageSize2;
 
-                        if(App.getId()==null){
+                        if (App.getId() == null) {
                             Intent intent = new Intent(getActivity(), WebViewActivity.class);
 
                             intent.putExtra(WebViewActivity.URL_KEY
                                     , H5UrlData.PEROSNDETAILS2 + mediaList.get(pos).getId() + "&memberId=");
                             intent.putExtra(WebViewActivity.TITLE, "");
                             startActivity(intent);
-                        }else {
+                        } else {
                             Intent intent = new Intent(getActivity(), WebViewActivity.class);
 
                             intent.putExtra(WebViewActivity.URL_KEY
@@ -697,19 +677,17 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
     @Override
     public void onGetQiniuBeanResult(QiniuBean qiniuBean) {
         if (qiniuBean != null && "000".equals(qiniuBean.getCode())) {
-            if(qiniuBean.getData() != null){
-                App.QiniuToken =qiniuBean.getData().getUploadToken();
+            if (qiniuBean.getData() != null) {
+                App.QiniuToken = qiniuBean.getData().getUploadToken();
             }
         }
     }
-
 
     @Override
     public void onGetAlipayPrivateKeyBeanResult(AlipayPrivateKeyBean alipayPrivateKeyBean) {
         if ("000".equals(alipayPrivateKeyBean.getCode())) {
             String RSA2_PRIVATE = alipayPrivateKeyBean.getData().getPrivatekey();
-            KV kv = new KV(getActivity());
-            kv.put(Constants.RSA2_PRIVATE, RSA2_PRIVATE).commit();
+            SharedPreferences.getInstance().setString(getString(R.string.RSA2_PRIVATE), RSA2_PRIVATE);
 
         }
     }
@@ -845,6 +823,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
         mLlDot.getChildAt(0).findViewById(R.id.v_dot)
                 .setBackgroundResource(R.drawable.dot_selected);
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
             public void onPageSelected(int position) {
                 // 取消圆点选中
                 mLlDot.getChildAt(curIndex)
@@ -857,9 +836,11 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
                 curIndex = position;
             }
 
+            @Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
             }
 
+            @Override
             public void onPageScrollStateChanged(int arg0) {
             }
         });
@@ -877,6 +858,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
         media_ll_dot.getChildAt(0).findViewById(R.id.v_dot)
                 .setBackgroundResource(R.drawable.dot_selected);
         media_view_pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
             public void onPageSelected(int position) {
                 // 取消圆点选中
                 media_ll_dot.getChildAt(curIndex)
@@ -889,15 +871,17 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
                 curIndex = position;
             }
 
+            @Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
             }
 
+            @Override
             public void onPageScrollStateChanged(int arg0) {
             }
         });
     }
 
-    public interface HomeFragmentListener{
+    public interface HomeFragmentListener {
         void tackImgClick();
 
     }
@@ -909,7 +893,7 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
 
     //检查更新
     private void checkUpdateApk(int newestVersionCodeStr, String downloadStr) {
-        if ( !StringUtils.isEmpty(downloadStr)) {
+        if (!StringUtils.isEmpty(downloadStr)) {
             UpdateManager manager = UpdateManager.getInstance();
             manager.setContext(getActivity());
             manager.checkUpdate(newestVersionCodeStr, downloadStr);

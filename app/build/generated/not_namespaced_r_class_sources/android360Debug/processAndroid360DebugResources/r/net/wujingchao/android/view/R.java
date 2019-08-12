@@ -38,7 +38,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int app_name = 0x7f0a014b;
+        public static final int app_name = 0x7f0a014d;
     }
     public static final class styleable {
         private styleable() {}

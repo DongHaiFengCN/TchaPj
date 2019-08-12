@@ -25,10 +25,10 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int app_name = 0x7f0a014b;
-        public static final int gravity_center = 0x7f0a0188;
-        public static final int gravity_left = 0x7f0a0189;
-        public static final int gravity_right = 0x7f0a018a;
+        public static final int app_name = 0x7f0a014d;
+        public static final int gravity_center = 0x7f0a0190;
+        public static final int gravity_left = 0x7f0a0191;
+        public static final int gravity_right = 0x7f0a0192;
     }
     public static final class styleable {
         private styleable() {}

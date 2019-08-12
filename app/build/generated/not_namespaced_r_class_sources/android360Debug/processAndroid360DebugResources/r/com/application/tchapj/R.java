@@ -283,8 +283,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int activityChooserViewStyle=0x7f0100db;
-        /** 内容文字颜色
-         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -293,8 +292,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int ad_text_content_color=0x7f01005e;
-        /** 内容文字大小
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -304,8 +302,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int ad_text_content_size=0x7f01005f;
-        /** 前缀文字颜色
-         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -314,8 +311,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int ad_text_front_color=0x7f01005c;
-        /** 前缀文字大小
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -325,8 +321,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int ad_text_front_size=0x7f01005d;
-        /** 文字停留在中心的时间
-         <p>Must be an integer value, such as "<code>100</code>".
+        /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -334,8 +329,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int ad_text_view_interval=0x7f01005b;
-        /** 文字进入与消失的时间
-         <p>Must be an integer value, such as "<code>100</code>".
+        /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -1312,10 +1306,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int ci_selectedRadiusColor=0x7f01016a;
-        /** 
-        Whether or not this view should have a circular clip applied
-        
-         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -2926,8 +2917,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int gcp_progress_text_size=0x7f0101ec;
-        /** <attr name="gcp_progress_text_offset" format="dimension"/>
-         <p>Must be one of the following constant values.</p>
+        /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
@@ -3240,10 +3230,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int iconifiedByDefault=0x7f0102d9;
-        /** 
-        The fixed aspect ratio to use in aspect ratio adjustments.
-        
-         <p>Must be a floating point value, such as "<code>1.2</code>".
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -3251,11 +3238,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int imageAspectRatio=0x7f010215;
-        /** 
-        What kind of aspect ratio adjustment to do.  It must be one of "none", "adjust_width",
-        or "adjust_height".
-        
-         <p>Must be one of the following constant values.</p>
+        /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
@@ -4193,18 +4176,17 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int layout_srlBackgroundColor=0x7f01031a;
-        /** 填满布局
-         <p>Must be one of the following constant values.</p>
+        /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>Translate</code></td><td>0</td><td></td></tr>
-<tr><td><code>Scale</code></td><td>1</td><td>平行移动</td></tr>
-<tr><td><code>FixedBehind</code></td><td>2</td><td>拉伸形变</td></tr>
-<tr><td><code>FixedFront</code></td><td>3</td><td>固定在背后</td></tr>
-<tr><td><code>MatchLayout</code></td><td>4</td><td>固定在前面</td></tr>
+<tr><td><code>Scale</code></td><td>1</td><td></td></tr>
+<tr><td><code>FixedBehind</code></td><td>2</td><td></td></tr>
+<tr><td><code>FixedFront</code></td><td>3</td><td></td></tr>
+<tr><td><code>MatchLayout</code></td><td>4</td><td></td></tr>
 </table>
          */
         public static final int layout_srlSpinnerStyle=0x7f010031;
@@ -4646,17 +4628,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
          */
         public static final int nice9_tipText=0x7f01020d;
-        /** the max length of hint content
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
          */
         public static final int npv_AlternativeHint=0x7f01023a;
-        /** just used to measure maxWidth for wrap_content without hint,
-            the string array will never be displayed.
-            you can set this attr if you want to keep the wraped numberpickerview
-            width unchanged when alter the content list
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int npv_AlternativeTextArrayWithMeasureHint=0x7f010238;
@@ -4749,14 +4726,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
          */
         public static final int npv_RespondChangeOnDetached=0x7f01022f;
-        /** set number of item displayed, default is 3
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be an integer value, such as "<code>100</code>".
          */
         public static final int npv_ShowCount=0x7f01021f;
-        /** set if show divider, default is true
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
          */
@@ -5781,8 +5756,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int round_radius=0x7f0102ed;
-        /** 行个数
-         <p>Must be an integer value, such as "<code>100</code>".
+        /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -6117,8 +6091,7 @@ containing a value of this type.
 </table>
          */
         public static final int show_mode1=0x7f010328;
-        /** 列个数
-         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -6338,16 +6311,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int srlAnimatingColor=0x7f010129;
-        /** 固定在背后
-         <p>Must be one of the following constant values.</p>
+        /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>Translate</code></td><td>0</td><td></td></tr>
-<tr><td><code>Scale</code></td><td>1</td><td>平行移动</td></tr>
-<tr><td><code>FixedBehind</code></td><td>2</td><td>拉伸形变</td></tr>
+<tr><td><code>Scale</code></td><td>1</td><td></td></tr>
+<tr><td><code>FixedBehind</code></td><td>2</td><td></td></tr>
 </table>
          */
         public static final int srlClassicsSpinnerStyle=0x7f01004d;
@@ -7169,22 +7141,19 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int tabTextSize=0x7f01008e;
-        /** tab正常背景
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int tab_background_focus=0x7f01026f;
-        /** tab字体选中颜色
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int tab_background_normal=0x7f01026e;
-        /** popwindow弹出动画
-         <p>Must be an integer value, such as "<code>100</code>".
+        /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -7192,8 +7161,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int tab_max_ems=0x7f010271;
-        /** tab单行最多字数
-         <p>Must be an integer value, such as "<code>100</code>".
+        /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -7201,13 +7169,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int tab_max_lines=0x7f010272;
-        /** tab选中背景
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int tab_pop_anim=0x7f010270;
-        /** tab字体正常颜色
-         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -7216,8 +7182,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int tab_text_color_focus=0x7f01026d;
-        /** tab字体大小
-         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -12011,11 +11976,12 @@ containing a value of this type.
         public static final int ControlSucceed=0x7f0a0119;
         public static final int Friday=0x7f0a011a;
         public static final int Monday=0x7f0a011b;
-        public static final int Saturday=0x7f0a011c;
-        public static final int Sunday=0x7f0a011d;
-        public static final int Thursday=0x7f0a011e;
-        public static final int Tuesday=0x7f0a011f;
-        public static final int Wednesday=0x7f0a0120;
+        public static final int RSA2_PRIVATE=0x7f0a011c;
+        public static final int Saturday=0x7f0a011d;
+        public static final int Sunday=0x7f0a011e;
+        public static final int Thursday=0x7f0a011f;
+        public static final int Tuesday=0x7f0a0120;
+        public static final int Wednesday=0x7f0a0121;
         public static final int abc_action_bar_home_description=0x7f0a0000;
         public static final int abc_action_bar_up_description=0x7f0a0001;
         public static final int abc_action_menu_overflow_description=0x7f0a0002;
@@ -12024,18 +11990,18 @@ containing a value of this type.
         public static final int abc_activitychooserview_choose_application=0x7f0a0005;
         public static final int abc_capital_off=0x7f0a0006;
         public static final int abc_capital_on=0x7f0a0007;
-        public static final int abc_font_family_body_1_material=0x7f0a0121;
-        public static final int abc_font_family_body_2_material=0x7f0a0122;
-        public static final int abc_font_family_button_material=0x7f0a0123;
-        public static final int abc_font_family_caption_material=0x7f0a0124;
-        public static final int abc_font_family_display_1_material=0x7f0a0125;
-        public static final int abc_font_family_display_2_material=0x7f0a0126;
-        public static final int abc_font_family_display_3_material=0x7f0a0127;
-        public static final int abc_font_family_display_4_material=0x7f0a0128;
-        public static final int abc_font_family_headline_material=0x7f0a0129;
-        public static final int abc_font_family_menu_material=0x7f0a012a;
-        public static final int abc_font_family_subhead_material=0x7f0a012b;
-        public static final int abc_font_family_title_material=0x7f0a012c;
+        public static final int abc_font_family_body_1_material=0x7f0a0122;
+        public static final int abc_font_family_body_2_material=0x7f0a0123;
+        public static final int abc_font_family_button_material=0x7f0a0124;
+        public static final int abc_font_family_caption_material=0x7f0a0125;
+        public static final int abc_font_family_display_1_material=0x7f0a0126;
+        public static final int abc_font_family_display_2_material=0x7f0a0127;
+        public static final int abc_font_family_display_3_material=0x7f0a0128;
+        public static final int abc_font_family_display_4_material=0x7f0a0129;
+        public static final int abc_font_family_headline_material=0x7f0a012a;
+        public static final int abc_font_family_menu_material=0x7f0a012b;
+        public static final int abc_font_family_subhead_material=0x7f0a012c;
+        public static final int abc_font_family_title_material=0x7f0a012d;
         public static final int abc_search_hint=0x7f0a0008;
         public static final int abc_searchview_description_clear=0x7f0a0009;
         public static final int abc_searchview_description_query=0x7f0a000a;
@@ -12045,59 +12011,63 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f0a000e;
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000f;
         public static final int abc_toolbar_collapse_description=0x7f0a0010;
-        public static final int about=0x7f0a012d;
-        public static final int account_=0x7f0a012e;
-        public static final int action_settings=0x7f0a012f;
-        public static final int action_sign_in=0x7f0a0130;
-        public static final int action_sign_in_short=0x7f0a0131;
-        public static final int activities_link_url=0x7f0a0132;
-        public static final int activities_require=0x7f0a0133;
-        public static final int activities_to_guide=0x7f0a0134;
-        public static final int activity_countdown=0x7f0a0135;
-        public static final int activity_materials=0x7f0a0136;
-        public static final int age=0x7f0a0137;
-        public static final int agentweb_camera=0x7f0a0138;
-        public static final int agentweb_cancel=0x7f0a0139;
-        public static final int agentweb_click_open=0x7f0a013a;
-        public static final int agentweb_coming_soon_download=0x7f0a013b;
-        public static final int agentweb_current_downloading_progress=0x7f0a013c;
-        public static final int agentweb_default_page_error=0x7f0a013d;
-        public static final int agentweb_download=0x7f0a013e;
-        public static final int agentweb_download_fail=0x7f0a013f;
-        public static final int agentweb_download_task_has_been_exist=0x7f0a0140;
-        public static final int agentweb_file_chooser=0x7f0a0141;
-        public static final int agentweb_file_download=0x7f0a0142;
-        public static final int agentweb_honeycomblow=0x7f0a0143;
-        public static final int agentweb_leave=0x7f0a0144;
-        public static final int agentweb_leave_app_and_go_other_page=0x7f0a0145;
-        public static final int agentweb_loading=0x7f0a0146;
-        public static final int agentweb_max_file_length_limit=0x7f0a0147;
-        public static final int agentweb_tips=0x7f0a0148;
-        public static final int agentweb_trickter=0x7f0a0149;
-        public static final int alphabet_and_number=0x7f0a014a;
-        public static final int app_name=0x7f0a014b;
-        public static final int appbar_scrolling_view_behavior=0x7f0a014c;
-        public static final int auth_google_play_services_client_facebook_display_name=0x7f0a014d;
-        public static final int auth_google_play_services_client_google_display_name=0x7f0a014e;
-        public static final int author_=0x7f0a014f;
-        public static final int author_jenly=0x7f0a0150;
-        public static final int auto_login_chk_txt=0x7f0a0151;
-        public static final int bottom_sheet_behavior=0x7f0a0152;
-        public static final int brvah_app_name=0x7f0a0153;
+        public static final int about=0x7f0a012e;
+        public static final int account_=0x7f0a012f;
+        public static final int action_settings=0x7f0a0130;
+        public static final int action_sign_in=0x7f0a0131;
+        public static final int action_sign_in_short=0x7f0a0132;
+        public static final int activities_link_url=0x7f0a0133;
+        public static final int activities_require=0x7f0a0134;
+        public static final int activities_to_guide=0x7f0a0135;
+        public static final int activity_countdown=0x7f0a0136;
+        public static final int activity_materials=0x7f0a0137;
+        public static final int age=0x7f0a0138;
+        public static final int agentweb_camera=0x7f0a0139;
+        public static final int agentweb_cancel=0x7f0a013a;
+        public static final int agentweb_click_open=0x7f0a013b;
+        public static final int agentweb_coming_soon_download=0x7f0a013c;
+        public static final int agentweb_current_downloading_progress=0x7f0a013d;
+        public static final int agentweb_default_page_error=0x7f0a013e;
+        public static final int agentweb_download=0x7f0a013f;
+        public static final int agentweb_download_fail=0x7f0a0140;
+        public static final int agentweb_download_task_has_been_exist=0x7f0a0141;
+        public static final int agentweb_file_chooser=0x7f0a0142;
+        public static final int agentweb_file_download=0x7f0a0143;
+        public static final int agentweb_honeycomblow=0x7f0a0144;
+        public static final int agentweb_leave=0x7f0a0145;
+        public static final int agentweb_leave_app_and_go_other_page=0x7f0a0146;
+        public static final int agentweb_loading=0x7f0a0147;
+        public static final int agentweb_max_file_length_limit=0x7f0a0148;
+        public static final int agentweb_tips=0x7f0a0149;
+        public static final int agentweb_trickter=0x7f0a014a;
+        public static final int alipay=0x7f0a014b;
+        public static final int alphabet_and_number=0x7f0a014c;
+        public static final int app_name=0x7f0a014d;
+        public static final int appbar_scrolling_view_behavior=0x7f0a014e;
+        public static final int attentions=0x7f0a014f;
+        public static final int authState=0x7f0a0150;
+        public static final int auth_google_play_services_client_facebook_display_name=0x7f0a0151;
+        public static final int auth_google_play_services_client_google_display_name=0x7f0a0152;
+        public static final int author_=0x7f0a0153;
+        public static final int author_jenly=0x7f0a0154;
+        public static final int auto_login_chk_txt=0x7f0a0155;
+        public static final int birthday=0x7f0a0156;
+        public static final int bottom_sheet_behavior=0x7f0a0157;
+        public static final int brvah_app_name=0x7f0a0158;
         public static final int brvah_load_end=0x7f0a0030;
         public static final int brvah_load_failed=0x7f0a0031;
         public static final int brvah_loading=0x7f0a0032;
-        public static final int btn_click_login=0x7f0a0154;
-        public static final int btn_follow_click_login=0x7f0a0155;
-        public static final int can_not_find_relevant_content=0x7f0a0156;
-        public static final int cancel=0x7f0a0157;
-        public static final int car_search_hint=0x7f0a0158;
-        public static final int car_search_tip=0x7f0a0159;
-        public static final int character_counter_pattern=0x7f0a015a;
-        public static final int choose_file=0x7f0a015b;
-        public static final int circle_content=0x7f0a015c;
-        public static final int circle_of_friends=0x7f0a015d;
-        public static final int cloud_ctrl=0x7f0a015e;
+        public static final int btn_click_login=0x7f0a0159;
+        public static final int btn_follow_click_login=0x7f0a015a;
+        public static final int can_not_find_relevant_content=0x7f0a015b;
+        public static final int cancel=0x7f0a015c;
+        public static final int car_search_hint=0x7f0a015d;
+        public static final int car_search_tip=0x7f0a015e;
+        public static final int character_counter_pattern=0x7f0a015f;
+        public static final int choose_file=0x7f0a0160;
+        public static final int circle_content=0x7f0a0161;
+        public static final int circle_of_friends=0x7f0a0162;
+        public static final int cloud_ctrl=0x7f0a0163;
         public static final int common_google_play_services_api_unavailable_text=0x7f0a0011;
         public static final int common_google_play_services_enable_button=0x7f0a0012;
         public static final int common_google_play_services_enable_text=0x7f0a0013;
@@ -12127,139 +12097,154 @@ containing a value of this type.
         public static final int common_open_on_phone=0x7f0a002b;
         public static final int common_signin_button_text=0x7f0a002c;
         public static final int common_signin_button_text_long=0x7f0a002d;
-        public static final int contact_cooperation=0x7f0a015f;
-        public static final int cooperated=0x7f0a0160;
-        public static final int copy=0x7f0a0161;
-        public static final int csdn_=0x7f0a0162;
-        public static final int csdn_jenly=0x7f0a0163;
-        public static final int defaule_always_message=0x7f0a0164;
-        public static final int defaule_first_message=0x7f0a0165;
-        public static final int dialog_consultation_verify_identity_content_str=0x7f0a0166;
-        public static final int dialog_consultation_verify_identity_title_str=0x7f0a0167;
-        public static final int dialog_loading=0x7f0a0168;
-        public static final int dialog_title=0x7f0a0169;
-        public static final int douyinoriginal=0x7f0a016a;
-        public static final int download_activity_materials=0x7f0a016b;
-        public static final int drawer_btn_rss=0x7f0a016c;
-        public static final int duration_of_activity=0x7f0a016d;
-        public static final int email_=0x7f0a016e;
-        public static final int email_jenly=0x7f0a016f;
-        public static final int emotional_state=0x7f0a0170;
-        public static final int empty_directory=0x7f0a0171;
-        public static final int error_field_required=0x7f0a0172;
-        public static final int error_incorrect_password=0x7f0a0173;
-        public static final int error_invalid_email=0x7f0a0174;
-        public static final int error_invalid_password=0x7f0a0175;
-        public static final int error_selecting_file=0x7f0a0176;
-        public static final int evenote_title=0x7f0a0177;
-        public static final int fans_=0x7f0a0178;
-        public static final int fans_num=0x7f0a0179;
-        public static final int fetch_line=0x7f0a017a;
-        public static final int fetch_linelist_failed=0x7f0a017b;
-        public static final int fetch_reslist_failed=0x7f0a017c;
-        public static final int fetch_resource_suc=0x7f0a017d;
-        public static final int fetchline_process_tip=0x7f0a017e;
-        public static final int filter_reset=0x7f0a017f;
-        public static final int forget_password=0x7f0a0180;
-        public static final int friend_copywriting=0x7f0a0181;
-        public static final int friend_release_diaog_content1=0x7f0a0182;
-        public static final int friend_release_diaog_content2=0x7f0a0183;
-        public static final int getline_fail_tip=0x7f0a0184;
-        public static final int getline_suc_tip=0x7f0a0185;
+        public static final int contact_cooperation=0x7f0a0164;
+        public static final int cooperated=0x7f0a0165;
+        public static final int copy=0x7f0a0166;
+        public static final int csdn_=0x7f0a0167;
+        public static final int csdn_jenly=0x7f0a0168;
+        public static final int defaule_always_message=0x7f0a0169;
+        public static final int defaule_first_message=0x7f0a016a;
+        public static final int dialog_consultation_verify_identity_content_str=0x7f0a016b;
+        public static final int dialog_consultation_verify_identity_title_str=0x7f0a016c;
+        public static final int dialog_loading=0x7f0a016d;
+        public static final int dialog_title=0x7f0a016e;
+        public static final int douyinoriginal=0x7f0a016f;
+        public static final int download_activity_materials=0x7f0a0170;
+        public static final int drawer_btn_rss=0x7f0a0171;
+        public static final int duration_of_activity=0x7f0a0172;
+        public static final int dyState=0x7f0a0173;
+        public static final int email_=0x7f0a0174;
+        public static final int email_jenly=0x7f0a0175;
+        public static final int emotional_state=0x7f0a0176;
+        public static final int empty_directory=0x7f0a0177;
+        public static final int error_field_required=0x7f0a0178;
+        public static final int error_incorrect_password=0x7f0a0179;
+        public static final int error_invalid_email=0x7f0a017a;
+        public static final int error_invalid_password=0x7f0a017b;
+        public static final int error_selecting_file=0x7f0a017c;
+        public static final int evenote_title=0x7f0a017d;
+        public static final int faState=0x7f0a017e;
+        public static final int fans=0x7f0a017f;
+        public static final int fans_=0x7f0a0180;
+        public static final int fans_num=0x7f0a0181;
+        public static final int fetch_line=0x7f0a0182;
+        public static final int fetch_linelist_failed=0x7f0a0183;
+        public static final int fetch_reslist_failed=0x7f0a0184;
+        public static final int fetch_resource_suc=0x7f0a0185;
+        public static final int fetchline_process_tip=0x7f0a0186;
+        public static final int filter_reset=0x7f0a0187;
+        public static final int forget_password=0x7f0a0188;
+        public static final int friend_copywriting=0x7f0a0189;
+        public static final int friend_release_diaog_content1=0x7f0a018a;
+        public static final int friend_release_diaog_content2=0x7f0a018b;
+        public static final int getline_fail_tip=0x7f0a018c;
+        public static final int getline_suc_tip=0x7f0a018d;
         public static final int gif_tag=0x7f0a0033;
-        public static final int github_=0x7f0a0186;
-        public static final int github_jenly=0x7f0a0187;
-        public static final int gravity_center=0x7f0a0188;
-        public static final int gravity_left=0x7f0a0189;
-        public static final int gravity_right=0x7f0a018a;
-        public static final int hair_circle_of_douyingenpai=0x7f0a018b;
-        public static final int hair_circle_of_douyinoriginal=0x7f0a018c;
-        public static final int hair_circle_of_friends=0x7f0a018d;
-        public static final int hair_circle_of_weishigenpai=0x7f0a018e;
-        public static final int hair_weibo=0x7f0a018f;
-        public static final int head=0x7f0a0190;
-        public static final int hello_blank_fragment=0x7f0a0191;
-        public static final int hello_world=0x7f0a0192;
-        public static final int hint_fkyj=0x7f0a0193;
-        public static final int hint_room_chat=0x7f0a0194;
-        public static final int hint_search=0x7f0a0195;
-        public static final int icon=0x7f0a0196;
-        public static final int ijkplayer_dummy=0x7f0a0197;
-        public static final int image_button_content_description=0x7f0a0198;
-        public static final int internal_storage=0x7f0a0199;
-        public static final int ip_all_images=0x7f0a019a;
-        public static final int ip_complete=0x7f0a019b;
-        public static final int ip_folder_image_count=0x7f0a019c;
-        public static final int ip_origin=0x7f0a019d;
-        public static final int ip_origin_size=0x7f0a019e;
-        public static final int ip_photo_crop=0x7f0a019f;
-        public static final int ip_preview=0x7f0a01a0;
-        public static final int ip_preview_count=0x7f0a01a1;
-        public static final int ip_preview_image_count=0x7f0a01a2;
-        public static final int ip_select_complete=0x7f0a01a3;
-        public static final int ip_select_limit=0x7f0a01a4;
-        public static final int islive=0x7f0a01a5;
-        public static final int item_title_txt_catagory_inland=0x7f0a01a6;
-        public static final int item_title_txt_catagory_internal=0x7f0a01a7;
-        public static final int item_title_txt_catagory_system=0x7f0a01a8;
-        public static final int item_title_txt_catagory_yanshi=0x7f0a01a9;
-        public static final int jcd_name=0x7f0a01aa;
-        public static final int l=0x7f0a01ab;
-        public static final int lable_password=0x7f0a01ac;
-        public static final int lable_username_number=0x7f0a01ad;
-        public static final int lead_task_automatic_save_txt=0x7f0a01ae;
-        public static final int lead_task_examine_txt=0x7f0a01af;
-        public static final int lead_task_task_require_txt=0x7f0a01b0;
-        public static final int lead_task_wechat_upload_remind_txt=0x7f0a01b1;
-        public static final int led_the_task=0x7f0a01b2;
-        public static final int limiting_conditions=0x7f0a01b3;
-        public static final int line_unavailable=0x7f0a01b4;
-        public static final int live_notice=0x7f0a01b5;
-        public static final int load_fail=0x7f0a01b6;
-        public static final int load_more_empty=0x7f0a01b7;
-        public static final int load_succeed=0x7f0a01b8;
-        public static final int loading=0x7f0a01b9;
-        public static final int location=0x7f0a01ba;
-        public static final int login=0x7f0a01bb;
-        public static final int login_btn_txt=0x7f0a01bc;
-        public static final int login_failed=0x7f0a01bd;
-        public static final int login_process_tip=0x7f0a01be;
-        public static final int login_suc_tip=0x7f0a01bf;
-        public static final int map_of_friend_circle=0x7f0a01c0;
-        public static final int mine_contribution=0x7f0a01c1;
-        public static final int mine_fans=0x7f0a01c2;
-        public static final int mine_follow=0x7f0a01c3;
-        public static final int mine_game=0x7f0a01c4;
-        public static final int mine_level=0x7f0a01c5;
-        public static final int mine_recharge=0x7f0a01c6;
-        public static final int mine_setting=0x7f0a01c7;
-        public static final int mine_starlight=0x7f0a01c8;
-        public static final int mine_task=0x7f0a01c9;
-        public static final int mine_watch=0x7f0a01ca;
-        public static final int money_times=0x7f0a01cb;
-        public static final int net_error_msg=0x7f0a01cc;
-        public static final int network_unavailable=0x7f0a01cd;
-        public static final int no_comment=0x7f0a01ce;
-        public static final int no_data_tip=0x7f0a01cf;
-        public static final int no_more=0x7f0a01d0;
+        public static final int github_=0x7f0a018e;
+        public static final int github_jenly=0x7f0a018f;
+        public static final int gravity_center=0x7f0a0190;
+        public static final int gravity_left=0x7f0a0191;
+        public static final int gravity_right=0x7f0a0192;
+        public static final int hair_circle_of_douyingenpai=0x7f0a0193;
+        public static final int hair_circle_of_douyinoriginal=0x7f0a0194;
+        public static final int hair_circle_of_friends=0x7f0a0195;
+        public static final int hair_circle_of_weishigenpai=0x7f0a0196;
+        public static final int hair_weibo=0x7f0a0197;
+        public static final int head=0x7f0a0198;
+        public static final int headimgurl=0x7f0a0199;
+        public static final int hello_blank_fragment=0x7f0a019a;
+        public static final int hello_world=0x7f0a019b;
+        public static final int hint_fkyj=0x7f0a019c;
+        public static final int hint_room_chat=0x7f0a019d;
+        public static final int hint_search=0x7f0a019e;
+        public static final int icon=0x7f0a019f;
+        public static final int id=0x7f0a01a0;
+        public static final int identity=0x7f0a01a1;
+        public static final int ijkplayer_dummy=0x7f0a01a2;
+        public static final int image_button_content_description=0x7f0a01a3;
+        public static final int input_card_number=0x7f0a01a4;
+        public static final int input_name=0x7f0a01a5;
+        public static final int internal_storage=0x7f0a01a6;
+        public static final int ip_all_images=0x7f0a01a7;
+        public static final int ip_complete=0x7f0a01a8;
+        public static final int ip_folder_image_count=0x7f0a01a9;
+        public static final int ip_origin=0x7f0a01aa;
+        public static final int ip_origin_size=0x7f0a01ab;
+        public static final int ip_photo_crop=0x7f0a01ac;
+        public static final int ip_preview=0x7f0a01ad;
+        public static final int ip_preview_count=0x7f0a01ae;
+        public static final int ip_preview_image_count=0x7f0a01af;
+        public static final int ip_select_complete=0x7f0a01b0;
+        public static final int ip_select_limit=0x7f0a01b1;
+        public static final int isFirstIn=0x7f0a01b2;
+        public static final int islive=0x7f0a01b3;
+        public static final int item_title_txt_catagory_inland=0x7f0a01b4;
+        public static final int item_title_txt_catagory_internal=0x7f0a01b5;
+        public static final int item_title_txt_catagory_system=0x7f0a01b6;
+        public static final int item_title_txt_catagory_yanshi=0x7f0a01b7;
+        public static final int jcd_name=0x7f0a01b8;
+        public static final int l=0x7f0a01b9;
+        public static final int lable_password=0x7f0a01ba;
+        public static final int lable_username_number=0x7f0a01bb;
+        public static final int lead_task_automatic_save_txt=0x7f0a01bc;
+        public static final int lead_task_examine_txt=0x7f0a01bd;
+        public static final int lead_task_task_require_txt=0x7f0a01be;
+        public static final int lead_task_wechat_upload_remind_txt=0x7f0a01bf;
+        public static final int led_the_task=0x7f0a01c0;
+        public static final int limiting_conditions=0x7f0a01c1;
+        public static final int line_unavailable=0x7f0a01c2;
+        public static final int lingState=0x7f0a01c3;
+        public static final int live_notice=0x7f0a01c4;
+        public static final int load_fail=0x7f0a01c5;
+        public static final int load_more_empty=0x7f0a01c6;
+        public static final int load_succeed=0x7f0a01c7;
+        public static final int loading=0x7f0a01c8;
+        public static final int location=0x7f0a01c9;
+        public static final int login=0x7f0a01ca;
+        public static final int loginName=0x7f0a01cb;
+        public static final int login_btn_txt=0x7f0a01cc;
+        public static final int login_failed=0x7f0a01cd;
+        public static final int login_process_tip=0x7f0a01ce;
+        public static final int login_suc_tip=0x7f0a01cf;
+        public static final int map_of_friend_circle=0x7f0a01d0;
+        public static final int mine_contribution=0x7f0a01d1;
+        public static final int mine_fans=0x7f0a01d2;
+        public static final int mine_follow=0x7f0a01d3;
+        public static final int mine_game=0x7f0a01d4;
+        public static final int mine_level=0x7f0a01d5;
+        public static final int mine_recharge=0x7f0a01d6;
+        public static final int mine_setting=0x7f0a01d7;
+        public static final int mine_starlight=0x7f0a01d8;
+        public static final int mine_task=0x7f0a01d9;
+        public static final int mine_watch=0x7f0a01da;
+        public static final int money_times=0x7f0a01db;
+        public static final int mtState=0x7f0a01dc;
+        public static final int net_error_msg=0x7f0a01dd;
+        public static final int network_unavailable=0x7f0a01de;
+        public static final int nickName=0x7f0a01df;
+        public static final int no_comment=0x7f0a01e0;
+        public static final int no_data_tip=0x7f0a01e1;
+        public static final int no_more=0x7f0a01e2;
         public static final int no_url=0x7f0a0101;
-        public static final int normal=0x7f0a01d1;
-        public static final int occupation=0x7f0a01d2;
-        public static final int on_the_channel=0x7f0a01d3;
-        public static final int on_the_crowd=0x7f0a01d4;
-        public static final int opening_blog=0x7f0a01d5;
-        public static final int opening_qq=0x7f0a01d6;
-        public static final int opening_wechat=0x7f0a01d7;
-        public static final int outer_space=0x7f0a01d8;
-        public static final int page_load_failed=0x7f0a01d9;
-        public static final int passwd_hint=0x7f0a01da;
-        public static final int password_toggle_content_description=0x7f0a01db;
-        public static final int path_password_eye=0x7f0a01dc;
-        public static final int path_password_eye_mask_strike_through=0x7f0a01dd;
-        public static final int path_password_eye_mask_visible=0x7f0a01de;
-        public static final int path_password_strike_through=0x7f0a01df;
-        public static final int permission_rationale=0x7f0a01e0;
-        public static final int personal_information=0x7f0a01e1;
+        public static final int normal=0x7f0a01e3;
+        public static final int occupation=0x7f0a01e4;
+        public static final int on_the_channel=0x7f0a01e5;
+        public static final int on_the_crowd=0x7f0a01e6;
+        public static final int opening_blog=0x7f0a01e7;
+        public static final int opening_qq=0x7f0a01e8;
+        public static final int opening_wechat=0x7f0a01e9;
+        public static final int order_title=0x7f0a01ea;
+        public static final int outer_space=0x7f0a01eb;
+        public static final int page_load_failed=0x7f0a01ec;
+        public static final int passwd_hint=0x7f0a01ed;
+        public static final int password_toggle_content_description=0x7f0a01ee;
+        public static final int passworld=0x7f0a01ef;
+        public static final int path_password_eye=0x7f0a01f0;
+        public static final int path_password_eye_mask_strike_through=0x7f0a01f1;
+        public static final int path_password_eye_mask_visible=0x7f0a01f2;
+        public static final int path_password_strike_through=0x7f0a01f3;
+        public static final int permission_rationale=0x7f0a01f4;
+        public static final int personal_information=0x7f0a01f5;
         public static final int picture_all_audio=0x7f0a0034;
         public static final int picture_audio=0x7f0a0035;
         public static final int picture_audio_empty=0x7f0a0036;
@@ -12297,56 +12282,60 @@ containing a value of this type.
         public static final int picture_tape=0x7f0a0055;
         public static final int picture_video_toast=0x7f0a0056;
         public static final int picture_warning=0x7f0a0057;
-        public static final int press_again_to_exit=0x7f0a01e2;
-        public static final int prompt_email=0x7f0a01e3;
-        public static final int prompt_password=0x7f0a01e4;
-        public static final int pull_to_refresh=0x7f0a01e5;
-        public static final int pullup_to_load=0x7f0a01e6;
-        public static final int qm_account=0x7f0a01e7;
-        public static final int re_submit=0x7f0a01e8;
-        public static final int recommend=0x7f0a01e9;
-        public static final int recommend_more=0x7f0a01ea;
-        public static final int refresh_fail=0x7f0a01eb;
-        public static final int refresh_succeed=0x7f0a01ec;
-        public static final int refreshing=0x7f0a01ed;
-        public static final int register_tv_license=0x7f0a01ee;
-        public static final int release_img_txt=0x7f0a01ef;
-        public static final int release_to_load=0x7f0a01f0;
-        public static final int release_to_refresh=0x7f0a01f1;
-        public static final int review_the_results=0x7f0a01f2;
-        public static final int reviewprogress=0x7f0a01f3;
-        public static final int reviewunfinish=0x7f0a01f4;
-        public static final int room_anchor=0x7f0a01f5;
-        public static final int room_chat=0x7f0a01f6;
-        public static final int room_follow=0x7f0a01f7;
-        public static final int room_ranking=0x7f0a01f8;
-        public static final int satellite=0x7f0a01f9;
-        public static final int save=0x7f0a01fa;
-        public static final int scale_up_show_behavior=0x7f0a01fb;
-        public static final int scoll_aware_fab_behavior=0x7f0a01fc;
-        public static final int search=0x7f0a01fd;
+        public static final int press_again_to_exit=0x7f0a01f6;
+        public static final int prompt_email=0x7f0a01f7;
+        public static final int prompt_password=0x7f0a01f8;
+        public static final int pull_to_refresh=0x7f0a01f9;
+        public static final int pullup_to_load=0x7f0a01fa;
+        public static final int pyqState=0x7f0a01fb;
+        public static final int qm_account=0x7f0a01fc;
+        public static final int qqId=0x7f0a01fd;
+        public static final int re_submit=0x7f0a01fe;
+        public static final int realname=0x7f0a01ff;
+        public static final int recommend=0x7f0a0200;
+        public static final int recommend_more=0x7f0a0201;
+        public static final int refresh_fail=0x7f0a0202;
+        public static final int refresh_succeed=0x7f0a0203;
+        public static final int refreshing=0x7f0a0204;
+        public static final int register_tv_license=0x7f0a0205;
+        public static final int release_img_txt=0x7f0a0206;
+        public static final int release_to_load=0x7f0a0207;
+        public static final int release_to_refresh=0x7f0a0208;
+        public static final int review_the_results=0x7f0a0209;
+        public static final int reviewprogress=0x7f0a020a;
+        public static final int reviewunfinish=0x7f0a020b;
+        public static final int room_anchor=0x7f0a020c;
+        public static final int room_chat=0x7f0a020d;
+        public static final int room_follow=0x7f0a020e;
+        public static final int room_ranking=0x7f0a020f;
+        public static final int satellite=0x7f0a0210;
+        public static final int save=0x7f0a0211;
+        public static final int scale_up_show_behavior=0x7f0a0212;
+        public static final int scoll_aware_fab_behavior=0x7f0a0213;
+        public static final int search=0x7f0a0214;
         public static final int search_menu_title=0x7f0a002e;
-        public static final int secrecy=0x7f0a01fe;
-        public static final int sensor_shark_off_show_txt=0x7f0a01ff;
-        public static final int server_setting=0x7f0a0200;
-        public static final int server_setting_hint=0x7f0a0201;
-        public static final int serveraddr_empty_tip=0x7f0a0202;
-        public static final int set=0x7f0a0203;
-        public static final int setting_cancle=0x7f0a0204;
-        public static final int setting_sure=0x7f0a0205;
-        public static final int setting_title=0x7f0a0206;
-        public static final int share_content=0x7f0a0207;
-        public static final int share_platform_name=0x7f0a0208;
-        public static final int share_to_format=0x7f0a0209;
-        public static final int signup=0x7f0a020a;
-        public static final int skip=0x7f0a020b;
-        public static final int soft_update_cancel=0x7f0a020c;
-        public static final int soft_update_info=0x7f0a020d;
-        public static final int soft_update_later=0x7f0a020e;
-        public static final int soft_update_no=0x7f0a020f;
-        public static final int soft_update_title=0x7f0a0210;
-        public static final int soft_update_updatebtn=0x7f0a0211;
-        public static final int soft_updating=0x7f0a0212;
+        public static final int secrecy=0x7f0a0215;
+        public static final int sensor_shark_off_show_txt=0x7f0a0216;
+        public static final int server_setting=0x7f0a0217;
+        public static final int server_setting_hint=0x7f0a0218;
+        public static final int serveraddr_empty_tip=0x7f0a0219;
+        public static final int set=0x7f0a021a;
+        public static final int setting_cancle=0x7f0a021b;
+        public static final int setting_sure=0x7f0a021c;
+        public static final int setting_title=0x7f0a021d;
+        public static final int sex=0x7f0a021e;
+        public static final int share_content=0x7f0a021f;
+        public static final int share_platform_name=0x7f0a0220;
+        public static final int share_to_format=0x7f0a0221;
+        public static final int signup=0x7f0a0222;
+        public static final int skip=0x7f0a0223;
+        public static final int soft_update_cancel=0x7f0a0224;
+        public static final int soft_update_info=0x7f0a0225;
+        public static final int soft_update_later=0x7f0a0226;
+        public static final int soft_update_no=0x7f0a0227;
+        public static final int soft_update_title=0x7f0a0228;
+        public static final int soft_update_updatebtn=0x7f0a0229;
+        public static final int soft_updating=0x7f0a022a;
         public static final int srl_component_falsify=0x7f0a0106;
         public static final int srl_content_empty=0x7f0a0107;
         public static final int srl_footer_failed=0x7f0a0108;
@@ -12386,7 +12375,7 @@ containing a value of this type.
         public static final int ssdk_instagram=0x7f0a006b;
         public static final int ssdk_instagram_client_inavailable=0x7f0a006c;
         public static final int ssdk_instapager_email_or_password_incorrect=0x7f0a006d;
-        public static final int ssdk_instapager_login_html=0x7f0a0213;
+        public static final int ssdk_instapager_login_html=0x7f0a022b;
         public static final int ssdk_instapaper=0x7f0a006e;
         public static final int ssdk_instapaper_email=0x7f0a006f;
         public static final int ssdk_instapaper_login=0x7f0a0070;
@@ -12510,11 +12499,11 @@ containing a value of this type.
         public static final int ssdk_yixinmoments=0x7f0a00e6;
         public static final int ssdk_youdao=0x7f0a00e7;
         public static final int ssdk_youtube=0x7f0a00e8;
-        public static final int start_ctrl=0x7f0a0214;
-        public static final int start_live_time=0x7f0a0215;
+        public static final int start_ctrl=0x7f0a022c;
+        public static final int start_live_time=0x7f0a022d;
         public static final int status_bar_notification_info_overflow=0x7f0a002f;
-        public static final int stop_ctrl=0x7f0a0216;
-        public static final int storage_removed=0x7f0a0217;
+        public static final int stop_ctrl=0x7f0a022e;
+        public static final int storage_removed=0x7f0a022f;
         public static final int strNetworkTipsCancelBtn=0x7f0a00e9;
         public static final int strNetworkTipsConfirmBtn=0x7f0a00ea;
         public static final int strNetworkTipsMessage=0x7f0a00eb;
@@ -12539,72 +12528,77 @@ containing a value of this type.
         public static final int strUpgradeDialogUpdateTimeLabel=0x7f0a00fe;
         public static final int strUpgradeDialogUpgradeBtn=0x7f0a00ff;
         public static final int strUpgradeDialogVersionLabel=0x7f0a0100;
-        public static final int stream_choose=0x7f0a0218;
-        public static final int string_reviewfinish=0x7f0a0219;
-        public static final int string_reviewprogress=0x7f0a021a;
-        public static final int submit=0x7f0a021b;
-        public static final int submit_audit_materials=0x7f0a021c;
-        public static final int subscribe_manager_category_info=0x7f0a021d;
-        public static final int subscribe_manager_category_info_2=0x7f0a021e;
-        public static final int subscribe_more_category=0x7f0a021f;
-        public static final int subscribe_my_category=0x7f0a0220;
-        public static final int sure=0x7f0a0221;
-        public static final int swipe_down_to_refresh=0x7f0a0222;
-        public static final int tab_achievement=0x7f0a0223;
-        public static final int tab_all=0x7f0a0224;
-        public static final int tab_attendance=0x7f0a0225;
-        public static final int tab_car=0x7f0a0226;
-        public static final int tab_check=0x7f0a0227;
-        public static final int tab_classroom=0x7f0a0228;
-        public static final int tab_course=0x7f0a0229;
-        public static final int tab_email=0x7f0a022a;
-        public static final int tab_exam=0x7f0a022b;
-        public static final int tab_follw=0x7f0a022c;
-        public static final int tab_history=0x7f0a022d;
-        public static final int tab_home=0x7f0a022e;
-        public static final int tab_item_quest=0x7f0a022f;
-        public static final int tab_live=0x7f0a0230;
-        public static final int tab_main=0x7f0a0231;
-        public static final int tab_map=0x7f0a0232;
-        public static final int tab_me=0x7f0a0233;
-        public static final int tab_more=0x7f0a0234;
-        public static final int tab_my=0x7f0a0235;
-        public static final int tab_myarchives=0x7f0a0236;
-        public static final int tab_myinfo=0x7f0a0237;
-        public static final int tab_pass=0x7f0a0238;
-        public static final int tab_phone=0x7f0a0239;
-        public static final int tab_quest=0x7f0a023a;
-        public static final int tab_score=0x7f0a023b;
-        public static final int tab_task=0x7f0a023c;
-        public static final int task_schedule=0x7f0a023d;
-        public static final int task_time=0x7f0a023e;
-        public static final int text=0x7f0a023f;
+        public static final int stream_choose=0x7f0a0230;
+        public static final int string_reviewfinish=0x7f0a0231;
+        public static final int string_reviewprogress=0x7f0a0232;
+        public static final int submit=0x7f0a0233;
+        public static final int submit_audit_materials=0x7f0a0234;
+        public static final int subscribe_manager_category_info=0x7f0a0235;
+        public static final int subscribe_manager_category_info_2=0x7f0a0236;
+        public static final int subscribe_more_category=0x7f0a0237;
+        public static final int subscribe_my_category=0x7f0a0238;
+        public static final int sure=0x7f0a0239;
+        public static final int swipe_down_to_refresh=0x7f0a023a;
+        public static final int tab_achievement=0x7f0a023b;
+        public static final int tab_all=0x7f0a023c;
+        public static final int tab_attendance=0x7f0a023d;
+        public static final int tab_car=0x7f0a023e;
+        public static final int tab_check=0x7f0a023f;
+        public static final int tab_classroom=0x7f0a0240;
+        public static final int tab_course=0x7f0a0241;
+        public static final int tab_email=0x7f0a0242;
+        public static final int tab_exam=0x7f0a0243;
+        public static final int tab_follw=0x7f0a0244;
+        public static final int tab_history=0x7f0a0245;
+        public static final int tab_home=0x7f0a0246;
+        public static final int tab_item_quest=0x7f0a0247;
+        public static final int tab_live=0x7f0a0248;
+        public static final int tab_main=0x7f0a0249;
+        public static final int tab_map=0x7f0a024a;
+        public static final int tab_me=0x7f0a024b;
+        public static final int tab_more=0x7f0a024c;
+        public static final int tab_my=0x7f0a024d;
+        public static final int tab_myarchives=0x7f0a024e;
+        public static final int tab_myinfo=0x7f0a024f;
+        public static final int tab_pass=0x7f0a0250;
+        public static final int tab_phone=0x7f0a0251;
+        public static final int tab_quest=0x7f0a0252;
+        public static final int tab_score=0x7f0a0253;
+        public static final int tab_task=0x7f0a0254;
+        public static final int taskApplyId=0x7f0a0255;
+        public static final int task_schedule=0x7f0a0256;
+        public static final int task_time=0x7f0a0257;
+        public static final int telephone=0x7f0a0258;
+        public static final int text=0x7f0a0259;
         public static final int text_empty=0x7f0a0117;
         public static final int text_retry=0x7f0a0118;
-        public static final int the_bounty=0x7f0a0240;
-        public static final int the_review_process=0x7f0a0241;
-        public static final int third_party_login=0x7f0a0242;
-        public static final int tips_current_not_login=0x7f0a0243;
+        public static final int the_bounty=0x7f0a025a;
+        public static final int the_review_process=0x7f0a025b;
+        public static final int third_party_login=0x7f0a025c;
+        public static final int tips_current_not_login=0x7f0a025d;
         public static final int tips_not_wifi=0x7f0a0102;
         public static final int tips_not_wifi_cancel=0x7f0a0103;
         public static final int tips_not_wifi_confirm=0x7f0a0104;
-        public static final int tips_notice_desc=0x7f0a0244;
-        public static final int tips_search_keywords_cannot_be_empty=0x7f0a0245;
-        public static final int title_activity_draw_my_line_map=0x7f0a0246;
-        public static final int title_activity_login=0x7f0a0247;
-        public static final int title_activity_my_data_list=0x7f0a0248;
-        public static final int title_activity_show_my_line=0x7f0a0249;
-        public static final int today=0x7f0a024a;
-        public static final int try_again_later=0x7f0a024b;
-        public static final int unit_name=0x7f0a024c;
-        public static final int upload_audit_content1=0x7f0a024d;
-        public static final int upload_audit_content2=0x7f0a024e;
-        public static final int upload_audit_materials=0x7f0a024f;
-        public static final int upload_audit_time_str=0x7f0a0250;
-        public static final int username_hint=0x7f0a0251;
-        public static final int welcome_tips=0x7f0a0252;
-        public static final int yjfk=0x7f0a0253;
-        public static final int zhandouli_=0x7f0a0254;
+        public static final int tips_notice_desc=0x7f0a025e;
+        public static final int tips_search_keywords_cannot_be_empty=0x7f0a025f;
+        public static final int title_activity_draw_my_line_map=0x7f0a0260;
+        public static final int title_activity_login=0x7f0a0261;
+        public static final int title_activity_my_data_list=0x7f0a0262;
+        public static final int title_activity_show_my_line=0x7f0a0263;
+        public static final int today=0x7f0a0264;
+        public static final int try_again_later=0x7f0a0265;
+        public static final int unit_name=0x7f0a0266;
+        public static final int upload_audit_content1=0x7f0a0267;
+        public static final int upload_audit_content2=0x7f0a0268;
+        public static final int upload_audit_materials=0x7f0a0269;
+        public static final int upload_audit_time_str=0x7f0a026a;
+        public static final int username_hint=0x7f0a026b;
+        public static final int wbState=0x7f0a026c;
+        public static final int welcome_tips=0x7f0a026d;
+        public static final int wsState=0x7f0a026e;
+        public static final int wxId=0x7f0a026f;
+        public static final int yjfk=0x7f0a0270;
+        public static final int zhandouli_=0x7f0a0271;
     }
     public static final class style {
         public static final int ActionButton=0x7f0c0096;
@@ -12617,11 +12611,6 @@ containing a value of this type.
         public static final int Animation_Design_BottomSheetDialog=0x7f0c009d;
         /**  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
          */
         public static final int AppBaseTheme=0x7f0c000c;
         public static final int AppTheme=0x7f0c009e;
@@ -13086,8 +13075,6 @@ containing a value of this type.
         public static final int todaydetail_info_layout=0x7f0c01d4;
         public static final int todaydetail_info_title=0x7f0c01d5;
         public static final int transparentFrameWindowStyle=0x7f0c01d6;
-        /** <item name="android:background">@color/color_transparent_9000</item>
-         */
         public static final int wx_login_style=0x7f0c01d7;
     }
     public static final class xml {
@@ -13102,12 +13089,12 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ADTextView_ad_text_content_color com.application.tchapj:ad_text_content_color}</code></td><td>内容文字颜色</td></tr>
-           <tr><td><code>{@link #ADTextView_ad_text_content_size com.application.tchapj:ad_text_content_size}</code></td><td>内容文字大小</td></tr>
-           <tr><td><code>{@link #ADTextView_ad_text_front_color com.application.tchapj:ad_text_front_color}</code></td><td>前缀文字颜色</td></tr>
-           <tr><td><code>{@link #ADTextView_ad_text_front_size com.application.tchapj:ad_text_front_size}</code></td><td>前缀文字大小</td></tr>
-           <tr><td><code>{@link #ADTextView_ad_text_view_interval com.application.tchapj:ad_text_view_interval}</code></td><td>文字停留在中心的时间</td></tr>
-           <tr><td><code>{@link #ADTextView_ad_text_view_speed com.application.tchapj:ad_text_view_speed}</code></td><td>文字进入与消失的时间</td></tr>
+           <tr><td><code>{@link #ADTextView_ad_text_content_color com.application.tchapj:ad_text_content_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #ADTextView_ad_text_content_size com.application.tchapj:ad_text_content_size}</code></td><td></td></tr>
+           <tr><td><code>{@link #ADTextView_ad_text_front_color com.application.tchapj:ad_text_front_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #ADTextView_ad_text_front_size com.application.tchapj:ad_text_front_size}</code></td><td></td></tr>
+           <tr><td><code>{@link #ADTextView_ad_text_view_interval com.application.tchapj:ad_text_view_interval}</code></td><td></td></tr>
+           <tr><td><code>{@link #ADTextView_ad_text_view_speed com.application.tchapj:ad_text_view_speed}</code></td><td></td></tr>
            </table>
            @see #ADTextView_ad_text_content_color
            @see #ADTextView_ad_text_content_size
@@ -13121,9 +13108,8 @@ containing a value of this type.
             0x7f01005e, 0x7f01005f
         };
         /**
-          <p>
-          @attr description
-          内容文字颜色
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#ad_text_content_color}
+          attribute's value can be found in the {@link #ADTextView} array.
 
 
           <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -13133,14 +13119,12 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:ad_text_content_color
         */
         public static final int ADTextView_ad_text_content_color = 4;
         /**
-          <p>
-          @attr description
-          内容文字大小
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#ad_text_content_size}
+          attribute's value can be found in the {@link #ADTextView} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -13151,14 +13135,12 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:ad_text_content_size
         */
         public static final int ADTextView_ad_text_content_size = 5;
         /**
-          <p>
-          @attr description
-          前缀文字颜色
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#ad_text_front_color}
+          attribute's value can be found in the {@link #ADTextView} array.
 
 
           <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -13168,14 +13150,12 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:ad_text_front_color
         */
         public static final int ADTextView_ad_text_front_color = 2;
         /**
-          <p>
-          @attr description
-          前缀文字大小
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#ad_text_front_size}
+          attribute's value can be found in the {@link #ADTextView} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -13186,14 +13166,12 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:ad_text_front_size
         */
         public static final int ADTextView_ad_text_front_size = 3;
         /**
-          <p>
-          @attr description
-          文字停留在中心的时间
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#ad_text_view_interval}
+          attribute's value can be found in the {@link #ADTextView} array.
 
 
           <p>Must be an integer value, such as "<code>100</code>".
@@ -13202,14 +13180,12 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:ad_text_view_interval
         */
         public static final int ADTextView_ad_text_view_interval = 1;
         /**
-          <p>
-          @attr description
-          文字进入与消失的时间
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#ad_text_view_speed}
+          attribute's value can be found in the {@link #ADTextView} array.
 
 
           <p>Must be an integer value, such as "<code>100</code>".
@@ -13218,7 +13194,6 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:ad_text_view_speed
         */
         public static final int ADTextView_ad_text_view_speed = 0;
@@ -16650,7 +16625,7 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #BallPulseFooter_srlAnimatingColor com.application.tchapj:srlAnimatingColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #BallPulseFooter_srlClassicsSpinnerStyle com.application.tchapj:srlClassicsSpinnerStyle}</code></td><td>固定在背后</td></tr>
+           <tr><td><code>{@link #BallPulseFooter_srlClassicsSpinnerStyle com.application.tchapj:srlClassicsSpinnerStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #BallPulseFooter_srlNormalColor com.application.tchapj:srlNormalColor}</code></td><td></td></tr>
            </table>
            @see #BallPulseFooter_srlAnimatingColor
@@ -16676,9 +16651,8 @@ containing a value of this type.
         */
         public static final int BallPulseFooter_srlAnimatingColor = 1;
         /**
-          <p>
-          @attr description
-          固定在背后
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#srlClassicsSpinnerStyle}
+          attribute's value can be found in the {@link #BallPulseFooter} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -16688,10 +16662,9 @@ containing a value of this type.
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>Translate</code></td><td>0</td><td></td></tr>
-<tr><td><code>Scale</code></td><td>1</td><td>平行移动</td></tr>
-<tr><td><code>FixedBehind</code></td><td>2</td><td>拉伸形变</td></tr>
+<tr><td><code>Scale</code></td><td>1</td><td></td></tr>
+<tr><td><code>FixedBehind</code></td><td>2</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name com.application.tchapj:srlClassicsSpinnerStyle
         */
         public static final int BallPulseFooter_srlClassicsSpinnerStyle = 0;
@@ -18155,7 +18128,7 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #ClassicsFooter_srlAccentColor com.application.tchapj:srlAccentColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #ClassicsFooter_srlClassicsSpinnerStyle com.application.tchapj:srlClassicsSpinnerStyle}</code></td><td>固定在背后</td></tr>
+           <tr><td><code>{@link #ClassicsFooter_srlClassicsSpinnerStyle com.application.tchapj:srlClassicsSpinnerStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #ClassicsFooter_srlDrawableArrow com.application.tchapj:srlDrawableArrow}</code></td><td></td></tr>
            <tr><td><code>{@link #ClassicsFooter_srlDrawableArrowSize com.application.tchapj:srlDrawableArrowSize}</code></td><td></td></tr>
            <tr><td><code>{@link #ClassicsFooter_srlDrawableMarginRight com.application.tchapj:srlDrawableMarginRight}</code></td><td></td></tr>
@@ -18199,9 +18172,8 @@ containing a value of this type.
         */
         public static final int ClassicsFooter_srlAccentColor = 0;
         /**
-          <p>
-          @attr description
-          固定在背后
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#srlClassicsSpinnerStyle}
+          attribute's value can be found in the {@link #ClassicsFooter} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -18211,10 +18183,9 @@ containing a value of this type.
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>Translate</code></td><td>0</td><td></td></tr>
-<tr><td><code>Scale</code></td><td>1</td><td>平行移动</td></tr>
-<tr><td><code>FixedBehind</code></td><td>2</td><td>拉伸形变</td></tr>
+<tr><td><code>Scale</code></td><td>1</td><td></td></tr>
+<tr><td><code>FixedBehind</code></td><td>2</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name com.application.tchapj:srlClassicsSpinnerStyle
         */
         public static final int ClassicsFooter_srlClassicsSpinnerStyle = 1;
@@ -18354,7 +18325,7 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #ClassicsHeader_srlAccentColor com.application.tchapj:srlAccentColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #ClassicsHeader_srlClassicsSpinnerStyle com.application.tchapj:srlClassicsSpinnerStyle}</code></td><td>固定在背后</td></tr>
+           <tr><td><code>{@link #ClassicsHeader_srlClassicsSpinnerStyle com.application.tchapj:srlClassicsSpinnerStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #ClassicsHeader_srlDrawableArrow com.application.tchapj:srlDrawableArrow}</code></td><td></td></tr>
            <tr><td><code>{@link #ClassicsHeader_srlDrawableArrowSize com.application.tchapj:srlDrawableArrowSize}</code></td><td></td></tr>
            <tr><td><code>{@link #ClassicsHeader_srlDrawableMarginRight com.application.tchapj:srlDrawableMarginRight}</code></td><td></td></tr>
@@ -18405,9 +18376,8 @@ containing a value of this type.
         */
         public static final int ClassicsHeader_srlAccentColor = 0;
         /**
-          <p>
-          @attr description
-          固定在背后
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#srlClassicsSpinnerStyle}
+          attribute's value can be found in the {@link #ClassicsHeader} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -18417,10 +18387,9 @@ containing a value of this type.
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>Translate</code></td><td>0</td><td></td></tr>
-<tr><td><code>Scale</code></td><td>1</td><td>平行移动</td></tr>
-<tr><td><code>FixedBehind</code></td><td>2</td><td>拉伸形变</td></tr>
+<tr><td><code>Scale</code></td><td>1</td><td></td></tr>
+<tr><td><code>FixedBehind</code></td><td>2</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name com.application.tchapj:srlClassicsSpinnerStyle
         */
         public static final int ClassicsHeader_srlClassicsSpinnerStyle = 1;
@@ -22803,7 +22772,7 @@ containing a value of this type.
            <tr><td><code>{@link #GoogleCircleProgressView_gcp_progress_stoke_width com.application.tchapj:gcp_progress_stoke_width}</code></td><td></td></tr>
            <tr><td><code>{@link #GoogleCircleProgressView_gcp_progress_text_color com.application.tchapj:gcp_progress_text_color}</code></td><td></td></tr>
            <tr><td><code>{@link #GoogleCircleProgressView_gcp_progress_text_size com.application.tchapj:gcp_progress_text_size}</code></td><td></td></tr>
-           <tr><td><code>{@link #GoogleCircleProgressView_gcp_progress_text_visibility com.application.tchapj:gcp_progress_text_visibility}</code></td><td><attr name="gcp_progress_text_offset" format="dimension"/></td></tr>
+           <tr><td><code>{@link #GoogleCircleProgressView_gcp_progress_text_visibility com.application.tchapj:gcp_progress_text_visibility}</code></td><td></td></tr>
            <tr><td><code>{@link #GoogleCircleProgressView_gcp_show_arrow com.application.tchapj:gcp_show_arrow}</code></td><td></td></tr>
            </table>
            @see #GoogleCircleProgressView_gcp_arrow_height
@@ -22994,9 +22963,8 @@ containing a value of this type.
         */
         public static final int GoogleCircleProgressView_gcp_progress_text_size = 10;
         /**
-          <p>
-          @attr description
-          <attr name="gcp_progress_text_offset" format="dimension"/>
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#gcp_progress_text_visibility}
+          attribute's value can be found in the {@link #GoogleCircleProgressView} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -23008,7 +22976,6 @@ containing a value of this type.
 <tr><td><code>visible</code></td><td>0</td><td></td></tr>
 <tr><td><code>invisible</code></td><td>1</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name com.application.tchapj:gcp_progress_text_visibility
         */
         public static final int GoogleCircleProgressView_gcp_progress_text_visibility = 12;
@@ -23889,13 +23856,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LoadingImageView_circleCrop com.application.tchapj:circleCrop}</code></td><td>
-        Whether or not this view should have a circular clip applied
-        </td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.application.tchapj:imageAspectRatio}</code></td><td>
-        The fixed aspect ratio to use in aspect ratio adjustments.</td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.application.tchapj:imageAspectRatioAdjust}</code></td><td>
-        What kind of aspect ratio adjustment to do.</td></tr>
+           <tr><td><code>{@link #LoadingImageView_circleCrop com.application.tchapj:circleCrop}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.application.tchapj:imageAspectRatio}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.application.tchapj:imageAspectRatioAdjust}</code></td><td></td></tr>
            </table>
            @see #LoadingImageView_circleCrop
            @see #LoadingImageView_imageAspectRatio
@@ -23905,11 +23868,8 @@ containing a value of this type.
             0x7f010214, 0x7f010215, 0x7f010216
         };
         /**
-          <p>
-          @attr description
-          
-        Whether or not this view should have a circular clip applied
-        
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#circleCrop}
+          attribute's value can be found in the {@link #LoadingImageView} array.
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -23918,16 +23878,12 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:circleCrop
         */
         public static final int LoadingImageView_circleCrop = 2;
         /**
-          <p>
-          @attr description
-          
-        The fixed aspect ratio to use in aspect ratio adjustments.
-        
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#imageAspectRatio}
+          attribute's value can be found in the {@link #LoadingImageView} array.
 
 
           <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -23936,17 +23892,12 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:imageAspectRatio
         */
         public static final int LoadingImageView_imageAspectRatio = 1;
         /**
-          <p>
-          @attr description
-          
-        What kind of aspect ratio adjustment to do.  It must be one of "none", "adjust_width",
-        or "adjust_height".
-        
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#imageAspectRatioAdjust}
+          attribute's value can be found in the {@link #LoadingImageView} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -23959,7 +23910,6 @@ containing a value of this type.
 <tr><td><code>adjust_width</code></td><td>1</td><td></td></tr>
 <tr><td><code>adjust_height</code></td><td>2</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name com.application.tchapj:imageAspectRatioAdjust
         */
         public static final int LoadingImageView_imageAspectRatioAdjust = 0;
@@ -23975,9 +23925,8 @@ containing a value of this type.
            <tr><td><code>{@link #LoopView_initPosition com.application.tchapj:initPosition}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_lineColor com.application.tchapj:lineColor}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_lineSpacingMultiplier com.application.tchapj:lineSpacingMultiplier}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoopView_npv_AlternativeHint com.application.tchapj:npv_AlternativeHint}</code></td><td>the max length of hint content</td></tr>
-           <tr><td><code>{@link #LoopView_npv_AlternativeTextArrayWithMeasureHint com.application.tchapj:npv_AlternativeTextArrayWithMeasureHint}</code></td><td>just used to measure maxWidth for wrap_content without hint,
-            the string array will never be displayed.</td></tr>
+           <tr><td><code>{@link #LoopView_npv_AlternativeHint com.application.tchapj:npv_AlternativeHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoopView_npv_AlternativeTextArrayWithMeasureHint com.application.tchapj:npv_AlternativeTextArrayWithMeasureHint}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_AlternativeTextArrayWithoutMeasureHint com.application.tchapj:npv_AlternativeTextArrayWithoutMeasureHint}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_DividerColor com.application.tchapj:npv_DividerColor}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_DividerHeight com.application.tchapj:npv_DividerHeight}</code></td><td></td></tr>
@@ -23993,8 +23942,8 @@ containing a value of this type.
            <tr><td><code>{@link #LoopView_npv_MinValue com.application.tchapj:npv_MinValue}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_RespondChangeInMainThread com.application.tchapj:npv_RespondChangeInMainThread}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_RespondChangeOnDetached com.application.tchapj:npv_RespondChangeOnDetached}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoopView_npv_ShowCount com.application.tchapj:npv_ShowCount}</code></td><td>set number of item displayed, default is 3</td></tr>
-           <tr><td><code>{@link #LoopView_npv_ShowDivider com.application.tchapj:npv_ShowDivider}</code></td><td>set if show divider, default is true</td></tr>
+           <tr><td><code>{@link #LoopView_npv_ShowCount com.application.tchapj:npv_ShowCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoopView_npv_ShowDivider com.application.tchapj:npv_ShowDivider}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_TextArray com.application.tchapj:npv_TextArray}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_TextColorHint com.application.tchapj:npv_TextColorHint}</code></td><td></td></tr>
            <tr><td><code>{@link #LoopView_npv_TextColorNormal com.application.tchapj:npv_TextColorNormal}</code></td><td></td></tr>
@@ -24151,30 +24100,23 @@ containing a value of this type.
         */
         public static final int LoopView_lineSpacingMultiplier = 8;
         /**
-          <p>
-          @attr description
-          the max length of hint content
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#npv_AlternativeHint}
+          attribute's value can be found in the {@link #LoopView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:npv_AlternativeHint
         */
         public static final int LoopView_npv_AlternativeHint = 36;
         /**
-          <p>
-          @attr description
-          just used to measure maxWidth for wrap_content without hint,
-            the string array will never be displayed.
-            you can set this attr if you want to keep the wraped numberpickerview
-            width unchanged when alter the content list
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#npv_AlternativeTextArrayWithMeasureHint}
+          attribute's value can be found in the {@link #LoopView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name com.application.tchapj:npv_AlternativeTextArrayWithMeasureHint
         */
         public static final int LoopView_npv_AlternativeTextArrayWithMeasureHint = 34;
@@ -24358,28 +24300,24 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int LoopView_npv_RespondChangeOnDetached = 25;
         /**
-          <p>
-          @attr description
-          set number of item displayed, default is 3
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#npv_ShowCount}
+          attribute's value can be found in the {@link #LoopView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be an integer value, such as "<code>100</code>".
-          <p>This is a private symbol.
           @attr name com.application.tchapj:npv_ShowCount
         */
         public static final int LoopView_npv_ShowCount = 9;
         /**
-          <p>
-          @attr description
-          set if show divider, default is true
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#npv_ShowDivider}
+          attribute's value can be found in the {@link #LoopView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
-          <p>This is a private symbol.
           @attr name com.application.tchapj:npv_ShowDivider
         */
         public static final int LoopView_npv_ShowDivider = 10;
@@ -25695,19 +25633,19 @@ containing a value of this type.
           @attr name com.application.tchapj:pstsUnderlineHeight
         */
         public static final int PagerSlidingTabStrip_pstsUnderlineHeight = 4;
-        /** tab单行最大行数
+        /** Attributes that can be used with a PopsTabView.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PopsTabView_tab_background_focus com.application.tchapj:tab_background_focus}</code></td><td>tab正常背景</td></tr>
-           <tr><td><code>{@link #PopsTabView_tab_background_normal com.application.tchapj:tab_background_normal}</code></td><td>tab字体选中颜色</td></tr>
-           <tr><td><code>{@link #PopsTabView_tab_max_ems com.application.tchapj:tab_max_ems}</code></td><td>popwindow弹出动画</td></tr>
-           <tr><td><code>{@link #PopsTabView_tab_max_lines com.application.tchapj:tab_max_lines}</code></td><td>tab单行最多字数</td></tr>
-           <tr><td><code>{@link #PopsTabView_tab_pop_anim com.application.tchapj:tab_pop_anim}</code></td><td>tab选中背景</td></tr>
-           <tr><td><code>{@link #PopsTabView_tab_text_color_focus com.application.tchapj:tab_text_color_focus}</code></td><td>tab字体正常颜色</td></tr>
-           <tr><td><code>{@link #PopsTabView_tab_text_color_normal com.application.tchapj:tab_text_color_normal}</code></td><td>tab字体大小</td></tr>
+           <tr><td><code>{@link #PopsTabView_tab_background_focus com.application.tchapj:tab_background_focus}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopsTabView_tab_background_normal com.application.tchapj:tab_background_normal}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopsTabView_tab_max_ems com.application.tchapj:tab_max_ems}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopsTabView_tab_max_lines com.application.tchapj:tab_max_lines}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopsTabView_tab_pop_anim com.application.tchapj:tab_pop_anim}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopsTabView_tab_text_color_focus com.application.tchapj:tab_text_color_focus}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopsTabView_tab_text_color_normal com.application.tchapj:tab_text_color_normal}</code></td><td></td></tr>
            <tr><td><code>{@link #PopsTabView_tab_textsize com.application.tchapj:tab_textsize}</code></td><td></td></tr>
            </table>
            @see #PopsTabView_tab_background_focus
@@ -25724,37 +25662,32 @@ containing a value of this type.
             0x7f01026f, 0x7f010270, 0x7f010271, 0x7f010272
         };
         /**
-          <p>
-          @attr description
-          tab正常背景
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#tab_background_focus}
+          attribute's value can be found in the {@link #PopsTabView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          <p>This is a private symbol.
           @attr name com.application.tchapj:tab_background_focus
         */
         public static final int PopsTabView_tab_background_focus = 4;
         /**
-          <p>
-          @attr description
-          tab字体选中颜色
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#tab_background_normal}
+          attribute's value can be found in the {@link #PopsTabView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          <p>This is a private symbol.
           @attr name com.application.tchapj:tab_background_normal
         */
         public static final int PopsTabView_tab_background_normal = 3;
         /**
-          <p>
-          @attr description
-          popwindow弹出动画
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#tab_max_ems}
+          attribute's value can be found in the {@link #PopsTabView} array.
 
 
           <p>Must be an integer value, such as "<code>100</code>".
@@ -25763,14 +25696,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:tab_max_ems
         */
         public static final int PopsTabView_tab_max_ems = 6;
         /**
-          <p>
-          @attr description
-          tab单行最多字数
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#tab_max_lines}
+          attribute's value can be found in the {@link #PopsTabView} array.
 
 
           <p>Must be an integer value, such as "<code>100</code>".
@@ -25779,26 +25710,22 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:tab_max_lines
         */
         public static final int PopsTabView_tab_max_lines = 7;
         /**
-          <p>
-          @attr description
-          tab选中背景
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#tab_pop_anim}
+          attribute's value can be found in the {@link #PopsTabView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name com.application.tchapj:tab_pop_anim
         */
         public static final int PopsTabView_tab_pop_anim = 5;
         /**
-          <p>
-          @attr description
-          tab字体正常颜色
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#tab_text_color_focus}
+          attribute's value can be found in the {@link #PopsTabView} array.
 
 
           <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -25808,14 +25735,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:tab_text_color_focus
         */
         public static final int PopsTabView_tab_text_color_focus = 2;
         /**
-          <p>
-          @attr description
-          tab字体大小
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#tab_text_color_normal}
+          attribute's value can be found in the {@link #PopsTabView} array.
 
 
           <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -25825,7 +25750,6 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:tab_text_color_normal
         */
         public static final int PopsTabView_tab_text_color_normal = 1;
@@ -29008,7 +28932,7 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #SmartRefreshLayout_Layout_layout_srlBackgroundColor com.application.tchapj:layout_srlBackgroundColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #SmartRefreshLayout_Layout_layout_srlSpinnerStyle com.application.tchapj:layout_srlSpinnerStyle}</code></td><td>填满布局</td></tr>
+           <tr><td><code>{@link #SmartRefreshLayout_Layout_layout_srlSpinnerStyle com.application.tchapj:layout_srlSpinnerStyle}</code></td><td></td></tr>
            </table>
            @see #SmartRefreshLayout_Layout_layout_srlBackgroundColor
            @see #SmartRefreshLayout_Layout_layout_srlSpinnerStyle
@@ -29032,9 +28956,8 @@ containing a value of this type.
         */
         public static final int SmartRefreshLayout_Layout_layout_srlBackgroundColor = 1;
         /**
-          <p>
-          @attr description
-          填满布局
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#layout_srlSpinnerStyle}
+          attribute's value can be found in the {@link #SmartRefreshLayout_Layout} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -29044,12 +28967,11 @@ containing a value of this type.
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>Translate</code></td><td>0</td><td></td></tr>
-<tr><td><code>Scale</code></td><td>1</td><td>平行移动</td></tr>
-<tr><td><code>FixedBehind</code></td><td>2</td><td>拉伸形变</td></tr>
-<tr><td><code>FixedFront</code></td><td>3</td><td>固定在背后</td></tr>
-<tr><td><code>MatchLayout</code></td><td>4</td><td>固定在前面</td></tr>
+<tr><td><code>Scale</code></td><td>1</td><td></td></tr>
+<tr><td><code>FixedBehind</code></td><td>2</td><td></td></tr>
+<tr><td><code>FixedFront</code></td><td>3</td><td></td></tr>
+<tr><td><code>MatchLayout</code></td><td>4</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name com.application.tchapj:layout_srlSpinnerStyle
         */
         public static final int SmartRefreshLayout_Layout_layout_srlSpinnerStyle = 0;
@@ -29108,7 +29030,7 @@ containing a value of this type.
           @attr name com.application.tchapj:maxActionInlineWidth
         */
         public static final int SnackbarLayout_maxActionInlineWidth = 2;
-        /** 是否显示下拉图标
+        /** Attributes that can be used with a SortItemView.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
@@ -29116,8 +29038,8 @@ containing a value of this type.
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #SortItemView_label com.application.tchapj:label}</code></td><td></td></tr>
            <tr><td><code>{@link #SortItemView_line_count com.application.tchapj:line_count}</code></td><td></td></tr>
-           <tr><td><code>{@link #SortItemView_row_count com.application.tchapj:row_count}</code></td><td>行个数</td></tr>
-           <tr><td><code>{@link #SortItemView_show_other_line com.application.tchapj:show_other_line}</code></td><td>列个数</td></tr>
+           <tr><td><code>{@link #SortItemView_row_count com.application.tchapj:row_count}</code></td><td></td></tr>
+           <tr><td><code>{@link #SortItemView_show_other_line com.application.tchapj:show_other_line}</code></td><td></td></tr>
            </table>
            @see #SortItemView_label
            @see #SortItemView_line_count
@@ -29156,9 +29078,8 @@ containing a value of this type.
         */
         public static final int SortItemView_line_count = 1;
         /**
-          <p>
-          @attr description
-          行个数
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#row_count}
+          attribute's value can be found in the {@link #SortItemView} array.
 
 
           <p>Must be an integer value, such as "<code>100</code>".
@@ -29167,14 +29088,12 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:row_count
         */
         public static final int SortItemView_row_count = 2;
         /**
-          <p>
-          @attr description
-          列个数
+          <p>This symbol is the offset where the {@link com.application.tchapj.R.attr#show_other_line}
+          attribute's value can be found in the {@link #SortItemView} array.
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -29183,7 +29102,6 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name com.application.tchapj:show_other_line
         */
         public static final int SortItemView_show_other_line = 3;
@@ -32668,7 +32586,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.application.tchapj:unAddedCategroyTitleBg
         */
         public static final int channel_tag_style_unAddedCategroyTitleBg = 7;
-        /** <attr name = "lineColor" format= "color" />
+        /** Attributes that can be used with a dashedline.
          */
         public static final int[] dashedline = {
             

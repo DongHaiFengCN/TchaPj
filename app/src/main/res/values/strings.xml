@@ -133,7 +133,6 @@
     <string name="hint_fkyj">请输反馈意见</string>
 
 
-
     <string name="text">text</string>
     <string name="welcome_tips">做年轻人爱看的直播</string>
     <string name="tab_home">首页</string>
@@ -190,6 +189,7 @@
     <string name="mine_setting">设置</string>
 
     <!-- 登录 -->
+    <string name="isFirstIn">isFirstIn</string>
     <string name="login">登录</string>
     <string name="signup">注册</string>
     <string name="lable_username_number">用户名/手机号</string>
@@ -407,5 +407,68 @@
     <string name="alphabet_and_number">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</string>
     <string name="lead_task_wechat_upload_remind_txt">请按照商家要求上传截图</string>
     <string name="load_more_empty">没有更多数据</string>
+    <string name="order_title">账单</string>
+    <string name="input_name">输入姓名</string>
+    <string name="input_card_number">输入身份证号</string>
+
+
+    <!--持久化保存数的 key-->
+    <string name="loginName">loginName</string>
+    <string name="passworld">passworld</string>
+    <string name="identity">identity</string>
+    <string name="alipay" >alipay</string>
+    <string name="telephone" >telephone</string>
+    <string name="id" >id</string>
+    <string name="realname" >realname</string>
+    <string name="nickName" >nickName</string>
+    <string name="wxId" >wxId</string>
+    <string name="sex" >sex</string>
+    <string name="qqId" >qqId</string>
+    <string name="attentions" >attentions</string>
+    <string name="fans" >fans</string>
+
+    <string name="lingState" >lingState</string>
+
+    <string name="birthday" >birthday</string>
+    <string name="authState" >authState</string>
+    <string name="headimgurl" >headimgurl</string>
+
+
+    <string name="taskApplyId" >taskApplyId</string>
+    <string name="dyState" >dyState</string>
+    <string name="wsState" >wsState</string>
+
+    <string name="wbState" >wbState</string>
+    <string name="faState" >faState</string>
+    <string name="pyqState" >pyqState</string>
+    <string name="mtState" >mtState</string>
+
+    <!--taskApplyId
+ true string
+任务认证id
+dyState
+ true string
+抖音：0正在审核中，1已通过，2已驳回
+wsState
+ true string
+微视资源：0正在审核中，1已通过，2已驳回*
+wbState
+ true string
+微博资源：0正在审核中，1已通过，2已驳回*
+pyqState
+ true string
+朋友圈资源：0正在审核中，1已通过，2已驳回
+faState
+ true string
+0-未申请 1-正在审核中 2-已通过 3-未通过
+mtState
+ true string
+媒体认证 0 未申请 1审核中2 已通过 3已拒绝
+mrState-->
+
+
+
+    <string name="RSA2_PRIVATE" >RSA2_PRIVATE</string>
+
 
 </resources>

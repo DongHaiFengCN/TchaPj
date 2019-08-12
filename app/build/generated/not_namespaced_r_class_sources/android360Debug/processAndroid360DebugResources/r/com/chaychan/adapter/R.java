@@ -49,7 +49,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int brvah_app_name = 0x7f0a0153;
+        public static final int brvah_app_name = 0x7f0a0158;
         public static final int brvah_load_end = 0x7f0a0030;
         public static final int brvah_load_failed = 0x7f0a0031;
         public static final int brvah_loading = 0x7f0a0032;
