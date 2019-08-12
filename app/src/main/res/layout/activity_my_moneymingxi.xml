@@ -34,7 +34,7 @@
 
 
             <View
-                android:layout_width="3dp"
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_marginTop="8dp"
@@ -50,6 +50,46 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="花 费"
+                android:textColor="@drawable/top_r_text2"
+                android:textColorHighlight="#48BAF3"
+                android:textSize="14sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/radiobutton_background3" />
+
+            <RadioButton
+                android:id="@+id/top_money_cz"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-1dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="推广金充值"
+                android:textColor="@drawable/top_r_text2"
+                android:textColorHighlight="#48BAF3"
+                android:textSize="14sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/radiobutton_background3" />
+
+            <RadioButton
+                android:id="@+id/top_money_tx"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-1dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="推广金提现"
                 android:textColor="@drawable/top_r_text2"
                 android:textColorHighlight="#48BAF3"
                 android:textSize="14sp" />

@@ -23,9 +23,7 @@ import java.lang.Override;
 public class DarenDataOneActivity_ViewBinding implements Unbinder {
   private DarenDataOneActivity target;
 
-  private View view2131756186;
-
-  private View view2131756318;
+  private View view2131756341;
 
   @UiThread
   public DarenDataOneActivity_ViewBinding(DarenDataOneActivity target) {
@@ -53,18 +51,9 @@ public class DarenDataOneActivity_ViewBinding implements Unbinder {
     target.permanentCityNameTv = Utils.findRequiredViewAsType(source, R.id.permanent_address_city_name_tv, "field 'permanentCityNameTv'", TextView.class);
     target.writeLinearLayout = Utils.findRequiredViewAsType(source, R.id.writeLl, "field 'writeLinearLayout'", MustWriteLinearLayout.class);
     target.inviteCodeEdt = Utils.findRequiredViewAsType(source, R.id.daren_one_invite_et, "field 'inviteCodeEdt'", EditText.class);
-    view = Utils.findRequiredView(source, R.id.darendataone_media_resources_example_tv, "field 'mediaResourcesExampleTv' and method 'onViewClicked'");
-    target.mediaResourcesExampleTv = Utils.castView(view, R.id.darendataone_media_resources_example_tv, "field 'mediaResourcesExampleTv'", TextView.class);
-    view2131756186 = view;
-    view.setOnClickListener(new DebouncingOnClickListener() {
-      @Override
-      public void doClick(View p0) {
-        target.onViewClicked(p0);
-      }
-    });
     target.darendataone_media_resources_tip_tv = Utils.findRequiredViewAsType(source, R.id.darendataone_media_resources_tip_tv, "field 'darendataone_media_resources_tip_tv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.permanent_address_city_rl, "method 'onViewClicked'");
-    view2131756318 = view;
+    view2131756341 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -96,12 +85,9 @@ public class DarenDataOneActivity_ViewBinding implements Unbinder {
     target.permanentCityNameTv = null;
     target.writeLinearLayout = null;
     target.inviteCodeEdt = null;
-    target.mediaResourcesExampleTv = null;
     target.darendataone_media_resources_tip_tv = null;
 
-    view2131756186.setOnClickListener(null);
-    view2131756186 = null;
-    view2131756318.setOnClickListener(null);
-    view2131756318 = null;
+    view2131756341.setOnClickListener(null);
+    view2131756341 = null;
   }
 }

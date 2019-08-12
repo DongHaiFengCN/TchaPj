@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import com.application.tchapj.bean.MemberInfo;
-import com.application.tchapj.bean.MemberInfoBean;
 import com.application.tchapj.bean.UserInfo;
 import com.application.tchapj.login.bean.LoginResult;
 import com.application.tchapj.utils2.share.SharedPreferencesUtils;
@@ -33,7 +31,6 @@ public class DataManager {
     private static SharedPreferences sharedPreferences;
     private static DataManager dataManager;
     private App application;
-    private LocalBroadcastManager mLocalBroadcastManager;
 
     /**
      * 登录广播
@@ -54,7 +51,6 @@ public class DataManager {
         application = (App) (context.getApplicationContext());
         map = new HashMap<>(INITIALCAPACITY);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        mLocalBroadcastManager = LocalBroadcastManager.getInstance(application);
     }
 
     /**
@@ -184,7 +180,7 @@ public class DataManager {
 
     public boolean disposeMember(final UpDataListener upDataListener) {
 
-        String memberId = quickGetMetaData(R.string.id, String.class);
+        final String memberId = quickGetMetaData(R.string.id, String.class);
 
         if (!"".equals(memberId)) {
 
@@ -211,8 +207,7 @@ public class DataManager {
                         @Override
                         public void onNext(MemberInfo memberInfo) {
 
-                            Intent intent = new Intent(ACTION_FLUSH);
-                            if ("000".equals(memberInfo.getCode())) {
+                            if ("000".equals(memberInfo.getCode()) && memberInfo.getData() != null) {
 
                                 //实名认证信息
                                 getDataManager().setMetaDataById(R.string.identity, memberInfo.getData().getIdentity());
@@ -244,8 +239,11 @@ public class DataManager {
                                 //关注的人
                                 getDataManager().setMetaDataById(R.string.attentions, memberInfo.getData().getAttentions());
 
-                                // intent.putExtra("flush", true);
-                                // mLocalBroadcastManager.sendBroadcast(intent);
+
+                                //发图
+                                getDataManager().setMetaDataById(R.string.faState, memberInfo.getData().getFaState());
+
+
 
                                 if (upDataListener != null) {
 
@@ -261,11 +259,14 @@ public class DataManager {
                         }
                     });
 
-
             return true;
 
         }
 
+        if (upDataListener != null) {
+
+            upDataListener.updata(false);
+        }
 
         return false;
     }
@@ -278,9 +279,9 @@ public class DataManager {
      * @param passWorld     用户密码
      * @param isPersistence 是否初持久化
      */
-    public void initMemberInfo(final String name, final String passWorld, boolean isPersistence) {
+    public void initMemberInfo(final String name, final String passWorld, boolean isPersistence, final LoginListener loginListener) {
 
-        clearAll();
+        release();
         //第一步先登录获取memberId
         application.getAppComponent()
                 .getAPIService()
@@ -296,10 +297,7 @@ public class DataManager {
                     @Override
                     public void onError(Throwable e) {
 
-                        Intent intent = new Intent(ACTION_LOGIN);
-                        intent.putExtra("description", "登录失败！");
-                        intent.putExtra("permission ", false);
-                        mLocalBroadcastManager.sendBroadcast(intent);
+                        loginListener.login(false);
 
                     }
 
@@ -319,6 +317,7 @@ public class DataManager {
                             //memberId
                             getDataManager().setMetaDataById(R.string.id, loginInfoBean.getId(), true);
 
+
                             getDataManager().setMetaDataById(R.string.nickName, loginInfoBean.getNick_name());
 
                             Log.e("DOAING", loginInfoBean.getNick_name() + "?????");
@@ -332,32 +331,6 @@ public class DataManager {
                             getDataManager().setMetaDataById(R.string.realname, loginInfoBean.getName(), true);
 
                             getDataManager().setMetaDataById(R.string.headimgurl, loginInfoBean.getHeadimgurl());
-                            //用户昵称
-                            // getDataManager().setMetaDataById(R.string.nickName, loginInfoBean.getNick_name(), true);
-
-                      /*      //用户微信id
-                            getDataManager().setMetaDataById(R.string.wxId, loginInfoBean.);
-
-                            //QQ
-                            getDataManager().setMetaDataById(R.string.qqId, memberInfo.getData().getQqId());*/
-
-                            //用户性别
-      /*                      getDataManager().setMetaDataById(R.string.sex, memberInfo.getData().getSex());
-
-                            //用户生日
-                            getDataManager().setMetaDataById(R.string.birthday, memberInfo.getData().getBirthday());
-
-                            // 小微号认证 0-未申请 1-正在审核中 2-已通过 3-未通过
-                            getDataManager().setMetaDataById(R.string.authState, memberInfo.getData().getAuthState());
-
-                            //媒体资源0-未申请 1-待提交媒体资源 2-媒体资源待审核 3-已通过 4未通过
-                            getDataManager().setMetaDataById(R.string.lingState, memberInfo.getData().getLingState());
-
-                            //头像url
-                            getDataManager().setMetaDataById(R.string.headimgurl, memberInfo.getData().getHeadimgurl());
-
-                            //关注的人
-                            getDataManager().setMetaDataById(R.string.attentions, memberInfo.getData().getAttentions());*/
 
 
                             intent.putExtra("permission", true);
@@ -365,11 +338,12 @@ public class DataManager {
                             //登录成功刷新所有缓存数据
                             disposeMember(null);
 
+                            loginListener.login(true);
                         } else {
-                            intent.putExtra("permission", false);
+                            loginListener.login(false);
 
                         }
-                        mLocalBroadcastManager.sendBroadcast(intent);
+
                     }
                 });
 
@@ -385,21 +359,26 @@ public class DataManager {
      * 清空所有缓存，退出账号时用
      */
     @SuppressLint("CommitPrefEdits")
-    public void clearAll() {
+    public void release() {
 
         if (map != null) {
             map.clear();
         }
 
         if (sharedPreferences != null) {
-            sharedPreferences.edit().clear().commit();
+            sharedPreferences.edit().clear().apply();
         }
 
 
     }
 
-    interface UpDataListener {
+    public interface UpDataListener {
 
         void updata(boolean getDataSuccess);
+    }
+
+   public interface LoginListener {
+
+        void login(boolean isLogin);
     }
 }

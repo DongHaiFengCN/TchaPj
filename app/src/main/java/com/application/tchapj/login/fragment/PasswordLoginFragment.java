@@ -114,7 +114,23 @@ public class PasswordLoginFragment extends Fragment {
                     Toast.makeText(getContext(), "请输入正确手机号！", Toast.LENGTH_LONG).show();
                     return;
                 }
-                getDataManager().initMemberInfo(loginName, loginPwd, true);
+                getDataManager()
+                        .initMemberInfo(loginName, loginPwd, true, new DataManager.LoginListener() {
+                            @Override
+                            public void login(boolean isLogin) {
+
+                                if (isLogin) {
+
+                                    getActivity().finish();
+                                    Toast.makeText(getActivity(),"登录成功",Toast.LENGTH_SHORT).show();
+
+
+                                } else {
+                                    Toast.makeText(getActivity(),"登录失败",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
 
             }
         });

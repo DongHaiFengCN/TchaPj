@@ -29,10 +29,12 @@ import com.application.tchapj.R;
 import com.application.tchapj.alipay.OrderInfoUtil2_0;
 import com.application.tchapj.alipay.PayResult;
 import com.application.tchapj.base.BaseMvpActivity;
+import com.application.tchapj.bean.PromotionPayResultBean;
 import com.application.tchapj.main.bean.HomeCircleModel;
 import com.application.tchapj.my.activity.MyjibenActivity;
 import com.application.tchapj.my.adpter.GridImageAdapter;
 import com.application.tchapj.my.adpter.ImagePickerAdapter;
+import com.application.tchapj.my.bean.MoneyInfoBean;
 import com.application.tchapj.my.fragment.FullyGridLayoutManager;
 import com.application.tchapj.task.bean.FaTaskBean;
 import com.application.tchapj.task.bean.FaTaskSuccessBean;
@@ -542,11 +544,16 @@ public class TaskWbActivity extends BaseMvpActivity<IFaTaskView, FaTaskPresenter
             taskId= faTaskBean.getData().getTaskId();
 
             // 上传合拍任务 参数一  表示交易金额  参数二  表示活动名称
-            getPresenter().getFaTaskSuccessBeanResult(fa_wb_zjtv.getText().toString(), name);
+            //getPresenter().getFaTaskSuccessBeanResult(fa_wb_zjtv.getText().toString(), name);
         }
     }
 
-    @Override // 预付订单
+    @Override
+    public void onGetAlipayOrderInfoSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
+
+    }
+
+  /*  @Override // 预付订单
     public void onGetFaTaskSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
 
         if ("000".equals(faTaskSuccessBean.getCode())) {
@@ -563,7 +570,7 @@ public class TaskWbActivity extends BaseMvpActivity<IFaTaskView, FaTaskPresenter
 
 
         }
-    }
+    }*/
 
     @Override // 任务付款
     public void onGetFaTaskSuccessafterBeanModels(FaTaskSuccessafterBean faTaskSuccessafterBean) {
@@ -574,6 +581,16 @@ public class TaskWbActivity extends BaseMvpActivity<IFaTaskView, FaTaskPresenter
             //Toast.makeText(getContext(), "上传流水成功！", Toast.LENGTH_LONG).show();
             finish();
         }
+    }
+
+    @Override
+    public void onGetBrokerage(MoneyInfoBean moneyInfoBean) {
+
+    }
+
+    @Override
+    public void onGetPromotionPaySuccess(PromotionPayResultBean baseBean) {
+
     }
 
     @Override

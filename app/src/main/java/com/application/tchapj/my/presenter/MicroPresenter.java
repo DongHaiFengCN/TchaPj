@@ -3,6 +3,7 @@ package com.application.tchapj.my.presenter;
 import com.application.tchapj.App;
 import com.application.tchapj.base.BaseMvpPresenter;
 import com.application.tchapj.login.bean.LoginResult;
+import com.application.tchapj.login.bean.SmsCodeResponse;
 import com.application.tchapj.my.bean.MicroInfoBean;
 import com.application.tchapj.my.bean.MicroTabBean;
 import com.application.tchapj.my.view.IMicroView;
@@ -73,7 +74,7 @@ public class MicroPresenter extends BaseMvpPresenter<IMicroView> {
                 .getSmsCodeResult(username,"002","1.0","","JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
-                .subscribe(new Subscriber<LoginResult>() {  // 将数据绑定到实体类的操作
+                .subscribe(new Subscriber<SmsCodeResponse>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
                         if(isViewAttached())
@@ -87,7 +88,7 @@ public class MicroPresenter extends BaseMvpPresenter<IMicroView> {
                     }
 
                     @Override // 得到数据
-                    public void onNext(LoginResult loginResultBean) {
+                    public void onNext(SmsCodeResponse loginResultBean) {
                         LogUtils.d("Response:"+ loginResultBean);
                         if(isViewAttached())
                             getView().onGetSmsCodeResult(loginResultBean); // 得到一层数据

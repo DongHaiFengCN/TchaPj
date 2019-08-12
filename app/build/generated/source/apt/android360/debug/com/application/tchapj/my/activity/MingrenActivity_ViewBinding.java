@@ -19,7 +19,7 @@ import java.lang.Override;
 public class MingrenActivity_ViewBinding implements Unbinder {
   private MingrenActivity target;
 
-  private View view2131756318;
+  private View view2131756341;
 
   @UiThread
   public MingrenActivity_ViewBinding(MingrenActivity target) {
@@ -39,7 +39,7 @@ public class MingrenActivity_ViewBinding implements Unbinder {
     target.micro_info_next = Utils.findRequiredViewAsType(source, R.id.micro_info_next, "field 'micro_info_next'", Button.class);
     target.permanentCityNameTv = Utils.findRequiredViewAsType(source, R.id.permanent_address_city_name_tv, "field 'permanentCityNameTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.permanent_address_city_rl, "method 'onViewClicked'");
-    view2131756318 = view;
+    view2131756341 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -63,7 +63,7 @@ public class MingrenActivity_ViewBinding implements Unbinder {
     target.micro_info_next = null;
     target.permanentCityNameTv = null;
 
-    view2131756318.setOnClickListener(null);
-    view2131756318 = null;
+    view2131756341.setOnClickListener(null);
+    view2131756341 = null;
   }
 }

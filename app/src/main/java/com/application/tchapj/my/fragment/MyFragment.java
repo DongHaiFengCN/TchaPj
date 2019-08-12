@@ -31,6 +31,7 @@ import com.application.tchapj.login.activity.LoginMainActivity;
 import com.application.tchapj.main.bean.NewsInfo;
 import com.application.tchapj.my.activity.AttentionListActivity;
 
+import com.application.tchapj.my.activity.ContactActivity;
 import com.application.tchapj.my.activity.ContentManagerActivity;
 import com.application.tchapj.my.activity.DanmuActivity;
 import com.application.tchapj.my.activity.FansListActivity;
@@ -110,16 +111,11 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
     @BindView(R.id.fragment_my_fans_tv)
     TextView fragment_my_fans_tv;
 
-    Subscription mSubscription;
     Unbinder unbinder;
 
     private String user_id;
     private MaterialDialog dialog;
 
-    //private UserInfo user;
-    private LocalBroadcastManager localBroadcastManager = null;
-
-    private BroadcastReceiver flushLocalReceiver;
 
     RequestOptions headImgOptions = new RequestOptions()
             .centerCrop()
@@ -149,8 +145,9 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
 
         String nickName = getDataManager().quickGetMetaData(R.string.nickName, String.class);
         String attentions = String.valueOf(getDataManager().quickGetMetaData(R.string.attentions, Integer.class));
-        String fans = getDataManager().quickGetMetaData(R.string.fans, String.class);
+        String fans = String.valueOf(getDataManager().quickGetMetaData(R.string.fans, Integer.class));
         String headUrl = getDataManager().quickGetMetaData(R.string.headimgurl, String.class);
+        user_id = getDataManager().quickGetMetaData(R.string.id, String.class);
 
         if (!"".equals(nickName)) {
             my_logon_tv.setText(nickName);
@@ -189,33 +186,27 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
 
 
         }
+
+        String sex = getDataManager().quickGetMetaData(R.string.sex, String.class);
+        if (!"".equals(sex)) {
+            if ("m".equals(sex)) {
+                my_top_sex.setVisibility(View.VISIBLE);
+                my_top_sex2.setVisibility(View.GONE);
+                my_top_sex.setBackgroundResource(R.mipmap.sex);
+
+            } else {
+                my_top_sex.setVisibility(View.GONE);
+                my_top_sex2.setVisibility(View.VISIBLE);
+                my_top_sex2.setBackgroundResource(R.mipmap.sex2);
+            }
+        }
     }
+
+
 
     @Override
     public void initUI() {
 
-
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(DataManager.ACTION_FLUSH);
-
-        flushLocalReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-
-                if (intent.getBooleanExtra("flush", false)) {
-
-                    //这里进行数据的重新填写
-                    Log.e("DOAING", "刷新数据成功！");
-
-                } else {
-                    Toast.makeText(getActivity(), "刷新缓存失败", Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-        localBroadcastManager = LocalBroadcastManager.getInstance(Objects.requireNonNull(getActivity()));
-        localBroadcastManager.registerReceiver(flushLocalReceiver, intentFilter);
-
-        user_id = getDataManager().quickGetMetaData(R.string.id, String.class);
 
         my_logon_tv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,7 +220,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             @Override
             public void onClick(View v) {
 
-                if (user_id == null) {
+                if (user_id == null || "".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), MyjibenActivity.class);
@@ -242,7 +233,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         my_whbyh_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user_id == null) {
+                if (user_id == null|| "".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), WhbyMemberActivity.class);
@@ -259,7 +250,9 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             @Override
             public void onClick(View v) {
 
-                if (user_id == null) {
+                Log.e("DOAING",user_id);
+
+                if (user_id == null|| "".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), IdentityActivity.class);
@@ -306,9 +299,9 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
             @Override
             public void onClick(View v) {
 
-          /*      Intent intent = new Intent(getContext(), ContactActivity.class);
+                Intent intent = new Intent(getContext(), ContactActivity.class);
 
-                startActivity(intent);*/
+                startActivity(intent);
             }
         });
 
@@ -432,7 +425,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
-        localBroadcastManager.unregisterReceiver(flushLocalReceiver);
+
 
     }
 
@@ -488,28 +481,6 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         builder.create().show();
     }
 
-    private void dialogs2() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("请绑定支付宝");
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int whichButton) {
-
-                Intent intent = new Intent(getContext(), MyjibenActivity.class);
-                startActivity(intent);
-            }
-        });
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int whichButton) {
-                dialog.dismiss();
-            }
-        });
-
-        builder.create().show();
-    }
-
     public void startWeb(String url, String title) {
 
         Intent intent = new Intent(getContext(), WebViewActivity.class);
@@ -524,7 +495,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         switch (view.getId()) {
             case R.id.fragment_my_wallet_ll:
 
-                if (user_id == null) {
+                if (user_id == null||"".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), MyMoneyActivity.class);
@@ -532,7 +503,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
                 }
                 break;
             case R.id.fragment_my_content_manager_ll:
-                if (user_id == null) {
+                if (user_id == null||"".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), ContentManagerActivity.class);
@@ -543,7 +514,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
                 ToastUtil.show(getActivity(), "内容分析");
                 break;
             case R.id.fragment_my_task_analysis_ll:
-                if (user_id == null) {
+                if (user_id == null||"".equals(user_id)) {
                     dialogs();
                 } else {
                     Intent intent = new Intent(getContext(), TaskAnalysisActivity.class);

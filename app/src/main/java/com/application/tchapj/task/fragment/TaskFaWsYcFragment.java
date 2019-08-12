@@ -19,8 +19,10 @@ import android.widget.Toast;
 import com.application.tchapj.App;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpFragment;
+import com.application.tchapj.bean.PromotionPayResultBean;
 import com.application.tchapj.main.bean.HomeCircleModel;
 import com.application.tchapj.my.adpter.ImagePickerAdapter;
+import com.application.tchapj.my.bean.MoneyInfoBean;
 import com.application.tchapj.task.bean.FaTaskBean;
 import com.application.tchapj.task.bean.FaTaskSuccessBean;
 import com.application.tchapj.task.bean.FaTaskSuccessafterBean;
@@ -332,13 +334,24 @@ public class TaskFaWsYcFragment extends BaseMvpFragment<IFaTaskView, FaTaskPrese
         }
     }
 
-    @Override // 预付订单
-    public void onGetFaTaskSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
+    @Override
+    public void onGetAlipayOrderInfoSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
 
     }
 
+
     @Override // 任务付款
     public void onGetFaTaskSuccessafterBeanModels(FaTaskSuccessafterBean faTaskSuccessafterBean) {
+
+    }
+
+    @Override
+    public void onGetBrokerage(MoneyInfoBean moneyInfoBean) {
+
+    }
+
+    @Override
+    public void onGetPromotionPaySuccess(PromotionPayResultBean baseBean) {
 
     }
 

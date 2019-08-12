@@ -16,6 +16,7 @@ import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
 import com.application.tchapj.consultation.activity.UploadVideoActivity;
 import com.application.tchapj.login.bean.LoginResult;
+import com.application.tchapj.login.bean.SmsCodeResponse;
 import com.application.tchapj.my.adpter.GridImageAdapter;
 import com.application.tchapj.my.adpter.ImagePickerAdapter;
 import com.application.tchapj.my.bean.DarenDataBean;
@@ -219,8 +220,9 @@ public class DarenOtherAddActivity extends BaseMvpActivity<IDarenOneView, DarenO
         return new DarenOnePresenter(getApp());
     }
 
-    @Override // 验证码
-    public void onGetSmsCodeResult(LoginResult loginResultBean) {
+
+    @Override
+    public void onGetSmsCodeResult(SmsCodeResponse loginResultBean) {
 
     }
 

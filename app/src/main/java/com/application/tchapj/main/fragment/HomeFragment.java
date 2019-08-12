@@ -17,6 +17,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -80,6 +81,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import static com.application.tchapj.DataManager.getDataManager;
 
 // 首页Fragment
 public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> implements IHomeView {
@@ -569,20 +572,6 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
     public void onGetHomeMediaListResult(HomeMediaList homeMediaList) {
 
         if ("000".equals(homeMediaList.getCode())) {
-           /* List<HomeMediaList.HomeMediaListResult.HomeMediaModel> mediaList = homeMediaList.getData().getMediaList();
-
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-
-            // 设置焦点
-            media_recycle.setNestedScrollingEnabled(false);
-            media_recycle.setHasFixedSize(true);
-
-            media_recycle.setLayoutManager(linearLayoutManager);
-            mediaAdapter = new HomeMediaAdapter(getContext());
-            media_recycle.setAdapter(mediaAdapter);
-
-            mediaAdapter.setDatas(mediaList);*/
 
             final List<HomeMediaList.HomeMediaListResult.HomeMediaModel> mediaList = homeMediaList.getData().getMediaList();
 
@@ -655,23 +644,6 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
 
         }
 
-        /*// 老版本找圈子
-        if ("000".equals(homeCircleModel.getCode())) {
-            List<HomeCircleModel.HomeCircleModelResult.HomeCircle> circles = homeCircleModel.getData().getCircleTypeList();
-                   *//* homeCircleView01.setData(circles.get(0));
-                    homeCircleView01.setData(circles.get(0));
-                    homeCircleView01.setData(circles.get(0));*//*
-            if (circles.size() > 0) {
-                homeCircleView01.setData(circles.get(0));
-                if (circles.size() > 1) {
-
-                    homeCircleView02.setData(circles.get(2));
-                }
-                if (circles.size() > 2) {
-                    homeCircleView03.setData(circles.get(3));
-                }
-            }
-        }*/
     }
 
     @Override
@@ -687,7 +659,10 @@ public class HomeFragment extends BaseMvpFragment<IHomeView, HomePresenter> impl
     public void onGetAlipayPrivateKeyBeanResult(AlipayPrivateKeyBean alipayPrivateKeyBean) {
         if ("000".equals(alipayPrivateKeyBean.getCode())) {
             String RSA2_PRIVATE = alipayPrivateKeyBean.getData().getPrivatekey();
-            SharedPreferences.getInstance().setString(getString(R.string.RSA2_PRIVATE), RSA2_PRIVATE);
+
+            Log.e("DOAING","RSA2_PRIVATE_-----"+RSA2_PRIVATE);
+            getDataManager().setMetaDataById(R.string.RSA2_PRIVATE,RSA2_PRIVATE);
+           // SharedPreferences.getInstance().setString(getString(R.string.RSA2_PRIVATE), RSA2_PRIVATE);
 
         }
     }

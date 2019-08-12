@@ -7,12 +7,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +22,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -30,7 +30,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -38,17 +37,15 @@ import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
 import com.application.tchapj.App;
-import com.application.tchapj.Constants;
 import com.application.tchapj.R;
-import com.application.tchapj.alipay.OrderInfoUtil2_0;
 import com.application.tchapj.alipay.PayResult;
 import com.application.tchapj.base.BaseMvpActivity;
+import com.application.tchapj.bean.PromotionPayResultBean;
 import com.application.tchapj.bean.TaskDraftBean;
-import com.application.tchapj.main.bean.HomeCircleModel;
-import com.application.tchapj.my.activity.DarenDataOneActivity;
 import com.application.tchapj.my.activity.MyjibenActivity;
 import com.application.tchapj.my.adpter.GridImageAdapter;
 import com.application.tchapj.my.adpter.ImagePickerAdapter;
+import com.application.tchapj.my.bean.MoneyInfoBean;
 import com.application.tchapj.my.fragment.FullyGridLayoutManager;
 import com.application.tchapj.task.adapter.FriendReleaseAdapter;
 import com.application.tchapj.task.bean.FaTaskBean;
@@ -81,8 +78,9 @@ import com.application.tchapj.widiget.GridSpacingItemDecoration;
 import com.application.tchapj.widiget.KV;
 import com.application.tchapj.widiget.OnTagSelectListener;
 import com.application.tchapj.widiget.TagAdapter;
-import com.application.tchapj.widiget.TagAdapter3;
 import com.application.tchapj.widiget.ToolbarHelper;
+import com.iflytek.cloud.Setting;
+import com.iflytek.cloud.thirdparty.L;
 import com.qiniu.android.common.FixedZone;
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.Configuration;
@@ -97,8 +95,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -151,14 +151,17 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
     TextView titleTv;
 
 
-
+    Dialog publishTaskDialog;
     private BigDecimal discount;
     private String discountPrice = "200"; //>=这个值就打折
     private String discountStr;//后台返的折扣字段，没折扣值为空
     private boolean isUseDiscount = false;//有没有用折扣
 
     int current = 1;
-
+    /**
+     * 1 推广金  2 支付宝
+     */
+    int payType = 1;
     private String imageurl;
     private ArrayList<ImageItem> images = null;
     // 第一个图片选择
@@ -173,7 +176,7 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
 
     // 第二个图片选择
     //private int maxSelectNum = 9;
-    private int maxSelectNum = 1;
+    private int maxSelectNum = 9;
     private List<LocalMedia> selectList = new ArrayList<>();
     private List<LocalMedia> mselectList1;
     private List<LocalMedia> mselectList2;
@@ -195,7 +198,7 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
     private String require;     // 任务要求/商家需求
     private String activityImgUrl;      // 活动缩略图
     private String startTime;   // 活动开始时间
-    private String endTime= "";     // 活动结束时间
+    private String endTime = "";     // 活动结束时间
     //    private String circleTypeId;// 投放圈子
     private String unitPrice;   // 单价
     private String taskImgUrl;  // 活动图片url或视频url
@@ -214,23 +217,27 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
     public String taskId;
 
     private KV kv;                 // 保存缓存数据的对象
-    private FaTaskSuccessBean.FaTaskSuccessBeanResult faTaskSuccessBeanResult = new FaTaskSuccessBean.FaTaskSuccessBeanResult();
+    //private FaTaskSuccessBean.FaTaskSuccessBeanResult faTaskSuccessBeanResult = new FaTaskSuccessBean.FaTaskSuccessBeanResult();
     public String orderString; // 支付宝预付订单信息
-    public static String ordernumber = "2018082821001004090523209120"; // 流水号
+    //public static String ordernumber = "2018082821001004090523209120"; // 流水号
 
     // 支付宝支付业务：入参app_id
-    public static final String APPID = "2018062560414948";
+    // public static final String APPID = "2018062560414948";
 
     // 支付宝私钥
-    public static String RSA2_PRIVATE = "";
+    // public static String RSA2_PRIVATE = "";
 
     // 支付宝公钥
-    public static final String RSA_PRIVATE = "";
+    // public static final String RSA_PRIVATE = "";
+
+    private double brokerage;
+
 
     private static final int SDK_PAY_FLAG = 1;
     // 消息机制刷新页面
     @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
+        @Override
         @SuppressWarnings("unused")
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -277,30 +284,50 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                     break;
             }
         }
-
-
     };
 
 
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
-
-
+        originalPriceTv.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
     }
 
     @Override
     public int getRootViewId() {
+
         return R.layout.activity_release_task_img_text;
     }
 
     @Override
     public void initUI() {
 
+        fa_pyq_ydet.setOnFocusChangeListener(new android.view.View.
+                OnFocusChangeListener() {
+            @SuppressLint("NewApi")
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    fa_pyq_ydet.setTextColor(getColor(R.color.black));
+
+                }
+            }
+        });
+        taskRequireTv.setOnFocusChangeListener(new android.view.View.
+                OnFocusChangeListener() {
+            @SuppressLint("NewApi")
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    taskRequireTv.setTextColor(getColor(R.color.black));
+                }
+            }
+        });
+        getPresenter().getBrokerage();
         titleTv.setText("发图文任务");
         toolbarRightTv.setText("保存草稿");
 
-        kv = new KV(ReleaseTaskImgTextActivity.this);             // 保存基础数据
-        RSA2_PRIVATE = kv.getString(Constants.RSA2_PRIVATE, "");
+        kv = new KV(ReleaseTaskImgTextActivity.this);
+        //RSA2_PRIVATE = kv.getString(Constants.RSA2_PRIVATE, "");
 
         //chooseMode = PictureMimeType.ofAll();
         chooseMode = PictureMimeType.ofImage();
@@ -321,7 +348,6 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         initSelectChannelTabLayout();
 
 
-
         // 时间选择
         fa_pyq_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -330,7 +356,6 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 picker.setActionButtonTop(false);
                 picker.setCanLinkage(false);
                 picker.setTitleText("请选择");
-                //        picker.setStepMinute(5);
                 picker.setWeightEnable(true);
                 picker.setWheelModeEnable(true);
                 LineConfig config = new LineConfig();
@@ -343,8 +368,10 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                     @Override
                     public void onDateTimePicked(String year, String month, String day, String hour, String minute) {
 
-                        fa_pyq_start.setText(month + "-" + day + " " + hour + ":" + minute);
-                        startTime = year + "-" + month + "-" + day + " " + hour + ":" + minute;       // 活动开始时间
+                        SimpleDateFormat ss = new SimpleDateFormat("ss");//获取秒
+                        String s = ss.format(new Date());
+                        fa_pyq_start.setText(month + "-" + day + " " + hour + ":" + minute + ":" + s);
+                        startTime = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + s;       // 活动开始时间
                     }
                 });
                 picker.show();
@@ -358,7 +385,6 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 picker.setActionButtonTop(false);
                 picker.setCanLinkage(false);
                 picker.setTitleText("请选择");
-//        picker.setStepMinute(5);
                 picker.setWeightEnable(true);
                 picker.setWheelModeEnable(true);
                 LineConfig config = new LineConfig();
@@ -370,8 +396,10 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 picker.setOnDateTimePickListener(new DateTimePicker.OnYearMonthDayTimePickListener() {
                     @Override
                     public void onDateTimePicked(String year, String month, String day, String hour, String minute) {
-                        fa_pyq_end.setText(month + "-" + day + " " + hour + ":" + minute);
-                        endTime = year + "-" + month + "-" + day + " " + hour + ":" + minute;// 活动结束时间
+                        SimpleDateFormat ss = new SimpleDateFormat("ss");//获取秒
+                        String s = ss.format(new Date());
+                        fa_pyq_end.setText(month + "-" + day + " " + hour + ":" + minute + ":" + s);
+                        endTime = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + s;// 活动结束时间
                     }
                 });
                 picker.show();
@@ -394,7 +422,7 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                     sl = new BigDecimal(fa_pyq_slet.getText().toString());
                     dj = new BigDecimal(fa_pyq_djet.getText().toString());
                     setPrice(sl, dj);
-                }else{
+                } else {
                     originalPriceTv.setText("");
                     fa_pyq_price_tv.setText("");
                 }
@@ -410,44 +438,39 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
 
                 getViewData();//获取界面上用户填写的数据
 
-                if (activityImgUrl==null) {
-                    Toast.makeText(getApplication(),"请选择活动缩略图！", Toast.LENGTH_LONG).show();
+                if (activityImgUrl == null) {
+                    Toast.makeText(getApplication(), "请选择活动缩略图！", Toast.LENGTH_LONG).show();
                     return;
                 } else if (name.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入活动标题！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请输入活动标题！", Toast.LENGTH_LONG).show();
                     return;
-                }else if (startTime.length() <= 0) {
-                    Toast.makeText(getApplication(),"请选择开始时间！", Toast.LENGTH_LONG).show();
+                } else if (startTime.length() <= 0) {
+                    Toast.makeText(getApplication(), "请选择开始时间！", Toast.LENGTH_LONG).show();
                     return;
                 } else if (endTime.length() <= 0) {
-                    Toast.makeText(getApplication(),"请选择结束时间！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请选择结束时间！", Toast.LENGTH_LONG).show();
                     return;
-                } else if (taskGuidance.length() <= 0&&current!=0) {
-                    Toast.makeText(getApplication(),"请输入活动引导！", Toast.LENGTH_LONG).show();
+                } else if (taskGuidance.length() <= 0 && current != 0) {
+                    Toast.makeText(getApplication(), "请输入活动引导！", Toast.LENGTH_LONG).show();
                     return;
                 } else if (TextUtils.isEmpty(taskImgUrl)) {
 
-                    Toast.makeText(getApplication(),"请选择图片！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请选择图片！", Toast.LENGTH_LONG).show();
                     return;
                 } else if (TextUtils.isEmpty(require)) {
                     Toast.makeText(getApplication(), "请输入任务要求！", Toast.LENGTH_LONG).show();
                     return;
-                } else if (copywriting.length() <= 0&&current!=0) {
-                    Toast.makeText(getApplication(),"请输入朋友圈文案！", Toast.LENGTH_LONG).show();
+                } else if (copywriting.length() <= 0 && current != 0) {
+                    Toast.makeText(getApplication(), "请输入朋友圈文案！", Toast.LENGTH_LONG).show();
                     return;
-                }else if (unitPrice.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入单价！", Toast.LENGTH_LONG).show();
+                } else if (unitPrice.length() <= 0) {
+                    Toast.makeText(getApplication(), "请输入单价！", Toast.LENGTH_LONG).show();
                     return;
-                }else if (taskNum.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入投放数量！", Toast.LENGTH_LONG).show();
+                } else if (taskNum.length() <= 0) {
+                    Toast.makeText(getApplication(), "请输入投放数量！", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-
-                String discountRequestParamStr = "";//没使用折扣（现在是折扣期间，但是价钱没满足折扣要求时）传空给后台
-                if(isUseDiscount){
-                    discountRequestParamStr = discountStr;//使用折扣了传折扣给后台
-                }
 
                 // 上传朋友圈任务
 //                if(current == 0){
@@ -457,10 +480,9 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
 //                            , taskNum, linkTitleStr, phonenumber, copywriting, Fans, ForwardUrl,discountRequestParamStr);
 
 
-                    getPresenter().getFaTaskBeanResult(memberId, taskType, name, require, activityImgUrl, startTime
-                            , endTime, unitPrice, taskImgUrl
-                            , taskNum, taskGuidance, phonenumber, copywriting, Fans, "",discountRequestParamStr);
-
+            /*    getPresenter().getFaTaskBeanResult(memberId, taskType,"", name, require, activityImgUrl, startTime
+                        , endTime, unitPrice, taskImgUrl
+                        , taskNum, taskGuidance, phonenumber, copywriting, Fans, "");*/
 
 
             }
@@ -501,25 +523,25 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         originalPriceTv.setText(sl.multiply(dj) + "");
 
         int compareToInt = sl.multiply(dj).compareTo(new BigDecimal(discountPrice));
-        if((compareToInt == 0 || compareToInt == 1) && !TextUtils.isEmpty(discountStr) && !discountStr.equals("1")){//0:等于 1:大于  并且 折扣不等于null
+        if ((compareToInt == 0 || compareToInt == 1) && !TextUtils.isEmpty(discountStr) && !discountStr.equals("1")) {//0:等于 1:大于  并且 折扣不等于null
             //用折扣
             isUseDiscount = true;
             fa_pyq_price_tv.setText(sl.multiply(dj).multiply(discount) + "");
-        }else{
+        } else {
             isUseDiscount = false;
-            fa_pyq_price_tv.setText(sl.multiply(dj)+ "");
+            fa_pyq_price_tv.setText(sl.multiply(dj) + "");
         }
     }
 
 
     @Override
     public void initData() {
-        if(SharedPreferencesUtils.getInstance().getStartInitiationData() != null){
+        if (SharedPreferencesUtils.getInstance().getStartInitiationData() != null) {
             discountStr = SharedPreferencesUtils.getInstance().getStartInitiationData().getDiscount();
-            if(!TextUtils.isEmpty(discountStr) && !discountStr.equals("1")){
+            if (!TextUtils.isEmpty(discountStr) && !discountStr.equals("1")) {
                 discount = new BigDecimal(discountStr);
                 discountTv.setText(discount.multiply(new BigDecimal("10")).stripTrailingZeros().toPlainString() + "折" + " （200起才能使用折扣）");//去无用的零 stripTrailingZeros().toPlainString()
-            }else{
+            } else {
                 discountStr = "";
                 discount = new BigDecimal(1);
                 discountTv.setText("无");
@@ -540,42 +562,45 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
             faTaskBeanResult = faTaskBean.getData();
             taskId = faTaskBean.getData().getTaskId();
 
-            // 上传合拍任务 参数一  表示交易金额  参数二  表示活动名称
-            getPresenter().getFaTaskSuccessBeanResult(fa_pyq_price_tv.getText().toString(), name);
+
+            //获取任务id推广金支付
+            if (payType == 1) {
+
+                getPresenter().promotionPayOrder(fa_pyq_price_tv.getText().toString(), taskId);
+                // Log.e("A", "推广金支付" + fa_pyq_price_tv.getText().toString() + "--1--" + taskId);
+
+            } else {
+                //支付预付订单
+                getPresenter().getAlipayOrderInfoResult(fa_pyq_price_tv.getText().toString(), name);
+                //  Log.e("A", "支付宝支付" + fa_pyq_price_tv.getText().toString() + "--2--" + name);
+            }
 
 
-        }else{
+        } else {
             String failStr = "发布失败";
-            if(!TextUtils.isEmpty(faTaskBean.getDescription())){
+            if (!TextUtils.isEmpty(faTaskBean.getDescription())) {
                 failStr = failStr + ":" + faTaskBean.getDescription();
             }
             showToast(failStr);
         }
     }
 
-    @Override // 预付订单
-    public void onGetFaTaskSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
+
+
+    /**
+     * 预付支付宝订单
+     *
+     * @param faTaskSuccessBean
+     */
+    @Override
+    public void onGetAlipayOrderInfoSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
 
         if ("000".equals(faTaskSuccessBean.getCode())) {
-            faTaskSuccessBeanResult = faTaskSuccessBean.getData();
             orderString = faTaskSuccessBean.getData().getOrderString(); // 支付宝预付订单信息
             Log.e("预付订单", "预付订单: " + orderString);
-
-            if (RSA2_PRIVATE.equals("")) {
-                jibendialogs();
-            } else {
-
-                if (current == 0) {
-                    // 上传合拍任务 参数一  表示交易金额  参数二  表示活动名称
-                    payV2(fa_pyq_price_tv.getText().toString(), name);
-                } else {
-                    payV2(fa_pyq_price_tv.getText().toString(), name);
-                }
-
-            }
+            payV2(orderString);
 
         }
-
     }
 
 
@@ -583,11 +608,41 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
     public void onGetFaTaskSuccessafterBeanModels(FaTaskSuccessafterBean faTaskSuccessafterBean) {
 
         if ("000".equals(faTaskSuccessafterBean.getCode())) {
-
-            Toast.makeText(ReleaseTaskImgTextActivity.this, "上传流水成功！", Toast.LENGTH_LONG).show();
+            Toast.makeText(ReleaseTaskImgTextActivity.this, "支付成功！", Toast.LENGTH_LONG).show();
             finish();
         }
     }
+
+    /**
+     * 这里获取钱包佣金的余额
+     *
+     * @param moneyInfoBean
+     */
+    @Override
+    public void onGetBrokerage(MoneyInfoBean moneyInfoBean) {
+
+        if ("000".equals(moneyInfoBean.getCode())) {
+
+            brokerage = Double.valueOf(moneyInfoBean.getData().getProSY());
+
+        }
+    }
+
+    /**
+     * 推广金支付完成的方法
+     *
+     * @param baseBean
+     */
+    @Override
+    public void onGetPromotionPaySuccess(PromotionPayResultBean baseBean) {
+
+        if ("000".equals(baseBean.getCode())) {
+
+            Toast.makeText(ReleaseTaskImgTextActivity.this, baseBean.getDescription(), Toast.LENGTH_SHORT).show();
+            finish();
+        }
+    }
+
 
     @Override
     public void showProgress() {
@@ -771,33 +826,30 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                                 .selectionMedia(selectList)
                                 .forResult(PictureConfig.CHOOSE_REQUEST);
                     }
-
                 }
             }, names);
-
         }
     };
 
-    private SelectDialog showDialog(SelectDialog.SelectDialogListener listener, List<String> names) {
+    private void showDialog(SelectDialog.SelectDialogListener listener, List<String> names) {
         SelectDialog dialog = new SelectDialog(ReleaseTaskImgTextActivity.this, R.style
                 .transparentFrameWindowStyle,
                 listener, names);
         if (!ReleaseTaskImgTextActivity.this.isFinishing()) {
             dialog.show();
         }
-        return dialog;
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (resultCode == ImagePicker.RESULT_CODE_ITEMS) {
             //添加图片返回
             if (data != null && requestCode == REQUEST_CODE_SELECT) {
+
                 images = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
                 if (images != null) {
+
                     selImageList.clear();
                     selImageList.addAll(images);
                     adapter.setImages(selImageList);
@@ -810,75 +862,82 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
 
             }
         } else if (resultCode == ImagePicker.RESULT_CODE_BACK) {
+
             //预览图片返回
             if (data != null && requestCode == REQUEST_CODE_PREVIEW) {
 
+
                 images = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_IMAGE_ITEMS);
+
                 if (images != null) {
                     selImageList.clear();
                     selImageList.addAll(images);
-                    if(selImageList.size() == 0){
+                    if (selImageList.size() == 0) {
                         activityImgUrl = "";
                     }
                     adapter.setImages(selImageList);
                 }
             }
-        } else if (resultCode == ReleaseTaskImgTextActivity.this.RESULT_OK) {
-            switch (requestCode) {
-                case PictureConfig.CHOOSE_REQUEST:
+        } else if (resultCode == RESULT_OK) {
+            if (requestCode == PictureConfig.CHOOSE_REQUEST) {
+                if (current == 0) {
+                    // 图片选择
+                    mselectList1 = PictureSelector.obtainMultipleResult(data);
+                    selectList.clear();
+                    selectList = mselectList1;
+                    gridImageAdapter.setList(selectList);
+                    gridImageAdapter.notifyDataSetChanged();
 
-                    if (current == 0) {
-                        // 图片选择
+                    // 进行判断
+                    showLoadingDialog();
+                    for (int i = 0; i < selectList.size(); i++) {
+                        upload(selectList.get(i).getPath(), i);
+                    }
+                } else {
+                    // 图片选择
+                    imagelist.clear();
+                    mselectList2 = PictureSelector.obtainMultipleResult(data);
 
-                        mselectList1 = PictureSelector.obtainMultipleResult(data);
-                        selectList.clear();
-                        selectList = mselectList1;
-                        gridImageAdapter.setList(selectList);
-                        gridImageAdapter.notifyDataSetChanged();
-
-                        // 进行判断
-                        showLoadingDialog();
-                        for (int i = 0; i < selectList.size(); i++) {
-                            upload(selectList.get(i).getPath(), i);
-                        }
-                    } else {
-                        // 图片选择
-                        imagelist.clear();
-                        mselectList2 = PictureSelector.obtainMultipleResult(data);
-                        selectList.clear();
-                        selectList = mselectList2;
-                        gridImageAdapter.setList(selectList);
-                        gridImageAdapter.notifyDataSetChanged();
-
-                        // 进行判断
-                        showLoadingDialog();
-                        for (int i = 0; i < selectList.size(); i++) {
-                            upload(selectList.get(i).getPath(), i);
+                    //不是下列格式的数据都过滤掉
+                    Iterator<LocalMedia> localMediaIterator = mselectList2.iterator();
+                    while (localMediaIterator.hasNext()) {
+                        LocalMedia localMedia = localMediaIterator.next();
+                        if (!("image/jpeg".equals(localMedia.pictureType) ||
+                                "image/jpg".equals(localMedia.pictureType) ||
+                                "image/gif".equals(localMedia.pictureType) ||
+                                "image/png".equals(localMedia.pictureType))) {
+                            Toast.makeText(ReleaseTaskImgTextActivity.this, "上传的格式不合法！", Toast.LENGTH_SHORT).show();
+                            localMediaIterator.remove();
                         }
                     }
 
+                    selectList.clear();
+                    selectList = mselectList2;
+                    gridImageAdapter.setList(selectList);
+                    gridImageAdapter.notifyDataSetChanged();
 
+                    // 进行判断
+                    if (selectList.size() > 0) {
+                        showLoadingDialog();
+                    }
+                    for (int i = 0; i < selectList.size(); i++) {
+                        upload(selectList.get(i).getPath(), i);
+                    }
+                }
             }
         }
 
 
     }
 
+    /**
+     * @param fileUrl 图片原始路径
+     * @param index   缩略图
+     */
     private void upload(String fileUrl, final int index) {
-        /*Configuration config = new Configuration.Builder()
-                .chunkSize(256 * 1024)        // 分片上传时，每片的大小。 默认256K
-                .putThreshhold(512 * 1024)   // 启用分片上传阀值。默认512K
-                .connectTimeout(10)           // 链接超时。默认10秒
-                .useHttps(true)               // 是否使用https上传域名
-                .responseTimeout(60)          // 服务器响应超时。默认60秒
-                .recorder(recorder)           // recorder分片上传时，已上传片记录器。默认null
-                .recorder(recorder, keyGen)   // keyGen 分片上传时，生成标识符，用于片记录器区分是那个文件的上传记录
-                .zone(FixedZone.zone0)        // 设置区域，指定不同区域的上传域名、备用域名、备用IP。
-                .build();
-// 重用uploadManager。一般地，只需要创建一个uploadManager对象
-        UploadManager uploadManager = new UploadManager(config);*/
 
-
+        //切割文件名
+        String key = fileUrl.substring(fileUrl.lastIndexOf("\\") + 1);
         //上传配置
         Configuration config = new Configuration.Builder()
                 .chunkSize(256 * 1024)  //分片上传时，每片的大小。 默认 256K
@@ -889,23 +948,21 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 .build();
         UploadManager uploadManager = new UploadManager(config);
 
-        uploadManager.put(fileUrl, null, App.QiniuToken, new UpCompletionHandler() {
+        uploadManager.put(fileUrl, key, App.QiniuToken, new UpCompletionHandler() {
             @Override
             public void complete(String s, ResponseInfo responseInfo,
                                  JSONObject jsonObject) {
                 if (responseInfo.isOK()) {
 
-                    Log.e("success", "complete:" + responseInfo + jsonObject);
-
                     try {
                         String upimg = jsonObject.getString("key");
 
                         imageurl = "http://" + "qiniuyun2.ctrlmedia.cn/" + upimg;
-                        if(index == -1){
+                        if (index == -1) {
                             //表示活动缩略图
                             activityImgUrl = imageurl;
-                        }else{
-                            if(!imagelist.contains(imageurl)){
+                        } else {
+                            if (!imagelist.contains(imageurl)) {
                                 imagelist.add(imageurl);
                             }
 
@@ -919,8 +976,7 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 } else {
                     Log.e("failssss", s + responseInfo + jsonObject + imageurl);
                 }
-                Log.e("qiniu", "complete: " + jsonObject + imageurl);
-                if(index == -1 || (index >= 0 && selectList.size() - 1 == index)){
+                if (index == -1 || (index >= 0 && selectList.size() - 1 == index)) {
                     dismissLoadingDialog();
                 }
 
@@ -934,12 +990,14 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         AlertDialog.Builder builder = new AlertDialog.Builder(ReleaseTaskImgTextActivity.this);
         builder.setMessage("最多选择3个");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
 
                 dialog.dismiss();
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.dismiss();
             }
@@ -949,32 +1007,13 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
     }
 
     // 支付宝支付业务
-    public void payV2(String money, String titls) {
-        if (TextUtils.isEmpty(APPID) || (TextUtils.isEmpty(RSA2_PRIVATE) && TextUtils.isEmpty(RSA_PRIVATE))) {
-            new AlertDialog.Builder(ReleaseTaskImgTextActivity.this).setTitle("警告").setMessage("需要配置APPID | RSA_PRIVATE")
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialoginterface, int i) {
-                            //
-                            finish();
-                        }
-                    }).show();
-            return;
-        }
-
-        boolean rsa2 = (RSA2_PRIVATE.length() > 0);
-        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(APPID, rsa2, money, titls); // 传参重点
-        String orderParam = OrderInfoUtil2_0.buildOrderParam(params);
-
-        String privateKey = rsa2 ? RSA2_PRIVATE : RSA_PRIVATE;
-        String sign = OrderInfoUtil2_0.getSign(params, privateKey, rsa2);
-        final String orderInfo = orderParam + "&" + sign;
+    public void payV2(final String orderString) {
 
         Runnable payRunnable = new Runnable() {
-
             @Override
             public void run() {
                 PayTask alipay = new PayTask(ReleaseTaskImgTextActivity.this);
-                Map<String, String> result = alipay.payV2(orderInfo, true);
+                Map<String, String> result = alipay.payV2(orderString, true);
                 Log.i("msp", result.toString());
 
                 Message msg = new Message();
@@ -994,12 +1033,14 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         AlertDialog.Builder builder = new AlertDialog.Builder(ReleaseTaskImgTextActivity.this);
         builder.setMessage("请进行支付宝申请授权");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 Intent intent = new Intent(ReleaseTaskImgTextActivity.this, MyjibenActivity.class);
                 startActivity(intent);
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.dismiss();
             }
@@ -1015,7 +1056,6 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         memberId = App.getId();   // 用户id
 
         name = fa_pyq_titlet.getText().toString();         // 活动标题
-
 
 
         phonenumber = "";                                     // 手机号码
@@ -1039,25 +1079,33 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         copywriting = fa_pyq_waet.getText().toString();       // 朋友圈文案
 
 
-
+/*        fa_pyq_ydet.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    fa_pyq_ydet.setTextColor(getColor(R.color.black));
+                    Log.e("AAAAAAAA","AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                }
+                return false;
+            }
+        });*/
 
         taskImgUrl = "";
-        if(imagelist != null){
-            for (int i = 0; i < imagelist.size(); i ++){
+        if (imagelist != null) {
+            for (int i = 0; i < imagelist.size(); i++) {
                 taskImgUrl += imagelist.get(i);
-                if(i != imagelist.size() - 1){
+                if (i != imagelist.size() - 1) {
                     taskImgUrl += ",";
 
                 }
             }
         }
 
-
     }
 
     @OnClick({R.id.toolbar_menu_title, R.id.release_task_img_text_preview_task_tv})
     public void onViewClicked(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.toolbar_menu_title:
                 //保存草稿
                 getViewData();
@@ -1092,36 +1140,36 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 //预览任务
                 getViewData();//获取界面上用户填写的数据
 
-                if (activityImgUrl==null) {
-                    Toast.makeText(getApplication(),"请选择活动缩略图！", Toast.LENGTH_LONG).show();
+                if (activityImgUrl == null) {
+                    Toast.makeText(getApplication(), "请选择活动缩略图！", Toast.LENGTH_LONG).show();
                     return;
                 } else if (name.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入活动标题！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请输入活动标题！", Toast.LENGTH_LONG).show();
                     return;
-                }else if (startTime.length() <= 0) {
-                    Toast.makeText(getApplication(),"请选择开始时间！", Toast.LENGTH_LONG).show();
+                } else if (startTime.length() <= 0) {
+                    Toast.makeText(getApplication(), "请选择开始时间！", Toast.LENGTH_LONG).show();
                     return;
                 } else if (endTime.length() <= 0) {
-                    Toast.makeText(getApplication(),"请选择结束时间！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请选择结束时间！", Toast.LENGTH_LONG).show();
                     return;
-                } else if (taskGuidance.length() <= 0&&current!=0) {
-                    Toast.makeText(getApplication(),"请输入活动引导！", Toast.LENGTH_LONG).show();
+                } else if (taskGuidance.length() <= 0 && current != 0) {
+                    Toast.makeText(getApplication(), "请输入活动引导！", Toast.LENGTH_LONG).show();
                     return;
-                }  else if (TextUtils.isEmpty(taskImgUrl)) {
+                } else if (TextUtils.isEmpty(taskImgUrl)) {
 
-                    Toast.makeText(getApplication(),"请选择图片！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请选择图片！", Toast.LENGTH_LONG).show();
                     return;
                 } else if (TextUtils.isEmpty(require)) {
                     Toast.makeText(getApplication(), "请输入任务要求！", Toast.LENGTH_LONG).show();
                     return;
-                } else if (copywriting.length() <= 0&&current!=0) {
-                    Toast.makeText(getApplication(),"请输入朋友圈文案！", Toast.LENGTH_LONG).show();
+                } else if (copywriting.length() <= 0 && current != 0) {
+                    Toast.makeText(getApplication(), "请输入朋友圈文案！", Toast.LENGTH_LONG).show();
                     return;
-                }else if (unitPrice.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入单价！", Toast.LENGTH_LONG).show();
+                } else if (unitPrice.length() <= 0) {
+                    Toast.makeText(getApplication(), "请输入单价！", Toast.LENGTH_LONG).show();
                     return;
-                }else if (taskNum.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入投放数量！", Toast.LENGTH_LONG).show();
+                } else if (taskNum.length() <= 0) {
+                    Toast.makeText(getApplication(), "请输入投放数量！", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -1133,8 +1181,8 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
 
     }
 
-    public void setViewData(){
-        if(SharedPreferencesUtils.getInstance().getTaskToDraft() != null){
+    public void setViewData() {
+        if (SharedPreferencesUtils.getInstance().getTaskToDraft() != null) {
             TaskDraftBean taskDraftBean = SharedPreferencesUtils.getInstance().getTaskToDraft();
             fa_pyq_titlet.setText(taskDraftBean.getActivityTitle());
             fa_pyq_start.setText(taskDraftBean.getStartTime());
@@ -1154,8 +1202,8 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
             taskRequireTv.setText(taskDraftBean.getTaskRequireLike());
             fa_pyq_waet.setText(taskDraftBean.getWechatCopywriting());
 
-            if(!TextUtils.isEmpty(taskDraftBean.getActivityImgUrl()) && taskDraftBean.getActivityImgList() != null
-                    && taskDraftBean.getActivityImgList().size() > 0){
+            if (!TextUtils.isEmpty(taskDraftBean.getActivityImgUrl()) && taskDraftBean.getActivityImgList() != null
+                    && taskDraftBean.getActivityImgList().size() > 0) {
 
                 selImageList.clear();
                 selImageList.addAll(taskDraftBean.getActivityImgList());
@@ -1164,10 +1212,10 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 activityImgUrl = taskDraftBean.getActivityImgUrl();
             }
 
-            if(taskDraftBean.getImageUrlList() != null
+            if (taskDraftBean.getImageUrlList() != null
                     && taskDraftBean.getImageUrlList().size() > 0
-                    && taskDraftBean.getSelectImageList()!= null
-                    && taskDraftBean.getSelectImageList().size() > 0){
+                    && taskDraftBean.getSelectImageList() != null
+                    && taskDraftBean.getSelectImageList().size() > 0) {
 
                 selectList = taskDraftBean.getSelectImageList();
                 gridImageAdapter.setList(selectList);
@@ -1175,8 +1223,6 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
 
                 imagelist = taskDraftBean.getImageUrlList();
             }
-
-
         }
     }
 
@@ -1185,7 +1231,10 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         context.startActivity(starter);
     }
 
-    public void showPreviewTaskDialog(){
+    @SuppressLint("SetTextI18n")
+    public void showPreviewTaskDialog() {
+
+
         final Dialog dialog = new Dialog(this, R.style.DialogStyle);
         View view = LayoutInflater.from(this).inflate(R.layout.activity_lead_task_wechat, null);
         dialog.setContentView(view);
@@ -1194,58 +1243,122 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         view.findViewById(R.id.coypTv).setVisibility(View.GONE);
         view.findViewById(R.id.lead_task_wechat_submit_tv).setVisibility(View.GONE);
         view.findViewById(R.id.place_order_task_ll).setVisibility(View.VISIBLE);
-        ((Toolbar)view.findViewById(R.id.toolbar)).setNavigationOnClickListener(new View.OnClickListener(){
+        ((Toolbar) view.findViewById(R.id.toolbar)).setNavigationOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
             }
         });
+
         view.findViewById(R.id.place_order_task_submit_tv).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
-                String discountRequestParamStr = "";//没使用折扣（现在是折扣期间，但是价钱没满足折扣要求时）传空给后台
-                if(isUseDiscount){
-                    discountRequestParamStr = discountStr;//使用折扣了传折扣给后台
-                }
 
-                //调用发任务接口
-                getPresenter().getFaTaskBeanResult(memberId, taskType, name, require, activityImgUrl, startTime
-                        , endTime, unitPrice, taskImgUrl
-                        , taskNum, taskGuidance, phonenumber, copywriting, Fans, "",discountRequestParamStr);
+                String amount = fa_pyq_price_tv.getText().toString();
+
+                final Dialog mPayDialog = new Dialog(ReleaseTaskImgTextActivity.this, R.style.DialogStyle);
+                mPayDialog.setCanceledOnTouchOutside(true); //手指触碰到外界取消
+                mPayDialog.setCancelable(true);             //可取消 为true
+                Window window = mPayDialog.getWindow();      // 得到dialog的窗体
+                Objects.requireNonNull(window).setGravity(Gravity.BOTTOM);
+                window.setWindowAnimations(R.style.share_animation);
+
+                View view1 = getLayoutInflater().inflate(R.layout.layout_dialog_pay_task, null);
+                view1.findViewById(R.id.close_tv).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mPayDialog.dismiss();
+                    }
+                });
+                TextView amountTv = view1.findViewById(R.id.amount_tv);
+                amountTv.setText("￥" + amount);
+                RadioButton r1 = view1.findViewById(R.id.r1);
+                // RadioButton r2 = view1.findViewById(R.id.r2);
+                r1.setText("推广佣金  " + brokerage);
+
+                BigDecimal data1 = new BigDecimal(amount);
+                RadioGroup radioGroup = view1.findViewById(R.id.pay_type_rg);
+
+                //支付金额大于佣金转到支付宝支付  1 推广金 2 支付宝
+                if (data1.compareTo(new BigDecimal(brokerage)) > 0) {
+                    radioGroup.check(R.id.r2);
+                    r1.setClickable(false);
+                    r1.setTextColor(getResources().getColor(R.color.alpha_40_black));
+                    payType = 2;
+                } else {
+                    radioGroup.check(R.id.r1);
+                    payType = 1;
+                }
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                        switch (i) {
+                            case R.id.r1:
+                                payType = 1;
+                                break;
+                            case R.id.r2:
+                                payType = 2;
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                });
+
+                Button payBt = view1.findViewById(R.id.pay_bt);
+                payBt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        //调用发任务的接口
+                        getPresenter().getFaTaskBeanResult(memberId, taskType, tagLayoutAdapter.position + "", name, require, activityImgUrl, startTime
+                                , endTime, unitPrice, taskImgUrl
+                                , taskNum, taskGuidance, phonenumber, copywriting, Fans, "");
+                        mPayDialog.dismiss();
+
+                    }
+                });
+                window.setContentView(view1);
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);//设置横向全屏
+                mPayDialog.show();
+
             }
         });
 
 
         TextView toolbarTitleTv = view.findViewById(R.id.toolbar_title);
-        TextView releasefNameTv = view.findViewById(R.id.releasefNameTv);
-        ImageView releasefImg = view.findViewById(R.id.releasefImg);
+        TextView releaseNameTv = view.findViewById(R.id.releasefNameTv);
+        ImageView releaseImg = view.findViewById(R.id.releasefImg);
         TextView friendCircleTv = view.findViewById(R.id.friendCircleTv);
-        TextView releasefDownloadValueTv1 = view.findViewById(R.id.releasefDownloadValueTv1);
-        TextView releasefMoneyValueTv = view.findViewById(R.id.releasefMoneyValueTv);
+        TextView releaseDownloadValueTv1 = view.findViewById(R.id.releasefDownloadValueTv1);
+        TextView releaseMoneyTv = view.findViewById(R.id.releasefMoneyValueTv);
+        releaseMoneyTv.setText((Double.valueOf(unitPrice) * 10) + "");
+
         TextView activityRequireTv = view.findViewById(R.id.lead_task_wechat_task_requirement_tv);
         TextView activityGuideTv = view.findViewById(R.id.lead_task_wechat_activity_guide_tv);
         TextView activityTimeValueTv = view.findViewById(R.id.activityTimeValueTv);
         TextView taskStatusTv = view.findViewById(R.id.lead_task_wechat_task_status_tv);
-        TextView releasefCopywritingTv = view.findViewById(R.id.releasefCopywritingTv);
+        TextView releaseCopywritingTv = view.findViewById(R.id.releasefCopywritingTv);
         RecyclerView releasefValueRv = view.findViewById(R.id.releasefValueRv);
         TextView priceTv = view.findViewById(R.id.place_order_task_price_tv);
 
         toolbarTitleTv.setText("预览任务效果");
-        GlideUtils.loadRoundedImageView(this, activityImgUrl, releasefImg, R.color.gainsboro);
-        releasefNameTv.setText(name);
+        GlideUtils.loadRoundedImageView(this, activityImgUrl, releaseImg, R.color.gainsboro);
+        releaseNameTv.setText(name);
         friendCircleTv.setText(SharedPreferencesUtils.getInstance().getNickName());
-        releasefDownloadValueTv1.setText(copywriting);
-        releasefMoneyValueTv.setText(CommonUtils.moneyToVMoney(new BigDecimal(unitPrice)));
+        releaseDownloadValueTv1.setText(copywriting);
         taskStatusTv.setText("任务总数：" + taskNum);
-        releasefCopywritingTv.setText("图文文案");
+        releaseCopywritingTv.setText("图文文案");
         priceTv.setText(fa_pyq_price_tv.getText());
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         Date date = null;
         try {
             date = simpleDateFormat.parse(endTime);
-            long endTimeLong = date.getTime()- System.currentTimeMillis();
+            long endTimeLong = date.getTime() - System.currentTimeMillis();
             activityTimeValueTv.setText(CommonUtils.getTimeStampDiffer(endTimeLong));//活动倒计时
         } catch (ParseException e) {
             e.printStackTrace();
@@ -1259,7 +1372,7 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
             activityGuideTv.setText(taskGuidance);
         }
 
-       // init 配图 RecyclerView
+        // init 配图 RecyclerView
         releasefValueRv.setHasFixedSize(true);
         releasefValueRv.setNestedScrollingEnabled(false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
@@ -1285,14 +1398,10 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
                 intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, imageItems);
                 intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, pos);
                 intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
-//                    startActivityForResult(intentPreview, REQUEST_CODE_PREVIEW);
                 startActivity(intentPreview);
             }
         });
         friendReleaseAdapter.notifyDataSetChanged();
-
-
-
         Window window = dialog.getWindow();
         WindowManager.LayoutParams dialogParams = window.getAttributes();
         dialogParams.width = WindowManager.LayoutParams.MATCH_PARENT;
@@ -1300,6 +1409,8 @@ public class ReleaseTaskImgTextActivity extends BaseMvpActivity<IFaTaskView, FaT
         window.setAttributes(dialogParams);
 
         dialog.show();
+
+
     }
 
 

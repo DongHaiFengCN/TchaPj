@@ -2,6 +2,7 @@ package com.application.tchapj.my.view;
 
 import com.application.tchapj.base.BaseMvpView;
 import com.application.tchapj.login.bean.LoginResult;
+import com.application.tchapj.login.bean.SmsCodeResponse;
 import com.application.tchapj.my.bean.DarenDataBean;
 import com.application.tchapj.my.bean.DarenDataOneBean;
 
@@ -12,7 +13,7 @@ import com.application.tchapj.my.bean.DarenDataOneBean;
 public interface IDarenOneView extends BaseMvpView {
 
     // 手机验证码数据
-    void onGetSmsCodeResult(LoginResult loginResultBean);
+    void onGetSmsCodeResult(SmsCodeResponse loginResultBean);
 
     // 上传达人资料数据
     void onGetDarenDataOneBeanResult(DarenDataOneBean darenDataOneBean);

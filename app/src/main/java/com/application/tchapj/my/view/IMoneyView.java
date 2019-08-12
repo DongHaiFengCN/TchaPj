@@ -2,6 +2,7 @@ package com.application.tchapj.my.view;
 
 import com.application.tchapj.base.BaseBean;
 import com.application.tchapj.base.BaseMvpView;
+import com.application.tchapj.bean.PromotionResultBean;
 import com.application.tchapj.my.bean.MoneyInfoBean;
 import com.application.tchapj.my.bean.MoneyInfoListBean;
 import com.application.tchapj.my.bean.MoneyTransferBean;
@@ -23,4 +24,18 @@ public interface IMoneyView extends BaseMvpView {
 
     //大额提现--人工转账
     void onGetArtificialTransferBeanResult(BaseBean baseBean);
+
+    /**
+     *
+     * 预付订单接口
+     * @param baseBean
+     */
+    void promotionResultBeanBaseBean(BaseBean<PromotionResultBean> baseBean);
+
+    /**
+     *
+     * 订单支付成功接口
+     * @param baseBean
+     */
+    void promotionSuccess(BaseBean baseBean);
 }

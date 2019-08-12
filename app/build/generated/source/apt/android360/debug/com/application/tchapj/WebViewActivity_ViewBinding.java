@@ -16,7 +16,7 @@ import java.lang.Override;
 public class WebViewActivity_ViewBinding implements Unbinder {
   private WebViewActivity target;
 
-  private View view2131756501;
+  private View view2131756524;
 
   @UiThread
   public WebViewActivity_ViewBinding(WebViewActivity target) {
@@ -32,7 +32,7 @@ public class WebViewActivity_ViewBinding implements Unbinder {
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'toolbar'", Toolbar.class);
     view = Utils.findRequiredView(source, R.id.toolbar_share_img, "field 'toolbarShareIv' and method 'onClick'");
     target.toolbarShareIv = Utils.castView(view, R.id.toolbar_share_img, "field 'toolbarShareIv'", ImageView.class);
-    view2131756501 = view;
+    view2131756524 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -52,7 +52,7 @@ public class WebViewActivity_ViewBinding implements Unbinder {
     target.toolbar = null;
     target.toolbarShareIv = null;
 
-    view2131756501.setOnClickListener(null);
-    view2131756501 = null;
+    view2131756524.setOnClickListener(null);
+    view2131756524 = null;
   }
 }

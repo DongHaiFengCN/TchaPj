@@ -63,7 +63,7 @@
                                 android:layout_height="wrap_content"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="1000000"
+                                android:text="0"
                                 android:textColor="#FD4058"
                                 android:textSize="34sp" />
 
@@ -100,7 +100,7 @@
                                 android:layout_height="wrap_content"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="2888"
+                                android:text="0"
                                 android:textColor="#ffc37f73"
                                 android:textSize="15sp" />
 

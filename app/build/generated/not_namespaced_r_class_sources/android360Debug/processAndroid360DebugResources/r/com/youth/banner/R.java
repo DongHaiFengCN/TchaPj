@@ -38,8 +38,8 @@ public final class R {
 
         public static final int black_background = 0x7f020093;
         public static final int gray_radius = 0x7f02012c;
-        public static final int no_banner = 0x7f0201ee;
-        public static final int white_radius = 0x7f0202b8;
+        public static final int no_banner = 0x7f0201ef;
+        public static final int white_radius = 0x7f0202b9;
     }
     public static final class id {
         private id() {}
@@ -65,7 +65,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int banner = 0x7f040069;
+        public static final int banner = 0x7f04006b;
     }
     public static final class styleable {
         private styleable() {}

@@ -1,16 +1,20 @@
 package com.application.tchapj.my.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -28,6 +32,7 @@ import com.application.tchapj.App;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
 import com.application.tchapj.login.bean.LoginResult;
+import com.application.tchapj.login.bean.SmsCodeResponse;
 import com.application.tchapj.main.bean.HomeCircleModel;
 import com.application.tchapj.my.adpter.ImagePickerAdapter;
 import com.application.tchapj.my.bean.DarenDataBean;
@@ -36,7 +41,9 @@ import com.application.tchapj.my.presenter.DarenOnePresenter;
 import com.application.tchapj.my.view.IDarenOneView;
 import com.application.tchapj.utils.CommonDialogListenerUtil;
 import com.application.tchapj.utils.ToastUtil;
+import com.application.tchapj.utils.Utils;
 import com.application.tchapj.utils2.SelectDialog;
+import com.application.tchapj.utils2.Verification;
 import com.application.tchapj.utils2.imagepicker.ImagePicker;
 import com.application.tchapj.utils2.imagepicker.bean.ImageItem;
 import com.application.tchapj.utils2.imagepicker.imageloader.GlideImageLoader;
@@ -57,8 +64,10 @@ import com.application.tchapj.widiget.OnTagSelectListener;
 import com.application.tchapj.widiget.TagAdapter;
 import com.application.tchapj.widiget.TagDarenAdapter;
 import com.application.tchapj.widiget.ToolbarHelper;
+import com.iflytek.cloud.thirdparty.U;
 import com.king.base.util.StringUtils;
 import com.qiniu.android.common.FixedZone;
+import com.qiniu.android.common.Zone;
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.Configuration;
 import com.qiniu.android.storage.UpCompletionHandler;
@@ -75,7 +84,7 @@ import butterknife.OnClick;
 
 // 达人资料第一页
 public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOnePresenter> implements IDarenOneView
-        , ImagePickerAdapter.OnRecyclerViewItemClickListener{
+        , ImagePickerAdapter.OnRecyclerViewItemClickListener {
 
     @BindView(R.id.daren_one_head_img_rv)
     RecyclerView headImgRv;
@@ -97,10 +106,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
     EditText daren_one_realname_et;
     @BindView(R.id.daren_one_sfz_et)
     EditText daren_one_sfz_et;
-//    @BindView(R.id.daren_one_code_tv)
-//    TextView daren_one_code_tv;
-//    @BindView(R.id.daren_one_code_et)
-//    EditText daren_one_code_et;
 
     @BindView(R.id.daren_fl)
     FlowTagDarenLayout daren_fl;
@@ -117,8 +122,8 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
     MustWriteLinearLayout writeLinearLayout;
     @BindView(R.id.daren_one_invite_et)
     EditText inviteCodeEdt;
-    @BindView(R.id.darendataone_media_resources_example_tv)
-    TextView mediaResourcesExampleTv;
+/*    @BindView(R.id.darendataone_media_resources_example_tv)
+    TextView mediaResourcesExampleTv;*/
 
 
     private TagDarenAdapter<String> mSizeTagAdapter;
@@ -148,19 +153,21 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
     public static final int MEDIA_RESOURCES_REQUEST_CODE_PREVIEW = 103;
 
     private String Id;
-    private String ResourcesTypeId ="0";
+    private String ResourcesTypeId = "0";
     private String XwhName;
     private String headimageUrl;
     private String NameNicheng;
     private String Jieshao;
     private String Realname;
     private String Sex = "1";
-    private String Position1="";
-    private String Position2="";
-    private String Position3="";
-    private String PositionId="";
+    private String Position1 = "";
+    private String Position2 = "";
+    private String Position3 = "";
+    private String PositionId = "";
     private String catType = "0";  // 0 朋友圈 1 微博 2 抖音 3 微视 4 其他
-    private String Industry="0";
+    private String Industry = "0";
+
+    UploadManager uploadManager;
 
     public List<HomeCircleModel.HomeCircleModelResult.HomeCircle> circles;
 
@@ -175,105 +182,12 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
     TextView darendataone_media_resources_tip_tv;
     private List<LocalMedia> videoSelectList = new ArrayList<>();
 
+
     ImagePickerAdapter.OnRecyclerViewItemClickListener mediaResourcesRvItemClick = new ImagePickerAdapter.OnRecyclerViewItemClickListener() {
         @Override
         public void onItemClick(View view, int position) {
-            switch (position) {
-                case IMAGE_ITEM_ADD:
-                    List<String> names = new ArrayList<>();
-                    if((!catType.equals("4")) || (mediaResourcesImages != null && mediaResourcesImages.size() > 0)){
-                        names.add("拍照");
-                        names.add("相册");
-                    }else{
-                        names.add("拍照");
-                        names.add("相册");
-                        names.add("拍摄");
-                        names.add("本地视频");
-                    }
-                    showDialog(new SelectDialog.SelectDialogListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            switch (position) {
-                                case 0: // 直接调起相机
-                                    /**
-                                     * 0.4.7 目前直接调起相机不支持裁剪，如果开启裁剪后不会返回图片，请注意，后续版本会解决
-                                     *
-                                     * 但是当前直接依赖的版本已经解决，考虑到版本改动很少，所以这次没有上传到远程仓库
-                                     *
-                                     * 如果实在有所需要，请直接下载源码引用。
-                                     */
-                                    //打开选择,本次允许选择的数量
-                                    ImagePicker.getInstance().setSelectLimit(mediaResourcesMaxImgCount - mediaResourcesSelImageList.size());
-                                    Intent intent = new Intent(DarenDataOneActivity.this, ImageGridActivity.class);
-                                    intent.putExtra(ImageGridActivity.EXTRAS_TAKE_PICKERS, true); // 是否是直接打开相机
-                                    startActivityForResult(intent, MEDIA_RESOURCES_REQUEST_CODE_SELECT);
-                                    break;
-                                case 1:
-                                    //打开选择,本次允许选择的数量
-                                    ImagePicker.getInstance().setSelectLimit(mediaResourcesMaxImgCount - mediaResourcesSelImageList.size());
-                                    Intent intent1 = new Intent(DarenDataOneActivity.this, ImageGridActivity.class);
-                                    /* 如果需要进入选择的时候显示已经选中的图片，
-                                     * 详情请查看ImagePickerActivity
-                                     * */
-                                    intent1.putExtra(ImageGridActivity.EXTRAS_IMAGES, mediaResourcesImages);
-                                    startActivityForResult(intent1, MEDIA_RESOURCES_REQUEST_CODE_SELECT);
-                                    break;
-                                case 2:
-                                    // 单独拍摄
-                                    PictureSelector.create(DarenDataOneActivity.this)
-                                            .openCamera(PictureMimeType.ofVideo())
-                                            .theme(R.style.picture_default_style)
-                                            .maxSelectNum(1)
-                                            .minSelectNum(1)
-                                            .selectionMode(PictureConfig.SINGLE)
-                                            .previewImage(true)
-                                            .previewVideo(false)
-                                            .compressGrade(Luban.THIRD_GEAR)
-                                            .isCamera(true)
-                                            .glideOverride(160, 160)
-                                            .isGif(true)
-                                            .openClickSound(false)
-                                            .selectionMedia(videoSelectList)
-                                            .forResult(PictureConfig.CHOOSE_REQUEST);
-                                    break;
-                                case 3:
-                                    //本地视频
-                                    PictureSelector.create(DarenDataOneActivity.this)
-                                            .openGallery(PictureMimeType.ofVideo())
-                                            .theme(R.style.picture_default_style)
-                                            .maxSelectNum(1)
-                                            .minSelectNum(1)
-                                            .selectionMode(PictureConfig.SINGLE)
-                                            .previewImage(true)
-                                            .previewVideo(false)
-                                            .compressGrade(Luban.THIRD_GEAR)
-                                            .isCamera(true)
-                                            .glideOverride(160, 160)
-                                            .previewEggs(true)
-                                            .isGif(true)
-                                            .openClickSound(false)
-                                            .selectionMedia(videoSelectList)
-                                            .forResult(PictureConfig.CHOOSE_REQUEST);
-                                    break;
-                            }
-                            darendataone_media_resources_rv.setLayoutManager(new GridLayoutManager(DarenDataOneActivity.this, 1));
-                            mediaResourcesAdapter.setOnItemClickListener(mediaResourcesRvItemClick);
-                            darendataone_media_resources_rv.setAdapter(mediaResourcesAdapter);
+            showExampleImgDialog(position);
 
-                        }
-                    }, names);
-
-
-                    break;
-                default:
-                    //打开预览
-                    Intent intentPreview = new Intent(DarenDataOneActivity.this, ImagePreviewDelActivity.class);
-                    intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<ImageItem>) mediaResourcesAdapter.getImages());
-                    intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, position);
-                    intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
-                    startActivityForResult(intentPreview, MEDIA_RESOURCES_REQUEST_CODE_PREVIEW);
-                    break;
-            }
         }
     };
 
@@ -301,8 +215,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                 mediaResourcesMaxImgCount);
         mediaResourcesAdapter.setLayoutResId(R.layout.layout_item_upload_img, R.drawable.icon_upload_img);
         mediaResourcesAdapter.setOnItemClickListener(mediaResourcesRvItemClick);
-
-        //最好放到 Application oncreate执行
         initImagePicker();
         initWidget();
 
@@ -398,12 +310,12 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                     catType = "4";
                 }
 
-                if(position == 4){
+                if (position == 4) {
                     mediaResourcesAdapter.setLayoutResId(-1, R.mipmap.icon_selector_image_add);
-                    mediaResourcesExampleTv.setVisibility(View.GONE);//其他媒体类型，隐藏截图示例按钮
-                }else{
+                    // mediaResourcesExampleTv.setVisibility(View.GONE);//其他媒体类型，隐藏截图示例按钮
+                } else {
                     mediaResourcesAdapter.setLayoutResId(R.layout.layout_item_upload_img, R.drawable.icon_upload_img);
-                    mediaResourcesExampleTv.setVisibility(View.VISIBLE);
+                    // mediaResourcesExampleTv.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -423,60 +335,59 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
                 String inviteCodeStr = inviteCodeEdt.getText().toString();
 
-                if(positionlist != null && positionlist.size() > 0){
-                    if(positionlist.size()==1){
+                if (positionlist != null && positionlist.size() > 0) {
+                    if (positionlist.size() == 1) {
                         Position1 = positionlist.get(0);
-                        PositionId =Position1;
-                    }else if(positionlist.size()==2){
+                        PositionId = Position1;
+                    } else if (positionlist.size() == 2) {
                         Position1 = positionlist.get(0);
                         Position2 = positionlist.get(1);
-                        PositionId = Position1+","+Position2;
-                    }else if(positionlist.size()==3){
+                        PositionId = Position1 + "," + Position2;
+                    } else if (positionlist.size() == 3) {
                         Position1 = positionlist.get(0);
                         Position2 = positionlist.get(1);
                         Position3 = positionlist.get(2);
-                        PositionId = Position1+","+Position2+","+Position3;
+                        PositionId = Position1 + "," + Position2 + "," + Position3;
                     }
-                }else{
+                } else {
                     PositionId = "";
                 }
-
 
 
                 //Toast.makeText(DarenDataOneActivity.this, PositionId, Toast.LENGTH_SHORT).show();
 
                 if (StringUtils.isEmpty(headimageUrl)) {
-                    Toast.makeText(getApplication(),"请选择头像", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请选择头像", Toast.LENGTH_LONG).show();
                     return;
                 } else if (StringUtils.isEmpty(NameNicheng)) {
-                    Toast.makeText(getApplication(),"请输入昵称", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请输入昵称", Toast.LENGTH_LONG).show();
                     return;
-                }else if (StringUtils.isEmpty(Sex)) {
-                    Toast.makeText(getApplication(),"请选择性别", Toast.LENGTH_LONG).show();
+                } else if (StringUtils.isEmpty(Sex)) {
+                    Toast.makeText(getApplication(), "请选择性别", Toast.LENGTH_LONG).show();
                     return;
-                } else if(cityId == -1){
+                } else if (cityId == -1) {
                     ToastUtil.show(DarenDataOneActivity.this, "请选择常驻区域");
                     return;
-                } else if(StringUtils.isEmpty(PositionId)){
+                } else if (StringUtils.isEmpty(PositionId)) {
                     Toast.makeText(DarenDataOneActivity.this, "请选择您的圈子", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (StringUtils.isEmpty(mediaImageUrl)) {
-                    Toast.makeText(getApplication(),"请输入媒体资源图片！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请输入媒体资源图片！", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-//
-//                if (!StringUtils.isEmpty(sfzStr)) {
-//                    boolean isSfz = Verification.verifySfz(sfzStr);
-//                    if (!isSfz) {
-//                        Toast.makeText(DarenDataOneActivity.this, "请正确填写身份证号", Toast.LENGTH_SHORT).show();
-//                        return;
-//                    }
-//                }
+
+                if (!StringUtils.isEmpty(sfzStr)) {
+                    boolean isSfz = Verification.verifySfz(sfzStr);
+                    if (!isSfz) {
+                        Toast.makeText(DarenDataOneActivity.this, "请正确填写身份证号", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
 
                 // 上传达人资料
-                getPresenter().getDarenDataOneBeanResult(App.getId(),PositionId,Realname,Sex,""
-                        ,"",sfzStr,Jieshao,headimageUrl,NameNicheng, catType, mediaPrice, mediaImageUrl, cityId + "", inviteCodeStr);
+                getPresenter().getDarenDataOneBeanResult(App.getId(), PositionId, Realname, Sex, ""
+                        , "", sfzStr, Jieshao, headimageUrl, NameNicheng, catType, mediaPrice, mediaImageUrl, cityId + "", inviteCodeStr);
             }
         });
 
@@ -495,8 +406,9 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
         return new DarenOnePresenter(getApp());
     }
 
-    @Override // 验证码
-    public void onGetSmsCodeResult(LoginResult loginResultBean) {
+
+    @Override
+    public void onGetSmsCodeResult(SmsCodeResponse loginResultBean) {
 
     }
 
@@ -507,10 +419,10 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
             App.TaskApplyId = darenDataOneBeanResult.getTaskApplyId();//达人的id下一步操作要用
             ToastUtil.show(this, "提交成功");
 
-            Log.i("sssss",darenDataOneBeanResult.getTaskApplyId()+"");
+            Log.i("sssss", darenDataOneBeanResult.getTaskApplyId() + "");
             /*Toast.makeText(DarenDataOneActivity.this,darenDataOneBeanResult.getTaskApplyId(),Toast.LENGTH_LONG).show();*/
             finish();
-        }else{
+        } else {
             ToastUtil.show(this, darenDataOneBean.getDescription());
         }
 
@@ -644,13 +556,13 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
                     // 进行判断
                     showLoadingDialog();
-                    for(int i=0;i<images.size();i++){
+                    for (int i = 0; i < images.size(); i++) {
                         upload(images.get(i).path, requestCode);
                     }
 
                 }
 
-            }else if(data != null && requestCode == MEDIA_RESOURCES_REQUEST_CODE_SELECT){
+            } else if (data != null && requestCode == MEDIA_RESOURCES_REQUEST_CODE_SELECT) {
                 mediaResourcesImages = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
                 if (mediaResourcesImages != null) {
                     mediaResourcesSelImageList.clear();
@@ -660,7 +572,7 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
                     showLoadingDialog();
                     // 进行判断
-                    for(int i=0;i<mediaResourcesSelImageList.size();i++){
+                    for (int i = 0; i < mediaResourcesSelImageList.size(); i++) {
                         upload(mediaResourcesSelImageList.get(i).path, requestCode);
                     }
 
@@ -676,7 +588,7 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                     selImageList.addAll(images);
                     adapter.setImages(selImageList);
                 }
-            }else if(data != null && requestCode == MEDIA_RESOURCES_REQUEST_CODE_PREVIEW){
+            } else if (data != null && requestCode == MEDIA_RESOURCES_REQUEST_CODE_PREVIEW) {
                 mediaResourcesImages = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_IMAGE_ITEMS);
                 if (mediaResourcesImages != null) {
                     mediaResourcesSelImageList.clear();
@@ -684,10 +596,10 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                     mediaResourcesAdapter.setImages(mediaResourcesSelImageList);
                 }
             }
-        } else if(requestCode == 101 && resultCode == Activity.RESULT_OK){
+        } else if (requestCode == 101 && resultCode == Activity.RESULT_OK) {
             cityNameStr = data.getStringExtra("city_name");
             cityId = data.getIntExtra("city_id", -1);
-            if(!StringUtils.isEmpty(cityNameStr)){
+            if (!StringUtils.isEmpty(cityNameStr)) {
                 permanentCityNameTv.setText(cityNameStr);
             }
         }
@@ -696,68 +608,55 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
     private void upload(String fileUrl, final int tag) {
 
-        /*Configuration config = new Configuration.Builder()
+        Configuration config = new Configuration.Builder()
                 .chunkSize(256 * 1024)        // 分片上传时，每片的大小。 默认256K
                 .putThreshhold(512 * 1024)   // 启用分片上传阀值。默认512K
                 .connectTimeout(10)           // 链接超时。默认10秒
                 .useHttps(true)               // 是否使用https上传域名
                 .responseTimeout(60)          // 服务器响应超时。默认60秒
-                .recorder(recorder)           // recorder分片上传时，已上传片记录器。默认null
-                .recorder(recorder, keyGen)   // keyGen 分片上传时，生成标识符，用于片记录器区分是那个文件的上传记录
-                .zone(FixedZone.zone0)        // 设置区域，指定不同区域的上传域名、备用域名、备用IP。
+                .zone(FixedZone.zone2)        // 设置区域，指定不同区域的上传域名、备用域名、备用IP。
                 .build();
-// 重用uploadManager。一般地，只需要创建一个uploadManager对象
-        UploadManager uploadManager = new UploadManager(config);*/
+
+        if (uploadManager == null) {
+            uploadManager = new UploadManager(config);
+        }
 
 
-        //上传配置
-        Configuration config = new Configuration.Builder()
-                .chunkSize(256 * 1024)  //分片上传时，每片的大小。 默认 256K
-                .putThreshhold(512 * 1024)  // 启用分片上传阀值。默认 512K
-                .connectTimeout(10) // 链接超时。默认 10秒
-                .responseTimeout(60) // 服务器响应超时。默认 60秒
-                .zone(FixedZone.zone2) // 设置区域，指默认 Zone.zone0 注：这步是最关键的 当初错的主要原因也是他 根据自己的地方选
-                .build();
-        UploadManager uploadManager = new UploadManager(config);
-
-        uploadManager.put(fileUrl, null,App.QiniuToken, new UpCompletionHandler() {
+        uploadManager.put(fileUrl, null, App.QiniuToken, new UpCompletionHandler() {
             @Override
             public void complete(String s, ResponseInfo responseInfo,
                                  JSONObject jsonObject) {
                 if (responseInfo.isOK()) {
 
-                    Log.e("success", "complete:"+responseInfo+jsonObject);
+                    Log.e("success", "complete:" + responseInfo + jsonObject);
 
                     try {
                         String upimg = jsonObject.getString("key");
-
-
-                        String url = "http://"+"qiniuyun2.ctrlmedia.cn/"+upimg;
-
-                        if(tag == REQUEST_CODE_SELECT){
+                        String url = "http://" + "qiniuyun2.ctrlmedia.cn/" + upimg;
+                        if (tag == REQUEST_CODE_SELECT) {
                             //上传头像返回
                             headimageUrl = url;
-                        }else{
+                        } else {
                             //上传媒体资源图片返回
-                            if(!StringUtils.isEmpty(mediaImageUrl) && !mediaImageUrl.contains(url)){
+                            if (!StringUtils.isEmpty(mediaImageUrl) && !mediaImageUrl.contains(url)) {
                                 mediaImageUrl += ",";
                             }
-                            if(!mediaImageUrl.contains(url)){
+                            if (!mediaImageUrl.contains(url)) {
                                 mediaImageUrl += url;
                             }
 
                         }
 
-                        Log.e("qiniu++++", "complete: "+jsonObject+imageurl);
+                        Log.e("qiniu++++", "complete: " + jsonObject + imageurl);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                 } else {
-                    Log.e("failssss", s + responseInfo + jsonObject+imageurl);
+                    Log.e("failssss", s + responseInfo + jsonObject + imageurl);
                 }
-                Log.e("qiniu", "complete: "+jsonObject+imageurl);
+                Log.e("qiniu", "complete: " + jsonObject + imageurl);
 
                 dismissLoadingDialog();
 
@@ -792,7 +691,7 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
     }
 
-    @OnClick({R.id.permanent_address_city_rl, R.id.darendataone_media_resources_example_tv})
+    @OnClick({R.id.permanent_address_city_rl/*, R.id.darendataone_media_resources_example_tv*/})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.permanent_address_city_rl:
@@ -801,17 +700,24 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
             case R.id.darendataone_media_resources_example_tv:
                 //显示截图示例
 
-                showExampleImgDialog();
+                //TODO 这里的显示改动到 点击添加截图触发
+                showExampleImgDialog(1);
+                break;
+            default:
                 break;
         }
     }
 
     //显示媒体资源，截图示例dialog
-    private void showExampleImgDialog() {
+    private void showExampleImgDialog(final int position) {
+
         //0朋友圈  1微博  2抖音  3微视
         final Dialog dialog = new Dialog(this, R.style.DialogStyle);
-        ImageView iv = new ImageView(this);
-        switch (catType){
+        View view = getLayoutInflater().inflate(R.layout.activity_darendataone_add_image, null);
+        ImageView iv = view.findViewById(R.id.wechat_iv);
+        Button button = view.findViewById(R.id.submit_area);
+
+        switch (catType) {
             case "0":
                 iv.setImageResource(R.mipmap.img_daren_data_one_example_wechat);
                 break;
@@ -826,18 +732,118 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                 break;
 
         }
-        iv.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
+                switch (position) {
+                    case IMAGE_ITEM_ADD:
+                        List<String> names = new ArrayList<>();
+                        if ((!catType.equals("4")) || (mediaResourcesImages != null && mediaResourcesImages.size() > 0)) {
+                            names.add("拍照");
+                            names.add("相册");
+                        } else {
+                            names.add("拍照");
+                            names.add("相册");
+                            names.add("拍摄");
+                            names.add("本地视频");
+                        }
+                        showDialog(new SelectDialog.SelectDialogListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                switch (position) {
+                                    case 0: // 直接调起相机
+
+                                        /**
+                                         * 0.4.7 目前直接调起相机不支持裁剪，如果开启裁剪后不会返回图片，请注意，后续版本会解决
+                                         *
+                                         * 但是当前直接依赖的版本已经解决，考虑到版本改动很少，所以这次没有上传到远程仓库
+                                         *
+                                         * 如果实在有所需要，请直接下载源码引用。
+                                         */
+
+                                        //打开选择,本次允许选择的数量
+                                        ImagePicker.getInstance().setSelectLimit(mediaResourcesMaxImgCount - mediaResourcesSelImageList.size());
+                                        Intent intent = new Intent(DarenDataOneActivity.this, ImageGridActivity.class);
+                                        intent.putExtra(ImageGridActivity.EXTRAS_TAKE_PICKERS, true); // 是否是直接打开相机
+                                        startActivityForResult(intent, MEDIA_RESOURCES_REQUEST_CODE_SELECT);
+                                        break;
+                                    case 1:
+                                        //打开选择,本次允许选择的数量
+                                        ImagePicker.getInstance().setSelectLimit(mediaResourcesMaxImgCount - mediaResourcesSelImageList.size());
+                                        Intent intent1 = new Intent(DarenDataOneActivity.this, ImageGridActivity.class);
+
+                                        /* 如果需要进入选择的时候显示已经选中的图片，
+                                         * 详情请查看ImagePickerActivity
+                                         * */
+
+                                        intent1.putExtra(ImageGridActivity.EXTRAS_IMAGES, mediaResourcesImages);
+                                        startActivityForResult(intent1, MEDIA_RESOURCES_REQUEST_CODE_SELECT);
+                                        break;
+                                    case 2:
+                                        // 单独拍摄
+                                        PictureSelector.create(DarenDataOneActivity.this)
+                                                .openCamera(PictureMimeType.ofVideo())
+                                                .theme(R.style.picture_default_style)
+                                                .maxSelectNum(1)
+                                                .minSelectNum(1)
+                                                .selectionMode(PictureConfig.SINGLE)
+                                                .previewImage(true)
+                                                .previewVideo(false)
+                                                .compressGrade(Luban.THIRD_GEAR)
+                                                .isCamera(true)
+                                                .glideOverride(160, 160)
+                                                .isGif(true)
+                                                .openClickSound(false)
+                                                .selectionMedia(videoSelectList)
+                                                .forResult(PictureConfig.CHOOSE_REQUEST);
+                                        break;
+                                    case 3:
+                                        //本地视频
+                                        PictureSelector.create(DarenDataOneActivity.this)
+                                                .openGallery(PictureMimeType.ofVideo())
+                                                .theme(R.style.picture_default_style)
+                                                .maxSelectNum(1)
+                                                .minSelectNum(1)
+                                                .selectionMode(PictureConfig.SINGLE)
+                                                .previewImage(true)
+                                                .previewVideo(false)
+                                                .compressGrade(Luban.THIRD_GEAR)
+                                                .isCamera(true)
+                                                .glideOverride(160, 160)
+                                                .previewEggs(true)
+                                                .isGif(true)
+                                                .openClickSound(false)
+                                                .selectionMedia(videoSelectList)
+                                                .forResult(PictureConfig.CHOOSE_REQUEST);
+                                        break;
+                                }
+                                darendataone_media_resources_rv.setLayoutManager(new GridLayoutManager(DarenDataOneActivity.this, 1));
+                                mediaResourcesAdapter.setOnItemClickListener(mediaResourcesRvItemClick);
+                                darendataone_media_resources_rv.setAdapter(mediaResourcesAdapter);
+
+                            }
+                        }, names);
+
+
+                        break;
+                    default:
+                        //打开预览
+                        Intent intentPreview = new Intent(DarenDataOneActivity.this, ImagePreviewDelActivity.class);
+                        intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<ImageItem>) mediaResourcesAdapter.getImages());
+                        intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, position);
+                        intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
+                        startActivityForResult(intentPreview, MEDIA_RESOURCES_REQUEST_CODE_PREVIEW);
+                        break;
+                }
+
             }
         });
-        dialog.setContentView(iv);
+        dialog.setContentView(view);
 
         Window dialogWindow = dialog.getWindow();
         WindowManager.LayoutParams layoutParams = dialogWindow.getAttributes();
-
-        WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
+        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         layoutParams.width = wm.getDefaultDisplay().getWidth() - DensityUtil.dp2px(this, 70);
         layoutParams.height = wm.getDefaultDisplay().getHeight() - DensityUtil.dp2px(this, 70);
         dialogWindow.setAttributes(layoutParams);

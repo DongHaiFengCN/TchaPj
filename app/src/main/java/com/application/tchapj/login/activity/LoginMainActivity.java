@@ -35,7 +35,7 @@ public class LoginMainActivity extends BaseActvity {
     private String headimgurl;
 
     // 得到Fragment对象
-    private PhoneLogonFragment phoneLogonFragment;
+    private PhoneLogonFragment phoneLoginFragment;
     private PasswordLoginFragment passwordLoginFragment;
 
     @Override
@@ -58,7 +58,6 @@ public class LoginMainActivity extends BaseActvity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         showPhoneLogonFragment();
 
     }
@@ -76,27 +75,29 @@ public class LoginMainActivity extends BaseActvity {
             case R.id.login_main_back_iv:
                 finish();
                 break;
+            default:
+                break;
 
         }
     }
 
     // 显示手机号
-    public void showPhoneLogonFragment(){
+    public void showPhoneLogonFragment() {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         hideAllFragment(fragmentTransaction);
-        if(phoneLogonFragment == null){
-            phoneLogonFragment = PhoneLogonFragment.newInstance(id,nickName,sex,headimgurl);
-            fragmentTransaction.add(R.id.my_logon_content,phoneLogonFragment);
+        if (phoneLoginFragment == null) {
+            phoneLoginFragment = new PhoneLogonFragment();
+            fragmentTransaction.add(R.id.my_logon_content, phoneLoginFragment);
         }
-        commitShowFragment(fragmentTransaction,phoneLogonFragment);
+        commitShowFragment(fragmentTransaction, phoneLoginFragment);
     }
 
     // 显示用户名密码
-    public void showPasswordLogonFragment(){
+    public void showPasswordLogonFragment() {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         hideAllFragment(fragmentTransaction);
-        if(passwordLoginFragment == null){
+        if (passwordLoginFragment == null) {
             passwordLoginFragment = new PasswordLoginFragment();
             fragmentTransaction.add(R.id.my_logon_content, passwordLoginFragment);
         }
@@ -106,21 +107,21 @@ public class LoginMainActivity extends BaseActvity {
     }
 
     // 显示Fragment
-    public void commitShowFragment(FragmentTransaction fragmentTransaction,Fragment fragment){
+    public void commitShowFragment(FragmentTransaction fragmentTransaction, Fragment fragment) {
         fragmentTransaction.show(fragment);
         fragmentTransaction.commit();
     }
 
     // 隐藏所有Fragment
-    public void hideAllFragment(FragmentTransaction fragmentTransaction){
-        hideFragment(fragmentTransaction,phoneLogonFragment);
+    public void hideAllFragment(FragmentTransaction fragmentTransaction) {
+        hideFragment(fragmentTransaction, phoneLoginFragment);
         hideFragment(fragmentTransaction, passwordLoginFragment);
 
     }
 
     // 隐藏Fragment
-    private void hideFragment(FragmentTransaction fragmentTransaction, Fragment fragment){
-        if(fragment!=null){
+    private void hideFragment(FragmentTransaction fragmentTransaction, Fragment fragment) {
+        if (fragment != null) {
             fragmentTransaction.hide(fragment);
         }
     }

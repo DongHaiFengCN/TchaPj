@@ -10,6 +10,7 @@ import com.application.tchapj.App;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseBean;
 import com.application.tchapj.base.BaseMvpFragment;
+import com.application.tchapj.bean.PromotionResultBean;
 import com.application.tchapj.my.adpter.MoneyHfAdapter;
 import com.application.tchapj.my.bean.MoneyInfoBean;
 import com.application.tchapj.my.bean.MoneyInfoListBean;
@@ -43,15 +44,6 @@ public class MoneyHfFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
     // 花费
     private List<MoneyInfoListBean.MoneyInfoListBeanResult.MoneyInfoTasks> moneyInfoTasks = new ArrayList<>();
 
-    // 接收参数
-    public static MoneyHfFragment newInstance(String param) {
-        Bundle args = new Bundle();
-        args.putString("args", param);
-        MoneyHfFragment fragment = new MoneyHfFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public int getRootViewId() {
         return R.layout.fragment_hf;
@@ -71,22 +63,12 @@ public class MoneyHfFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
 
     private void initListener() {
 
-        money_hf_srl.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                pageNum = 1;
-                if (moneyInfoTasks!=null){
-                    moneyInfoTasks.clear();
-                }
-                getPresenter().onGetMoneyInfoListBeanResult(pageNum+"",pageSize+"", App.getId());
-            }
-        });
-
+        money_hf_srl.setEnableRefresh(false);//关闭下拉刷新
         money_hf_srl.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 pageNum++;
-                getPresenter().onGetMoneyInfoListBeanResult(pageNum+"",pageSize+"", App.getId());
+                getPresenter().onGetMoneyInfoListBeanResult(pageNum+"",pageSize+"", App.getId(),"2");
             }
         });
 
@@ -95,7 +77,7 @@ public class MoneyHfFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
     @Override
     public void initData() {
 
-        getPresenter().onGetMoneyInfoListBeanResult(pageNum+"",pageSize+"", App.getId());
+        getPresenter().onGetMoneyInfoListBeanResult(pageNum+"",pageSize+"", App.getId(),"2");
 
     }
 
@@ -139,6 +121,16 @@ public class MoneyHfFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
 
     @Override
     public void onGetArtificialTransferBeanResult(BaseBean baseBean) {
+
+    }
+
+    @Override
+    public void promotionResultBeanBaseBean(BaseBean<PromotionResultBean> baseBean) {
+
+    }
+
+    @Override
+    public void promotionSuccess(BaseBean baseBean) {
 
     }
 

@@ -13,6 +13,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -76,6 +77,9 @@ public class MainActivity extends BaseActvity implements HomeFragment.HomeFragme
 
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
+        //刷新配置
+        DataManager.getDataManager()
+                .disposeMember(new Up());
 
     }
 
@@ -88,12 +92,6 @@ public class MainActivity extends BaseActvity implements HomeFragment.HomeFragme
             verifyStoragePermissions(MainActivity.this);
         }
 
-
-        /*Bmob.initialize(this,"860a802bf5be04a833f514ef69898e4b");//道路
-        CrashReport.initCrashReport(getApplicationContext(), "f8e80941be", false);//道路
-        BmobUpdateAgent.setUpdateOnlyWifi(false);
-        BmobUpdateAgent.update(this);
-        EventBus.getDefault().register(this);*/
         ButterKnife.bind(this);
         EventBus.getDefault().register(this);
 
@@ -324,5 +322,20 @@ public class MainActivity extends BaseActvity implements HomeFragment.HomeFragme
     public static void start(Context context) {
         Intent starter = new Intent(context, MainActivity.class);
         context.startActivity(starter);
+    }
+
+    public static class Up implements DataManager.UpDataListener{
+        @Override
+        public void updata(boolean getDataSuccess) {
+
+            if(getDataSuccess){
+
+                Log.e("DOAING","更新成功");
+
+            }else {
+                Log.e("DOAING","更新失败");
+            }
+
+        }
     }
 }

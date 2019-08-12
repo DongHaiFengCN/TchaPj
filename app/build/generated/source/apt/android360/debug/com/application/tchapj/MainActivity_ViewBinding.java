@@ -14,15 +14,15 @@ import java.lang.Override;
 public class MainActivity_ViewBinding implements Unbinder {
   private MainActivity target;
 
-  private View view2131755818;
+  private View view2131755827;
 
-  private View view2131755819;
+  private View view2131755828;
 
-  private View view2131755820;
+  private View view2131755829;
 
-  private View view2131755821;
+  private View view2131755830;
 
-  private View view2131755822;
+  private View view2131755831;
 
   @UiThread
   public MainActivity_ViewBinding(MainActivity target) {
@@ -36,7 +36,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     View view;
     view = Utils.findRequiredView(source, R.id.rbHome, "field 'rbHome' and method 'onClick'");
     target.rbHome = Utils.castView(view, R.id.rbHome, "field 'rbHome'", RadioButton.class);
-    view2131755818 = view;
+    view2131755827 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -45,7 +45,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbConsultation, "field 'rbConsultation' and method 'onClick'");
     target.rbConsultation = Utils.castView(view, R.id.rbConsultation, "field 'rbConsultation'", RadioButton.class);
-    view2131755819 = view;
+    view2131755828 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -54,7 +54,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbVideo, "field 'rbVideo' and method 'onClick'");
     target.rbVideo = Utils.castView(view, R.id.rbVideo, "field 'rbVideo'", RadioButton.class);
-    view2131755820 = view;
+    view2131755829 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -63,7 +63,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbTask, "field 'rbTask' and method 'onClick'");
     target.rbTask = Utils.castView(view, R.id.rbTask, "field 'rbTask'", RadioButton.class);
-    view2131755821 = view;
+    view2131755830 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -72,7 +72,7 @@ public class MainActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.rbMy, "field 'rbMy' and method 'onClick'");
     target.rbMy = Utils.castView(view, R.id.rbMy, "field 'rbMy'", RadioButton.class);
-    view2131755822 = view;
+    view2131755831 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -94,15 +94,15 @@ public class MainActivity_ViewBinding implements Unbinder {
     target.rbTask = null;
     target.rbMy = null;
 
-    view2131755818.setOnClickListener(null);
-    view2131755818 = null;
-    view2131755819.setOnClickListener(null);
-    view2131755819 = null;
-    view2131755820.setOnClickListener(null);
-    view2131755820 = null;
-    view2131755821.setOnClickListener(null);
-    view2131755821 = null;
-    view2131755822.setOnClickListener(null);
-    view2131755822 = null;
+    view2131755827.setOnClickListener(null);
+    view2131755827 = null;
+    view2131755828.setOnClickListener(null);
+    view2131755828 = null;
+    view2131755829.setOnClickListener(null);
+    view2131755829 = null;
+    view2131755830.setOnClickListener(null);
+    view2131755830 = null;
+    view2131755831.setOnClickListener(null);
+    view2131755831 = null;
   }
 }

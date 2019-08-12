@@ -1,7 +1,6 @@
 package com.application.tchapj.my.bean;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
  * Created by Administrator on 2018\9\7 0007.
@@ -9,11 +8,20 @@ import java.math.BigDecimal;
 
 public class MoneyInfoBean implements Serializable {
 
-    private String method;     //接口名
-    private String level;      //接口信息
-    private String code;       //接口返回结果
 
-    private MoneyInfoBeanResult data;
+    /**
+     * method : pm.own.wallet
+     * level : Info
+     * code : 000
+     * description : 获取钱包信息成功！
+     * data : {"alipay":"1","transferStatus":"0","alipayId":"2088702155983712","dj":0.1,"salary":0,"sy":0,"occupy":0.29,"proSY":0.3}
+     */
+
+    private String method;
+    private String level;
+    private String code;
+    private String description;
+    private DataBean data;
 
     public String getMethod() {
         return method;
@@ -39,63 +47,43 @@ public class MoneyInfoBean implements Serializable {
         this.code = code;
     }
 
-    public MoneyInfoBeanResult getData() {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(MoneyInfoBeanResult data) {
+    public void setData(DataBean data) {
         this.data = data;
     }
 
-    public static class MoneyInfoBeanResult {
+    public static class DataBean {
+        /**
+         * alipay : 1
+         * transferStatus : 0
+         * alipayId : 2088702155983712
+         * dj : 0.1
+         * salary : 0
+         * sy : 0
+         * occupy : 0.29
+         * proSY : 0.3
+         */
 
-        private BigDecimal salary;  // 总收益
-        private BigDecimal sy;      // 余额
-        private BigDecimal dj;      // 冻结
-        private BigDecimal ktk;     // 可退款
-        private String alipay;  // 0:未绑定 1:已绑定
-        private String alipayId;// 支付宝ID
+        private String alipay;
         private String transferStatus;
+        private String alipayId;
+        private String dj;
+        private String salary;
+        private String sy;
+        private String occupy;
+        private String proSY;
 
-        public String getTransferStatus() {
-            return transferStatus;
-        }
-
-        public void setTransferStatus(String transferStatus) {
-            this.transferStatus = transferStatus;
-        }
-
-        public BigDecimal getSalary() {
-            return salary;
-        }
-
-        public void setSalary(BigDecimal salary) {
-            this.salary = salary;
-        }
-
-        public BigDecimal getSy() {
-            return sy;
-        }
-
-        public void setSy(BigDecimal sy) {
-            this.sy = sy;
-        }
-
-        public BigDecimal getDj() {
-            return dj;
-        }
-
-        public void setDj(BigDecimal dj) {
-            this.dj = dj;
-        }
-
-        public BigDecimal getKtk() {
-            return ktk;
-        }
-
-        public void setKtk(BigDecimal ktk) {
-            this.ktk = ktk;
-        }
 
         public String getAlipay() {
             return alipay;
@@ -105,6 +93,14 @@ public class MoneyInfoBean implements Serializable {
             this.alipay = alipay;
         }
 
+        public String getTransferStatus() {
+            return transferStatus;
+        }
+
+        public void setTransferStatus(String transferStatus) {
+            this.transferStatus = transferStatus;
+        }
+
         public String getAlipayId() {
             return alipayId;
         }
@@ -112,7 +108,45 @@ public class MoneyInfoBean implements Serializable {
         public void setAlipayId(String alipayId) {
             this.alipayId = alipayId;
         }
+
+        public String getDj() {
+            return dj;
+        }
+
+        public void setDj(String dj) {
+            this.dj = dj;
+        }
+
+        public String getSalary() {
+            return salary;
+        }
+
+        public void setSalary(String salary) {
+            this.salary = salary;
+        }
+
+        public String getSy() {
+            return sy;
+        }
+
+        public void setSy(String sy) {
+            this.sy = sy;
+        }
+
+        public String getOccupy() {
+            return occupy;
+        }
+
+        public void setOccupy(String occupy) {
+            this.occupy = occupy;
+        }
+
+        public String getProSY() {
+            return proSY;
+        }
+
+        public void setProSY(String proSY) {
+            this.proSY = proSY;
+        }
     }
-
-
 }

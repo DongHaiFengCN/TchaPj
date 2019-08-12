@@ -21,6 +21,7 @@ import com.application.tchapj.consultation.bean.UpdateAuthorModel;
 import com.application.tchapj.consultation.bean.ZanBean;
 import com.application.tchapj.login.bean.LoginResult;
 import com.application.tchapj.login.bean.NewPhoneLoginResult;
+import com.application.tchapj.login.bean.SmsCodeResponse;
 import com.application.tchapj.main.bean.FlashScreenBean;
 import com.application.tchapj.main.bean.HomeCircleInfoModel;
 import com.application.tchapj.main.bean.HomeCircleModel;
@@ -184,7 +185,6 @@ public interface APIService {
             , @Query("format") String format);
 
 
-
     @POST("app?method=pm.news.comments")
     Observable<BaseBean<NewsCommentResultBean>> getNewsCommentsRequest(@Query("appKey") String appKey
             , @Query("v") String v, @Query("sign") String sign
@@ -198,7 +198,7 @@ public interface APIService {
             , @Query("v") String v, @Query("sign") String sign
             , @Query("format") String format, @Query("userId") String userId, @Query("news_id") String news_id
             , @Field("content") String content, @Query("replyType") int replyType
-            ,@Query("commentId") String commentId, @Query("toMemberId") String toMemberId);
+            , @Query("commentId") String commentId, @Query("toMemberId") String toMemberId);
 
     //发表评论
     @FormUrlEncoded
@@ -242,11 +242,10 @@ public interface APIService {
     // 我的任务分析列表
     @POST("app?method=pm.task.mytasklist")
     Observable<TaskSquareModel> getMyTaskListResult(@Query("memberId") String memberId,
-              @Query("Status") String status
+                                                    @Query("Status") String status
             , @Query("pageNum") String pageNum, @Query("pageSize") String pageSize
             , @Query("appKey") String appKey, @Query("v") String v
             , @Query("sign") String sign, @Query("format") String format);
-
 
 
     // 弹幕
@@ -317,14 +316,14 @@ public interface APIService {
     // 三方登录绑定手机号
     @POST("app?method=pm.member.addphonenum")
     Observable<BaseBean<BindingPhoneBean>> onThirdLoginBindingResult(@Query("mobile") String mobile
-            , @Query("memberId")String memberId
+            , @Query("memberId") String memberId
             , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
             , @Query("format") String format);
 
 
     // 得到验证码数据
     @POST("app?method=pm.login.code")
-    Observable<LoginResult> getSmsCodeResult(@Query("name") String name
+    Observable<SmsCodeResponse> getSmsCodeResult(@Query("name") String name
             , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
             , @Query("format") String format);
 
@@ -437,7 +436,7 @@ public interface APIService {
             , @Query("format") String format, @Field("catType") String catType, @Field("price") String price
             , @Query("screenshotIngUrl") String screenshotIngUrl
             , @Query("cityId") String cityId
-            , @Query("inviteCode")String inviteCode);
+            , @Query("inviteCode") String inviteCode);
 
     // 达人资料完善
     @FormUrlEncoded
@@ -480,13 +479,13 @@ public interface APIService {
             , @Query("format") String format);
 
 
-    // 发任务
     @FormUrlEncoded
     @POST("app?method=pm.task.release")
     Observable<FaTaskBean> getFaTaskBeanResult(
 
             @Query("memberId") String Id
             , @Query("taskType") String taskType
+            , @Query("taskImageType") String taskImageType
             , @Field("name") String name
             , @Field("require") String require
             , @Query("imgUrl") String imgUrl
@@ -500,9 +499,16 @@ public interface APIService {
             , @Field("copywriting") String copywriting
             , @Query("Fans") String Fans
             , @Field("ForwardUrl") String ForwardUrl
-            , @Field("discount") String discount
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
-            , @Query("format") String format);
+
+            , @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("sign") String sign
+            , @Query("format") String format
+            , @Query("type") String type
+            , @Query("secret") String secret
+            , @Query("method") String method
+
+    );
 
     // 我的发任务
     @POST("app?method=pm.task.ownfalist")
@@ -560,9 +566,11 @@ public interface APIService {
     Observable<FaTaskSuccessBean> getFaTaskSuccessBeanResult(
 
             @Query("amount") String amount
-            , @Field("name") String name
-
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Field("method") String method
+            , @Query("name") String name
+            , @Query("appKey") String appKey,
+            @Query("v") String v,
+            @Query("sign") String sign
             , @Query("format") String format);
 
     // 任务付款成功
@@ -603,7 +611,8 @@ public interface APIService {
     @POST("app?method=pm.artificial.transfer")
     Observable<BaseBean> getArtificialTransferResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
-            , @Query("format") String format, @Query("memberId") String memberId, @Query("amount") String amount, @Field("bankOutlets") String bankOutlets
+            , @Query("format") String format, @Query("memberId") String memberId,
+            @Query("amount") String amount, @Field("bankOutlets") String bankOutlets
             , @Field("name") String name, @Query("accountNumber") String accountNumber);
 
     // 我的任务列表--零钱模块
@@ -614,7 +623,9 @@ public interface APIService {
             , @Query("pageSize") String pageSize
             , @Query("memberId") String memberId
 
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Query("appKey") String appKey,
+            @Query("v") String v,
+            @Query("sign") String sign
             , @Query("format") String format);
 
     //  发评论接口
@@ -634,7 +645,7 @@ public interface APIService {
     @POST("app?method=pm.news.commentlikes")
     Observable<ZanBean> getZanBeanResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
-            , @Query("format") String format,@Query("userId") String memberId
+            , @Query("format") String format, @Query("userId") String memberId
             , @Query("id") String id
             , @Query("type") String type
             , @Query("isCancel") String isCancel);
@@ -659,7 +670,7 @@ public interface APIService {
     @FormUrlEncoded
     @POST("app?method=pm.usernews.newsList")
     Observable<ConsultationNewsModel> getUserNewsListModelResult(@Field("userId") String userId,
-              @Field("newModel") String newstype_id, @Field("pageNum") String pageNum, @Field("pageSize") String pageSize
+                                                                 @Field("newModel") String newstype_id, @Field("pageNum") String pageNum, @Field("pageSize") String pageSize
             , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
             , @Query("format") String format);
 
@@ -667,13 +678,13 @@ public interface APIService {
     @POST("app?method=pm.user.isauthor")
     Observable<IsAuthorModel> getUserIsAuthorResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("format") String format,
-            @Query("type") String type,@Query("memberId") String memberId);
+            @Query("type") String type, @Query("memberId") String memberId);
 
     //开通微呼百应号
     @POST("app?method=pm.user.updateAuthor")
     Observable<BaseBean> updateUserIsAuthorResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("format") String format,
-            @Query("type") String type,@Query("memberId") String memberId);
+            @Query("type") String type, @Query("memberId") String memberId);
 
     // 修改个人信息
     @FormUrlEncoded
@@ -701,19 +712,17 @@ public interface APIService {
             , @Query("format") String format);
 
 
-
     //发布文章（图文、视频、转载）
     @FormUrlEncoded
     @POST("app?method=pm.news.addNews")
     Observable<BaseModel> getAddNewsResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("format") String format,
-            @Query("UserId") String uerId,  @Field("content") String content,  @Field("ImgUrl") String imgurl,  @Query("Type") String Type);
+            @Query("UserId") String uerId, @Field("content") String content, @Field("ImgUrl") String imgurl, @Query("Type") String Type);
 
     // 删除文章
     @POST("app?method=pm.usernews.deletenews")
     Observable<BaseModel> getDeleteNewsResult(@Query("news_id") String news_id, @Query("appKey") String appKey
             , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
-
 
 
     //获取初始化数据 app重启时请求
@@ -725,7 +734,7 @@ public interface APIService {
     @POST("app?method=pm.member.getwhbyh")
     Observable<BaseBean<MemberInfoWhbyBean>> getMemberWhbyhResult(
             @Query("memberId") String memberId
-            ,@Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
             , @Query("format") String format);
 
     //获取启屏(闪屏)页数据
@@ -746,7 +755,6 @@ public interface APIService {
     Observable<BaseBean<FrozenListBean>> getFrozenToBalanceResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
             , @Query("format") String format, @Query("memberId") String memberId, @Query("id") String id, @Query("amount") String amount);
-
 
 
     /**
@@ -822,6 +830,7 @@ public interface APIService {
             , @Query("Id") String Id
             , @Query("memberId") String memberId
     );
+
     @POST("app?method=pm.member.updateIdentity")
     Observable<BaseBean> updateIndetity(
             @Query("appKey") String appKey

@@ -1120,6 +1120,10 @@
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable/bg_release_task_edit_radius5.xml"
     },
     {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/money_dialog_button.xml",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable/money_dialog_button.xml"
+    },
+    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/abc_ratingbar_indicator_material.xml",
         "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/res/drawable/abc_ratingbar_indicator_material.xml"
     },

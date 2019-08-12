@@ -15,6 +15,7 @@ import com.application.tchapj.App;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
 import com.application.tchapj.login.bean.LoginResult;
+import com.application.tchapj.login.bean.SmsCodeResponse;
 import com.application.tchapj.my.adpter.ImagePickerAdapter;
 import com.application.tchapj.my.bean.DarenDataBean;
 import com.application.tchapj.my.bean.DarenDataOneBean;
@@ -174,8 +175,9 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
         return new DarenOnePresenter(getApp());
     }
 
-    @Override // 验证码
-    public void onGetSmsCodeResult(LoginResult loginResultBean) {
+
+    @Override
+    public void onGetSmsCodeResult(SmsCodeResponse loginResultBean) {
 
     }
 

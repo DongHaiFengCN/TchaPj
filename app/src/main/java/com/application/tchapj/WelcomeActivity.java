@@ -48,9 +48,6 @@ public class WelcomeActivity extends SplashActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //刷新配置
-        DataManager.getDataManager()
-                .disposeMember(new Up());
 
 
     }
@@ -157,18 +154,4 @@ public class WelcomeActivity extends SplashActivity {
     }
 
 
-    public static class Up implements DataManager.UpDataListener{
-        @Override
-        public void updata(boolean getDataSuccess) {
-
-            if(getDataSuccess){
-
-                Log.e("DOAING","更新成功");
-
-            }else {
-                Log.e("DOAING","更新失败");
-            }
-
-        }
-    }
 }

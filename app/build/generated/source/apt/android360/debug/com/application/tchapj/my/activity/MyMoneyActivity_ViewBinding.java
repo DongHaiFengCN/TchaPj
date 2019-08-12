@@ -17,13 +17,13 @@ import java.lang.Override;
 public class MyMoneyActivity_ViewBinding implements Unbinder {
   private MyMoneyActivity target;
 
-  private View view2131755658;
+  private View view2131755665;
 
-  private View view2131755659;
+  private View view2131755666;
 
-  private View view2131755663;
+  private View view2131755670;
 
-  private View view2131756321;
+  private View view2131756344;
 
   @UiThread
   public MyMoneyActivity_ViewBinding(MyMoneyActivity target) {
@@ -52,7 +52,7 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
     target.taskOccupyTv = Utils.findRequiredViewAsType(source, R.id.task_occupy_tv, "field 'taskOccupyTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.recharge_money_tv, "field 'rechargeMoneyTv' and method 'onViewClicked'");
     target.rechargeMoneyTv = Utils.castView(view, R.id.recharge_money_tv, "field 'rechargeMoneyTv'", TextView.class);
-    view2131755658 = view;
+    view2131755665 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -61,7 +61,7 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.cash_withdrawal_tv, "field 'cashWithdrawalTv' and method 'onViewClicked'");
     target.cashWithdrawalTv = Utils.castView(view, R.id.cash_withdrawal_tv, "field 'cashWithdrawalTv'", TextView.class);
-    view2131755659 = view;
+    view2131755666 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -72,7 +72,7 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
     target.myMoneyLl = Utils.findRequiredViewAsType(source, R.id.my_money_ll, "field 'myMoneyLl'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.my_money_frozen_ll, "field 'myMoneyFrozenLl' and method 'onViewClicked'");
     target.myMoneyFrozenLl = Utils.castView(view, R.id.my_money_frozen_ll, "field 'myMoneyFrozenLl'", LinearLayout.class);
-    view2131755663 = view;
+    view2131755670 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -80,7 +80,7 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.back_framelayout, "method 'onViewClicked'");
-    view2131756321 = view;
+    view2131756344 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -117,13 +117,13 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
     target.myMoneyLl = null;
     target.myMoneyFrozenLl = null;
 
-    view2131755658.setOnClickListener(null);
-    view2131755658 = null;
-    view2131755659.setOnClickListener(null);
-    view2131755659 = null;
-    view2131755663.setOnClickListener(null);
-    view2131755663 = null;
-    view2131756321.setOnClickListener(null);
-    view2131756321 = null;
+    view2131755665.setOnClickListener(null);
+    view2131755665 = null;
+    view2131755666.setOnClickListener(null);
+    view2131755666 = null;
+    view2131755670.setOnClickListener(null);
+    view2131755670 = null;
+    view2131756344.setOnClickListener(null);
+    view2131756344 = null;
   }
 }

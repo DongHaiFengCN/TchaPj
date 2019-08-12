@@ -17,7 +17,7 @@ import java.lang.Override;
 public class ConsultationFragment_ViewBinding implements Unbinder {
   private ConsultationFragment target;
 
-  private View view2131755903;
+  private View view2131755912;
 
   @UiThread
   public ConsultationFragment_ViewBinding(final ConsultationFragment target, View source) {
@@ -28,7 +28,7 @@ public class ConsultationFragment_ViewBinding implements Unbinder {
     target.tabs = Utils.findRequiredViewAsType(source, R.id.tabs, "field 'tabs'", TabLayout.class);
     target.viewpager = Utils.findRequiredViewAsType(source, R.id.viewpager, "field 'viewpager'", ViewPager.class);
     view = Utils.findRequiredView(source, R.id.iv_edit_consultation, "method 'onViewClicked'");
-    view2131755903 = view;
+    view2131755912 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -48,7 +48,7 @@ public class ConsultationFragment_ViewBinding implements Unbinder {
     target.tabs = null;
     target.viewpager = null;
 
-    view2131755903.setOnClickListener(null);
-    view2131755903 = null;
+    view2131755912.setOnClickListener(null);
+    view2131755912 = null;
   }
 }

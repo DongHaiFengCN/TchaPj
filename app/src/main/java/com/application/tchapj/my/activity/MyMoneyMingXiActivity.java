@@ -12,15 +12,19 @@ import com.application.tchapj.App;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseBean;
 import com.application.tchapj.base.BaseMvpActivity;
+import com.application.tchapj.bean.PromotionResultBean;
 import com.application.tchapj.my.bean.MoneyInfoBean;
 import com.application.tchapj.my.bean.MoneyInfoListBean;
 import com.application.tchapj.my.bean.MoneyTransferBean;
+import com.application.tchapj.my.fragment.MoneyCzFragment;
 import com.application.tchapj.my.fragment.MoneyHfFragment;
 import com.application.tchapj.my.fragment.MoneySyFragment;
+import com.application.tchapj.my.fragment.MoneyTxFragment;
 import com.application.tchapj.my.presenter.MoneyPresenter;
 import com.application.tchapj.my.view.IMoneyView;
 import com.application.tchapj.task.adapter.TaskPagerAdapter;
 import com.application.tchapj.widiget.ToolbarHelper;
+import com.iflytek.cloud.thirdparty.T;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,11 +63,20 @@ public class MyMoneyMingXiActivity extends BaseMvpActivity<IMoneyView, MoneyPres
 
         getPresenter().onGetMoneyInfoBeanResult(App.getId());
 
-        fragments = new ArrayList<Fragment>();
+        fragments = new ArrayList<>();
         top_money_sy.setChecked(true);
 
+        //收益
         fragments.add(new MoneySyFragment());
+
+        //花费
         fragments.add(new MoneyHfFragment());
+
+        //充值
+        fragments.add(new MoneyCzFragment());
+        // fragments.add(new MoneyCzFragment());
+
+        fragments.add(new MoneyTxFragment());
 
         top_money_pager.setAdapter(new TaskPagerAdapter(getSupportFragmentManager(), fragments));
         top_money_pager.setCurrentItem(0); // 默认
@@ -72,7 +85,7 @@ public class MyMoneyMingXiActivity extends BaseMvpActivity<IMoneyView, MoneyPres
 
     }
 
-    public void initListener(){
+    public void initListener() {
 
         top_money_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -88,9 +101,15 @@ public class MyMoneyMingXiActivity extends BaseMvpActivity<IMoneyView, MoneyPres
                     case R.id.top_money_hf:
                         current = 1;
                         break;
+                    case R.id.top_money_cz:
+                        current = 2;
+                        break;
+                    case R.id.top_money_tx:
+                        current = 3;
+                        break;
                 }
 
-                if(top_money_pager.getCurrentItem() != current){
+                if (top_money_pager.getCurrentItem() != current) {
                     top_money_pager.setCurrentItem(current);
                 }
 
@@ -107,14 +126,19 @@ public class MyMoneyMingXiActivity extends BaseMvpActivity<IMoneyView, MoneyPres
             public void onPageSelected(int position) {
 
                 int currentItem = top_money_pager.getCurrentItem();
-                switch (currentItem){
+                switch (currentItem) {
                     case 0:
                         top_money_group.check(R.id.top_money_sy);
                         break;
                     case 1:
                         top_money_group.check(R.id.top_money_hf);
                         break;
-
+                    case 2:
+                        top_money_group.check(R.id.top_money_cz);
+                        break;
+                    case 3:
+                        top_money_group.check(R.id.top_money_tx);
+                        break;
                 }
             }
 
@@ -153,6 +177,16 @@ public class MyMoneyMingXiActivity extends BaseMvpActivity<IMoneyView, MoneyPres
 
     @Override
     public void onGetArtificialTransferBeanResult(BaseBean baseBean) {
+
+    }
+
+    @Override
+    public void promotionResultBeanBaseBean(BaseBean<PromotionResultBean> baseBean) {
+
+    }
+
+    @Override
+    public void promotionSuccess(BaseBean baseBean) {
 
     }
 

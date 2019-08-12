@@ -20,6 +20,14 @@
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/back.png"
     },
     {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/ic_ok.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/ic_ok.png"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/ic_no.png",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/ic_no.png"
+    },
+    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/mipmap-xxxhdpi-v4/cha.png",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/mipmap-xxxhdpi/cha.png"
     },

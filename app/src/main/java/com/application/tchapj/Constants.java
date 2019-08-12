@@ -33,10 +33,10 @@ public final class Constants {
 
 
     //h5链接正式地址
-    public static final String h5zhengshiUrl = "http://wx.whby.ctrl.cn";
+    //public static final String h5zhengshiUrl = "http://wx.whby.ctrl.cn";
 
     //Debug: h5链接测试地址
-    public static final String h5zhengshiUrl2 = "http://124.133.43.12:8087";
+    public static final String h5zhengshiUrl = "http://124.133.43.12:8087";
 
     //缓存值
     public static final String SERVER_MOBILE = "SERVER_MOBILE"; //客服手机号

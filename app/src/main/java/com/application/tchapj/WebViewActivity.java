@@ -34,7 +34,6 @@ import com.application.tchapj.login.activity.LoginMainActivity;
 import com.application.tchapj.main.bean.FlashScreenBean;
 import com.application.tchapj.utils2.AppManager;
 import com.application.tchapj.utils2.ProgressActivity;
-import com.application.tchapj.utils2.ShareSDKUtils;
 import com.application.tchapj.utils2.SharedPreferences;
 import com.application.tchapj.utils2.net.NetChangeObserver;
 import com.application.tchapj.utils2.net.NetWorkUtil;
@@ -61,7 +60,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
-import freemarker.template.utility.StringUtil;
 import io.reactivex.annotations.Nullable;
 
 // WebView
@@ -70,7 +68,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
 
     @BindView(R.id.toolbar_share_title)
     TextView title;         // 标题
-//    @BindView(R.id.iv_back)
+    //    @BindView(R.id.iv_back)
 //    ImageView iv_bback;     // 返回控件
     @BindView(R.id.toolbar)
     Toolbar toolbar; // 标题栏布局控件
@@ -85,7 +83,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
     private ProgressActivity progressActivity; // 显示加载Layout
     private long mExitTime;                    // 得到更新时间
     /**
-     传递的数据
+     * 传递的数据
      */
     public static String URL_KEY = "URL_KEY";
     public static String TITLE = "TITLE";
@@ -166,22 +164,22 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
             title.setText(title_name);
         }
 
-        if(showTitleBarBol){
+        if (showTitleBarBol) {
             //如果showTitleBar == true就算title_name没有值也显示标题栏
             toolbar.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             //否则就根据title_name是否有值判断展示
             if (!TextUtils.isEmpty(title_name)) {
                 toolbar.setVisibility(View.VISIBLE);
-            }else{
+            } else {
                 toolbar.setVisibility(View.GONE);
             }
         }
 
 
-        if(showShareBol){
+        if (showShareBol) {
             toolbarShareIv.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             toolbarShareIv.setVisibility(View.GONE);
         }
 
@@ -202,8 +200,6 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
                 .setReceivedTitleCallback(mCallback)
                 .setWebChromeClient(mWebChromeClient)
                 .setWebViewClient(mWebViewClient)
-                //.setSecutityType(AgentWeb.SecurityType.strict)
-//                .setWebLayout(new WebLayout(this))
                 .createAgentWeb()//
                 .ready()
                 .go(getUrl());
@@ -227,13 +223,17 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
 
         if(getIntent().getStringExtra(URL_TYPE) != null && getIntent().getStringExtra(URL_TYPE).equals("All")){
             //不需要拼接url
-            Log.e("H5连接路径：", "url===" + getIntent().getStringExtra(URL_KEY));
+            Log.e("H5连接路径：", "url===A" + getIntent().getStringExtra(URL_KEY));
             return getIntent().getStringExtra(URL_KEY);
         }else {
-            Log.e("H5连接路径：", "url==="+Constants.h5zhengshiUrl2+ getIntent().getStringExtra(URL_KEY));
-            return Constants.h5zhengshiUrl2 +getIntent().getStringExtra(URL_KEY);
+            Log.e("H5连接路径：", "url===B"+ getIntent().getStringExtra(URL_KEY));
+            return Constants.h5zhengshiUrl +getIntent().getStringExtra(URL_KEY);
         }
 
+
+        //TODO 这是临时测试用的地址
+        //  Log.e("DOAING", "http://192.168.15.70:8080/dist#/pages/famousDetail/famousDetail?id=" + getIntent().getStringExtra(URL_KEY) + "&memberId=" + App.getId() + "&type=1");
+        // return "http://192.168.15.70:8080/dist#/pages/famousDetail/famousDetail?id=" + getIntent().getStringExtra(URL_KEY) + "&memberId=" + App.getId() + "&type=1";
     }
 
     // 微信发送请求到第三方应用时，会回调到该方法
@@ -279,7 +279,6 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
                     @Override
                     public void onClick(View v) {
                         mAgentWeb.getWebLifeCycle().onResume();
-                        ;
                     }
                 });
     }
@@ -303,15 +302,13 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         }
 
         @JavascriptInterface
-        public void shareTitleContentImgUrlWebUrl(String shareTitle, String Content, String ImgUrl, String WebUrl,String id) {
-            Log.e("分享路径：", "titlesss=" + shareTitle + ";Contentsss=" + Content + ";ImgUrlsss=" + ImgUrl + ";WebUrlsss=" + WebUrl+ ";IDsss=" + id);
-            showShare(shareTitle, Content, ImgUrl, "http://api.whby.ctrl.cn"+id);
+        public void shareTitleContentImgUrlWebUrl(String shareTitle, String Content, String ImgUrl, String WebUrl, String id) {
+            Log.e("分享路径：", "titlesss=" + shareTitle + ";Contentsss=" + Content + ";ImgUrlsss=" + ImgUrl + ";WebUrlsss=" + WebUrl + ";IDsss=" + id);
+            showShare(shareTitle, Content, ImgUrl, WebUrl);
         }
 
         @JavascriptInterface
         public void loginpage() {
-
-            Log.e("跳转绑定手机号：", "1111111" + "ssssssss");
             BindingPhoneActivity.start(WebViewActivity.this);
             finish();
         }
@@ -368,10 +365,11 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
 
         /**
          * 拨打电话
+         *
          * @param phone
          */
         @JavascriptInterface
-        public void call2(String phone){
+        public void call2(String phone) {
 
             //检查权限
             if (ContextCompat.checkSelfPermission(WebViewActivity.this,
@@ -407,29 +405,16 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
                         return;
                     }
                     startActivity(intent);
-
-                    Log.e("CALL打电话：", "tel:" + phone);
                 }
 
             } else {
                 //已经拥有权限进行拨打
-                //Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "13345122570"));
                 if (ActivityCompat.checkSelfPermission(WebViewActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
                 startActivity(intent);
-
-                Log.e("CALL打电话：", "tel:" + phone);
             }
-
-            /*Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
-            if (ActivityCompat.checkSelfPermission(WebViewActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
-            }
-            startActivity(intent);
-
-            Log.e("CALL打电话：", "tel:" + phone);*/
 
         }
 
@@ -452,35 +437,6 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         }
     }
 
-    /*private void showShare(String shareTitle, String Content, String ImgUrl, String WebUrl) {
-        OnekeyShare oks = new OnekeyShare();
-        //关闭sso授权
-        oks.disableSSOWhenAuthorize();
-        // 分享时Notification的图标和文字  2.5.9以后的版本不     调用此方法
-        //oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
-
-        // title标题，印象笔记、邮箱、信息、微信、人人网、QQ和QQ空间使用
-        oks.setTitle("来自哔哩哔哩");
-        // titleUrl是标题的网络链接，仅在Linked-in,QQ和QQ空间使用
-        oks.setTitleUrl("https://www.baidu.com/");
-        // text是分享文本，所有平台都需要这个字段
-        oks.setText("来自哔哩哔哩");
-        //分享网络图片，新浪微博分享网络图片需要通过审核后申请高级写入接口，否则请注释掉测试新浪微博
-        oks.setImageUrl("http://f1.sharesdk.cn/imgs/2014/02/26/owWpLZo_638x960.jpg");
-        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-        //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
-        // url仅在微信（包括好友和朋友圈）中使用
-        oks.setUrl("https://www.baidu.com/");
-        // comment是我对这条分享的评论，仅在人人网和QQ空间使用
-        oks.setComment("哔哩哔哩");
-        // site是分享此内容的网站名称，仅在QQ空间使用
-        oks.setSite("哔哩哔哩b");
-        // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-        oks.setSiteUrl("https://www.baidu.com/");
-
-        // 启动分享GUI
-        oks.show(this);
-    }*/
 
     // 显示分享
     private void showShare(String shareTitle, String Content, String ImgUrl, String WebUrl) {
@@ -497,6 +453,8 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
         oks.setImageUrl(ImgUrl);
         // url仅在微信（包括好友和朋友圈）中使用
+
+        Log.e("发出去的地址：", WebUrl);
         oks.setUrl(WebUrl);
         // comment是我对这条分享的评论，仅在人人网和QQ空间使用
         oks.setComment(Content);
@@ -517,6 +475,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
 
         protected AgentWeb mAgentWeb;              // AgentWeb 是一个高度封装的 WebView
 
+        @Override
         public void onComplete(Platform plat, int action,
                                HashMap res) {
             System.out.println(res.toString());
@@ -525,6 +484,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
             mAgentWeb.getJsEntraceAccess().quickCallJs("shareSuccess");
         }
 
+        @Override
         public void onError(Platform plat, int action, Throwable t) {
             t.printStackTrace();
             // 在这里添加分享失败的处理代码
@@ -533,6 +493,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
 //            mAgentWeb.loadUrl("javascript:shareError('" +"分享失败"+"')");
         }
 
+        @Override
         public void onCancel(Platform plat, int action) {
             // 在这里添加取消分享的处理代码
         }
@@ -547,7 +508,6 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
     }
 
 
-
     @Override // 保存页面状态
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -557,7 +517,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
     }
 
     // 状态栏返回键
-    @OnClick({ R.id.toolbar_share_img})
+    @OnClick({R.id.toolbar_share_img})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.toolbar_share_img:
@@ -612,7 +572,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         starter.putExtra(WebViewActivity.URL_TYPE, urlType);
         starter.putExtra(WebViewActivity.URL_KEY, url);
         starter.putExtra(WebViewActivity.TITLE, shareName);
-        starter.putExtra(WebViewActivity.SHARE_CONTENT,shareContent);
+        starter.putExtra(WebViewActivity.SHARE_CONTENT, shareContent);
         starter.putExtra(WebViewActivity.SHARE_SMALL_IMG, shareSmallImg);
         context.startActivity(starter);
     }
@@ -622,7 +582,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         starter.putExtra(WebViewActivity.URL_TYPE, urlType);
         starter.putExtra(SHOW_SHARE, showShare);
         starter.putExtra(SHOW_TITLE_BAR, showTitleBar);
-        if(!url.contains("http")){
+        if (!url.contains("http")) {
             url = "http://" + url;
         }
 

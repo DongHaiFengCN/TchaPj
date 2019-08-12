@@ -60,36 +60,6 @@ public class AuthenticationActivity extends AppCompatActivity {
             }
         });
 
-        mApp.getAppComponent()
-                .getAPIService()
-                .updateIndetity("002", "", "pm.member.updateIdentity", "1.0", "JSON", "", "1", getDataManager().quickGetMetaData(R.string.id,String.class), "370123199007063413", "dd")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<BaseBean>() {
-                    @Override
-                    public void onCompleted() {
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                        Log.e("DOAING",e.getMessage());
-                        Toast.makeText(AuthenticationActivity.this, "数据提交失败，请重新尝试提交。", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onNext(BaseBean baseBean) {
-
-                        Log.e("DOAING", baseBean.getDescription() + "------");
-                        if (SUCCESS.equals(baseBean.getCode())) {
-
-                           // getDataManager().setMetaDataById(R.string.identity, id, true);
-
-                            Toast.makeText(AuthenticationActivity.this, baseBean.getDescription(), Toast.LENGTH_SHORT).show();
-                            finish();
-                        }
-                    }
-                });
     }
 
     public void onClick(View view) {

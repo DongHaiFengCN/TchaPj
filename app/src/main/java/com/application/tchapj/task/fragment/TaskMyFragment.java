@@ -54,6 +54,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 // 任务tab-我的任务
 public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSquarePresenter> implements MyTaskSquareView, View.OnClickListener {
 
@@ -256,7 +258,6 @@ public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSqua
     public void initData() {
 
         getPresenter().getFaTaskSquare(memberId, pageNum + "", pageSize + "");
-        //getPresenter().getTaskSquare(memberId, pageNum + "", pageSize + "");
     }
 
     @Override
@@ -391,7 +392,8 @@ public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSqua
     @OnClick(R.id.add_task_button)
     public void onViewClicked() {
 
-        if (StringUtils.isNullOrEmpty(App.getId())) {
+        String id = getDataManager().quickGetMetaData(R.string.id, String.class);
+        if ("".equals(id)) {
             CommonDialogUtil.showLoginDialog(getActivity());
         } else {
 
@@ -399,7 +401,7 @@ public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSqua
                 if (SharedPreferencesUtils.getInstance().getUserInfo().getFaTaskStatus() != null
                         && SharedPreferencesUtils.getInstance().getUserInfo().getFaTaskStatus().equals("2")) {
                     showPublishDialog();
-                }else{
+                } else {
                     CommonDialogUtil.identityDialog(getActivity(), "请先申请广告主身份");
                 }
             } else {
@@ -410,7 +412,7 @@ public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSqua
     }
 
     private void showPublishDialog() {
-        publishTaskDialog = new Dialog(mContext,R.style.DialogStyle);
+        publishTaskDialog = new Dialog(mContext, R.style.DialogStyle);
         View view = LayoutInflater.from(mContext).inflate(R.layout.layout_dialog_publish_task, null);
         publishTaskDialog.setContentView(view);
         view.findViewById(R.id.dialog_consultation_ll_other).setOnClickListener(this);

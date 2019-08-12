@@ -33,6 +33,8 @@ anim design_snackbar_in
 anim design_snackbar_out
 anim dialog_bottom_slide_in
 anim dialog_bottom_slide_out
+anim dialog_enter
+anim dialog_exit
 anim dialog_in
 anim dialog_out
 anim down_out
@@ -2635,6 +2637,7 @@ drawable material_dialog_window
 drawable me_login_btn_bg
 drawable message_oval_orange
 drawable message_oval_white
+drawable money_dialog_button
 drawable more_1x
 drawable msp_demo_title
 drawable msp_demo_title_bg
@@ -2875,6 +2878,7 @@ id about_collapsingToolbarLayout
 id above
 id accelerate
 id accelerateDecelerate
+id account_tv
 id action0
 id action_bar
 id action_bar_activity_content
@@ -2936,8 +2940,11 @@ id album_praise_number
 id album_time
 id alertTitle
 id alipay_rl
+id alipay_status_bt
+id alipay_status_im
 id all
 id always
+id amount_tv
 id anticipate
 id anticipateOvershoot
 id arc_menu
@@ -3037,6 +3044,7 @@ id clarity
 id classic
 id clip_horizontal
 id clip_vertical
+id close_tv
 id collapseActionView
 id collar_task_circle_friend_state_iv1
 id collar_task_circle_friend_state_iv2
@@ -3433,8 +3441,12 @@ id image_orientation
 id img1
 id imgRichpushBtnBack
 id imgView
+id indentity_status_bt
+id indentity_status_im
+id indentity_status_ll
 id indicatorInside
 id info
+id info_tv
 id insideInset
 id insideOverlay
 id invisible
@@ -3703,12 +3715,16 @@ id mini
 id mode_default
 id mode_fixed
 id mode_shifting
+id money_cz_rv
+id money_cz_srl
 id money_hf_rv
 id money_hf_srl
 id money_iv
 id money_sy_rv
 id money_sy_srl
 id money_tv
+id money_tx_rv
+id money_tx_srl
 id more_category_text
 id multiply
 id musicSeekBar
@@ -3780,6 +3796,7 @@ id notification_main_column_container
 id numIndicator
 id numIndicatorInside
 id numberEt
+id number_tv
 id orginalstateLine
 id originalfTv2
 id originalfTv3
@@ -3799,6 +3816,8 @@ id parentPanel
 id parent_matrix
 id parise_icon
 id payV2
+id pay_bt
+id pay_type_rg
 id pb_load
 id permanent_address_city_name_tv
 id permanent_address_city_rl
@@ -3853,6 +3872,8 @@ id pyq_add_ncet
 id pyq_add_vieo_rl
 id qianming_rl
 id qianming_tv
+id r1
+id r2
 id radio
 id rbConsultation
 id rbHome
@@ -4071,6 +4092,7 @@ id state_thumb
 id state_touch_drag
 id state_touch_scale
 id status_bar_latest_event_content
+id status_tv
 id submenuarrow
 id submit_area
 id submit_auth
@@ -4151,6 +4173,7 @@ id textinput_counter
 id textinput_error
 id thumb
 id time
+id time_tv
 id title
 id title1
 id titleDividerNoCustom
@@ -4173,10 +4196,12 @@ id top_dy_pager
 id top_dygp_task
 id top_dygroup
 id top_dyyc_task
+id top_money_cz
 id top_money_group
 id top_money_hf
 id top_money_pager
 id top_money_sy
+id top_money_tx
 id top_my_pager
 id top_my_task
 id top_pyqgroup
@@ -4334,6 +4359,7 @@ id wb_add_rv
 id wb_iv
 id webView
 id web_parent_layout_id
+id wechat_iv
 id wheelview_container
 id wheelview_single
 id wheelview_tips
@@ -4413,6 +4439,7 @@ layout activity_danmu
 layout activity_daren
 layout activity_daren_other_add
 layout activity_darendataone
+layout activity_darendataone_add_image
 layout activity_darendatatwo
 layout activity_dy_add
 layout activity_fa_dygptask
@@ -4443,6 +4470,7 @@ layout activity_microinfo
 layout activity_micronumber_main
 layout activity_mingpeoplelist
 layout activity_mingren
+layout activity_money_v_dialog
 layout activity_my_money
 layout activity_my_moneymingxi
 layout activity_news_channel
@@ -4518,6 +4546,8 @@ layout fragment_attention_celebrity_list
 layout fragment_channel
 layout fragment_consultation
 layout fragment_consultationinfo
+layout fragment_cz
+layout fragment_cz_item
 layout fragment_hf
 layout fragment_hf_item
 layout fragment_home
@@ -4540,6 +4570,8 @@ layout fragment_sy
 layout fragment_sy_item
 layout fragment_task
 layout fragment_test
+layout fragment_tx
+layout fragment_tx_item
 layout fragment_video
 layout fragment_web
 layout gridview
@@ -4599,6 +4631,7 @@ layout layout_dialog_consultation_verify_identity
 layout layout_dialog_lead_task_remind
 layout layout_dialog_my_money_recharge
 layout layout_dialog_pay_order
+layout layout_dialog_pay_task
 layout layout_dialog_publish_task
 layout layout_dialog_update_manager
 layout layout_dialog_wechat_qq
@@ -4925,8 +4958,10 @@ mipmap ic_my_1000_money
 mipmap ic_my_10_money
 mipmap ic_my_3_money
 mipmap ic_my_50_money
+mipmap ic_no
 mipmap ic_noxuan
 mipmap ic_nv
+mipmap ic_ok
 mipmap ic_one
 mipmap ic_other
 mipmap ic_other_select
@@ -6088,6 +6123,7 @@ style progressBarHorizontalStyle
 style progressBarStyle
 style progress_dialog
 style section_title
+style share_animation
 style spnner_divider_style
 style style_common_second_filter
 style subscribe_flow_layout

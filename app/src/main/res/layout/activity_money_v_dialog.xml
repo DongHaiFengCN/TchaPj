@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_margin="12dp"
+        android:text="提示"
+        android:textColor="@color/md_blue_grey_800"
+        />
+
+    <TextView
+        android:id="@+id/info_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_margin="12dp"
+        android:text="兑换前请先关联支付宝并完成实名认证"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4"
+        android:layout_margin="8dp"
+
+        >
+
+        <TextView
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:text="关联支付宝"
+            android:paddingLeft="12dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/alipay_status_im"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_4"
+
+            />
+        <TextView
+            android:id="@+id/alipay_status_bt"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textColor="@color/colorPrimary2"
+            android:layout_height="32dp"
+            android:textSize="@dimen/sp_fifteen"
+            android:gravity="center"
+            android:text="未关联"
+            android:background="@drawable/money_dialog_button"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/indentity_status_ll"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:text="实名认证"
+            android:paddingLeft="12dp"
+            android:gravity="center|start"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/indentity_status_im"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_4"
+            />
+        <TextView
+            android:id="@+id/indentity_status_bt"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="未绑定"
+            android:gravity="center"
+            android:textSize="@dimen/sp_14"
+            android:layout_height="32dp"
+            android:textColor="@color/colorPrimary2"
+            android:background="@drawable/money_dialog_button"
+            />
+    </LinearLayout>
+</LinearLayout>

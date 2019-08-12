@@ -31,6 +31,7 @@ import com.application.tchapj.widiget.ToolbarHelper;
 import butterknife.OnClick;
 
 // 登录
+@Deprecated
 public class LoginActivity extends BaseMvpActivity<ILoginView, LoginPresenter> implements ILoginView{
 
     private EditText mEdtUserName;

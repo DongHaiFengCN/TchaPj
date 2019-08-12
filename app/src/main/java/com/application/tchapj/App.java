@@ -190,6 +190,7 @@ public class App extends Application {
 
         getStartInitiationData();
 
+
         App.setId(DataManager.getDataManager().quickGetMetaData(R.string.id,String.class));
 
         SharedPreferences.getInstance().init(this);

@@ -16,6 +16,10 @@
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/anim/photo_anticipate_interpolator.xml"
     },
     {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/anim/dialog_exit.xml",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/anim/dialog_exit.xml"
+    },
+    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/anim/design_bottom_sheet_slide_in.xml",
         "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/res/anim/design_bottom_sheet_slide_in.xml"
     },
@@ -126,6 +130,10 @@
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/anim/dialog_in.xml",
         "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/base-2.0.aar/a8e5dfa63702beb8ba2762075174bb4f/res/anim/dialog_in.xml"
+    },
+    {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/anim/dialog_enter.xml",
+        "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/anim/dialog_enter.xml"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/anim/slide_left_out.xml",

@@ -18,9 +18,9 @@ import java.lang.Override;
 public class TaskSquareWsGpActivity_ViewBinding implements Unbinder {
   private TaskSquareWsGpActivity target;
 
-  private View view2131755512;
+  private View view2131755513;
 
-  private View view2131755514;
+  private View view2131755515;
 
   @UiThread
   public TaskSquareWsGpActivity_ViewBinding(TaskSquareWsGpActivity target) {
@@ -61,7 +61,7 @@ public class TaskSquareWsGpActivity_ViewBinding implements Unbinder {
     target.releasefDownloadTv = Utils.findRequiredViewAsType(source, R.id.releasefDownloadTv, "field 'releasefDownloadTv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.releasefValueRv, "field 'releasefValueRv' and method 'onViewClicked'");
     target.releasefValueRv = Utils.castView(view, R.id.releasefValueRv, "field 'releasefValueRv'", ImageView.class);
-    view2131755512 = view;
+    view2131755513 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -70,7 +70,7 @@ public class TaskSquareWsGpActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.hairFriendsBtn, "field 'hairFriendsBtn' and method 'onViewClicked'");
     target.hairFriendsBtn = Utils.castView(view, R.id.hairFriendsBtn, "field 'hairFriendsBtn'", Button.class);
-    view2131755514 = view;
+    view2131755515 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -118,9 +118,9 @@ public class TaskSquareWsGpActivity_ViewBinding implements Unbinder {
     target.hairFriendsBtn = null;
     target.ScrollView = null;
 
-    view2131755512.setOnClickListener(null);
-    view2131755512 = null;
-    view2131755514.setOnClickListener(null);
-    view2131755514 = null;
+    view2131755513.setOnClickListener(null);
+    view2131755513 = null;
+    view2131755515.setOnClickListener(null);
+    view2131755515 = null;
   }
 }

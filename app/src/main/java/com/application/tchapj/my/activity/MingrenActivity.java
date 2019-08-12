@@ -18,6 +18,7 @@ import com.application.tchapj.App;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
 import com.application.tchapj.login.bean.LoginResult;
+import com.application.tchapj.login.bean.SmsCodeResponse;
 import com.application.tchapj.my.adpter.ImagePickerAdapter2;
 import com.application.tchapj.my.bean.MicroInfoBean;
 import com.application.tchapj.my.bean.MicroTabBean;
@@ -271,10 +272,11 @@ public class MingrenActivity extends BaseMvpActivity<IMicroView, MicroPresenter>
         }
     }
 
-    @Override // 验证码
-    public void onGetSmsCodeResult(LoginResult loginResultBean) {
+    @Override
+    public void onGetSmsCodeResult(SmsCodeResponse loginResultBean) {
 
     }
+
 
     @Override // 认证
     public void onGetMicroInfoBeanResult(MicroInfoBean microInfoBean) {

@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.application.tchapj.App;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
+import com.application.tchapj.bean.PromotionPayResultBean;
+import com.application.tchapj.my.bean.MoneyInfoBean;
 import com.application.tchapj.task.bean.FaTaskBean;
 import com.application.tchapj.task.bean.FaTaskSuccessBean;
 import com.application.tchapj.task.bean.FaTaskSuccessafterBean;
@@ -120,13 +122,28 @@ public class TaskQtActivity extends BaseMvpActivity<IFaTaskView, FaTaskPresenter
         }
     }
 
-    @Override // 预付订单
-    public void onGetFaTaskSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
+    @Override
+    public void onGetAlipayOrderInfoSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
 
     }
 
+   /* @Override // 预付订单
+    public void onGetFaTaskSuccessBeanModels(FaTaskSuccessBean faTaskSuccessBean) {
+
+    }*/
+
     @Override // 任务付款
     public void onGetFaTaskSuccessafterBeanModels(FaTaskSuccessafterBean faTaskSuccessafterBean) {
+
+    }
+
+    @Override
+    public void onGetBrokerage(MoneyInfoBean moneyInfoBean) {
+
+    }
+
+    @Override
+    public void onGetPromotionPaySuccess(PromotionPayResultBean baseBean) {
 
     }
 

@@ -17,6 +17,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 // 登录界面的 Presenter 层 业务逻辑继承该层的接口  并 实现View层接口和Model层业务的处理逻辑
+@Deprecated
 public class LoginPresenter extends BaseMvpPresenter<ILoginView> {
 
 
@@ -151,7 +152,7 @@ public class LoginPresenter extends BaseMvpPresenter<ILoginView> {
 
         // 观察者被观察者模式
         // 得到根接口路径
-        getAppComponent()
+        /*getAppComponent()
                 .getAPIService() // 所有接口对象
                 .getSmsCodeResult(username,"002","1.0","","JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
@@ -180,7 +181,7 @@ public class LoginPresenter extends BaseMvpPresenter<ILoginView> {
                                 getView().onGetLoginResultUsInfo(loginResultBean.getData().getLoginInfo()); // 得到二层数据
                         }
                     }
-                });
+                });*/
     }
 
     // 新手机验证登录

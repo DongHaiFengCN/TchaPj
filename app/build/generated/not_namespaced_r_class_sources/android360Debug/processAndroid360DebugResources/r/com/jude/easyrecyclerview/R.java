@@ -35,14 +35,14 @@ public final class R {
         public static final int none = 0x7f100051;
         public static final int outsideInset = 0x7f10009d;
         public static final int outsideOverlay = 0x7f10009e;
-        public static final int progress = 0x7f100307;
-        public static final int ptr_layout = 0x7f100526;
+        public static final int progress = 0x7f100310;
+        public static final int ptr_layout = 0x7f10053d;
         public static final int vertical = 0x7f1000a0;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int layout_progress_recyclerview = 0x7f040103;
+        public static final int layout_progress_recyclerview = 0x7f04010a;
     }
     public static final class styleable {
         private styleable() {}

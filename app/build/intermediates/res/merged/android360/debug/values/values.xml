@@ -5446,6 +5446,10 @@ function login(form){
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:textSize">16dp</item>
     </style>
+    <style name="share_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
     <style name="spnner_divider_style" parent="AppBaseTheme">
         <item name="android:dropDownListViewStyle">@style/divider_style</item>
 
