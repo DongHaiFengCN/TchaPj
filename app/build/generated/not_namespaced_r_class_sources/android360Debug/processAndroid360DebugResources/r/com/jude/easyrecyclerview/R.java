@@ -42,7 +42,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int layout_progress_recyclerview = 0x7f040104;
+        public static final int layout_progress_recyclerview = 0x7f040102;
     }
     public static final class styleable {
         private styleable() {}

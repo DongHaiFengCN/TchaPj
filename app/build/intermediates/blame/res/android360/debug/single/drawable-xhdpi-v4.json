@@ -220,6 +220,10 @@
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-xhdpi/ic_placeholder.png"
     },
     {
+        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-xhdpi-v4/jc_brightness_video.png",
+        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/res/drawable-xhdpi-v4/jc_brightness_video.png"
+    },
+    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-xhdpi-v4/jc_pause_normal.png",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-xhdpi/jc_pause_normal.png"
     },
@@ -762,10 +766,6 @@
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-xhdpi-v4/ssdk_oks_classic_check_checked.png",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable-xhdpi/ssdk_oks_classic_check_checked.png"
-    },
-    {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-xhdpi-v4/jc_back.png",
-        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/res/drawable-xhdpi-v4/jc_back.png"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",

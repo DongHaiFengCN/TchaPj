@@ -37,7 +37,7 @@ MERGED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/cac
 MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:2:1-17:12
 MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:2:1-13:12
 MERGED from [com.lzy.widget:view-core:0.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/view-core-0.2.1.aar/fcfd070fda58026e28ce9c1b8999ad37/AndroidManifest.xml:2:1-12:12
-MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:2:1-19:12
+MERGED from [fm.jiecao:jiecaovideoplayer:5.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/AndroidManifest.xml:2:1-13:12
 MERGED from [com.github.florent37:viewanimator:1.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewanimator-1.0.5.aar/1f538a289ab0f4411f91a2d45f0a835d/AndroidManifest.xml:2:1-12:12
 MERGED from [com.android.support:design:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/AndroidManifest.xml:17:1-22:12
@@ -93,8 +93,6 @@ MERGED from [com.android.support:support-media-compat:27.1.1] /Users/dong/.gradl
 MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/daf75fdf9f761a2e4fe5579b5d1d4c1f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ce48bcd60c29abf17084cf0593a2527b/AndroidManifest.xml:17:1-22:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/2e335231b038c113252a3ad209eb87a7/AndroidManifest.xml:15:1-21:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.7.4.aar/77d929259529e2a5d05248a68559d5f2/AndroidManifest.xml:2:1-9:12
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.7.4.aar/25e51d35542491949dee6e376cb07612/AndroidManifest.xml:2:1-9:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/429bf78faa5b729f3ae6b31cc34014b2/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4099e843012d4be15e796c344911b23e/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/fb00c6c3677b878123a7e6512ce51c74/AndroidManifest.xml:17:1-22:12
@@ -180,8 +178,8 @@ MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/dong/.gradle/caches/transforms-1
 		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:21:22-65
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml:22:5-79
-MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:13:5-79
-MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:13:5-79
+MERGED from [fm.jiecao:jiecaovideoplayer:5.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/AndroidManifest.xml:11:5-79
+MERGED from [fm.jiecao:jiecaovideoplayer:5.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/AndroidManifest.xml:11:5-79
 MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:13:5-79
 MERGED from [com.tencent.bugly:crashreport_upgrade:1.4.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/crashreport_upgrade-1.4.1.aar/adb75d49ddea420ec98de96817ac80d6/AndroidManifest.xml:13:5-79
 MERGED from [com.github.pwittchen:reactivenetwork-rx2:0.11.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/reactivenetwork-rx2-0.11.0.aar/c0c3cd699a5e2382b8aa6eb4606c68f3/AndroidManifest.xml:11:5-79
@@ -371,8 +369,6 @@ MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches
 MERGED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:11:5-20
 MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:11:5-20
-MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:15:5-17:38
-MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:15:5-17:38
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7710c06094e2f93e9fc96311e924cc08/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/dong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/7710c06094e2f93e9fc96311e924cc08/AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/fd8f647b47c3b2bc4138b13da6d488e4/AndroidManifest.xml:9:5-20
@@ -416,7 +412,6 @@ MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/dong/.g
 		REJECTED from [com.github.pinguo-zhouwei:CustomPopwindow:2.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/CustomPopwindow-2.1.1.aar/5f68f2e7fcea90feafe5ade1f8fd077b/AndroidManifest.xml:12:9-35
 		REJECTED from [me.weyye.ColorTrackTabLayout:library:1.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.0.1.aar/9f1e05d1ea95793adb20fee4c9b9ec7f/AndroidManifest.xml:12:9-35
 		REJECTED from [com.github.chaychan:SlideCloseLib:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/SlideCloseLib-1.0.0.aar/e43ee9281dbec90bd5937874a615d61d/AndroidManifest.xml:12:9-35
-		REJECTED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:16:9-35
 		REJECTED from [com.king.thread:nevercrash:1.0.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/nevercrash-1.0.0.aar/fd389b8dd072ceced9dc1a7e40e6dfe3/AndroidManifest.xml:12:9-35
 		REJECTED from [com.just.agentweb:agentweb:3.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/agentweb-3.1.0.aar/1f50643e22298155dc7907014c6dcfc9/AndroidManifest.xml:12:9-35
 		REJECTED from [org.litepal.android:core:1.5.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/core-1.5.0.aar/25ab6e486875e527fb36b4fbdc8167b9/AndroidManifest.xml:12:9-35
@@ -1486,8 +1481,8 @@ MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches
 MERGED from [com.github.nukc.stateview:library:1.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/library-1.2.1.aar/5079a6c9bde10e23ccf82a9521277e84/AndroidManifest.xml:7:5-9:41
 MERGED from [com.lzy.widget:view-core:0.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/view-core-0.2.1.aar/fcfd070fda58026e28ce9c1b8999ad37/AndroidManifest.xml:8:5-10:41
 MERGED from [com.lzy.widget:view-core:0.2.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/view-core-0.2.1.aar/fcfd070fda58026e28ce9c1b8999ad37/AndroidManifest.xml:8:5-10:41
-MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:8:5-11:104
-MERGED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:8:5-11:104
+MERGED from [fm.jiecao:jiecaovideoplayer:5.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/AndroidManifest.xml:7:5-9:41
+MERGED from [fm.jiecao:jiecaovideoplayer:5.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.florent37:viewanimator:1.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewanimator-1.0.5.aar/1f538a289ab0f4411f91a2d45f0a835d/AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.florent37:viewanimator:1.0.5] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewanimator-1.0.5.aar/1f538a289ab0f4411f91a2d45f0a835d/AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:design:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/5a9a5c23a13f879d3ff929c1110708ce/AndroidManifest.xml:20:5-44
@@ -1598,10 +1593,6 @@ MERGED from [com.android.support:support-compat:27.1.1] /Users/dong/.gradle/cach
 MERGED from [com.android.support:support-compat:27.1.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ce48bcd60c29abf17084cf0593a2527b/AndroidManifest.xml:20:5-44
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/2e335231b038c113252a3ad209eb87a7/AndroidManifest.xml:19:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/dong/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/2e335231b038c113252a3ad209eb87a7/AndroidManifest.xml:19:5-43
-MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.7.4.aar/77d929259529e2a5d05248a68559d5f2/AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-arm64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-arm64-0.7.4.aar/77d929259529e2a5d05248a68559d5f2/AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.7.4.aar/25e51d35542491949dee6e376cb07612/AndroidManifest.xml:5:5-7:41
-MERGED from [tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.4] /Users/dong/.gradle/caches/transforms-1/files-1.1/ijkplayer-x86_64-0.7.4.aar/25e51d35542491949dee6e376cb07612/AndroidManifest.xml:5:5-7:41
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/429bf78faa5b729f3ae6b31cc34014b2/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/429bf78faa5b729f3ae6b31cc34014b2/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4099e843012d4be15e796c344911b23e/AndroidManifest.xml:20:5-44
@@ -1612,8 +1603,6 @@ MERGED from [android.arch.core:runtime:1.1.0] /Users/dong/.gradle/caches/transfo
 MERGED from [android.arch.core:runtime:1.1.0] /Users/dong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/77aa02aa8cd40b25592311801575fd74/AndroidManifest.xml:20:5-44
 INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
 INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [fm.jiecao:jiecaovideoplayer:4.8.3] /Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/AndroidManifest.xml:11:9-101
 	android:targetSdkVersion
 		INJECTED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml
 		ADDED from /Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/AndroidManifest.xml

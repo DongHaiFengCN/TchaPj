@@ -411,7 +411,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     @Override
     public void onGetUserModelResult(UserModel userModelBean) {
 
-        SharedPreferencesUtils.getInstance().setNickName(userModelBean.getData().getNickName());
+       // SharedPreferencesUtils.getInstance().setNickName(userModelBean.getData());
     }
 
     //删除文章结果
@@ -476,6 +476,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage("请先进行登录");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 Intent intent = new Intent(getContext(), LoginMainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);  //最关键是这句
@@ -483,6 +484,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.dismiss();
             }
@@ -570,8 +572,9 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
 
     // 测量偏移量 @param commentConfig @return
     private int getListViewOffset(CommentConfig commentConfig) {
-        if (commentConfig == null)
+        if (commentConfig == null) {
             return 0;
+        }
         //这里如果你的listview上面还有其它占高度的控件，则需要减去该控件高度，listview的headview除外。
         //int listviewOffset = mScreenHeight - mSelectCircleItemH - mCurrentKeyboardH - mEditTextBodyHeight;
         /*int listviewOffset = screenHeight - selectCircleItemH - currentKeyboardH - editTextBodyHeight - topTitle.getHeight();*/
@@ -603,8 +606,9 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
 
     // 计算偏移量
     private void measureCircleItemHighAndCommentItemOffset(CommentConfig commentConfig) {
-        if (commentConfig == null)
+        if (commentConfig == null) {
             return;
+        }
 
         int firstPosition = layoutManager.findFirstVisibleItemPosition();
         //只能返回当前可见区域（列表可滚动）的子项

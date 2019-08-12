@@ -12,10 +12,10 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int jpush_ic_richpush_actionbar_back = 0x7f0201b6;
-        public static final int jpush_ic_richpush_actionbar_divider = 0x7f0201b7;
-        public static final int jpush_richpush_btn_selector = 0x7f0201b8;
-        public static final int jpush_richpush_progressbar = 0x7f0201b9;
+        public static final int jpush_ic_richpush_actionbar_back = 0x7f0201b3;
+        public static final int jpush_ic_richpush_actionbar_divider = 0x7f0201b4;
+        public static final int jpush_richpush_btn_selector = 0x7f0201b5;
+        public static final int jpush_richpush_progressbar = 0x7f0201b6;
     }
     public static final class id {
         private id() {}
@@ -33,8 +33,8 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int jpush_popwin_layout = 0x7f0400d8;
-        public static final int jpush_webview_layout = 0x7f0400d9;
+        public static final int jpush_popwin_layout = 0x7f0400d6;
+        public static final int jpush_webview_layout = 0x7f0400d7;
     }
     public static final class style {
         private style() {}

@@ -3,15 +3,18 @@ package com.application.tchapj.video.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.application.tchapj.App;
@@ -29,11 +32,12 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.iflytek.cloud.thirdparty.O;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.List;
 
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 
@@ -45,6 +49,12 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
     private Context mContext;
     private List<VideosModel.VideosResult.Videos> mVideoList;
+
+    public int getPlayIndex() {
+        return playIndex;
+    }
+
+    private int playIndex = -1;
 
 
     public VideoAdapter(Context context) {
@@ -69,7 +79,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     }
 
     @Override
-    public void onBindViewHolder(final VideoViewHolder holder, int position) {
+    public void onBindViewHolder(final VideoViewHolder holder, final int position) {
         final VideosModel.VideosResult.Videos video = mVideoList.get(position);
 
         //设置视频封面图
@@ -91,11 +101,10 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
             CommonUtils.setVideoCover(mContext, video.getExternalUrl(), thumbImageView);
         }
         //播放地址
-        holder.videoPlayer.setUp(video.getExternalUrl(), holder.videoPlayer.SCREEN_LAYOUT_NORMAL);// ,"视频标题"
-        holder.videoPlayer.backButton.setVisibility(View.GONE);//隐藏视频控件中的返回按钮
+        holder.videoPlayer.setUp(video.getExternalUrl(), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL);// ,"视频标题"
+        holder.videoPlayer.backButton.setVisibility(View.VISIBLE);//隐藏视频控件中的返回按钮
 
-
-        RequestOptions  options= new RequestOptions()
+        RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .placeholder(R.mipmap.ic_media_head_default)
                 .error(R.mipmap.ic_media_head_default)
@@ -113,21 +122,24 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                                 RoundedBitmapDrawableFactory.
                                         create(mContext.getResources(), resource);
                         //circularBitmapDrawable.setCornerRadius(8); // 圆角
-                        ((VideoViewHolder) holder).iv_video.setImageDrawable(circularBitmapDrawable);
+                        (holder).iv_video.setImageDrawable(circularBitmapDrawable);
                     }
                 });
 
-        ((VideoViewHolder) holder).iv_video.setOnClickListener(new View.OnClickListener() {
+
+        (holder).iv_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(StringUtils.isNullOrEmpty(App.getId())){
+
+
+                if (StringUtils.isNullOrEmpty(App.getId())) {
                     Intent intent = new Intent(mContext, WebViewActivity.class);
 
                     intent.putExtra(WebViewActivity.URL_KEY
                             , H5UrlData.Followtails2 + video.getId() + "&memberId=");
                     intent.putExtra(WebViewActivity.TITLE, "");
                     mContext.startActivity(intent);
-                }else {
+                } else {
                     Intent intent = new Intent(mContext, WebViewActivity.class);
 
                     intent.putExtra(WebViewActivity.URL_KEY
@@ -137,8 +149,6 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 }
             }
         });
-
-
         ((VideoViewHolder) holder).mingzi_tv.setText(video.getName()); // 名字
 
         ((VideoViewHolder) holder).tv_video_time.setText(SDDateUtil.formatDuringFrom(video.getCreateTime())); // 时间
@@ -147,14 +157,14 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
             @Override
             public void onClick(View view) {
 
-                if(App.getId()==null){
+                if (App.getId() == null) {
                     Intent intent = new Intent(mContext, WebViewActivity.class);
 
                     intent.putExtra(WebViewActivity.URL_KEY
                             , H5UrlData.Videocomments2 + video.getId() + "&memberId=");
                     intent.putExtra(WebViewActivity.TITLE, "");
                     mContext.startActivity(intent);
-                }else {
+                } else {
                     Intent intent = new Intent(mContext, WebViewActivity.class);
 
                     intent.putExtra(WebViewActivity.URL_KEY
@@ -176,10 +186,11 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 shareIntent.setType("audio/*");
                 mContext.startActivity(Intent.createChooser(shareIntent, "分享到"));
 
-                    /*showShare(video);*/
+                /*showShare(video);*/
 
             }
         });
+
 
     }
 
@@ -194,10 +205,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         public ImageView iv_video_comment;
         public ImageView iv_video_share;
 
+        public LinearLayout linearLayout;
         public JCVideoPlayerStandard videoPlayer;
+
         public VideoViewHolder(View itemView) {
             super(itemView);
 
+            linearLayout = itemView.findViewById(R.id.ll_item);
             iv_video = (CircleImageView) itemView.findViewById(R.id.iv_video);
             mingzi_tv = (TextView) itemView.findViewById(R.id.mingzi_tv);
             iv_video_tab = (ImageView) itemView.findViewById(R.id.iv_video_tab);

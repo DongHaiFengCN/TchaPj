@@ -34,8 +34,8 @@ public final class R {
         public static final int bg_button_normal = 0x7f020067;
         public static final int bg_button_pressed = 0x7f020068;
         public static final int button = 0x7f0200b4;
-        public static final int material_card = 0x7f0201e4;
-        public static final int material_dialog_window = 0x7f0201e5;
+        public static final int material_card = 0x7f0201e1;
+        public static final int material_dialog_window = 0x7f0201e2;
     }
     public static final class id {
         private id() {}
@@ -53,7 +53,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int layout_material_dialog = 0x7f0400fd;
+        public static final int layout_material_dialog = 0x7f0400fb;
     }
     public static final class string {
         private string() {}

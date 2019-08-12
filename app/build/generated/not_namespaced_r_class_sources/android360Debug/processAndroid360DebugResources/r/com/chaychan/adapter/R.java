@@ -17,9 +17,9 @@ public final class R {
         public static final int dp_4 = 0x7f090099;
         public static final int dp_40 = 0x7f09009a;
         public static final int dp_72 = 0x7f09009b;
-        public static final int sp_12 = 0x7f0900ee;
-        public static final int sp_14 = 0x7f0900ef;
-        public static final int sp_16 = 0x7f0900f0;
+        public static final int sp_12 = 0x7f0900ec;
+        public static final int sp_14 = 0x7f0900ed;
+        public static final int sp_16 = 0x7f0900ee;
     }
     public static final class drawable {
         private drawable() {}

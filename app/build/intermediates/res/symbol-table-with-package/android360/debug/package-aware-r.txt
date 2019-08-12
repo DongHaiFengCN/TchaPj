@@ -2074,10 +2074,8 @@ dimen item_margin2
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
-dimen jc_progress_dialog_margin_top
 dimen jc_start_button_w_h_fullscreen
 dimen jc_start_button_w_h_normal
-dimen jc_volume_dialog_margin_left
 dimen list_live_more_size
 dimen list_live_name_size
 dimen list_live_title_size
@@ -2552,7 +2550,6 @@ drawable item_selector
 drawable itemline
 drawable itemline2
 drawable jc_add_volume
-drawable jc_back
 drawable jc_back_normal
 drawable jc_back_pressed
 drawable jc_back_tiny_normal
@@ -2562,6 +2559,7 @@ drawable jc_bottom_bg
 drawable jc_bottom_progress
 drawable jc_bottom_seek_progress
 drawable jc_bottom_seek_thumb
+drawable jc_brightness_video
 drawable jc_click_back_selector
 drawable jc_click_back_tiny_selector
 drawable jc_click_error_selector
@@ -2580,9 +2578,6 @@ drawable jc_pause_normal
 drawable jc_pause_pressed
 drawable jc_play_normal
 drawable jc_play_pressed
-drawable jc_progress
-drawable jc_seek_progress
-drawable jc_seek_thumb
 drawable jc_seek_thumb_normal
 drawable jc_seek_thumb_pressed
 drawable jc_shrink
@@ -4596,8 +4591,6 @@ layout jc_dialog_progress
 layout jc_dialog_volume
 layout jc_layout_base
 layout jc_layout_standard
-layout jc_progress_dialog
-layout jc_volume_dialog
 layout jpush_popwin_layout
 layout jpush_webview_layout
 layout layout_adapter_friendrelease

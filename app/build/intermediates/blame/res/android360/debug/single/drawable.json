@@ -624,10 +624,6 @@
         "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/res/drawable/abc_cab_background_top_material.xml"
     },
     {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/jc_progress.xml",
-        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/res/drawable/jc_progress.xml"
-    },
-    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/60d82b6349d05a1b106a3a6c372c802f/res/drawable/abc_btn_borderless_material.xml"
     },
@@ -1104,10 +1100,6 @@
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable/search_edit_bg.xml"
     },
     {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/jc_seek_thumb.xml",
-        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/res/drawable/jc_seek_thumb.xml"
-    },
-    {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/shape_oval_dot_dark.xml",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable/shape_oval_dot_dark.xml"
     },
@@ -1286,10 +1278,6 @@
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/item_select_bg.xml",
         "source": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/src/main/res/drawable/item_select_bg.xml"
-    },
-    {
-        "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/jc_seek_progress.xml",
-        "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/res/drawable/jc_seek_progress.xml"
     },
     {
         "merged": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/drawable/white_radius.xml",

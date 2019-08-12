@@ -4,6 +4,23 @@
             "outputFile": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/res/merged/android360/debug/values-pt/values-pt.xml",
             "map": [
                 {
+                    "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,100,204,259",
+                        "endColumns": "44,103,54,59",
+                        "endOffsets": "95,199,254,314"
+                    },
+                    "to": {
+                        "startLines": "48,51,52,53",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "6601,6832,6936,6991",
+                        "endColumns": "44,103,54,59",
+                        "endOffsets": "6641,6931,6986,7046"
+                    }
+                },
+                {
                     "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ce48bcd60c29abf17084cf0593a2527b/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2",
@@ -35,23 +52,6 @@
                         "startOffsets": "1904,2181,2311,2491,2620,2753,2978,3200,3332,3508,3628,3806,3925,4060,4237,4364,4532,4923,5192,5316,5426,5621,5753,5969,6106,6293,6391,6487",
                         "endColumns": "276,129,179,128,132,224,221,131,175,119,177,118,134,176,126,167,121,268,123,109,194,131,215,136,186,97,95,113",
                         "endOffsets": "2176,2306,2486,2615,2748,2973,3195,3327,3503,3623,3801,3920,4055,4232,4359,4527,4649,5187,5311,5421,5616,5748,5964,6101,6288,6386,6482,6596"
-                    }
-                },
-                {
-                    "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/res/values-pt/values-pt.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,100,204,259",
-                        "endColumns": "44,103,54,59",
-                        "endOffsets": "95,199,254,314"
-                    },
-                    "to": {
-                        "startLines": "48,51,52,53",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "6601,6832,6936,6991",
-                        "endColumns": "44,103,54,59",
-                        "endOffsets": "6641,6931,6986,7046"
                     }
                 },
                 {
@@ -94,6 +94,23 @@
             "outputFile": "/Users/dong/Downloads/TchaPj_1/TchaPj/app/build/intermediates/incremental/mergeAndroid360DebugResources/merged.dir/values-pt/values-pt.xml",
             "map": [
                 {
+                    "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-5.5.aar/65b3dc111637d13cd81df94f5dd390ae/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,100,204,259",
+                        "endColumns": "44,103,54,59",
+                        "endOffsets": "95,199,254,314"
+                    },
+                    "to": {
+                        "startLines": "48,51,52,53",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "6601,6832,6936,6991",
+                        "endColumns": "44,103,54,59",
+                        "endOffsets": "6641,6931,6986,7046"
+                    }
+                },
+                {
                     "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ce48bcd60c29abf17084cf0593a2527b/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2",
@@ -125,23 +142,6 @@
                         "startOffsets": "1904,2181,2311,2491,2620,2753,2978,3200,3332,3508,3628,3806,3925,4060,4237,4364,4532,4923,5192,5316,5426,5621,5753,5969,6106,6293,6391,6487",
                         "endColumns": "276,129,179,128,132,224,221,131,175,119,177,118,134,176,126,167,121,268,123,109,194,131,215,136,186,97,95,113",
                         "endOffsets": "2176,2306,2486,2615,2748,2973,3195,3327,3503,3623,3801,3920,4055,4232,4359,4527,4649,5187,5311,5421,5616,5748,5964,6101,6288,6386,6482,6596"
-                    }
-                },
-                {
-                    "source": "/Users/dong/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-4.8.3.aar/6521bf8edebb68599ea1cac2cae78cf6/res/values-pt/values-pt.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,100,204,259",
-                        "endColumns": "44,103,54,59",
-                        "endOffsets": "95,199,254,314"
-                    },
-                    "to": {
-                        "startLines": "48,51,52,53",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "6601,6832,6936,6991",
-                        "endColumns": "44,103,54,59",
-                        "endOffsets": "6641,6931,6986,7046"
                     }
                 },
                 {

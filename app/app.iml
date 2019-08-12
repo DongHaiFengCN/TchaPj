@@ -181,6 +181,7 @@
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.king.thread:nevercrash:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: fm.jiecao:jiecaovideoplayer:5.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui:27.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.tencent.bugly:crashreport_upgrade:1.4.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.greenrobot:eventbus:3.0.0@jar" level="project" />
@@ -211,7 +212,6 @@
     <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:runner:0.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: tv.danmaku.ijk.media:ijkplayer-armv5:0.8.3@aar" level="project" />
-    <orderEntry type="library" name="Gradle: fm.jiecao:jiecaovideoplayer:4.8.3@aar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/dong/Downloads/TchaPj_1/TchaPj/app/libs/MobTools-2017.1024.1907.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: io.reactivex:rxandroid:1.2.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: cn.jiguang.sdk:jpush:3.1.6@aar" level="project" />
@@ -229,7 +229,6 @@
     <orderEntry type="library" name="Gradle: com.google.dagger:dagger:2.9@jar" level="project" />
     <orderEntry type="library" name="Gradle: __local_aars__:/Users/dong/Downloads/TchaPj_1/TchaPj/app/libs/ShareSDK-SinaWeibo-3.1.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: me.weyye.ColorTrackTabLayout:library:1.0.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: tv.danmaku.ijk.media:ijkplayer-arm64:0.7.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.litepal.android:core:1.5.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-core:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime:1.1.0@aar" level="project" />
@@ -273,7 +272,6 @@
     <orderEntry type="library" name="Gradle: com.github.chaychan:SlideCloseLib:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.tencent.sonic:sdk:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.ashokvarma.android:bottom-navigation-bar:1.4.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.pwittchen:reactivenetwork-rx2:0.11.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.nukc.stateview:library:1.2.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.pinguo-zhouwei:CustomPopwindow:2.1.1@aar" level="project" />

@@ -35,21 +35,24 @@ public class VideoPresenter extends BaseMvpPresenter<IVideosView> {
                 .subscribe(new Subscriber<VideosModel>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onCompleted();
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onError(e);
+                        }
                     }
 
                     @Override // 得到数据
                     public void onNext(VideosModel videosModel) {
                         LogUtils.d("Response:"+ videosModel);
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onGetVideos(videosModel); // 得到一层数据
+                        }
 
                     }
                 });
