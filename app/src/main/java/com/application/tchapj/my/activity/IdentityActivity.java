@@ -119,15 +119,14 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
         item_meiti_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (meitiState.equals("0") || meitiState.equals("3")) {
-                    if (mingrenState.equals("1") || mingrenState.equals("2")) {
-                        ToastUtil.show(IdentityActivity.this, "名人身份和媒体身份只能拥有一个");
-                    } else {
-                        Intent intent = new Intent(IdentityActivity.this, MeitiActivity.class);
-                        startActivity(intent);
-                    }
+                if ("2".equals(mingrenState) || "1".equals(mingrenState)) {
+
+                    ToastUtil.show(IdentityActivity.this, "名人身份和媒体身份只能拥有一个");
+
                 } else {
-                    dialogs(meitiState);
+
+                    Intent intent = new Intent(IdentityActivity.this, MeitiActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -250,6 +249,9 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
                 if (!"2".equals(darenState)) {
                     Intent intent = new Intent(IdentityActivity.this, DarenActivity.class);
                     startActivity(intent);
+                }else {
+                    Toast.makeText(IdentityActivity.this, "达人已认证", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
@@ -309,7 +311,8 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
                     Intent intent = new Intent(IdentityActivity.this, GuanggaoActivity.class);
                     startActivity(intent);
                 } else {
-                    dialogs(guanggaozhuState);
+
+                    Toast.makeText(IdentityActivity.this, "广告主已认证", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -362,7 +365,16 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
         item_mingren_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mingrenState.equals("0") || mingrenState.equals("3")) {
+
+                if ("1".equals(meitiState) || "2".equals(meitiState)) {
+
+                    ToastUtil.show(IdentityActivity.this, "名人身份和媒体身份只能拥有一个");
+
+                } else {
+                    Intent intent = new Intent(IdentityActivity.this, MingrenActivity.class);
+                    startActivity(intent);
+                }
+               /* if (mingrenState.equals("0") || mingrenState.equals("3")) {
                     if (meitiState.equals("1") || meitiState.equals("2")) {
                         ToastUtil.show(IdentityActivity.this, "名人身份和媒体身份只能拥有一个");
                     } else {
@@ -372,7 +384,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
 
                 } else {
                     dialogs(mingrenState);
-                }
+                }*/
             }
         });
 

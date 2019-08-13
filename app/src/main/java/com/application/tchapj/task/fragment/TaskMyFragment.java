@@ -218,40 +218,6 @@ public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSqua
         });
 
 
-//        arc_menu.setOnMenuItemClickListener(new XCArcMenuView.OnMenuItemClickListener() {
-//                                                @Override
-//                                                public void onClick(View view, int pos) {
-//                                                    // TODO Auto-generated method stub
-//                                                    String tag = (String) view.getTag();
-//
-//
-//                                                    if (tag.equals("抖音")) {
-//                                                        Toast.makeText(getContext(), "抖音", Toast.LENGTH_SHORT).show();
-//                                                        Intent intent = new Intent(getContext(), TaskDyMainActivity.class);
-//                                                        startActivity(intent);
-//
-//                                                    } else if (tag.equals("朋友圈")) {
-//                                                        Toast.makeText(getContext(), "朋友圈", Toast.LENGTH_SHORT).show();
-//                                                        Intent intent = new Intent(getContext(), TaskPyqActivity.class);
-//                                                        startActivity(intent);
-//
-//                                                    } else if (tag.equals("微博")) {
-//                                                        Toast.makeText(getContext(), "微博", Toast.LENGTH_SHORT).show();
-//                                                        Intent intent = new Intent(getContext(), TaskWbActivity.class);
-//                                                        startActivity(intent);
-//
-//                                                    } else if (tag.equals("其他")) {
-//                                                        Toast.makeText(getContext(), "其他", Toast.LENGTH_SHORT).show();
-//                                                        Intent intent = new Intent(getContext(), TaskQtActivity.class);
-//                                                        startActivity(intent);
-//                                                    }
-//                                                }
-//
-//
-//                                            }
-//        );
-
-
     }
 
     @Override
@@ -397,16 +363,15 @@ public class TaskMyFragment extends BaseMvpFragment<MyTaskSquareView, MyTaskSqua
             CommonDialogUtil.showLoginDialog(getActivity());
         } else {
 
-            if (SharedPreferencesUtils.getInstance().getUserInfo() != null) {
-                if (SharedPreferencesUtils.getInstance().getUserInfo().getFaTaskStatus() != null
-                        && SharedPreferencesUtils.getInstance().getUserInfo().getFaTaskStatus().equals("2")) {
-                    showPublishDialog();
-                } else {
-                    CommonDialogUtil.identityDialog(getActivity(), "请先申请广告主身份");
-                }
+            if ("2".equals(getDataManager().quickGetMetaData(R.string.faState, String.class))) {
+                showPublishDialog();
+
             } else {
-                ToastUtil.show(mContext, "无法验证身份请重新登录");
+
+                CommonDialogUtil.identityDialog(getActivity(), "请先申请广告主身份");
+
             }
+
         }
 
     }
