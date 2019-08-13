@@ -61,38 +61,6 @@ public class ConsultationTobPresenter extends BaseMvpPresenter<IConsultationTobV
     }
 
 
-//    //查询是否为微呼百应会员
-//    public void getUserIsAuthor(String memberId) {
-//
-//        getAppComponent()
-//                .getAPIService() // 所有接口对象
-//                .getUserIsAuthorResult("002","1.0","JSON", "1", memberId)
-//                .subscribeOn(Schedulers.io()) // 订阅方式
-//                .observeOn(AndroidSchedulers.mainThread()) // 指定线程
-//                .subscribe(new Subscriber<IsAuthorModel>() {  // 将数据绑定到实体类的操作
-//                    @Override
-//                    public void onCompleted() {
-//                        if(isViewAttached())
-//                            getView().onCompleted();
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        if(isViewAttached())
-//                            getView().onError(e);
-//                    }
-//
-//                    @Override // 得到数据
-//                    public void onNext(IsAuthorModel isAuthorModel) {
-//                        com.king.base.util.LogUtils.d("Response:"+ isAuthorModel);
-//
-//                        if(isAuthorModel!=null){
-//                            if(isViewAttached())
-//                                getView().onGetUserIsAuthor(isAuthorModel.getData()); // 得到二层数据
-//                        }
-//                    }
-//                });
-//    }
 
     //开通微呼百应会员
     public void updateUserIsAuthor(String memberId) {

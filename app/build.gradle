@@ -113,31 +113,27 @@ android {
 
             //输出的为渠道包的名字，例如 xiaomi.apk
             applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outFile = output.outputFile
-                    if (outFile != null && outFile.name.endsWith(".apk")) {
-                        def fileName = "${variant.productFlavors[0].name}" + ".apk"
-//                        def fileName = "微呼百应" + ".apk"
-                    //    output.outputFile = new File(outFile.parent, fileName);
-                    }
-                }
+                variant.outputs.all { output ->
+                            def outFile = output.outputFile
+                            if (outFile != null && outFile.name.endsWith(".apk")) {
+                                def fileName = "${variant.productFlavors[0].name}" + ".apk"
+                                //def fileName = "微呼百应" + ".apk"
+                              //  output.outputFile = new File(outFile.parent, fileName);
+
+                                outputFileName = fileName;
+                            }
+                        }
 
             }
+
+
         }
     }
 
     //渠道
     productFlavors {
         googleplay {}
-        huawei {}
-        xiaomi {}
-        wandoujia {}
-        baidu {}
-        yingyongbao {}
-        android360 {}
-        uc {}
-        umeng {}
-        meizu {}
+
         //批量配置
         productFlavors.all { flavor ->
             flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
@@ -240,7 +236,7 @@ dependencies {
     api 'com.android.support:recyclerview-v7:23.0.1'
     // 添加友盟依赖
     api 'com.umeng.analytics:analytics:latest.integration'
-   // api files('libs/BmobSDK_V3.4.7_0527.jar')
+    // api files('libs/BmobSDK_V3.4.7_0527.jar')
     //微信登陆
     api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2'
     //网络环境

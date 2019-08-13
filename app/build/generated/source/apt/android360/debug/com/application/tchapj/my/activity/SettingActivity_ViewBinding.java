@@ -29,6 +29,7 @@ public class SettingActivity_ViewBinding implements Unbinder {
     target.versionNameTv = Utils.findRequiredViewAsType(source, R.id.versionName_tv, "field 'versionNameTv'", TextView.class);
     target.qqTv = Utils.findRequiredViewAsType(source, R.id.qq_tv, "field 'qqTv'", TextView.class);
     target.weTv = Utils.findRequiredViewAsType(source, R.id.wechat_tv, "field 'weTv'", TextView.class);
+    target.telephoneTv = Utils.findRequiredViewAsType(source, R.id.telephone_tv, "field 'telephoneTv'", TextView.class);
   }
 
   @Override
@@ -43,5 +44,6 @@ public class SettingActivity_ViewBinding implements Unbinder {
     target.versionNameTv = null;
     target.qqTv = null;
     target.weTv = null;
+    target.telephoneTv = null;
   }
 }

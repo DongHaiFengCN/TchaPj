@@ -199,7 +199,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
 
         //0-未申请   1-正在审核中  2-已通过  3-未通过 lingState 达人
         daren_clv.setPaddingTop(paddingTop);          // 距离角的边距
-        if (darenState.equals("0")) {
+        if (darenState.equals("0") || "".equals(darenState)) {
 
             daren_clv.setFillColor(0xffa9a9a9); // 背景色
             daren_clv.right();                  // 位置
@@ -246,22 +246,18 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
         item_daren_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (SharedPreferencesUtils.getInstance().getUserInfo() != null && !TextUtils.isEmpty(SharedPreferencesUtils.getInstance().getUserInfo().getTelephone())) {
+
+                if ("2".equals(darenState)) {
                     Intent intent = new Intent(IdentityActivity.this, DarenActivity.class);
                     startActivity(intent);
-                } else {
-                    showToast("申请达人需绑定手机号");
-                    BindingPhoneActivity.start(IdentityActivity.this);
-
                 }
-
 
             }
         });
 
 
         guangao_clv.setPaddingTop(paddingTop);          // 距离角的边距
-        if (guanggaozhuState.equals("0")) {
+        if (guanggaozhuState.equals("0") || "".equals(guanggaozhuState)) {
 
             guangao_clv.setFillColor(0xffa9a9a9); // 背景色
             guangao_clv.right();                  // 位置
@@ -319,7 +315,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
         });
 
         mingren_clv.setPaddingTop(paddingTop);          // 距离角的边距
-        if (mingrenState.equals("0")) {
+        if (mingrenState.equals("0") || "".equals(mingrenState)) {
 
             mingren_clv.setFillColor(0xffa9a9a9); // 背景色
             mingren_clv.right();                  // 位置
@@ -381,7 +377,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
         });
 
         meiti_clv.setPaddingTop(paddingTop);          // 距离角的边距
-        if (meitiState.equals("0")) {
+        if (meitiState.equals("0") || "".equals(meitiState)) {
 
             meiti_clv.setFillColor(0xffa9a9a9); // 背景色
             meiti_clv.right();                  // 位置

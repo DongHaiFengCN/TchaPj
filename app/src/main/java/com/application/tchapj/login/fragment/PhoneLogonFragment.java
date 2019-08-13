@@ -200,7 +200,9 @@ public class PhoneLogonFragment extends Fragment {
                                 Toast.makeText(getActivity(), newPhoneLoginResult.getDescription(), Toast.LENGTH_SHORT).show();
                                 if ("000".equals(newPhoneLoginResult.getCode())) {
 
-                                    getDataManager().setMetaDataById(R.string.id, newPhoneLoginResult.getData().getMemberId(),true);
+                                    getDataManager().setMetaDataById(R.string.id, newPhoneLoginResult.getData().getMemberId(), true);
+
+                                    getDataManager().setMetaDataById(R.string.telephone, userName, true);
                                     getActivity().finish();
 
                                 }
@@ -249,10 +251,10 @@ public class PhoneLogonFragment extends Fragment {
             public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
                 platform.getName();
 
-                getDataManager().setMetaDataById(R.string.nickName, platform.getDb().getUserName(),true);
-                getDataManager().setMetaDataById(R.string.realname, platform.getDb().getUserName(),true);
-                getDataManager().setMetaDataById(R.string.sex, platform.getDb().getUserGender(),true);
-                getDataManager().setMetaDataById(R.string.headimgurl, platform.getDb().getUserIcon(),true);
+                getDataManager().setMetaDataById(R.string.nickName, platform.getDb().getUserName(), true);
+                getDataManager().setMetaDataById(R.string.realname, platform.getDb().getUserName(), true);
+                getDataManager().setMetaDataById(R.string.sex, platform.getDb().getUserGender(), true);
+                getDataManager().setMetaDataById(R.string.headimgurl, platform.getDb().getUserIcon(), true);
 
                 String logintype = "";
                 if (type.equals(QQ.NAME)) {

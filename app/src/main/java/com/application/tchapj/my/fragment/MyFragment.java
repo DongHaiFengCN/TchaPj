@@ -149,10 +149,20 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         String headUrl = getDataManager().quickGetMetaData(R.string.headimgurl, String.class);
         user_id = getDataManager().quickGetMetaData(R.string.id, String.class);
 
-        if (!"".equals(nickName)) {
-            my_logon_tv.setText(nickName);
-        } else {
+
+        if("".equals(nickName)&&"".equals(user_id)){
             my_logon_tv.setText("点击登录");
+            my_logon_tv.setClickable(true);
+
+        }else if(!"".equals(nickName)){
+
+            my_logon_tv.setText(nickName);
+
+            my_logon_tv.setClickable(false);
+
+        } else {
+            my_logon_tv.setText("游客登录");
+            my_logon_tv.setClickable(false);
         }
 
         if (!"".equals(attentions)) {

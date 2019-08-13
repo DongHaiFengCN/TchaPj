@@ -8,82 +8,82 @@
     </facet>
     <facet type="android" name="Android">
       <configuration>
-        <option name="SELECTED_BUILD_VARIANT" value="android360Debug" />
-        <option name="ASSEMBLE_TASK_NAME" value="assembleAndroid360Debug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileAndroid360DebugSources" />
+        <option name="SELECTED_BUILD_VARIANT" value="googleplayDebug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleGoogleplayDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileGoogleplayDebugSources" />
         <afterSyncTasks>
-          <task>generateAndroid360DebugSources</task>
+          <task>generateGoogleplayDebugSources</task>
         </afterSyncTasks>
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/build/generated/res/rs/android360/debug;file://$MODULE_DIR$/build/generated/res/resValues/android360/debug" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/build/generated/res/rs/googleplay/debug;file://$MODULE_DIR$/build/generated/res/resValues/googleplay/debug" />
         <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
-    <output url="file://$MODULE_DIR$/build/intermediates/javac/android360Debug/compileAndroid360DebugJavaWithJavac/classes" />
-    <output-test url="file://$MODULE_DIR$/build/intermediates/javac/android360DebugUnitTest/compileAndroid360DebugUnitTestJavaWithJavac/classes" />
+    <output url="file://$MODULE_DIR$/build/intermediates/javac/googleplayDebug/compileGoogleplayDebugJavaWithJavac/classes" />
+    <output-test url="file://$MODULE_DIR$/build/intermediates/javac/googleplayDebugUnitTest/compileGoogleplayDebugUnitTestJavaWithJavac/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/greendao" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/android360/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/android360/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/android360/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/android360/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/android360/debug" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/android360/debug" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360Debug/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360Debug/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360Debug/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360Debug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360Debug/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360Debug/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360Debug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/android360/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/android360/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/android360/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/android360/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/android360/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/android360/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360Debug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360Debug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360Debug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360Debug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360Debug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360Debug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360Debug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/android360/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360Debug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360Debug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360Debug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360Debug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360Debug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360Debug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360Debug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360/assets" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/android360/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/androidTestAndroid360/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testAndroid360/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/googleplay/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/googleplay/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/googleplay/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/googleplay/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/googleplay/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/googleplay/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplayDebug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplayDebug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplayDebug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplayDebug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplayDebug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplayDebug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplayDebug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/googleplay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/googleplay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/googleplay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/googleplay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/googleplay/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/googleplay/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplayDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplayDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplayDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplayDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplayDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplayDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplayDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/test/googleplay/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplayDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplayDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplayDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplayDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplayDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplayDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplayDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplay/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplay/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplay/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplay/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplay/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplay/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/googleplay/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplay/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplay/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplay/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplay/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplay/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplay/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTestGoogleplay/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplay/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplay/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplay/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplay/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplay/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplay/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testGoogleplay/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" type="java-resource" />
@@ -135,12 +135,15 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-libraries" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/checkAndroid360DebugClasspath" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/checkGoogleplayDebugClasspath" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/checkGoogleplayReleaseClasspath" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/compatible_screen_manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant_run_merged_manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javac" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/legacy_multidex_aapt_derived_proguard_rules" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/legacy_multidex_main_dex_list" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint_jar" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged_assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged_manifests" />

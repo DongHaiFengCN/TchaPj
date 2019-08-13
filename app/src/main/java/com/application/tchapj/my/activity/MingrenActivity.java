@@ -127,8 +127,6 @@ public class MingrenActivity extends BaseMvpActivity<IMicroView, MicroPresenter>
     @Override
     public void initUI() {
 
-//        getPresenter().onGetMicroTabResult();
-
         token = App.QiniuToken;
 
         // 单选
@@ -147,40 +145,14 @@ public class MingrenActivity extends BaseMvpActivity<IMicroView, MicroPresenter>
                         tabid = newstypeList.get(i).getId();
                     }
 
-                    /*Snackbar.make(parent, position + "恭喜你" + sb.toString(), Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();*/
                 } else {
 
                     tabid = newstypeList.get(0).getId();
-                    /*Snackbar.make(parent, "没有选择标签", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();*/
 
                 }
 
             }
         });
-
-//        mingren_yz_bt.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                phoneNumber = mingren_shouji_et.getText().toString();
-//
-//                if (!TextUtils.isEmpty(phoneNumber)) {
-//                    boolean isTel = verifyTel(phoneNumber);
-//                    if (isTel) {
-//                        loadSMS(mingren_yz_bt);
-//                    } else {
-//                        Toast.makeText(MingrenActivity.this, "请正确填写手机号", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                } else {
-//                    Toast.makeText(MingrenActivity.this, "请输入手机号", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                getPresenter().getSmsCodeResult(phoneNumber);
-//            }
-//        });
 
         selImageList = new ArrayList<>();
         adapter = new ImagePickerAdapter2(MingrenActivity.this, selImageList, maxImgCount);
@@ -293,7 +265,10 @@ public class MingrenActivity extends BaseMvpActivity<IMicroView, MicroPresenter>
         for (int i = 0; i < newstypeList.size(); i++) {
             dataSource.add(newstypeList.get(i).getName());
 
+            Log.e("DOAING",newstypeList.get(i).getName());
         }
+
+
         mSizeTagAdapter.onlyAddAll(dataSource);
     }
 

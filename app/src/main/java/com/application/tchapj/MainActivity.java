@@ -20,6 +20,7 @@ import android.widget.RadioButton;
 import com.application.tchapj.base.BaseActvity;
 import com.application.tchapj.consultation.fragment.ConsultationFragment;
 import com.application.tchapj.main.fragment.HomeFragment;
+import com.application.tchapj.my.activity.MingrenActivity;
 import com.application.tchapj.my.fragment.MyFragment;
 import com.application.tchapj.rxbus.ChangeAnswerEvent;
 import com.application.tchapj.rxbus.RxBus;
@@ -86,6 +87,9 @@ public class MainActivity extends BaseActvity implements HomeFragment.HomeFragme
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+     /*   Intent intent = new Intent(this, MingrenActivity.class);
+        startActivity(intent);*/
 
         // 动态读取权限
         if (Build.VERSION.SDK_INT >= 23) {

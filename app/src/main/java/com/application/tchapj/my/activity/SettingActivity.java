@@ -39,6 +39,10 @@ public class SettingActivity extends BaseActvity implements View.OnClickListener
     @BindView(R.id.wechat_tv)
     TextView weTv;
 
+    @BindView(R.id.telephone_tv)
+    TextView telephoneTv;
+
+
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
         toolbarHelper.setTitle("系统设置");
@@ -64,6 +68,9 @@ public class SettingActivity extends BaseActvity implements View.OnClickListener
                 finish();
             }
         });
+
+
+        telephoneTv.setText(getDataManager().quickGetMetaData(R.string.telephone,String.class));
 
         versionNameTv.setText(Utils.getVersionName(getApplicationContext()));
 

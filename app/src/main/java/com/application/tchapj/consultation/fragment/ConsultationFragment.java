@@ -357,46 +357,6 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
         }
 
 
-        /*    if(SharedPreferencesUtils.getInstance().getUserInfo() != null){
-                if (SharedPreferencesUtils.getInstance().getUserInfo().getLingState().equals("2") || SharedPreferencesUtils.getInstance().getUserInfo().getMrState().equals("2")
-                        || SharedPreferencesUtils.getInstance().getUserInfo().getMtState().equals("2")) {
-                    //已经有一个身份（名人/媒体/达人）g
-                    if(!StringUtils.isNullOrEmpty(SharedPreferencesUtils.getInstance().getUserInfo().getIsAuthor()) && SharedPreferencesUtils.getInstance().getUserInfo().getIsAuthor().equals("1")){
-                        //已申请微呼百应号
-                        showDialog();
-                    }else{
-                        //没有申请微呼百应号，去申请
-                        CommonDialogUtil.showOpenWhbyNumberDialog(context, new ConsultationFragmentOpenDialogClickListener() {
-                            @Override
-                            public void agreementClick() {
-                                Intent intent = new Intent(context, WebViewActivity.class);
-                                intent.putExtra(WebViewActivity.URL_KEY, Constants.ACCOUNT_NUMBER_AGREEMENT);
-                                intent.putExtra(WebViewActivity.TITLE, "");
-                                intent.putExtra(WebViewActivity.URL_TYPE, "All");
-                                context.startActivity(intent);
-                            }
-
-                            @Override
-                            public void confirmClick() {
-                                getPresenter().updateUserIsAuthor(App.getId());
-                            }
-                        });
-
-                    }
-                }else{
-                    //让用户去认证身份
-                    CommonDialogUtil.showIdentityActivateDialog(context, new ConsultationFragmentActivateDialogClickListener() {
-
-                        @Override
-                        public void goActivateClick() {
-                            IdentityActivity.start(getActivity(), SharedPreferencesUtils.getInstance().getUserInfo());
-                        }
-                    });
-                }
-            }else{
-                ToastUtil.show(getActivity(), "获取不到用户信息，请重新登录");
-            }*/
-
 
 
     }
