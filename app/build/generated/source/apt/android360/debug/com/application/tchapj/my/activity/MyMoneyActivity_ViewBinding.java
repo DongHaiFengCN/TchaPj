@@ -23,7 +23,7 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
 
   private View view2131755670;
 
-  private View view2131756344;
+  private View view2131756347;
 
   @UiThread
   public MyMoneyActivity_ViewBinding(MyMoneyActivity target) {
@@ -80,7 +80,7 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.back_framelayout, "method 'onViewClicked'");
-    view2131756344 = view;
+    view2131756347 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -123,7 +123,7 @@ public class MyMoneyActivity_ViewBinding implements Unbinder {
     view2131755666 = null;
     view2131755670.setOnClickListener(null);
     view2131755670 = null;
-    view2131756344.setOnClickListener(null);
-    view2131756344 = null;
+    view2131756347.setOnClickListener(null);
+    view2131756347 = null;
   }
 }

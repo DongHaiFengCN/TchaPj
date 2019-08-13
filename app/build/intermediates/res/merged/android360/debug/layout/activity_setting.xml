@@ -7,14 +7,12 @@
 
     <include layout="@layout/toolbar" />
 
-    <!--<TextView
-
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_arrow"
         android:padding="16dp"
-        android:text="账号和绑定设置"
-        android:textColor="@color/black"
+        android:text="账号设置"
+        android:textColor="@color/black_de"
         android:textSize="16sp" />
 
     <View
@@ -24,47 +22,151 @@
         android:layout_marginRight="20dp"
         android:background="#f0f1f0" />
 
-    <TextView
-
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_arrow"
-        android:padding="16dp"
-        android:text="手机号"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="手机号"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/telephone_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:gravity="end"
+            android:text="175658887877"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="#f0f1f0" />-->
+        android:background="#f0f1f0" />
 
     <TextView
         android:id="@+id/setting_mima_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_arrow"
         android:padding="16dp"
         android:text="修改密码"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:drawableRight="@mipmap/ic_black_right_go"
+        android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="#f0f1f0" />
 
-    <!--<TextView
+    <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_arrow"
         android:padding="16dp"
-        android:text="社交平台绑定"
-        android:textColor="@color/black"
+        android:text="平台绑定"
+        android:textColor="@color/black_de"
         android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#f0f1f0" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="微信"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/wechat_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:gravity="end"
+            android:text="未绑定"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#f0f1f0" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="QQ"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/qq_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:gravity="end"
+            android:text="未绑定"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#f0f1f0" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:text="版本号"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/versionName_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:gravity="end"
+            android:text="v4.8"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -77,28 +179,10 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_arrow"
         android:padding="16dp"
-        android:text="微信"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#f0f1f0" />
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_arrow"
-        android:padding="16dp"
-        android:text="QQ"
-        android:textColor="@color/black"
-        android:textSize="16sp" />-->
+        android:text="关于微呼百应"
+        android:drawableRight="@mipmap/ic_black_right_go"
+        android:textSize="14sp" />
 
     <View
         android:layout_width="match_parent"

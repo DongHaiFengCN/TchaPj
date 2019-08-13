@@ -18,9 +18,9 @@ import java.lang.Override;
 public class UploadVideoActivity_ViewBinding implements Unbinder {
   private UploadVideoActivity target;
 
-  private View view2131755779;
+  private View view2131755783;
 
-  private View view2131755780;
+  private View view2131755784;
 
   @UiThread
   public UploadVideoActivity_ViewBinding(UploadVideoActivity target) {
@@ -37,7 +37,7 @@ public class UploadVideoActivity_ViewBinding implements Unbinder {
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar, "field 'toolbar'", Toolbar.class);
     view = Utils.findRequiredView(source, R.id.upload_video_cancel_tv, "field 'uploadVideoCancelTv' and method 'onViewClicked'");
     target.uploadVideoCancelTv = Utils.castView(view, R.id.upload_video_cancel_tv, "field 'uploadVideoCancelTv'", TextView.class);
-    view2131755779 = view;
+    view2131755783 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -46,7 +46,7 @@ public class UploadVideoActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.upload_video_upload_tv, "field 'uploadVideoUploadTv' and method 'onViewClicked'");
     target.uploadVideoUploadTv = Utils.castView(view, R.id.upload_video_upload_tv, "field 'uploadVideoUploadTv'", TextView.class);
-    view2131755780 = view;
+    view2131755784 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -76,9 +76,9 @@ public class UploadVideoActivity_ViewBinding implements Unbinder {
     target.uploadImgRv = null;
     target.uploadVideoRv = null;
 
-    view2131755779.setOnClickListener(null);
-    view2131755779 = null;
-    view2131755780.setOnClickListener(null);
-    view2131755780 = null;
+    view2131755783.setOnClickListener(null);
+    view2131755783 = null;
+    view2131755784.setOnClickListener(null);
+    view2131755784 = null;
   }
 }

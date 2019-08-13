@@ -19,7 +19,7 @@ import java.lang.Override;
 public class ReleaseTaskImgTextActivity_ViewBinding implements Unbinder {
   private ReleaseTaskImgTextActivity target;
 
-  private View view2131756510;
+  private View view2131756513;
 
   private View view2131755737;
 
@@ -39,7 +39,7 @@ public class ReleaseTaskImgTextActivity_ViewBinding implements Unbinder {
     target.fa_pyq_end = Utils.findRequiredViewAsType(source, R.id.fa_pyq_end, "field 'fa_pyq_end'", TextView.class);
     view = Utils.findRequiredView(source, R.id.toolbar_menu_title, "field 'toolbarRightTv' and method 'onViewClicked'");
     target.toolbarRightTv = Utils.castView(view, R.id.toolbar_menu_title, "field 'toolbarRightTv'", TextView.class);
-    view2131756510 = view;
+    view2131756513 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -93,8 +93,8 @@ public class ReleaseTaskImgTextActivity_ViewBinding implements Unbinder {
     target.discountTv = null;
     target.titleTv = null;
 
-    view2131756510.setOnClickListener(null);
-    view2131756510 = null;
+    view2131756513.setOnClickListener(null);
+    view2131756513 = null;
     view2131755737.setOnClickListener(null);
     view2131755737 = null;
   }

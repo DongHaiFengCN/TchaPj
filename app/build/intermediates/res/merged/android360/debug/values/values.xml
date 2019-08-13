@@ -376,11 +376,11 @@
         <flag name="chains" value="8"/>
     </attr>
     <attr format="enum" name="layout_srlSpinnerStyle">
-        <enum name="Translate" value="0"/><!--平行移动-->
-        <enum name="Scale" value="1"/><!--拉伸形变-->
-        <enum name="FixedBehind" value="2"/><!--固定在背后-->
-        <enum name="FixedFront" value="3"/><!--固定在前面-->
-        <enum name="MatchLayout" value="4"/><!--填满布局-->
+        <enum name="Translate" value="0"/>
+        <enum name="Scale" value="1"/>
+        <enum name="FixedBehind" value="2"/>
+        <enum name="FixedFront" value="3"/>
+        <enum name="MatchLayout" value="4"/>
     </attr>
     <attr format="reference|color" name="picture.ac_preview.bottom.bg"/>
     <attr format="reference|color" name="picture.ac_preview.complete.textColor"/>
@@ -415,9 +415,9 @@
     <attr format="dimension" name="radius"/>
     <attr format="color" name="srlAccentColor"/>
     <attr format="enum" name="srlClassicsSpinnerStyle">
-        <enum name="Translate" value="0"/><!--平行移动-->
-        <enum name="Scale" value="1"/><!--拉伸形变-->
-        <enum name="FixedBehind" value="2"/><!--固定在背后-->
+        <enum name="Translate" value="0"/>
+        <enum name="Scale" value="1"/>
+        <enum name="FixedBehind" value="2"/>
     </attr>
     <attr format="reference" name="srlDrawableArrow"/>
     <attr format="dimension" name="srlDrawableArrowSize"/>
@@ -1204,17 +1204,17 @@
     <color name="window_background">#00000000</color>
     <color name="yellow">#FFFF00</color>
     <declare-styleable name="ADTextView">
-        <!--文字进入与消失的时间-->
+        
         <attr format="integer" name="ad_text_view_speed"/>
-        <!--文字停留在中心的时间-->
+        
         <attr format="integer" name="ad_text_view_interval"/>
-        <!--前缀文字颜色-->
+        
         <attr format="color" name="ad_text_front_color"/>
-        <!--前缀文字大小-->
+        
         <attr format="dimension" name="ad_text_front_size"/>
-        <!--内容文字颜色-->
+        
         <attr format="color" name="ad_text_content_color"/>
-        <!--内容文字大小-->
+        
         <attr format="dimension" name="ad_text_content_size"/>
     </declare-styleable>
     <declare-styleable name="AHBottomNavigationBehavior_Params">
@@ -1602,7 +1602,7 @@
 
         <attr format="dimension" name="gcp_progress_text_size"/>
         <attr format="color" name="gcp_progress_text_color"/>
-        <!--<attr name="gcp_progress_text_offset" format="dimension"/>-->
+        
         <attr format="enum" name="gcp_progress_text_visibility">
             <enum name="visible" value="0"/>
             <enum name="invisible" value="1"/>
@@ -1653,24 +1653,17 @@
     <declare-styleable name="ListPopupWindow"><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/></declare-styleable>
     <declare-styleable name="LoadingImageView">
 
-        <!--
-        What kind of aspect ratio adjustment to do.  It must be one of "none", "adjust_width",
-        or "adjust_height".
-        -->
+        
         <attr format="enum" name="imageAspectRatioAdjust">
             <enum name="none" value="0"/>
             <enum name="adjust_width" value="1"/>
             <enum name="adjust_height" value="2"/>
         </attr>
 
-        <!--
-        The fixed aspect ratio to use in aspect ratio adjustments.
-        -->
+        
         <attr format="float" name="imageAspectRatio"/>
 
-        <!--
-        Whether or not this view should have a circular clip applied
-        -->
+        
         <attr format="boolean" name="circleCrop"/>
 
     </declare-styleable>
@@ -1691,9 +1684,9 @@
 
 
 
-        <!--set number of item displayed, default is 3-->
+        
         <attr format="reference|integer" name="npv_ShowCount"/>
-        <!--set if show divider, default is true-->
+        
         <attr format="reference|boolean" name="npv_ShowDivider"/>
         <attr format="reference|color" name="npv_DividerColor"/>
         <attr format="reference|dimension" name="npv_DividerMarginLeft"/>
@@ -1719,13 +1712,10 @@
         <attr format="reference|boolean" name="npv_RespondChangeInMainThread"/>
         <attr format="reference|string" name="npv_TextEllipsize"/>
 
-        <!--just used to measure maxWidth for wrap_content without hint,
-            the string array will never be displayed.
-            you can set this attr if you want to keep the wraped numberpickerview
-            width unchanged when alter the content list-->
+        
         <attr format="reference" name="npv_AlternativeTextArrayWithMeasureHint"/>
         <attr format="reference" name="npv_AlternativeTextArrayWithoutMeasureHint"/>
-        <!--the max length of hint content-->
+        
         <attr format="reference|string" name="npv_AlternativeHint"/>
     </declare-styleable>
     <declare-styleable name="LoopViewPager"><attr format="boolean" name="lvp_isAutoLoop"/><attr format="integer" name="lvp_delayTime"/></declare-styleable>
@@ -1795,18 +1785,18 @@
     <declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstsIndicatorColor"/><attr format="color" name="pstsUnderlineColor"/><attr format="color" name="pstsDividerColor"/><attr format="dimension" name="pstsIndicatorHeight"/><attr format="dimension" name="pstsUnderlineHeight"/><attr format="dimension" name="pstsDividerPadding"/><attr format="dimension" name="pstsTabPaddingLeftRight"/><attr format="dimension" name="pstsScrollOffset"/><attr format="reference" name="pstsTabBackground"/><attr format="boolean" name="pstsShouldExpand"/><attr format="boolean" name="pstsTextAllCaps"/></declare-styleable>
     <declare-styleable name="PopsTabView">
 
-        <attr format="dimension" name="tab_textsize"/> <!--tab字体大小-->
-        <attr format="color" name="tab_text_color_normal"/> <!--tab字体正常颜色-->
-        <attr format="color" name="tab_text_color_focus"/><!--tab字体选中颜色-->
+        <attr format="dimension" name="tab_textsize"/> 
+        <attr format="color" name="tab_text_color_normal"/> 
+        <attr format="color" name="tab_text_color_focus"/>
 
-        <attr format="color|reference" name="tab_background_normal"/><!--tab正常背景-->
-        <attr format="color|reference" name="tab_background_focus"/><!--tab选中背景-->
+        <attr format="color|reference" name="tab_background_normal"/>
+        <attr format="color|reference" name="tab_background_focus"/>
 
-        <attr format="reference" name="tab_pop_anim"/><!--popwindow弹出动画-->
+        <attr format="reference" name="tab_pop_anim"/>
 
 
-        <attr format="integer" name="tab_max_ems"/> <!--tab单行最多字数-->
-        <attr format="integer" name="tab_max_lines"/> <!--tab单行最大行数-->
+        <attr format="integer" name="tab_max_ems"/> 
+        <attr format="integer" name="tab_max_lines"/> 
 
 
     </declare-styleable>
@@ -1988,9 +1978,9 @@
     <declare-styleable name="SnackbarLayout"><attr name="android:maxWidth"/><attr name="elevation"/><attr format="dimension" name="maxActionInlineWidth"/></declare-styleable>
     <declare-styleable name="SortItemView">
         <attr format="string" name="label"/>
-        <attr format="integer" name="line_count"/><!--行个数-->
-        <attr format="integer" name="row_count"/><!--列个数-->
-        <attr format="boolean" name="show_other_line"/><!--是否显示下拉图标-->
+        <attr format="integer" name="line_count"/>
+        <attr format="integer" name="row_count"/>
+        <attr format="boolean" name="show_other_line"/>
     </declare-styleable>
     <declare-styleable name="Spinner"><attr name="android:prompt"/><attr name="popupTheme"/><attr name="android:popupBackground"/><attr name="android:dropDownWidth"/><attr name="android:entries"/></declare-styleable>
     <declare-styleable name="StateView"><attr format="reference" name="emptyResource"/><attr format="reference" name="retryResource"/><attr format="reference" name="loadingResource"/></declare-styleable>
@@ -2180,7 +2170,7 @@
         <attr format="reference|dimension" name="channelItemTxSize"/>
     </declare-styleable>
     <declare-styleable name="dashedline">
-        <!--<attr name = "lineColor" format= "color" />-->
+        
     </declare-styleable>
     <declare-styleable name="expandableLayout"><attr format="integer" name="ael_duration"/><attr format="boolean" name="ael_expanded"/><attr format="integer" name="ael_defaultChildIndex"/><attr format="integer" name="ael_defaultPosition"/><attr format="enum" name="ael_orientation"><enum name="horizontal" value="0"/><enum name="vertical" value="1"/></attr><attr format="enum" name="ael_interpolator"><enum name="accelerateDecelerate" value="0"/><enum name="accelerate" value="1"/><enum name="anticipate" value="2"/><enum name="anticipateOvershoot" value="3"/><enum name="bounce" value="4"/><enum name="decelerate" value="5"/><enum name="fastOutLinearIn" value="6"/><enum name="fastOutSlowIn" value="7"/><enum name="linear" value="8"/><enum name="linearOutSlowIn" value="9"/><enum name="overshoot" value="10"/></attr></declare-styleable>
     <declare-styleable name="roundedimageview">
@@ -2734,6 +2724,7 @@
     <string name="ip_preview_image_count">%1$d/%2$d</string>
     <string name="ip_select_complete">完成(%1$d/%2$d)</string>
     <string name="ip_select_limit">最多选择%1$d张图片</string>
+    <string name="isAuthor">isAuthor</string>
     <string name="isFirstIn">isFirstIn</string>
     <string name="islive">正在直播</string>
     <string name="item_title_txt_catagory_inland">国内平台</string>
@@ -2776,6 +2767,7 @@
     <string name="mine_task">任务中心</string>
     <string name="mine_watch">观看历史</string>
     <string name="money_times">V币/每次</string>
+    <string name="mrState">mrState</string>
     <string name="mtState">mtState</string>
     <string name="net_error_msg">网络不给力</string>
     <string name="network_unavailable">网络状态不佳</string>
@@ -3249,14 +3241,10 @@ function login(form){
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
     </style>
     <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+        
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary</item>
         <item name="colorAccent">@color/primary</item>
@@ -3268,7 +3256,7 @@ function login(form){
         <item name="android:windowBackground">@color/white</item>
     </style>
     <style name="AppTheme.NoActionBar.AppBaseTheme">
-        <!--设置窗口为透明窗体，所以APP启动时的黑白屏也变成了透明的-->
+        
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@style/activityAnimation</item>
     </style>
@@ -3525,7 +3513,7 @@ function login(form){
         <item name="actionBarWidgetTheme">@null</item>
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
 
-        <!-- Panel attributes -->
+        
         <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_dark</item>
 
         <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
@@ -3576,7 +3564,7 @@ function login(form){
         <item name="colorButtonNormal">@color/button_material_dark</item>
         <item name="colorSwitchThumbNormal">@color/switch_thumb_material_dark</item>
 
-        <!-- Used by MediaRouter -->
+        
         <item name="isLightTheme">false</item>
     </style>
     <style name="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -3613,7 +3601,7 @@ function login(form){
         <item name="colorButtonNormal">@color/button_material_light</item>
         <item name="colorSwitchThumbNormal">@color/switch_thumb_material_light</item>
 
-        <!-- Used by MediaRouter -->
+        
         <item name="isLightTheme">true</item>
     </style>
     <style name="Base.V14.Widget.Design.AppBarLayout" parent="android:Widget">
@@ -3629,7 +3617,7 @@ function login(form){
 
         <item name="colorBackgroundFloating">@color/background_floating_material_dark</item>
 
-        <!-- Used by MediaRouter -->
+        
         <item name="isLightTheme">false</item>
 
         <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
@@ -3640,7 +3628,7 @@ function login(form){
         <item name="dividerVertical">@drawable/abc_list_divider_mtrl_alpha</item>
         <item name="dividerHorizontal">@drawable/abc_list_divider_mtrl_alpha</item>
 
-        <!-- Action Bar Styles -->
+        
         <item name="actionBarTabStyle">@style/Widget.AppCompat.ActionBar.TabView</item>
         <item name="actionBarTabBarStyle">@style/Widget.AppCompat.ActionBar.TabBar</item>
         <item name="actionBarTabTextStyle">@style/Widget.AppCompat.ActionBar.TabText</item>
@@ -3657,10 +3645,10 @@ function login(form){
         <item name="actionMenuTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Menu</item>
         <item name="actionMenuTextColor">?android:attr/textColorPrimaryDisableOnly</item>
 
-        <!-- Dropdown Spinner Attributes -->
+        
         <item name="actionDropDownStyle">@style/Widget.AppCompat.Spinner.DropDown.ActionBar</item>
 
-        <!-- Action Mode -->
+        
         <item name="actionModeStyle">@style/Widget.AppCompat.ActionMode</item>
         <item name="actionModeBackground">@drawable/abc_cab_background_top_material</item>
         <item name="actionModeSplitBackground">?attr/colorPrimaryDark</item>
@@ -3673,14 +3661,14 @@ function login(form){
         <item name="actionModeSelectAllDrawable">@drawable/abc_ic_menu_selectall_mtrl_alpha</item>
         <item name="actionModeShareDrawable">@drawable/abc_ic_menu_share_mtrl_alpha</item>
 
-        <!-- Panel attributes -->
+        
         <item name="panelMenuListWidth">@dimen/abc_panel_menu_list_width</item>
         <item name="panelMenuListTheme">@style/Theme.AppCompat.CompactMenu</item>
         <item name="panelBackground">@drawable/abc_menu_hardkey_panel_mtrl_mult</item>
         <item name="android:panelBackground">@android:color/transparent</item>
         <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_dark</item>
 
-        <!-- List attributes -->
+        
         <item name="textAppearanceListItem">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="textAppearanceListItemSmall">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="textAppearanceListItemSecondary">@style/TextAppearance.AppCompat.Body1</item>
@@ -3690,16 +3678,16 @@ function login(form){
         <item name="listPreferredItemPaddingLeft">@dimen/abc_list_item_padding_horizontal_material</item>
         <item name="listPreferredItemPaddingRight">@dimen/abc_list_item_padding_horizontal_material</item>
 
-        <!-- Spinner styles -->
+        
         <item name="spinnerStyle">@style/Widget.AppCompat.Spinner</item>
         <item name="android:spinnerItemStyle">@style/Widget.AppCompat.TextView.SpinnerItem</item>
         <item name="android:dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
 
-        <!-- Required for use of support_simple_spinner_dropdown_item.xml -->
+        
         <item name="spinnerDropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
         <item name="dropdownListPreferredItemHeight">?attr/listPreferredItemHeightSmall</item>
 
-        <!-- Popup Menu styles -->
+        
         <item name="popupMenuStyle">@style/Widget.AppCompat.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.AppCompat.Widget.PopupMenu.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.AppCompat.Widget.PopupMenu.Small</item>
@@ -3708,17 +3696,17 @@ function login(form){
         <item name="dropDownListViewStyle">?android:attr/dropDownListViewStyle</item>
         <item name="listMenuViewStyle">@style/Widget.AppCompat.ListMenuView</item>
 
-        <!-- SearchView attributes -->
+        
         <item name="searchViewStyle">@style/Widget.AppCompat.SearchView</item>
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
         <item name="textColorSearchUrl">@color/abc_search_url_text</item>
         <item name="textAppearanceSearchResultTitle">@style/TextAppearance.AppCompat.SearchResult.Title</item>
         <item name="textAppearanceSearchResultSubtitle">@style/TextAppearance.AppCompat.SearchResult.Subtitle</item>
 
-        <!-- ShareActionProvider attributes -->
+        
         <item name="activityChooserViewStyle">@style/Widget.AppCompat.ActivityChooserView</item>
 
-        <!-- Toolbar styles -->
+        
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
         <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
 
@@ -3727,7 +3715,7 @@ function login(form){
         <item name="editTextColor">?android:attr/textColorPrimary</item>
         <item name="autoCompleteTextViewStyle">@style/Widget.AppCompat.AutoCompleteTextView</item>
 
-        <!-- Color palette -->
+        
         <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
         <item name="colorPrimary">@color/primary_material_dark</item>
         <item name="colorAccent">@color/accent_material_dark</item>
@@ -3750,7 +3738,7 @@ function login(form){
         <item name="ratingBarStyleSmall">@style/Widget.AppCompat.RatingBar.Small</item>
         <item name="seekBarStyle">@style/Widget.AppCompat.SeekBar</item>
 
-        <!-- Button styles -->
+        
         <item name="buttonStyle">@style/Widget.AppCompat.Button</item>
         <item name="buttonStyleSmall">@style/Widget.AppCompat.Button.Small</item>
         <item name="android:textAppearanceButton">@style/TextAppearance.AppCompat.Widget.Button</item>
@@ -3763,7 +3751,7 @@ function login(form){
         <item name="buttonBarNegativeButtonStyle">?attr/buttonBarButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">?attr/buttonBarButtonStyle</item>
 
-        <!-- Dialog attributes -->
+        
         <item name="dialogTheme">@style/ThemeOverlay.AppCompat.Dialog</item>
         <item name="dialogPreferredPadding">@dimen/abc_dialog_padding_material</item>
 
@@ -3773,14 +3761,13 @@ function login(form){
         <item name="textColorAlertDialogListItem">@color/abc_primary_text_material_dark</item>
         <item name="listDividerAlertDialog">@null</item>
 
-        <!-- Define these here; ContextThemeWrappers around themes that define them should
-             always clear these values. -->
+        
         <item name="windowFixedWidthMajor">@null</item>
         <item name="windowFixedWidthMinor">@null</item>
         <item name="windowFixedHeightMajor">@null</item>
         <item name="windowFixedHeightMinor">@null</item>
 
-        <!-- Tooltip attributes -->
+        
         <item name="tooltipFrameBackground">@drawable/tooltip_frame_light</item>
         <item name="tooltipForegroundColor">@color/foreground_material_light</item>
 
@@ -3823,7 +3810,7 @@ function login(form){
 
         <item name="colorBackgroundFloating">@color/background_floating_material_light</item>
 
-        <!-- Used by MediaRouter -->
+        
         <item name="isLightTheme">true</item>
 
         <item name="selectableItemBackground">@drawable/abc_item_background_holo_light</item>
@@ -3834,7 +3821,7 @@ function login(form){
         <item name="dividerVertical">@drawable/abc_list_divider_mtrl_alpha</item>
         <item name="dividerHorizontal">@drawable/abc_list_divider_mtrl_alpha</item>
 
-        <!-- Action Bar Styles -->
+        
         <item name="actionBarTabStyle">@style/Widget.AppCompat.Light.ActionBar.TabView</item>
         <item name="actionBarTabBarStyle">@style/Widget.AppCompat.Light.ActionBar.TabBar</item>
         <item name="actionBarTabTextStyle">@style/Widget.AppCompat.Light.ActionBar.TabText</item>
@@ -3851,7 +3838,7 @@ function login(form){
         <item name="actionMenuTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Menu</item>
         <item name="actionMenuTextColor">?android:attr/textColorPrimaryDisableOnly</item>
 
-        <!-- Action Mode -->
+        
         <item name="actionModeStyle">@style/Widget.AppCompat.ActionMode</item>
         <item name="actionModeBackground">@drawable/abc_cab_background_top_material</item>
         <item name="actionModeSplitBackground">?attr/colorPrimaryDark</item>
@@ -3864,17 +3851,17 @@ function login(form){
         <item name="actionModeSelectAllDrawable">@drawable/abc_ic_menu_selectall_mtrl_alpha</item>
         <item name="actionModeShareDrawable">@drawable/abc_ic_menu_share_mtrl_alpha</item>
 
-        <!-- Dropdown Spinner Attributes -->
+        
         <item name="actionDropDownStyle">@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar</item>
 
-        <!-- Panel attributes -->
+        
         <item name="panelMenuListWidth">@dimen/abc_panel_menu_list_width</item>
         <item name="panelMenuListTheme">@style/Theme.AppCompat.CompactMenu</item>
         <item name="panelBackground">@drawable/abc_menu_hardkey_panel_mtrl_mult</item>
         <item name="android:panelBackground">@android:color/transparent</item>
         <item name="listChoiceBackgroundIndicator">@drawable/abc_list_selector_holo_light</item>
 
-        <!-- List attributes -->
+        
         <item name="textAppearanceListItem">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="textAppearanceListItemSmall">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="textAppearanceListItemSecondary">@style/TextAppearance.AppCompat.Body1</item>
@@ -3884,16 +3871,16 @@ function login(form){
         <item name="listPreferredItemPaddingLeft">@dimen/abc_list_item_padding_horizontal_material</item>
         <item name="listPreferredItemPaddingRight">@dimen/abc_list_item_padding_horizontal_material</item>
 
-        <!-- Spinner styles -->
+        
         <item name="spinnerStyle">@style/Widget.AppCompat.Spinner</item>
         <item name="android:spinnerItemStyle">@style/Widget.AppCompat.TextView.SpinnerItem</item>
         <item name="android:dropDownListViewStyle">@style/Widget.AppCompat.ListView.DropDown</item>
 
-        <!-- Required for use of support_simple_spinner_dropdown_item.xml -->
+        
         <item name="spinnerDropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
         <item name="dropdownListPreferredItemHeight">?attr/listPreferredItemHeightSmall</item>
 
-        <!-- Popup Menu styles -->
+        
         <item name="popupMenuStyle">@style/Widget.AppCompat.Light.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small</item>
@@ -3902,17 +3889,17 @@ function login(form){
         <item name="dropDownListViewStyle">?android:attr/dropDownListViewStyle</item>
         <item name="listMenuViewStyle">@style/Widget.AppCompat.ListMenuView</item>
 
-        <!-- SearchView attributes -->
+        
         <item name="searchViewStyle">@style/Widget.AppCompat.Light.SearchView</item>
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
         <item name="textColorSearchUrl">@color/abc_search_url_text</item>
         <item name="textAppearanceSearchResultTitle">@style/TextAppearance.AppCompat.SearchResult.Title</item>
         <item name="textAppearanceSearchResultSubtitle">@style/TextAppearance.AppCompat.SearchResult.Subtitle</item>
 
-        <!-- ShareActionProvider attributes -->
+        
         <item name="activityChooserViewStyle">@style/Widget.AppCompat.ActivityChooserView</item>
 
-        <!-- Toolbar styles -->
+        
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
         <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
 
@@ -3921,7 +3908,7 @@ function login(form){
         <item name="editTextColor">?android:attr/textColorPrimary</item>
         <item name="autoCompleteTextViewStyle">@style/Widget.AppCompat.AutoCompleteTextView</item>
 
-        <!-- Color palette -->
+        
         <item name="colorPrimaryDark">@color/primary_dark_material_light</item>
         <item name="colorPrimary">@color/primary_material_light</item>
         <item name="colorAccent">@color/accent_material_light</item>
@@ -3944,7 +3931,7 @@ function login(form){
         <item name="ratingBarStyleSmall">@style/Widget.AppCompat.RatingBar.Small</item>
         <item name="seekBarStyle">@style/Widget.AppCompat.SeekBar</item>
 
-        <!-- Button styles -->
+        
         <item name="buttonStyle">@style/Widget.AppCompat.Button</item>
         <item name="buttonStyleSmall">@style/Widget.AppCompat.Button.Small</item>
         <item name="android:textAppearanceButton">@style/TextAppearance.AppCompat.Widget.Button</item>
@@ -3957,7 +3944,7 @@ function login(form){
         <item name="buttonBarNegativeButtonStyle">?attr/buttonBarButtonStyle</item>
         <item name="buttonBarNeutralButtonStyle">?attr/buttonBarButtonStyle</item>
 
-        <!-- Dialog attributes -->
+        
         <item name="dialogTheme">@style/ThemeOverlay.AppCompat.Dialog</item>
         <item name="dialogPreferredPadding">@dimen/abc_dialog_padding_material</item>
 
@@ -3967,14 +3954,13 @@ function login(form){
         <item name="textColorAlertDialogListItem">@color/abc_primary_text_material_light</item>
         <item name="listDividerAlertDialog">@null</item>
 
-        <!-- Define these here; ContextThemeWrappers around themes that define them should
-             always clear these values. -->
+        
         <item name="windowFixedWidthMajor">@null</item>
         <item name="windowFixedWidthMinor">@null</item>
         <item name="windowFixedHeightMajor">@null</item>
         <item name="windowFixedHeightMinor">@null</item>
 
-        <!-- Tooltip attributes -->
+        
         <item name="tooltipFrameBackground">@drawable/tooltip_frame_dark</item>
         <item name="tooltipForegroundColor">@color/foreground_material_dark</item>
 
@@ -4410,10 +4396,10 @@ function login(form){
         <item name="colorAccent">@color/accent</item>
     </style>
     <style name="DialogStyle" parent="@android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item><!--  边框-->
-        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
-        <item name="android:windowIsTranslucent">false</item><!--半透明-->
-        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
@@ -4464,7 +4450,7 @@ function login(form){
         <item name="android:buttonBarButtonStyle">?attr/buttonBarButtonStyle</item>
         <item name="android:borderlessButtonStyle">?attr/borderlessButtonStyle</item>
 
-        <!-- Window colors -->
+        
         <item name="android:colorForeground">@color/foreground_material_dark</item>
         <item name="android:colorForegroundInverse">@color/foreground_material_light</item>
         <item name="android:colorBackground">@color/background_material_dark</item>
@@ -4473,7 +4459,7 @@ function login(form){
         <item name="android:backgroundDimAmount">0.6</item>
         <item name="android:windowBackground">@color/background_material_dark</item>
 
-        <!-- Text colors -->
+        
         <item name="android:textColorPrimary">@color/abc_primary_text_material_dark</item>
         <item name="android:textColorPrimaryInverse">@color/abc_primary_text_material_light</item>
         <item name="android:textColorPrimaryDisableOnly">@color/abc_primary_text_disable_only_material_dark</item>
@@ -4489,7 +4475,7 @@ function login(form){
         <item name="android:textColorLinkInverse">?attr/colorAccent</item>
         <item name="android:textColorAlertDialogListItem">@color/abc_primary_text_material_dark</item>
 
-        <!-- Text styles -->
+        
         <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
         <item name="android:textAppearanceInverse">@style/TextAppearance.AppCompat.Inverse</item>
         <item name="android:textAppearanceLarge">@style/TextAppearance.AppCompat.Large</item>
@@ -4522,7 +4508,7 @@ function login(form){
         <item name="android:buttonBarButtonStyle">?attr/buttonBarButtonStyle</item>
         <item name="android:borderlessButtonStyle">?attr/borderlessButtonStyle</item>
 
-        <!-- Window colors -->
+        
         <item name="android:colorForeground">@color/foreground_material_light</item>
         <item name="android:colorForegroundInverse">@color/foreground_material_dark</item>
         <item name="android:colorBackground">@color/background_material_light</item>
@@ -4531,7 +4517,7 @@ function login(form){
         <item name="android:backgroundDimAmount">0.6</item>
         <item name="android:windowBackground">@color/background_material_light</item>
 
-        <!-- Text colors -->
+        
         <item name="android:textColorPrimary">@color/abc_primary_text_material_light</item>
         <item name="android:textColorPrimaryInverse">@color/abc_primary_text_material_dark</item>
         <item name="android:textColorSecondary">@color/abc_secondary_text_material_light</item>
@@ -4548,7 +4534,7 @@ function login(form){
         <item name="android:textColorLinkInverse">?attr/colorAccent</item>
         <item name="android:textColorAlertDialogListItem">@color/abc_primary_text_material_light</item>
 
-        <!-- Text styles -->
+        
         <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
         <item name="android:textAppearanceInverse">@style/TextAppearance.AppCompat.Inverse</item>
         <item name="android:textAppearanceLarge">@style/TextAppearance.AppCompat.Large</item>
@@ -4575,12 +4561,12 @@ function login(form){
     </style>
     <style name="Platform.ThemeOverlay.AppCompat" parent=""/>
     <style name="Platform.ThemeOverlay.AppCompat.Dark">
-        <!-- Action Bar styles -->
+        
         <item name="actionBarItemBackground">@drawable/abc_item_background_holo_dark</item>
         <item name="actionDropDownStyle">@style/Widget.AppCompat.Spinner.DropDown.ActionBar</item>
         <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
 
-        <!-- SearchView styles -->
+        
         <item name="android:autoCompleteTextViewStyle">@style/Widget.AppCompat.AutoCompleteTextView</item>
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
@@ -4589,7 +4575,7 @@ function login(form){
         <item name="actionDropDownStyle">@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar</item>
         <item name="selectableItemBackground">@drawable/abc_item_background_holo_light</item>
 
-        <!-- SearchView attributes -->
+        
         <item name="android:autoCompleteTextViewStyle">@style/Widget.AppCompat.Light.AutoCompleteTextView</item>
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
@@ -4854,19 +4840,19 @@ function login(form){
     <style name="ThemeOverlay.AppCompat.Light" parent="Base.ThemeOverlay.AppCompat.Light"/>
     <style name="Theme_dialog" parent="@android:style/Theme.Dialog">
 
-        <!-- 边框 -->
+        
         <item name="android:windowFrame">@android:color/transparent</item>
-        <!-- 是否浮现在activity之上 -->
+        
         <item name="android:windowIsFloating">true</item>
-        <!-- 半透明 -->
+        
         <item name="android:windowIsTranslucent">false</item>
-        <!-- 无标题 -->
+        
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
 
-        <!-- 自己想要的背景 -->
+        
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -4875,11 +4861,11 @@ function login(form){
         <item name="android:textStyle">normal</item>
     </style>
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
-        <!-- android:textColorPrimary is the color of the title text in the Toolbar  -->
+        
         <item name="android:textColorPrimary">@android:color/white</item>
-        <!-- actionMenuTextColor is the color of the text of action (menu) items  -->
+        
         <item name="actionMenuTextColor">@android:color/white</item>
-        <!-- Tints the input fields like checkboxes and text fields -->
+        
         <item name="colorAccent">@color/accent</item>
     </style>
     <style name="WelcomeActivityStyle" parent="@style/AppTheme">
@@ -5187,223 +5173,223 @@ function login(form){
         <item name="android:textSize">@dimen/medium</item>
     </style>
     <style name="picture.QQ.style" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <!--标题栏背景色-->
+        
+        
         <item name="colorPrimary">@color/blue</item>
-        <!--状态栏背景色-->
+        
         <item name="colorPrimaryDark">@color/blue</item>
-        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        
         <item name="picture.statusFontColor">false</item>
-        <!--返回键图标-->
+        
         <item name="picture.leftBack.icon">@drawable/picture_back</item>
-        <!--标题下拉箭头-->
+        
         <item name="picture.arrow_down.icon">@drawable/arrow_down</item>
-        <!--标题上拉箭头-->
+        
         <item name="picture.arrow_up.icon">@drawable/arrow_up</item>
-        <!--标题文字颜色-->
+        
         <item name="picture.title.textColor">@color/white</item>
-        <!--标题栏右边文字-->
+        
         <item name="picture.right.textColor">@color/white</item>
-        <!--图片列表勾选样式-->
+        
         <item name="picture.checked.style">@drawable/checkbox_num_selector</item>
-        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        
         <item name="picture.style.checkNumMode">true</item>
-        <!--选择图片样式0/9-->
+        
         <item name="picture.style.numComplete">false</item>
-        <!--图片列表底部背景色-->
+        
         <item name="picture.bottom.bg">@color/color_fa</item>
-        <!--图片列表预览文字颜色-->
+        
         <item name="picture.preview.textColor">@color/blue</item>
-        <!--图片列表已完成文字颜色-->
+        
         <item name="picture.complete.textColor">@color/blue</item>
-        <!--图片已选数量圆点背景色-->
+        
         <item name="picture.num.style">@drawable/num_oval_blue</item>
-        <!--预览界面标题文字颜色-->
+        
         <item name="picture.ac_preview.title.textColor">@color/white</item>
-        <!--预览界面已完成文字颜色-->
+        
         <item name="picture.ac_preview.complete.textColor">@color/blue</item>
-        <!--预览界面标题栏背景色-->
+        
         <item name="picture.ac_preview.title.bg">@color/blue</item>
-        <!--预览界面底部背景色-->
+        
         <item name="picture.ac_preview.bottom.bg">@color/color_fa</item>
-        <!--预览界面状态栏颜色-->
+        
         <item name="picture.status.color">@color/blue</item>
-        <!--预览界面返回箭头-->
+        
         <item name="picture.preview.leftBack.icon">@drawable/picture_back</item>
-        <!--是否改变预览界面状态栏字体颜色为黑色-->
+        
         <item name="picture.preview.statusFontColor">false</item>
-        <!--裁剪页面标题背景色-->
+        
         <item name="picture.crop.toolbar.bg">@color/bar_grey</item>
-        <!--裁剪页面状态栏颜色-->
+        
         <item name="picture.crop.status.color">@color/bar_grey</item>
-        <!--裁剪页面标题文字颜色-->
+        
         <item name="picture.crop.title.color">@color/white</item>
-        <!--相册文件夹列表选中图标-->
+        
         <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
     </style>
     <style name="picture.Sina.style" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <!--标题栏背景色-->
+        
+        
         <item name="colorPrimary">@color/white</item>
-        <!--状态栏背景色-->
+        
         <item name="colorPrimaryDark">@color/white</item>
-        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        
         <item name="picture.statusFontColor">true</item>
-        <!--返回键图标-->
+        
         <item name="picture.leftBack.icon">@drawable/back2</item>
-        <!--标题下拉箭头-->
+        
         <item name="picture.arrow_down.icon">@drawable/orange_arrow_down</item>
-        <!--标题上拉箭头-->
+        
         <item name="picture.arrow_up.icon">@drawable/orange_arrow_up</item>
-        <!--标题文字颜色-->
+        
         <item name="picture.title.textColor">@color/color_53</item>
-        <!--标题栏右边文字-->
+        
         <item name="picture.right.textColor">@color/color_53</item>
-        <!--图片列表勾选样式-->
+        
         <item name="picture.checked.style">@drawable/checkbox_selector</item>
-        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        
         <item name="picture.style.checkNumMode">false</item>
-        <!--选择图片样式0/9-->
+        
         <item name="picture.style.numComplete">false</item>
-        <!--图片列表底部背景色-->
+        
         <item name="picture.bottom.bg">@color/color_fa</item>
-        <!--图片列表预览文字颜色-->
+        
         <item name="picture.preview.textColor">@color/color_orange</item>
-        <!--图片列表已完成文字颜色-->
+        
         <item name="picture.complete.textColor">@color/color_orange</item>
-        <!--图片已选数量圆点背景色-->
+        
         <item name="picture.num.style">@drawable/num_oval_orange</item>
-        <!--预览界面标题文字颜色-->
+        
         <item name="picture.ac_preview.title.textColor">@color/color_53</item>
-        <!--预览界面已完成文字颜色-->
+        
         <item name="picture.ac_preview.complete.textColor">@color/color_orange</item>
-        <!--预览界面标题栏背景色-->
+        
         <item name="picture.ac_preview.title.bg">@color/white</item>
-        <!--预览界面底部背景色-->
+        
         <item name="picture.ac_preview.bottom.bg">@color/color_fa</item>
-        <!--预览界面状态栏颜色-->
+        
         <item name="picture.status.color">@color/white</item>
-        <!--预览界面返回箭头-->
+        
         <item name="picture.preview.leftBack.icon">@drawable/back2</item>
-        <!--是否改变预览界面状态栏字体颜色为黑色-->
+        
         <item name="picture.preview.statusFontColor">true</item>
-        <!--裁剪页面标题背景色-->
+        
         <item name="picture.crop.toolbar.bg">@color/bar_grey</item>
-        <!--裁剪页面状态栏颜色-->
+        
         <item name="picture.crop.status.color">@color/bar_grey</item>
-        <!--裁剪页面标题文字颜色-->
+        
         <item name="picture.crop.title.color">@color/white</item>
-        <!--相册文件夹列表选中图标-->
+        
         <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
     </style>
     <style name="picture.default.style" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <!--标题栏背景色-->
+        
+        
         <item name="colorPrimary">@color/bar_grey</item>
-        <!--状态栏背景色-->
+        
         <item name="colorPrimaryDark">@color/bar_grey</item>
-        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        
         <item name="picture.statusFontColor">false</item>
-        <!--返回键图标-->
+        
         <item name="picture.leftBack.icon">@drawable/picture_back</item>
-        <!--标题下拉箭头-->
+        
         <item name="picture.arrow_down.icon">@drawable/arrow_down</item>
-        <!--标题上拉箭头-->
+        
         <item name="picture.arrow_up.icon">@drawable/arrow_up</item>
-        <!--标题文字颜色-->
+        
         <item name="picture.title.textColor">@color/white</item>
-        <!--标题栏右边文字-->
+        
         <item name="picture.right.textColor">@color/white</item>
-        <!--图片列表勾选样式-->
+        
         <item name="picture.checked.style">@drawable/checkbox_selector</item>
-        <!--开启图片列表勾选数字模式-->
+        
         <item name="picture.style.checkNumMode">false</item>
-        <!--选择图片样式0/9-->
+        
         <item name="picture.style.numComplete">false</item>
-        <!--图片列表底部背景色-->
+        
         <item name="picture.bottom.bg">@color/color_fa</item>
-        <!--图片列表预览文字颜色-->
+        
         <item name="picture.preview.textColor">@color/tab_color_true</item>
-        <!--图片列表已完成文字颜色-->
+        
         <item name="picture.complete.textColor">@color/tab_color_true</item>
-        <!--图片已选数量圆点背景色-->
+        
         <item name="picture.num.style">@drawable/num_oval</item>
-        <!--预览界面标题文字颜色-->
+        
         <item name="picture.ac_preview.title.textColor">@color/white</item>
-        <!--预览界面已完成文字颜色-->
+        
         <item name="picture.ac_preview.complete.textColor">@color/tab_color_true</item>
-        <!--预览界面标题栏背景色-->
+        
         <item name="picture.ac_preview.title.bg">@color/bar_grey</item>
-        <!--预览界面底部背景色-->
+        
         <item name="picture.ac_preview.bottom.bg">@color/bar_grey_90</item>
-        <!--预览界面状态栏颜色-->
+        
         <item name="picture.status.color">@color/bar_grey_90</item>
-        <!--预览界面返回箭头-->
+        
         <item name="picture.preview.leftBack.icon">@drawable/picture_back</item>
-        <!--是否改变预览界面状态栏字体颜色为黑色-->
+        
         <item name="picture.preview.statusFontColor">false</item>
-        <!--裁剪页面标题背景色-->
+        
         <item name="picture.crop.toolbar.bg">@color/bar_grey</item>
-        <!--裁剪页面状态栏颜色-->
+        
         <item name="picture.crop.status.color">@color/bar_grey</item>
-        <!--裁剪页面标题文字颜色-->
+        
         <item name="picture.crop.title.color">@color/white</item>
-        <!--相册文件夹列表选中图标-->
+        
         <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
     </style>
     <style name="picture.white.style" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <!--标题栏背景色-->
+        
+        
         <item name="colorPrimary">@color/white</item>
-        <!--状态栏背景色-->
+        
         <item name="colorPrimaryDark">@color/white</item>
-        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        
         <item name="picture.statusFontColor">true</item>
-        <!--返回键图标-->
+        
         <item name="picture.leftBack.icon">@drawable/back2</item>
-        <!--标题下拉箭头-->
+        
         <item name="picture.arrow_down.icon">@drawable/orange_arrow_down</item>
-        <!--标题上拉箭头-->
+        
         <item name="picture.arrow_up.icon">@drawable/orange_arrow_up</item>
-        <!--标题文字颜色-->
+        
         <item name="picture.title.textColor">@color/black</item>
-        <!--标题栏右边文字-->
+        
         <item name="picture.right.textColor">@color/black</item>
-        <!--图片列表勾选样式-->
+        
         <item name="picture.checked.style">@drawable/checkbox_selector</item>
-        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        
         <item name="picture.style.checkNumMode">false</item>
-        <!--选择图片样式0/9-->
+        
         <item name="picture.style.numComplete">true</item>
-        <!--图片列表底部背景色-->
+        
         <item name="picture.bottom.bg">@color/color_fa</item>
-        <!--图片列表预览文字颜色-->
+        
         <item name="picture.preview.textColor">@color/tab_color_false</item>
-        <!--图片列表已完成文字颜色-->
+        
         <item name="picture.complete.textColor">@color/tab_color_false</item>
-        <!--图片已选数量圆点背景色-->
+        
         <item name="picture.num.style">@drawable/num_oval</item>
-        <!--预览界面标题文字颜色-->
+        
         <item name="picture.ac_preview.title.textColor">@color/white</item>
-        <!--预览界面已完成文字颜色-->
+        
         <item name="picture.ac_preview.complete.textColor">@color/tab_color_true</item>
-        <!--预览界面标题栏背景色-->
+        
         <item name="picture.ac_preview.title.bg">@color/bar_grey</item>
-        <!--预览界面底部背景色-->
+        
         <item name="picture.ac_preview.bottom.bg">@color/bar_grey_90</item>
-        <!--预览界面状态栏颜色-->
+        
         <item name="picture.status.color">@color/bar_grey_90</item>
-        <!--预览界面返回箭头-->
+        
         <item name="picture.preview.leftBack.icon">@drawable/picture_back</item>
-        <!--是否改变预览界面状态栏字体颜色为黑色-->
+        
         <item name="picture.preview.statusFontColor">false</item>
-        <!--裁剪页面标题背景色-->
+        
         <item name="picture.crop.toolbar.bg">@color/bar_grey</item>
-        <!--裁剪页面状态栏颜色-->
+        
         <item name="picture.crop.status.color">@color/bar_grey</item>
-        <!--裁剪页面标题文字颜色-->
+        
         <item name="picture.crop.title.color">@color/white</item>
-        <!--相册文件夹列表选中图标-->
+        
         <item name="picture.folder_checked_dot">@drawable/orange_oval</item>
     </style>
     <style name="picture_alert_dialog" parent="android:Theme.Dialog">
@@ -5417,9 +5403,9 @@ function login(form){
         <item name="android:backgroundDimAmount">0.4</item>
     </style>
     <style name="popupwindow_anim_style">
-        <!-- 指定显示的动画xml -->
+        
         <item name="android:windowEnterAnimation">@anim/show_from_bottom</item>
-        <!-- 指定消失的动画xml -->
+        
         <item name="android:windowExitAnimation">@anim/hide_to_bottom</item>
     </style>
     <style name="progressBarHorizontalStyle" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
@@ -5556,8 +5542,8 @@ function login(form){
         <item name="windowActionBar">false</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item><!--退出动画-->
+        <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item>
         <item name="android:activityOpenExitAnimation">@anim/activity_close_exit</item>
-        <!--<item name="android:background">@color/color_transparent_9000</item>-->
+        
     </style>
 </resources>

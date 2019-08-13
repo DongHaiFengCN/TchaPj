@@ -3872,6 +3872,7 @@ id pyq_add_ncet
 id pyq_add_vieo_rl
 id qianming_rl
 id qianming_tv
+id qq_tv
 id r1
 id r2
 id radio
@@ -4331,6 +4332,7 @@ id vError
 id v_dot
 id v_dot1
 id v_dot2
+id versionName_tv
 id vertical
 id video_play
 id video_recyclerview
@@ -4360,6 +4362,7 @@ id wb_iv
 id webView
 id web_parent_layout_id
 id wechat_iv
+id wechat_tv
 id wheelview_container
 id wheelview_single
 id wheelview_tips
@@ -5247,6 +5250,7 @@ string ip_preview_count
 string ip_preview_image_count
 string ip_select_complete
 string ip_select_limit
+string isAuthor
 string isFirstIn
 string islive
 string item_title_txt_catagory_inland
@@ -5289,6 +5293,7 @@ string mine_starlight
 string mine_task
 string mine_watch
 string money_times
+string mrState
 string mtState
 string net_error_msg
 string network_unavailable

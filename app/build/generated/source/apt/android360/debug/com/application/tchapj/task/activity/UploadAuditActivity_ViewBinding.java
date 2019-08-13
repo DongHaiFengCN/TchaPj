@@ -19,7 +19,7 @@ import java.lang.Override;
 public class UploadAuditActivity_ViewBinding implements Unbinder {
   private UploadAuditActivity target;
 
-  private View view2131755777;
+  private View view2131755781;
 
   private View view2131755510;
 
@@ -42,7 +42,7 @@ public class UploadAuditActivity_ViewBinding implements Unbinder {
     target.uploadAudioBtnTime = Utils.findRequiredViewAsType(source, R.id.uploadAudioBtnTime, "field 'uploadAudioBtnTime'", TextView.class);
     view = Utils.findRequiredView(source, R.id.uploadAudioBtn, "field 'uploadAudioBtn' and method 'onViewClicked'");
     target.uploadAudioBtn = Utils.castView(view, R.id.uploadAudioBtn, "field 'uploadAudioBtn'", Button.class);
-    view2131755777 = view;
+    view2131755781 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -85,8 +85,8 @@ public class UploadAuditActivity_ViewBinding implements Unbinder {
     target.copywritingTv = null;
     target.saveImgRv = null;
 
-    view2131755777.setOnClickListener(null);
-    view2131755777 = null;
+    view2131755781.setOnClickListener(null);
+    view2131755781 = null;
     view2131755510.setOnClickListener(null);
     view2131755510 = null;
   }

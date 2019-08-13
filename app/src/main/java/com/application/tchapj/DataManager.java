@@ -210,7 +210,7 @@ public class DataManager {
                             if ("000".equals(memberInfo.getCode()) && memberInfo.getData() != null) {
 
                                 //实名认证信息
-                                getDataManager().setMetaDataById(R.string.identity, memberInfo.getData().getIdentity());
+                                getDataManager().setMetaDataById(R.string.identity, memberInfo.getData().getIdentity(),true);
 
                                 //用户名
                                 getDataManager().setMetaDataById(R.string.realname, memberInfo.getData().getRealname(), true);
@@ -231,18 +231,32 @@ public class DataManager {
                                 getDataManager().setMetaDataById(R.string.birthday, memberInfo.getData().getBirthday(), true);
 
                                 // 小微号认证 0-未申请 1-正在审核中 2-已通过 3-未通过
-                                getDataManager().setMetaDataById(R.string.authState, memberInfo.getData().getAuthState());
+                                getDataManager().setMetaDataById(R.string.authState, memberInfo.getData().getAuthState(), true);
 
                                 //媒体资源0-未申请 1-待提交媒体资源 2-媒体资源待审核 3-已通过 4未通过
-                                getDataManager().setMetaDataById(R.string.lingState, memberInfo.getData().getLingState());
+                                getDataManager().setMetaDataById(R.string.lingState, memberInfo.getData().getLingState(), true);
 
                                 //关注的人
-                                getDataManager().setMetaDataById(R.string.attentions, memberInfo.getData().getAttentions());
+                                getDataManager().setMetaDataById(R.string.attentions, memberInfo.getData().getAttentions(), true);
 
 
                                 //发图
-                                getDataManager().setMetaDataById(R.string.faState, memberInfo.getData().getFaState());
+                                getDataManager().setMetaDataById(R.string.faState, memberInfo.getData().getFaState(), true);
 
+
+                                //达人
+                                setMetaDataById(R.string.lingState, memberInfo.getData().getLingState(), true);
+
+                                //媒体
+                                setMetaDataById(R.string.mtState, "2",true);
+                                // setMetaDataById(R.string.mtState,memberInfo.getData().getMtState());
+
+                                //名人
+                                setMetaDataById(R.string.mrState, "2",true);
+                                // setMetaDataById(R.string.mtState,memberInfo.getData().getMrState());
+
+                                //维护白影
+                                setMetaDataById(R.string.isAuthor,memberInfo.getData().getIsAuthor(),true);
 
 
                                 if (upDataListener != null) {
@@ -377,7 +391,7 @@ public class DataManager {
         void updata(boolean getDataSuccess);
     }
 
-   public interface LoginListener {
+    public interface LoginListener {
 
         void login(boolean isLogin);
     }

@@ -439,10 +439,15 @@
     <string name="wsState" >wsState</string>
 
     <string name="wbState" >wbState</string>
+
+    <!--广告主-->
     <string name="faState" >faState</string>
     <string name="pyqState" >pyqState</string>
     <string name="mtState" >mtState</string>
 
+    <string name="mrState" >mrState</string>
+    <!--维护白影-->
+    <string name="isAuthor" >isAuthor</string>
     <!--taskApplyId
  true string
 任务认证id

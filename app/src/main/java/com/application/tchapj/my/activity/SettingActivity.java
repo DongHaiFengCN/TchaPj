@@ -1,6 +1,7 @@
 package com.application.tchapj.my.activity;
 
 import android.content.Intent;
+import android.content.SearchRecentSuggestionsProvider;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseActvity;
 import com.application.tchapj.login.activity.PassWordActivity;
+import com.application.tchapj.utils.Utils;
 import com.application.tchapj.widiget.ToolbarHelper;
 
 import butterknife.BindView;
@@ -26,6 +28,16 @@ public class SettingActivity extends BaseActvity implements View.OnClickListener
 
     @BindView(R.id.setting_tv_exit)
     Button mTvExit;
+
+    @BindView(R.id.versionName_tv)
+    TextView versionNameTv;
+
+
+    @BindView(R.id.qq_tv)
+    TextView qqTv;
+
+    @BindView(R.id.wechat_tv)
+    TextView weTv;
 
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
@@ -53,6 +65,23 @@ public class SettingActivity extends BaseActvity implements View.OnClickListener
             }
         });
 
+        versionNameTv.setText(Utils.getVersionName(getApplicationContext()));
+
+
+        if ("1".equals(getDataManager().quickGetMetaData(R.string.qqId, String.class))) {
+
+            qqTv.setText("已经绑定");
+        } else {
+            qqTv.setText("未绑定");
+        }
+
+
+        if ("1".equals(getDataManager().quickGetMetaData(R.string.wxId, String.class))) {
+
+            weTv.setText("已经绑定");
+        } else {
+            weTv.setText("未绑定");
+        }
     }
 
 

@@ -17,9 +17,9 @@ import java.lang.Override;
 public class StartUpAdvertActivity_ViewBinding implements Unbinder {
   private StartUpAdvertActivity target;
 
-  private View view2131755758;
+  private View view2131755762;
 
-  private View view2131755759;
+  private View view2131755763;
 
   @UiThread
   public StartUpAdvertActivity_ViewBinding(StartUpAdvertActivity target) {
@@ -34,7 +34,7 @@ public class StartUpAdvertActivity_ViewBinding implements Unbinder {
     target.tvTimeCount = Utils.findRequiredViewAsType(source, R.id.tvTimeCount, "field 'tvTimeCount'", TextView.class);
     view = Utils.findRequiredView(source, R.id.ivAdvertisement, "field 'ivAdvertisement' and method 'onViewClicked'");
     target.ivAdvertisement = Utils.castView(view, R.id.ivAdvertisement, "field 'ivAdvertisement'", ImageView.class);
-    view2131755758 = view;
+    view2131755762 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -43,7 +43,7 @@ public class StartUpAdvertActivity_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.llTimeCount, "field 'llTimeCount' and method 'onViewClicked'");
     target.llTimeCount = Utils.castView(view, R.id.llTimeCount, "field 'llTimeCount'", LinearLayout.class);
-    view2131755759 = view;
+    view2131755763 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -63,9 +63,9 @@ public class StartUpAdvertActivity_ViewBinding implements Unbinder {
     target.ivAdvertisement = null;
     target.llTimeCount = null;
 
-    view2131755758.setOnClickListener(null);
-    view2131755758 = null;
-    view2131755759.setOnClickListener(null);
-    view2131755759 = null;
+    view2131755762.setOnClickListener(null);
+    view2131755762 = null;
+    view2131755763.setOnClickListener(null);
+    view2131755763 = null;
   }
 }

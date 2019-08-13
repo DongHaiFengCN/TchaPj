@@ -72,7 +72,7 @@ public class CommonDialogUtil {
 
 
     //确认开通 微呼百应号
-    public static void showOpenWhbyNumberDialog(final Context context, final ConsultationFragment.ConsultationFragmentOpenDialogClickListener listener) {
+    public static void showOpenWhbyNumberDialog(final Context context, final ConsultationFragmentOpenDialogClickListener listener) {
         final Dialog dialog = new Dialog(context,R.style.DialogStyle);
         View view = LayoutInflater.from(context).inflate(R.layout.layout_dialog_consultation_verify_identity, null);
         dialog.setContentView(view);
@@ -117,7 +117,7 @@ public class CommonDialogUtil {
             public void onClick(View view) {
                 dialog.dismiss();
                 if(radioButton.isChecked()){
-                    listener.confirmClick();
+                    listener.agreementClick();
                 }
 
             }
@@ -134,8 +134,13 @@ public class CommonDialogUtil {
 
     }
 
+    interface ConsultationFragmentOpenDialogClickListener{
+
+        void agreementClick();
+    }
+
     //身份激活
-    public static void showIdentityActivateDialog(final Context context, final ConsultationFragment.ConsultationFragmentActivateDialogClickListener listener) {
+   /* public static void showIdentityActivateDialog(final Context context, final ConsultationFragmentActivateDialogClickListener listener) {
 
 
         final Dialog dialog = new Dialog(context,R.style.DialogStyle);
@@ -176,7 +181,7 @@ public class CommonDialogUtil {
         dialogWindow.setAttributes(layoutParams);
         dialog.show();
 
-    }
+    }*/
 
     //更新提示
     public static void showUpdateApkDialog(final Context context, final UpdateManager.UpdateMangerDialogClickListener listener) {

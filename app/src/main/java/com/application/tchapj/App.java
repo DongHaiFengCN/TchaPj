@@ -41,6 +41,7 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+import static com.application.tchapj.DataManager.getDataManager;
 import static com.application.tchapj.utils2.SDToast.mHandler;
 
 // 程序的基本配置
@@ -191,7 +192,7 @@ public class App extends Application {
         getStartInitiationData();
 
 
-        App.setId(DataManager.getDataManager().quickGetMetaData(R.string.id,String.class));
+        App.setId(getDataManager().quickGetMetaData(R.string.id,String.class));
 
         SharedPreferences.getInstance().init(this);
 
@@ -285,7 +286,8 @@ public class App extends Application {
 
 
     public static String getId() {
-        return SharedPreferencesUtils.getInstance().getUserInfo().getId();
+        return getDataManager().quickGetMetaData(R.string.id,String.class);
+
     }
 
     public static void setId(String id) {

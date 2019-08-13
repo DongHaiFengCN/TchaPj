@@ -19,17 +19,17 @@ import java.lang.Override;
 public class MyFragment_ViewBinding implements Unbinder {
   private MyFragment target;
 
-  private View view2131755960;
-
-  private View view2131755961;
-
-  private View view2131755962;
-
   private View view2131755963;
 
   private View view2131755964;
 
   private View view2131755965;
+
+  private View view2131755966;
+
+  private View view2131755967;
+
+  private View view2131755968;
 
   @UiThread
   public MyFragment_ViewBinding(final MyFragment target, View source) {
@@ -56,7 +56,7 @@ public class MyFragment_ViewBinding implements Unbinder {
     target.fragment_my_attentions_fans_ll = Utils.findRequiredViewAsType(source, R.id.fragment_my_attentions_fans_ll, "field 'fragment_my_attentions_fans_ll'", LinearLayout.class);
     view = Utils.findRequiredView(source, R.id.fragment_my_attentions_tv, "field 'fragment_my_attentions_tv' and method 'onViewClicked'");
     target.fragment_my_attentions_tv = Utils.castView(view, R.id.fragment_my_attentions_tv, "field 'fragment_my_attentions_tv'", TextView.class);
-    view2131755960 = view;
+    view2131755963 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -65,30 +65,6 @@ public class MyFragment_ViewBinding implements Unbinder {
     });
     view = Utils.findRequiredView(source, R.id.fragment_my_fans_tv, "field 'fragment_my_fans_tv' and method 'onViewClicked'");
     target.fragment_my_fans_tv = Utils.castView(view, R.id.fragment_my_fans_tv, "field 'fragment_my_fans_tv'", TextView.class);
-    view2131755961 = view;
-    view.setOnClickListener(new DebouncingOnClickListener() {
-      @Override
-      public void doClick(View p0) {
-        target.onViewClicked(p0);
-      }
-    });
-    view = Utils.findRequiredView(source, R.id.fragment_my_wallet_ll, "method 'onViewClicked'");
-    view2131755962 = view;
-    view.setOnClickListener(new DebouncingOnClickListener() {
-      @Override
-      public void doClick(View p0) {
-        target.onViewClicked(p0);
-      }
-    });
-    view = Utils.findRequiredView(source, R.id.fragment_my_content_manager_ll, "method 'onViewClicked'");
-    view2131755963 = view;
-    view.setOnClickListener(new DebouncingOnClickListener() {
-      @Override
-      public void doClick(View p0) {
-        target.onViewClicked(p0);
-      }
-    });
-    view = Utils.findRequiredView(source, R.id.fragment_my_content_analysis_ll, "method 'onViewClicked'");
     view2131755964 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
@@ -96,8 +72,32 @@ public class MyFragment_ViewBinding implements Unbinder {
         target.onViewClicked(p0);
       }
     });
-    view = Utils.findRequiredView(source, R.id.fragment_my_task_analysis_ll, "method 'onViewClicked'");
+    view = Utils.findRequiredView(source, R.id.fragment_my_wallet_ll, "method 'onViewClicked'");
     view2131755965 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.fragment_my_content_manager_ll, "method 'onViewClicked'");
+    view2131755966 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.fragment_my_content_analysis_ll, "method 'onViewClicked'");
+    view2131755967 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onViewClicked(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, R.id.fragment_my_task_analysis_ll, "method 'onViewClicked'");
+    view2131755968 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -134,17 +134,17 @@ public class MyFragment_ViewBinding implements Unbinder {
     target.fragment_my_attentions_tv = null;
     target.fragment_my_fans_tv = null;
 
-    view2131755960.setOnClickListener(null);
-    view2131755960 = null;
-    view2131755961.setOnClickListener(null);
-    view2131755961 = null;
-    view2131755962.setOnClickListener(null);
-    view2131755962 = null;
     view2131755963.setOnClickListener(null);
     view2131755963 = null;
     view2131755964.setOnClickListener(null);
     view2131755964 = null;
     view2131755965.setOnClickListener(null);
     view2131755965 = null;
+    view2131755966.setOnClickListener(null);
+    view2131755966 = null;
+    view2131755967.setOnClickListener(null);
+    view2131755967 = null;
+    view2131755968.setOnClickListener(null);
+    view2131755968 = null;
   }
 }

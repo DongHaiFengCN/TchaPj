@@ -22,7 +22,7 @@ import java.lang.Override;
 public class TaskPyqActivity_ViewBinding implements Unbinder {
   private TaskPyqActivity target;
 
-  private View view2131756510;
+  private View view2131756513;
 
   @UiThread
   public TaskPyqActivity_ViewBinding(TaskPyqActivity target) {
@@ -61,7 +61,7 @@ public class TaskPyqActivity_ViewBinding implements Unbinder {
     target.fa_pyqlj_ydet = Utils.findRequiredViewAsType(source, R.id.fa_pyqlj_ydet, "field 'fa_pyqlj_ydet'", EditText.class);
     view = Utils.findRequiredView(source, R.id.toolbar_menu_title, "field 'toolbarRightTv' and method 'onViewClicked'");
     target.toolbarRightTv = Utils.castView(view, R.id.toolbar_menu_title, "field 'toolbarRightTv'", TextView.class);
-    view2131756510 = view;
+    view2131756513 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -110,7 +110,7 @@ public class TaskPyqActivity_ViewBinding implements Unbinder {
     target.discountTv = null;
     target.discountTipTv = null;
 
-    view2131756510.setOnClickListener(null);
-    view2131756510 = null;
+    view2131756513.setOnClickListener(null);
+    view2131756513 = null;
   }
 }

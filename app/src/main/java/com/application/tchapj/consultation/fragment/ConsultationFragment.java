@@ -13,7 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.application.tchapj.App;
 import com.application.tchapj.Constants;
@@ -38,6 +42,9 @@ import com.application.tchapj.utils.CommonUtils;
 import com.application.tchapj.utils.ToastUtil;
 import com.application.tchapj.utils2.qiniu.utils.StringUtils;
 import com.application.tchapj.utils2.share.SharedPreferencesUtils;
+import com.application.tchapj.widiget.DensityUtil;
+import com.iflytek.cloud.thirdparty.C;
+import com.iflytek.cloud.thirdparty.P;
 import com.king.base.adapter.ViewPagerFragmentAdapter;
 
 import java.util.ArrayList;
@@ -50,6 +57,8 @@ import butterknife.Unbinder;
 import freemarker.template.utility.StringUtil;
 import rx.Subscription;
 import rx.functions.Action1;
+
+import static com.application.tchapj.DataManager.getDataManager;
 
 
 // 咨询页Fragment
@@ -189,7 +198,7 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
     }
 
     private void showDialog() {
-        publishContentDialog = new Dialog(mContext,R.style.DialogStyle);
+        publishContentDialog = new Dialog(mContext, R.style.DialogStyle);
         View view = LayoutInflater.from(mContext).inflate(R.layout.layout_dialog_consultation, null);
         publishContentDialog.setContentView(view);
 //        LinearLayout graphicLl = view.findViewById(R.id.dialog_consultation_ll_graphic).setOnClickListener(this);
@@ -221,11 +230,137 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
 
     @OnClick(R.id.iv_edit_consultation)
     public void onViewClicked() {
-        if(CommonUtils.isLogin(getActivity())){
-            if(SharedPreferencesUtils.getInstance().getUserInfo() != null){
+        if (CommonUtils.isLogin(getActivity())) {
+
+            if ("2".equals(getDataManager().quickGetMetaData(R.string.lingState, String.class))
+                    || "2".equals(getDataManager().quickGetMetaData(R.string.mtState, String.class))
+                    || "2".equals(getDataManager().quickGetMetaData(R.string.mrState, String.class))) {
+
+                if ("1".equals(getDataManager().quickGetMetaData(R.string.isAuthor, String.class))) {
+                    //已申请微呼百应号
+                    showDialog();
+                } else {
+
+                    final Dialog dialog = new Dialog(context,R.style.DialogStyle);
+                    View view = LayoutInflater.from(context).inflate(R.layout.layout_dialog_consultation_verify_identity, null);
+                    dialog.setContentView(view);
+                    final RadioButton radioButton = view.findViewById(R.id.dialog_consultation_verify_identity_rdo_btn);
+                    final TextView confirmTv = view.findViewById(R.id.dialog_consultation_verify_identity_confirm_tv);
+                    LinearLayout rdoLl = view.findViewById(R.id.dialog_consultation_verify_identity_rdo_ll);
+                    TextView tipTv = view.findViewById(R.id.dialog_consultation_verify_identity_tip_tv);
+                    rdoLl.setVisibility(View.VISIBLE);
+                    tipTv.setVisibility(View.GONE);
+                    confirmTv.setBackgroundResource(R.drawable.bg_dialog_consultation_verify_identity_confirm);
+                    confirmTv.setText("确认开通");
+
+                    view.findViewById(R.id.dialog_consultation_verify_identity_fl).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    //协议
+                    view.findViewById(R.id.dialog_consultation_verify_identity_agreement_tv).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(context, WebViewActivity.class);
+                            intent.putExtra(WebViewActivity.URL_KEY, Constants.ACCOUNT_NUMBER_AGREEMENT);
+                            intent.putExtra(WebViewActivity.TITLE, "");
+                            intent.putExtra(WebViewActivity.URL_TYPE, "All");
+                            context.startActivity(intent);
+
+                        }
+                    });
+
+                    radioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                            if(b){
+                                confirmTv.setBackgroundResource(R.drawable.bg_dialog_consultation_verify_identity_confirm);
+                            }else{
+                                confirmTv.setBackgroundResource(R.drawable.bg_dialog_consultation_verify_identity_confirm_normal);
+                            }
+                        }
+                    });
+
+                    confirmTv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                            if(radioButton.isChecked()){
+                                Intent intent = new Intent(context, WebViewActivity.class);
+                                intent.putExtra(WebViewActivity.URL_KEY, Constants.ACCOUNT_NUMBER_AGREEMENT);
+                                intent.putExtra(WebViewActivity.TITLE, "");
+                                intent.putExtra(WebViewActivity.URL_TYPE, "All");
+                                context.startActivity(intent);
+                            }
+
+                        }
+                    });
+
+
+                    Window dialogWindow = dialog.getWindow();
+                    WindowManager.LayoutParams layoutParams = dialogWindow.getAttributes();
+                    WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+
+                    layoutParams.width = wm.getDefaultDisplay().getWidth() - DensityUtil.dpTopx(context, 25);
+                    dialogWindow.setAttributes(layoutParams);
+                    dialog.show();
+
+
+                }
+            }else {
+
+                //进行身份认证
+                final Dialog dialog = new Dialog(context,R.style.DialogStyle);
+                View view = LayoutInflater.from(context).inflate(R.layout.layout_dialog_consultation_verify_identity, null);
+                dialog.setContentView(view);
+                final TextView confirmTv = view.findViewById(R.id.dialog_consultation_verify_identity_confirm_tv);
+
+                LinearLayout rdoLl = view.findViewById(R.id.dialog_consultation_verify_identity_rdo_ll);
+                TextView tipTv = view.findViewById(R.id.dialog_consultation_verify_identity_tip_tv);
+                rdoLl.setVisibility(View.GONE);
+                tipTv.setVisibility(View.VISIBLE);
+                confirmTv.setBackgroundResource(R.drawable.bg_dialog_consultation_verify_identity_confirm);
+                confirmTv.setText("身份激活");
+
+                view.findViewById(R.id.dialog_consultation_verify_identity_fl).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+
+                confirmTv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+
+                        IdentityActivity.start(getActivity(), SharedPreferencesUtils.getInstance().getUserInfo());
+
+                    }
+                });
+
+
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams layoutParams = dialogWindow.getAttributes();
+                WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+
+                layoutParams.width = wm.getDefaultDisplay().getWidth() - DensityUtil.dpTopx(context, 25);
+                dialogWindow.setAttributes(layoutParams);
+                dialog.show();
+
+
+            }
+        }
+
+
+        /*    if(SharedPreferencesUtils.getInstance().getUserInfo() != null){
                 if (SharedPreferencesUtils.getInstance().getUserInfo().getLingState().equals("2") || SharedPreferencesUtils.getInstance().getUserInfo().getMrState().equals("2")
                         || SharedPreferencesUtils.getInstance().getUserInfo().getMtState().equals("2")) {
-                    //已经有一个身份（名人/媒体/达人）
+                    //已经有一个身份（名人/媒体/达人）g
                     if(!StringUtils.isNullOrEmpty(SharedPreferencesUtils.getInstance().getUserInfo().getIsAuthor()) && SharedPreferencesUtils.getInstance().getUserInfo().getIsAuthor().equals("1")){
                         //已申请微呼百应号
                         showDialog();
@@ -260,9 +395,9 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
                 }
             }else{
                 ToastUtil.show(getActivity(), "获取不到用户信息，请重新登录");
-            }
+            }*/
 
-        }
+
 
     }
 
@@ -303,7 +438,6 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
         super.onDestroyView();
         unbinder.unbind();
     }
-
 
 
     // 得到全部咨询数据 respon
@@ -352,7 +486,7 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
     //开通微呼百应账号
     @Override
     public void onUpdateAuthor(BaseBean baseBean) {
-        if(baseBean != null && baseBean.getCode().equals("000")){
+        if (baseBean != null && baseBean.getCode().equals("000")) {
             ToastUtil.show(getActivity(), "开通成功");
             getPresenter().getMemberInfo(App.getId());//更新本地用户信息
         }
@@ -366,12 +500,13 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
     }
 
 
-    public interface ConsultationFragmentOpenDialogClickListener{
+    public interface ConsultationFragmentOpenDialogClickListener {
         void agreementClick();//运营规范
+
         void confirmClick();
     }
 
-    public interface ConsultationFragmentActivateDialogClickListener{
+    public interface ConsultationFragmentActivateDialogClickListener {
         void goActivateClick();
     }
 

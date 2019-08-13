@@ -23,7 +23,7 @@ import java.lang.Override;
 public class DarenDataOneActivity_ViewBinding implements Unbinder {
   private DarenDataOneActivity target;
 
-  private View view2131756341;
+  private View view2131756344;
 
   @UiThread
   public DarenDataOneActivity_ViewBinding(DarenDataOneActivity target) {
@@ -53,7 +53,7 @@ public class DarenDataOneActivity_ViewBinding implements Unbinder {
     target.inviteCodeEdt = Utils.findRequiredViewAsType(source, R.id.daren_one_invite_et, "field 'inviteCodeEdt'", EditText.class);
     target.darendataone_media_resources_tip_tv = Utils.findRequiredViewAsType(source, R.id.darendataone_media_resources_tip_tv, "field 'darendataone_media_resources_tip_tv'", TextView.class);
     view = Utils.findRequiredView(source, R.id.permanent_address_city_rl, "method 'onViewClicked'");
-    view2131756341 = view;
+    view2131756344 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -87,7 +87,7 @@ public class DarenDataOneActivity_ViewBinding implements Unbinder {
     target.inviteCodeEdt = null;
     target.darendataone_media_resources_tip_tv = null;
 
-    view2131756341.setOnClickListener(null);
-    view2131756341 = null;
+    view2131756344.setOnClickListener(null);
+    view2131756344 = null;
   }
 }

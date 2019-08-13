@@ -111,6 +111,25 @@ public class MemberInfo {
         private String telephone;
         private String mobile;
 
+        public String getMrState() {
+            return mrState;
+        }
+
+        public void setMrState(String mrState) {
+            this.mrState = mrState;
+        }
+
+        public String getMtState() {
+            return mtState;
+        }
+
+        public void setMtState(String mtState) {
+            this.mtState = mtState;
+        }
+
+        private String mrState;
+        private String mtState;
+
         public String getBirthday() {
             return birthday;
         }

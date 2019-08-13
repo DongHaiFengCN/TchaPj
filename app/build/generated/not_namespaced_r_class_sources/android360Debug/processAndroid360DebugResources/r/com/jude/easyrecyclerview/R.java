@@ -35,8 +35,8 @@ public final class R {
         public static final int none = 0x7f100051;
         public static final int outsideInset = 0x7f10009d;
         public static final int outsideOverlay = 0x7f10009e;
-        public static final int progress = 0x7f100310;
-        public static final int ptr_layout = 0x7f10053d;
+        public static final int progress = 0x7f100314;
+        public static final int ptr_layout = 0x7f100540;
         public static final int vertical = 0x7f1000a0;
     }
     public static final class layout {

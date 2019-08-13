@@ -109,9 +109,11 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
     @Override
     public void initUI() {
 
-        //smState = SharedPreferences.getInstance().getString(getString(R.string.identity), "");
-
+        darenState = getDataManager().quickGetMetaData(R.string.lingState, String.class);
+        guanggaozhuState = getDataManager().quickGetMetaData(R.string.faState, String.class);
         smState = getDataManager().quickGetMetaData(R.string.identity, String.class);
+        meitiState = getDataManager().quickGetMetaData(R.string.mtState, String.class);
+        mingrenState = getDataManager().quickGetMetaData(R.string.mrState, String.class);
         getPresenter().onGetQiniuResult();
 
         item_meiti_rl.setOnClickListener(new View.OnClickListener() {
@@ -159,11 +161,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
             smrz_clv.setText2("已认证");
             smrz_clv.setText2Color(0xffffffff);
         }
-        // getPresenter().getUserModelResult(App.getId());
 
-        //  smState = SharedPreferences.getInstance().getString(getString(R.string.identity), "");
-
-        // smState =
     }
 
     private void initView() {

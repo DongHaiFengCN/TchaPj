@@ -40,14 +40,14 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int btn_n = 0x7f10052d;
-        public static final int btn_p = 0x7f10052e;
-        public static final int buttonLayout = 0x7f10052c;
+        public static final int btn_n = 0x7f100530;
+        public static final int btn_p = 0x7f100531;
+        public static final int buttonLayout = 0x7f10052f;
         public static final int contentView = 0x7f10000f;
-        public static final int material_background = 0x7f100529;
+        public static final int material_background = 0x7f10052c;
         public static final int message = 0x7f10010f;
-        public static final int message_content_root = 0x7f10052a;
-        public static final int message_content_view = 0x7f10052b;
+        public static final int message_content_root = 0x7f10052d;
+        public static final int message_content_view = 0x7f10052e;
         public static final int title = 0x7f10003e;
     }
     public static final class layout {

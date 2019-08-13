@@ -26,6 +26,9 @@ public class SettingActivity_ViewBinding implements Unbinder {
 
     target.setting_mima_tv = Utils.findRequiredViewAsType(source, R.id.setting_mima_tv, "field 'setting_mima_tv'", TextView.class);
     target.mTvExit = Utils.findRequiredViewAsType(source, R.id.setting_tv_exit, "field 'mTvExit'", Button.class);
+    target.versionNameTv = Utils.findRequiredViewAsType(source, R.id.versionName_tv, "field 'versionNameTv'", TextView.class);
+    target.qqTv = Utils.findRequiredViewAsType(source, R.id.qq_tv, "field 'qqTv'", TextView.class);
+    target.weTv = Utils.findRequiredViewAsType(source, R.id.wechat_tv, "field 'weTv'", TextView.class);
   }
 
   @Override
@@ -37,5 +40,8 @@ public class SettingActivity_ViewBinding implements Unbinder {
 
     target.setting_mima_tv = null;
     target.mTvExit = null;
+    target.versionNameTv = null;
+    target.qqTv = null;
+    target.weTv = null;
   }
 }
