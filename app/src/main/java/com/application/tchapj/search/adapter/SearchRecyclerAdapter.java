@@ -107,7 +107,6 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter {
         }
     }
 
-    // TODO 设置头部信息
     private void bindTypeSlider(final HolderSlider holder, int position) {
         if(listSearchMingrens == null || listSearchMingrens.size() == 0){
             holder.search_ll.setVisibility(View.GONE);
@@ -210,6 +209,7 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter {
                     });
 
             holder.search_tv_name2.setText(listSearchMingrens.get(1).getNickName());
+
             holder.search_tv_explain2.setText(listSearchMingrens.get(1).getContent());
             holder.search_zixunName2.setText(listSearchMingrens.get(1).getNewsTypeId());
 

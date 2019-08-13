@@ -47,17 +47,17 @@
             android:padding="@dimen/dp_4"
 
             />
+
         <TextView
             android:id="@+id/alipay_status_bt"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:textColor="@color/colorPrimary2"
             android:layout_height="32dp"
-            android:textSize="@dimen/sp_fifteen"
+            android:layout_weight="1"
+            android:background="@drawable/money_dialog_button"
             android:gravity="center"
             android:text="未关联"
-            android:background="@drawable/money_dialog_button"
-            />
+            android:textColor="@color/colorPrimary2"
+            android:textSize="14sp" />
 
     </LinearLayout>
 

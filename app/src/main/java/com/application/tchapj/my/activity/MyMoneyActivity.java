@@ -811,14 +811,14 @@ public class MyMoneyActivity extends BaseMvpActivity<IMoneyView, MoneyPresenter>
             alipayId = moneyInfoBean.getData().getAlipayId();
             promotionFundTv.setText(moneyInfoBean.getData().getProSY() + "");
 
-            Log.e("DOAING", moneyInfoBean.getData().getProSY() + "");
+           //xz Log.e("DOAING", moneyInfoBean.getData().getProSY() + "");
             taskOccupyTv.setText(moneyInfoBean.getData().getOccupy() + " 元");
-            Log.e("DOAING", moneyInfoBean.getData().getOccupy() + " 元");
+          //  Log.e("DOAING", moneyInfoBean.getData().getOccupy() + " 元");
             sy_tv.setText(moneyInfoBean.getData().getSy() + "");
-            Log.e("DOAING", moneyInfoBean.getData().getSy() + "");
+           // Log.e("DOAING", moneyInfoBean.getData().getSy() + "");
             my_money_value.setText(moneyInfoBean.getData().getSy() + "");
             sy_tv.setText(moneyInfoBean.getData().getSalary() + "");
-            Log.e("DOAING", moneyInfoBean.getData().getSalary() + "");
+           // Log.e("DOAING", moneyInfoBean.getData().getSalary() + "");
 
             // dj_tv.setText(moneyInfoBean.getData().getDj() + "");
             //冻结的钱 包含已付款未审核的任务的钱。会和V币解冻列表页有按钮（灰色和彩色按钮）的数据钱相加不一样

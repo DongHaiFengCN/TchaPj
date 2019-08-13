@@ -177,8 +177,6 @@ public class PhoneLogonFragment extends Fragment {
                     return;
                 }
 
-                //getDataManager().release();
-
                 ((App) (getActivity().getApplication()))
                         .getAppComponent()
                         .getAPIService() // 所有接口对象

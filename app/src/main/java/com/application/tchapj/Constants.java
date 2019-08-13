@@ -20,11 +20,11 @@ public final class Constants {
     public static final boolean IS_DEBUG = true;
 
     // 正式库
-//    public static final String BASE_URL2 = "http://124.133.43.12:8081/whby-api/";
+    public static final String BASE_URL2 = "http://124.133.43.12:8081/whby-api/";
 
     // 测试库
-    // public static final String BASE_URL2 = "http://124.133.43.12:8084/whby-api3/";
-    public static final String BASE_URL2 = "http://192.168.15.149:8080/whby-api/";
+     //public static final String BASE_URL2 = "http://124.133.43.12:8084/whby-api3/";
+   // public static final String BASE_URL2 = "http://192.168.15.149:8080/whby-api/";
 
 
     //public static final String BASE_URL2 = "http://192.168.0.91:8080/whby-api/";//测试库，文文电脑IP

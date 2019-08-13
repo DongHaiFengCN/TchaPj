@@ -41,6 +41,8 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 
 // 提现
 public class MoneyTxFragment extends Fragment {
@@ -81,7 +83,7 @@ public class MoneyTxFragment extends Fragment {
     public void onGetMoneyInfoListBeanResult() {
         ((App) (getActivity().getApplication())).getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getMoneyInfoListBeanResult(pageNum + "", "10", App.getId(), "002", "1.0", "", "JSON")
+                .getMoneyInfoListBeanResult(pageNum + "", "10", getDataManager().quickGetMetaData(R.string.id,String.class), "4", "002", "1.0", "","JSON")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<MoneyInfoListBean>() {

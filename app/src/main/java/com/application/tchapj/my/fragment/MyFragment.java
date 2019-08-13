@@ -143,75 +143,84 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
     public void onResume() {
         super.onResume();
 
-        String nickName = getDataManager().quickGetMetaData(R.string.nickName, String.class);
-        String attentions = String.valueOf(getDataManager().quickGetMetaData(R.string.attentions, Integer.class));
-        String fans = String.valueOf(getDataManager().quickGetMetaData(R.string.fans, Integer.class));
-        String headUrl = getDataManager().quickGetMetaData(R.string.headimgurl, String.class);
-        user_id = getDataManager().quickGetMetaData(R.string.id, String.class);
+        DataManager.getDataManager().disposeMember(new DataManager.UpDataListener() {
+            @Override
+            public void updata(boolean getDataSuccess) {
+
+                String nickName = getDataManager().quickGetMetaData(R.string.nickName, String.class);
+                String attentions = String.valueOf(getDataManager().quickGetMetaData(R.string.attentions, Integer.class));
+                String fans = String.valueOf(getDataManager().quickGetMetaData(R.string.fans, Integer.class));
+                String headUrl = getDataManager().quickGetMetaData(R.string.headimgurl, String.class);
+                user_id = getDataManager().quickGetMetaData(R.string.id, String.class);
 
 
-        Log.e("DOAING","NICK_NAME"+nickName);
+                Log.e("DOAING","NICK_NAME"+nickName);
 
-        if("".equals(nickName)&&"".equals(user_id)){
-            my_logon_tv.setText("点击登录");
-            my_logon_tv.setClickable(true);
+                if("".equals(nickName)&&"".equals(user_id)){
+                    my_logon_tv.setText("点击登录");
+                    my_logon_tv.setClickable(true);
 
-        }else if(!"".equals(nickName)){
+                }else if(!"".equals(nickName)){
 
-            my_logon_tv.setText(nickName);
+                    my_logon_tv.setText(nickName);
 
-            my_logon_tv.setClickable(false);
+                    my_logon_tv.setClickable(false);
 
-        } else {
-            my_logon_tv.setText("游客登录");
-            my_logon_tv.setClickable(false);
-        }
+                } else {
+                    my_logon_tv.setText("游客登录");
+                    my_logon_tv.setClickable(false);
+                }
 
-        if (!"".equals(attentions)) {
-            fragment_my_attentions_tv.setText("关注：" + attentions);
-        } else {
-            fragment_my_attentions_tv.setText("关注：0");
-        }
+                if (!"".equals(attentions)) {
+                    fragment_my_attentions_tv.setText("关注：" + attentions);
+                } else {
+                    fragment_my_attentions_tv.setText("关注：0");
+                }
 
-        if (!"".equals(fans)) {
-            fragment_my_fans_tv.setText("粉丝：" + fans);
-        } else {
-            fragment_my_fans_tv.setText("粉丝：0");
-        }
-        if ("".equals(headUrl)) {
-            Glide.with(getActivity()).load(R.mipmap.ic_media_head_default).into(my_top_iv);
-        } else {
+                if (!"".equals(fans)) {
+                    fragment_my_fans_tv.setText("粉丝：" + fans);
+                } else {
+                    fragment_my_fans_tv.setText("粉丝：0");
+                }
+                if ("".equals(headUrl)) {
+                    Glide.with(getActivity()).load(R.mipmap.ic_media_head_default).into(my_top_iv);
+                } else {
 
-            Glide.with(getActivity())
-                    .asBitmap()
-                    .apply(headImgOptions)
-                    .load(headUrl)
-                    .into(new BitmapImageViewTarget(my_top_iv) {
-                        @Override
-                        protected void setResource(Bitmap resource) {
-                            RoundedBitmapDrawable circularBitmapDrawable =
-                                    RoundedBitmapDrawableFactory.
-                                            create(getActivity().getResources(), resource);
-                            my_top_iv.setImageDrawable(circularBitmapDrawable);
-                        }
-                    });
+                    Glide.with(getActivity())
+                            .asBitmap()
+                            .apply(headImgOptions)
+                            .load(headUrl)
+                            .into(new BitmapImageViewTarget(my_top_iv) {
+                                @Override
+                                protected void setResource(Bitmap resource) {
+                                    RoundedBitmapDrawable circularBitmapDrawable =
+                                            RoundedBitmapDrawableFactory.
+                                                    create(getActivity().getResources(), resource);
+                                    my_top_iv.setImageDrawable(circularBitmapDrawable);
+                                }
+                            });
 
 
-        }
+                }
 
-        String sex = getDataManager().quickGetMetaData(R.string.sex, String.class);
-        if (!"".equals(sex)) {
-            if ("m".equals(sex)) {
-                my_top_sex.setVisibility(View.VISIBLE);
-                my_top_sex2.setVisibility(View.GONE);
-                my_top_sex.setBackgroundResource(R.mipmap.sex);
+                String sex = getDataManager().quickGetMetaData(R.string.sex, String.class);
+                if (!"".equals(sex)) {
+                    if ("m".equals(sex)) {
+                        my_top_sex.setVisibility(View.VISIBLE);
+                        my_top_sex2.setVisibility(View.GONE);
+                        my_top_sex.setBackgroundResource(R.mipmap.sex);
 
-            } else {
-                my_top_sex.setVisibility(View.GONE);
-                my_top_sex2.setVisibility(View.VISIBLE);
-                my_top_sex2.setBackgroundResource(R.mipmap.sex2);
+                    } else {
+                        my_top_sex.setVisibility(View.GONE);
+                        my_top_sex2.setVisibility(View.VISIBLE);
+                        my_top_sex2.setBackgroundResource(R.mipmap.sex2);
+                    }
+                }
+
             }
-        }
+        });
+
+
     }
 
 

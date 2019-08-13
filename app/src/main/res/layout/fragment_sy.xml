@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="活动名称"
             android:textColor="@color/text_secondary" />
@@ -37,10 +37,7 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#f1f1f1"/>
+
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -55,8 +52,8 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/money_sy_rv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:background="@color/darkgray"
             android:overScrollMode="never" />
 
         <com.scwang.smartrefresh.layout.footer.ClassicsFooter

@@ -62,6 +62,8 @@ import com.application.tchapj.task.bean.TaskSquareInfoModel;
 import com.application.tchapj.task.bean.TaskSquareModel;
 import com.application.tchapj.video.bean.VideosModel;
 
+import java.util.jar.Attributes;
+
 import okhttp3.ResponseBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -381,7 +383,9 @@ public interface APIService {
     @POST("app?method=pm.main.searchbox")
     Observable<SearchBean> getSearchBeanResult(
             @Field("Name") String Name
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("sign") String sign
             , @Query("format") String format);
 
     // 搜索更多
@@ -390,7 +394,9 @@ public interface APIService {
     Observable<SearchBean> getSearchBeanResultmost(
             @Field("Name") String Name
             , @Field("id") String id
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("sign") String sign
             , @Query("format") String format);
 
     // 用户信息
@@ -398,9 +404,10 @@ public interface APIService {
     Observable<UserModel> getUserModelResult(@Query("memberId") String memberId, @Query("appKey") String appKey
             , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
 
-    // 个人中心
+
+    // 用户信息
     @POST("app?method=pm.member.get")
-    Observable<MemberInfo> getMember(@Query("memberId") String memberId, @Query("appKey") String appKey
+    Observable<MemberInfo> getMemberModelResult(@Query("memberId") String memberId, @Query("appKey") String appKey
             , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
 
     // 支付宝私钥 参数
@@ -479,6 +486,33 @@ public interface APIService {
             , @Query("format") String format);
 
 
+    /**
+     * 发布任务
+     *
+     * @param Id
+     * @param taskImageType
+     * @param name
+     * @param require
+     * @param imgUrl
+     * @param startTime
+     * @param endTime
+     * @param unitPrice
+     * @param taskImgUrl
+     * @param taskNum
+     * @param taskGuidance
+     * @param phonenumber
+     * @param copywriting
+     * @param Fans
+     * @param ForwardUrl
+     * @param appKey
+     * @param v
+     * @param sign
+     * @param format
+     * @param type
+     * @param secret
+     * @param method
+     * @return
+     */
     @FormUrlEncoded
     @POST("app?method=pm.task.release")
     Observable<FaTaskBean> getFaTaskBeanResult(
@@ -590,8 +624,9 @@ public interface APIService {
     Observable<MoneyInfoBean> getMoneyInfoBeanResult(
 
             @Query("memberId") String memberId
-
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("sign") String sign
             , @Query("format") String format);
 
     // 收益提现和退款--支付宝
@@ -601,18 +636,18 @@ public interface APIService {
             @Query("amount") String amount
             , @Query("id") String id
             , @Query("memberId") String memberId
-
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("sign") String sign
             , @Query("format") String format);
 
 
     //大额提现--人工转账
     @FormUrlEncoded
-    @POST("app?method=pm.artificial.transfer")
+    @POST("app?method=promotion.app.transfer")
     Observable<BaseBean> getArtificialTransferResult(
             @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
-            , @Query("format") String format, @Query("memberId") String memberId,
-            @Query("amount") String amount, @Field("bankOutlets") String bankOutlets
+            , @Query("format") String format, @Query("memberId") String memberId, @Query("amount") String amount, @Field("bankOutlets") String bankOutlets
             , @Field("name") String name, @Query("accountNumber") String accountNumber);
 
     // 我的任务列表--零钱模块
@@ -622,6 +657,7 @@ public interface APIService {
             @Query("pageNum") String pageNum
             , @Query("pageSize") String pageSize
             , @Query("memberId") String memberId
+            , @Query("classify") String classify
 
             , @Query("appKey") String appKey,
             @Query("v") String v,
@@ -831,6 +867,7 @@ public interface APIService {
             , @Query("memberId") String memberId
     );
 
+    @FormUrlEncoded
     @POST("app?method=pm.member.updateIdentity")
     Observable<BaseBean> updateIndetity(
             @Query("appKey") String appKey
@@ -842,14 +879,7 @@ public interface APIService {
             , @Query("type") String type
             , @Query("memberId") String memberId
             , @Query("identity") String identity
-            , @Query("realname") String realname
+            , @Field("realname") String realname
     );
-
-
-    // 用户信息
-    @POST("app?method=pm.member.get")
-    Observable<MemberInfo> getMemberModelResult(@Query("memberId") String memberId, @Query("appKey") String appKey
-            , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
-
 
 }

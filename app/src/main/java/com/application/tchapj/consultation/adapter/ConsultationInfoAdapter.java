@@ -68,6 +68,8 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
  * Created by tanger on 2018/3/19.
+ *
+ * @author dong 2019/8/13修改
  */
 
 public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -260,7 +262,7 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
             }
 
 
-            textViewHolder.tv_content.setText(news.getTitle());
+            textViewHolder.tv_content.setText(news.getName());
 
             textViewHolder.tv_time.setText(SDDateUtil.formatDuringFrom(news.getCreateTime()));
             textViewHolder.tv_title.setText(news.getR_name());
@@ -379,7 +381,7 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
 
             imageViewHolder.tv_name.setText(news.getR_name());
             imageViewHolder.tv_time.setText(SDDateUtil.formatDuringFrom(news.getCreateTime()));
-            imageViewHolder.tv_title.setText(news.getTitle());
+            imageViewHolder.tv_title.setText(news.getName());
 
             //置顶
             if ("0".equals(news.getTop())) {
@@ -457,7 +459,7 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
 
             imageViewHolder1.tv_name1.setText(news.getR_name());
             imageViewHolder1.tv_time1.setText(SDDateUtil.formatDuringFrom(news.getCreateTime()));
-            imageViewHolder1.tv_title1.setText(news.getTitle());
+            imageViewHolder1.tv_title1.setText(news.getName());
             //置顶
             if ("0".equals(news.getTop())) {
                 //热门
@@ -538,8 +540,6 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
                         Log.e("135", "url = " + url);
                     }
 
-
-                    Log.e("sssss", news.getId());
 
                     FullyGridLayoutManager manager;
 
@@ -671,13 +671,6 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
 
                     }
 
-                /*mListAdapter = new ListAdapter(mContext, pictures);
-                sudokuViewHolder.item_nice9_imagerl.setLayoutManager(new LinearLayoutManager(mContext));
-                sudokuViewHolder.item_nice9_imagerl.setAdapter(mListAdapter);*/
-
-                    // 将资源路径设置到图片选择实体类
-                    // final ArrayList<LocalMedia> imageItems = new ArrayList<>();
-
                 }
 
             }else{
@@ -695,86 +688,11 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
 
 
             if (!StringUtils.isNullOrEmpty(news.getConent())) {
-//                sudokuViewHolder.tv_title.setText(news.getConent());
                 sudokuViewHolder.contentTv.setVisibility(View.VISIBLE);
                 setContent(sudokuViewHolder, position, news.getConent(), news.getId());
             } else {
                 sudokuViewHolder.contentTv.setVisibility(View.GONE);
             }
-
-
-
-            /*// 判断接受到的是否有表情图片，有则替换
-            if (!StringUtils.isEmpty(news.getConent())) {
-                for (int i = 0; i < EmojiUtils.picStr.length; i++) {
-                    if (news.getConent().contains("[" + EmojiUtils.picStr[i] + "]")) {
-                        String s1 = news.getConent();
-                        String s = s1.replaceAll("\\[" + EmojiUtils.picStr[i] + "\\]", "<f" + EmojiUtils.picStr1[i] + ">");
-                        news.setConent(s);
-                    }
-                }
-            }
-
-            if (news.getConent() != null && news.getConent().contains("<f") && news.getConent().contains(">")) {
-                sudokuViewHolder.tv_title.setText("");
-                String message = news.getConent();
-                List<Object> results = new ArrayList<Object>();
-                List<String> ems = new ArrayList<String>();
-                Pattern patter = Pattern.compile("<f[\\w]*>");
-                Matcher matcher = patter.matcher(news.getConent());
-                while (matcher.find()) {
-                    ems.add(matcher.group());
-                }
-                for (int i = 0; i < ems.size(); i++) {
-                    if (message.startsWith("<f")) {
-                        results.add(message.substring(0, 6));
-                        message = message.substring(6, message.length());
-                        if (message.length() > 0 && !message.startsWith("<f")) {
-                            if (message.contains("<f") && message.contains(">")) {
-                                int emsIndex = message.indexOf("<");
-                                String itemMes = message.substring(0, emsIndex);
-                                results.add(itemMes);
-                                message = message.substring(emsIndex, message.length());
-                            } else {
-                                results.add(message);
-                            }
-                        }
-                    } else {
-                        int emsIndex = message.indexOf("<");
-                        String itemMes = message.substring(0, emsIndex);
-                        results.add(itemMes);
-                        message = message.substring(emsIndex, message.length());
-                        results.add(message.substring(0, 6));
-                        message = message.substring(6, message.length());
-                    }
-                }
-                ArrayList<SpannableString> list = new ArrayList<SpannableString>();
-                for (int i = 0; i < results.size(); i++) {
-                    list.add(null);
-                }
-                for (int i = 0; i < results.size(); i++) {
-                    if (results.get(i).toString().startsWith("<f")) {
-                        String emPath = results.get(i).toString().replace("<", "");
-                        emPath = emPath.replace(">", "");
-                        emPath = emPath.substring(1, 4);
-                        list.set(i, Emoji.getImg(mContext, emPath));
-                    }
-                }
-                for (int i = 0; i < list.size(); i++) {
-                    if (list.get(i) != null) {
-                        results.set(i, list.get(i));
-                    }
-                }
-                for (int i = 0; i < results.size(); i++) {
-                    sudokuViewHolder.tv_title.append((CharSequence) results.get(i));
-                }
-            } else if (!TextUtils.isEmpty(news.getConent())) {
-                sudokuViewHolder.tv_title.setText(news.getConent());
-                sudokuViewHolder.tv_title.setVisibility(View.VISIBLE);
-            } else {
-                sudokuViewHolder.tv_title.setVisibility(View.GONE);
-            }
-*/
 
             // 处理点赞列表
             final List<LikelogsBean> likelogsBeans = news.getLikelogs();
@@ -821,7 +739,6 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
                     sudokuViewHolder.commentList.setVisibility(View.VISIBLE);
                     sudokuViewHolder.commentList.setDatas(commentlogsBeans);
 
-                    Log.e("11111111111", "处理评论列表:" + commentlogsBeans.get(0).getContent());
                     // 处理评论列表点击事件
                     sudokuViewHolder.commentList.setOnItemClickListener(new CommentListView.OnItemClickListener() {
                         @Override
@@ -897,18 +814,7 @@ public class ConsultationInfoAdapter extends RecyclerView.Adapter<RecyclerView.V
             sudokuViewHolder.linearlayout_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    /**
-//                     * 弹出输入框，让用户输入评论
-//                     */
-//                    CommentConfig config = new CommentConfig();
-//                    config.circlePosition = position;
-//                    config.commentType = CommentConfig.Type.PUBLIC;
-//
-//                    if(commentlogsBeans!=null){
-//                        mListener.onItemButtonClick(config, news.getId(), commentlogsBeans.size());
-//                    }else {
-//                        mListener.onItemButtonClick(config, news.getId(), 0);
-//                    }
+
 
                     FindDetailActivity.start(mContext, news, true);
                 }

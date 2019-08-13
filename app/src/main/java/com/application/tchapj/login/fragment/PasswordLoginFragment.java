@@ -59,8 +59,8 @@ public class PasswordLoginFragment extends Fragment {
         mBtnSignIn = view.findViewById(R.id.login_btn_signIn);
         mTvRegister = view.findViewById(R.id.login_tv_register);
         initListener();
-        mEdtUserName.setText("15610170241");
-        mEdtUserPass.setText("123456");
+    /*    mEdtUserName.setText("15610170241");
+        mEdtUserPass.setText("123456");*/
 
 
         IntentFilter intentFilter = new IntentFilter();
@@ -78,8 +78,8 @@ public class PasswordLoginFragment extends Fragment {
                 }
             }
         };
-        localBroadcastManager = LocalBroadcastManager.getInstance(Objects.requireNonNull(getActivity()));
-        localBroadcastManager.registerReceiver(localReceiver, intentFilter);
+   /*     localBroadcastManager = LocalBroadcastManager.getInstance(Objects.requireNonNull(getActivity()));
+        localBroadcastManager.registerReceiver(localReceiver, intentFilter);*/
 
         return view;
     }
@@ -89,8 +89,8 @@ public class PasswordLoginFragment extends Fragment {
         super.onDestroy();
 
         //注销掉广播
-        localBroadcastManager.unregisterReceiver(localReceiver);
-        Log.e("DOAING", "密码广播登录已经注销");
+    /*    localBroadcastManager.unregisterReceiver(localReceiver);
+        Log.e("DOAING", "密码广播登录已经注销");*/
     }
 
 
@@ -121,12 +121,14 @@ public class PasswordLoginFragment extends Fragment {
 
                                 if (isLogin) {
 
+
+                                    Toast.makeText(getActivity(), "登录成功", Toast.LENGTH_SHORT).show();
+
                                     getActivity().finish();
-                                    Toast.makeText(getActivity(),"登录成功",Toast.LENGTH_SHORT).show();
 
 
                                 } else {
-                                    Toast.makeText(getActivity(),"登录失败",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity(), "登录失败", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

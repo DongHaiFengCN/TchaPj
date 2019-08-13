@@ -38,21 +38,24 @@ public class SearchPresenter extends BaseMvpPresenter<ISearchView> {
                 .subscribe(new Subscriber<MicroTabBean>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onCompleted();
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onError(e);
+                        }
                     }
 
                     @Override // 得到数据
                     public void onNext(MicroTabBean microTabBean) {
                         LogUtils.d("Response:"+ microTabBean);
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onGetMicroTabBeanResult(microTabBean); // 得到一层数据
+                        }
 
                     }
                 });
@@ -75,21 +78,24 @@ public class SearchPresenter extends BaseMvpPresenter<ISearchView> {
                 .subscribe(new Subscriber<SearchBean>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onCompleted();
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onError(e);
+                        }
                     }
 
                     @Override // 得到数据
                     public void onNext(SearchBean searchBean) {
                         LogUtils.d("Response:"+ searchBean);
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onGetSearchBeanResult(searchBean); // 得到一层数据
+                        }
 
                     }
                 });
@@ -112,21 +118,24 @@ public class SearchPresenter extends BaseMvpPresenter<ISearchView> {
                 .subscribe(new Subscriber<SearchBean>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onCompleted();
+                        }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onError(e);
+                        }
                     }
 
                     @Override // 得到数据
                     public void onNext(SearchBean searchBean) {
                         LogUtils.d("Response:"+ searchBean);
-                        if(isViewAttached())
+                        if(isViewAttached()) {
                             getView().onGetSearchBeanResultMost(searchBean); // 得到一层数据
+                        }
 
                     }
                 });

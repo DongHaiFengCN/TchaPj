@@ -176,7 +176,7 @@ public class DataManager {
 
 
     /**
-     * 如通过memberId 去配置所有的基础信息，在初始化账户系统时做。
+     * 通过 memberId 去更新所有数据。
      *
      * @return 没有配置信息
      */
@@ -344,7 +344,7 @@ public class DataManager {
 
 
                             //登录成功刷新所有缓存数据
-                            disposeMember(null);
+                           // disposeMember(null);
 
                             loginListener.login(true);
 

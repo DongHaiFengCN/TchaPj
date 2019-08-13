@@ -204,7 +204,7 @@ public class MoneyPresenter extends BaseMvpPresenter<IMoneyView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getMoneyInfoListBeanResult(pageNum, pageSize, memberId, classify, "002", "1.0", "JSON")
+                .getMoneyInfoListBeanResult(pageNum, pageSize, memberId, classify, "002", "1.0", "","JSON")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<MoneyInfoListBean>() {

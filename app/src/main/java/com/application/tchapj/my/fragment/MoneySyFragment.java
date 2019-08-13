@@ -27,6 +27,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 
 // 收益
 public class MoneySyFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter> implements IMoneyView {
@@ -54,7 +56,7 @@ public class MoneySyFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
 
         moneySyAdapter = new MoneySyAdapter(getContext());
         money_sy_rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        money_sy_rv.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
+        money_sy_rv.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         money_sy_rv.setAdapter(moneySyAdapter);
 
         initListener();
@@ -78,7 +80,7 @@ public class MoneySyFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 pageNum++;
-                getPresenter().onGetMoneyInfoListBeanResult(pageNum+"",pageSize+"", App.getId(),"1");
+                getPresenter().onGetMoneyInfoListBeanResult(pageNum + "", pageSize + "", App.getId(), "1");
             }
         });
 
@@ -87,7 +89,7 @@ public class MoneySyFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
     @Override
     public void initData() {
 
-        getPresenter().onGetMoneyInfoListBeanResult(pageNum+"",pageSize+"", App.getId(),"1");
+        getPresenter().onGetMoneyInfoListBeanResult(pageNum + "",  "10", getDataManager().quickGetMetaData(R.string.id, String.class), "1");
     }
 
     @Override
@@ -110,18 +112,18 @@ public class MoneySyFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
 
         if ("000".equals(moneyInfoListBean.getCode())) {
 
-            if (pageNum==1){
+            if (pageNum == 1) {
                 moneyInfoTaskLogs = moneyInfoListBean.getData().getTaskLogs();
-            }else{
+            } else {
                 moneyInfoTaskLogs.addAll(moneyInfoListBean.getData().getTaskLogs());
             }
 
             moneySyAdapter.setData(moneyInfoTaskLogs);
 
-            if (money_sy_srl.isEnableRefresh()){
+            if (money_sy_srl.isEnableRefresh()) {
                 money_sy_srl.finishRefresh();
             }
-            if (money_sy_srl.isEnableLoadMore()){
+            if (money_sy_srl.isEnableLoadMore()) {
                 money_sy_srl.finishLoadMore();
             }
         }
@@ -156,10 +158,10 @@ public class MoneySyFragment extends BaseMvpFragment<IMoneyView, MoneyPresenter>
     @Override
     public void onError(Throwable e) {
 
-        if (money_sy_srl.isEnableRefresh()){
+        if (money_sy_srl.isEnableRefresh()) {
             money_sy_srl.finishRefresh();
         }
-        if (money_sy_srl.isEnableLoadMore()){
+        if (money_sy_srl.isEnableLoadMore()) {
             money_sy_srl.finishLoadMore();
         }
 

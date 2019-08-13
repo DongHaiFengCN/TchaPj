@@ -31,6 +31,8 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 
 /**
  * @author 董海峰
@@ -71,7 +73,7 @@ public class MoneyCzFragment extends Fragment {
     public void onGetMoneyInfoListBeanResult() {
         ((App) (Objects.requireNonNull(getActivity()).getApplication())).getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getMoneyInfoListBeanResult(pageNum + "", "20", App.getId(), "3", "002", "1.0", "JSON")
+                .getMoneyInfoListBeanResult(pageNum+"" , "10", getDataManager().quickGetMetaData(R.string.id,String.class), "3", "002", "1.0", "","JSON")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<MoneyInfoListBean>() {

@@ -216,7 +216,9 @@ public class RecommendChildAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             textViewHolder.rl_item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (clickItemListener != null) clickItemListener.onclick(news.getId());
+                    if (clickItemListener != null) {
+                        clickItemListener.onclick(news.getId());
+                    }
                 }
             });
 
@@ -331,7 +333,9 @@ public class RecommendChildAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             imageViewHolder.ll_item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (clickItemListener != null) clickItemListener.onclick(news.getId());
+                    if (clickItemListener != null) {
+                        clickItemListener.onclick(news.getId());
+                    }
                 }
             });
 
@@ -398,7 +402,9 @@ public class RecommendChildAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             imageViewHolder1.ll_item1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (clickItemListener != null) clickItemListener.onclick(news.getId());
+                    if (clickItemListener != null) {
+                        clickItemListener.onclick(news.getId());
+                    }
                 }
             });
 
@@ -517,7 +523,9 @@ public class RecommendChildAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             sudokuViewHolder.iv_head.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (clickItemListener != null) clickItemListener.onclick(news.getId());
+                    if (clickItemListener != null) {
+                        clickItemListener.onclick(news.getId());
+                    }
                 }
             });
 
@@ -777,13 +785,13 @@ public class RecommendChildAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         void onDeleteItemButtonClick(int position, int commentId);
 
         // 添加赞   参数一 表示点赞的位置
-        void addPraise(int mPosition, String id,int mSize);
+        void addPraise(int mPosition, String id, int mSize);
 
         // 取消赞   参数一 表示点赞的位置  参数二 表示点赞的状态
         void deletePraise(int mCirclePosition);
 
         // 回复评论  参数一 表示回复的实体类
-        void onItemButtonClick(CommentConfig config, String id,int mSize);
+        void onItemButtonClick(CommentConfig config, String id, int mSize);
 
     }
 
@@ -809,7 +817,7 @@ public class RecommendChildAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
     }
 
-    private void setContent(final RecommendChildAdapter.SudokuViewHolder holder, final int position, String contentStr, final String newsId){
+    private void setContent(final SudokuViewHolder holder, final int position, String contentStr, final String newsId){
         Integer state = mTextStateList.get(datas.get(position).getId());
         //第一次初始化，未知状态
         if (state == null || state == STATE_UNKNOW) {

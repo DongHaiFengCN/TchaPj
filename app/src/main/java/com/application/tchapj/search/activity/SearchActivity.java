@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ import com.application.tchapj.search.greendao.InfoDao;
 import com.application.tchapj.search.presenter.SearchPresenter;
 import com.application.tchapj.search.view.ISearchView;
 import com.application.tchapj.utils.CommonUtils;
+import com.application.tchapj.utils.Utils;
 import com.application.tchapj.widiget.ToolbarHelper;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
@@ -51,9 +54,11 @@ public class SearchActivity extends BaseMvpActivity<ISearchView, SearchPresenter
     @BindView(R.id.search_history_clear_all_tv)
     TextView search_history_clear_all_tv;
 
+    @BindView(R.id.back_im)
+    ImageView backIm;
     @BindView(R.id.search_history_rv)
     ListView search_history_rv;
-
+    private LinearLayout top;
     // 数据库操作类
     private InfoDao dao;
 
@@ -79,6 +84,14 @@ public class SearchActivity extends BaseMvpActivity<ISearchView, SearchPresenter
     public void initUI() {
 
         getPresenter().onGetMicroTabResult();
+        top = findViewById(R.id.top_bar);
+
+        backIm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         dao = new InfoDao(this);
         infos = dao.findAll();
@@ -90,13 +103,12 @@ public class SearchActivity extends BaseMvpActivity<ISearchView, SearchPresenter
         search_tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openSearchInfoActivity();
-
-
             }
 
         });
+
+        //setTopBarMarginTop(Utils.getStatusBarHeight(this));
     }
 
     private void openSearchInfoActivity() {
@@ -277,6 +289,16 @@ public class SearchActivity extends BaseMvpActivity<ISearchView, SearchPresenter
         public long getItemId(int position) {
             return 0;
         }
+    }
+    public void setTopBarMarginTop(int size) {
+
+        if (top != null) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) top.getLayoutParams();
+            layoutParams.topMargin = -size;
+            top.setLayoutParams(layoutParams);
+        }
+
+
     }
 
 }

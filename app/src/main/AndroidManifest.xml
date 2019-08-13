@@ -624,6 +624,7 @@
             android:value="577c404367e58e6b1f001a40">
         </meta-data>-->
 
+
         <provider
             android:name=".utils2.imagepicker.ImagePickerProvider"
             android:authorities="${applicationId}.provider"
