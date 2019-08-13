@@ -185,6 +185,8 @@ public class DataManager {
 
         final String memberId = quickGetMetaData(R.string.id, String.class);
 
+        Log.e("DOAING", "更新配置" + memberId);
+
         if (!"".equals(memberId)) {
 
             application
@@ -203,7 +205,7 @@ public class DataManager {
                         public void onError(Throwable e) {
                             if (upDataListener != null) {
 
-                                upDataListener.updata(true);
+                                upDataListener.updata(false);
                             }
                         }
 
@@ -251,11 +253,11 @@ public class DataManager {
                                 setMetaDataById(R.string.lingState, memberInfo.getData().getLingState(), true);
 
                                 //媒体
-                                setMetaDataById(R.string.mtState, "2", true);
+                                setMetaDataById(R.string.mtState, memberInfo.getData().getMtState(), true);
                                 // setMetaDataById(R.string.mtState,memberInfo.getData().getMtState());
 
                                 //名人
-                                setMetaDataById(R.string.mrState, "2", true);
+                                setMetaDataById(R.string.mrState, memberInfo.getData().getMrState(), true);
                                 // setMetaDataById(R.string.mtState,memberInfo.getData().getMrState());
 
                                 //维护白影
@@ -376,11 +378,10 @@ public class DataManager {
                                         public void onNext(AlipayPrivateKeyBean alipayPrivateKeyBean) {
 
                                             DataManager.getDataManager().setMetaDataById(R.string.RSA2_PRIVATE, alipayPrivateKeyBean.getData().getPrivatekey());
-                                           Log.e("Response:", alipayPrivateKeyBean.getData().getPrivatekey());
+                                            Log.e("Response:", alipayPrivateKeyBean.getData().getPrivatekey());
 
                                         }
                                     });
-
 
 
                         } else {

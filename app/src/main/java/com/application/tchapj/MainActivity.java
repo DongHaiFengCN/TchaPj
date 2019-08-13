@@ -78,15 +78,17 @@ public class MainActivity extends BaseActvity implements HomeFragment.HomeFragme
 
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
-        //刷新配置
-        DataManager.getDataManager()
-                .disposeMember(new Up());
+
 
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //刷新配置
+        DataManager.getDataManager()
+                .disposeMember(new Up());
 
         // 动态读取权限
         if (Build.VERSION.SDK_INT >= 23) {

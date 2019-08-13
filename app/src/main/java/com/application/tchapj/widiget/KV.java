@@ -7,6 +7,8 @@ import android.content.SharedPreferences.Editor;
 import java.util.Map;
 
 // KV是一个简单的key-value存取类，对SharePreference进行了封装。
+
+@Deprecated
 public class KV {
 	private SharedPreferences mKV;
 	private Editor mEditor;
@@ -40,8 +42,6 @@ public class KV {
 		mKV = context.getSharedPreferences(kvName, mode);
 		mEditor = mKV.edit();
 	}
-
-
 
 
 

@@ -42,6 +42,7 @@ import com.application.tchapj.utils2.picture.config.PictureMimeType;
 import com.application.tchapj.utils2.picture.entity.LocalMedia;
 import com.application.tchapj.utils2.qiniu.utils.StringUtils;
 import com.application.tchapj.widiget.ToolbarHelper;
+import com.iflytek.cloud.thirdparty.S;
 import com.qiniu.android.common.FixedZone;
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.Configuration;
@@ -244,7 +245,7 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
 
                     //上传至七牛
                     showLoadingDialog();
-                    for(int i = 0; i < images.size(); i ++){
+                    for (int i = 0; i < images.size(); i++) {
                         upload(images.get(i).path, 1);
                     }
 
@@ -256,7 +257,7 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
             if (data != null && requestCode == REQUEST_CODE_PREVIEW) {
 
                 images = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_IMAGE_ITEMS);
-                ArrayList<String> urlImgs =  (ArrayList<String>) data.getSerializableExtra(ImagePicker.EXTRA_IMAGE_URL_ITEMS);
+                ArrayList<String> urlImgs = (ArrayList<String>) data.getSerializableExtra(ImagePicker.EXTRA_IMAGE_URL_ITEMS);
                 if (images != null) {
                     selImageList.clear();
                     selImageList.addAll(images);
@@ -274,15 +275,15 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
                     gridImageAdapter.notifyDataSetChanged();
 
                     //上传视频大小做限制
-                    if(type.equals("5")){
+                    if (type.equals("5")) {
                         //小视频 小于1分钟
-                        if(selectList != null && selectList.size() > 0 && selectList.get(0).getDuration() > 60 * 1000){
+                        if (selectList != null && selectList.size() > 0 && selectList.get(0).getDuration() > 60 * 1000) {
                             ToastUtil.show(mContext, "小视频需小于1分钟");
                             return;
                         }
-                    }else if(type.equals("3")){
+                    } else if (type.equals("3")) {
                         //长视频
-                        if(selectList != null && selectList.size() > 0 && selectList.get(0).getDuration() > 60 * 60 * 1000){
+                        if (selectList != null && selectList.size() > 0 && selectList.get(0).getDuration() > 60 * 60 * 1000) {
                             ToastUtil.show(mContext, "长视频需小于1小时");
                             return;
                         }
@@ -290,7 +291,7 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
 
                     //上传至七牛
                     showLoadingDialog();
-                    for(int i = 0; i < selectList.size(); i ++){
+                    for (int i = 0; i < selectList.size(); i++) {
                         upload(selectList.get(0).getPath(), 2);
                     }
 
@@ -327,22 +328,26 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
                 .build();
         UploadManager uploadManager = new UploadManager(config);
 
-        uploadManager.put(fileUrl, null, App.QiniuToken, new UpCompletionHandler() {
+        String key = fileUrl.substring(fileUrl.lastIndexOf("\\") + 1);
+
+        Log.e("DOAING", key);
+
+        uploadManager.put(fileUrl, key, App.QiniuToken, new UpCompletionHandler() {
             @Override
             public void complete(String s, ResponseInfo responseInfo,
                                  JSONObject jsonObject) {
                 dismissLoadingDialog();
                 if (responseInfo.isOK()) {
 
-                    Log.e("qiniu-success", "s===" + s +"responseInfo===" + responseInfo + "jsonObject===" + jsonObject);
+                    Log.e("qiniu-success", "s===" + s + "responseInfo===" + responseInfo + "jsonObject===" + jsonObject);
 
                     try {
                         String upimg = jsonObject.getString("key");
 
                         imageurl = "http://" + "qiniuyun2.ctrlmedia.cn/" + upimg;
-                        if(uploadType == 1){
+                        if (uploadType == 1) {
                             imagelist.add(imageurl);
-                        }else{
+                        } else {
                             videolist.add(imageurl);
                         }
                         Log.e("qiniu-success-imageurl", "imageurl===" + imageurl);
@@ -351,7 +356,7 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
                     }
 
                 } else {
-                    Log.e("qiniu-failssss", "s===" + s +"responseInfo===" + responseInfo + "jsonObject===" + jsonObject);
+                    Log.e("qiniu-failssss", "s===" + s + "responseInfo===" + responseInfo + "jsonObject===" + jsonObject);
                 }
 
             }
@@ -517,39 +522,39 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
 
         String imageStr = "";
 
-        if(!StringUtils.isNullOrEmpty(type)){
-            if(type.equals("2")){
-                if(imagelist != null){
-                    if(imagelist.size() == 1){
-                        if(selImageList != null && selImageList.get(0) != null){
-                             int scale = selImageList.get(0).width / selImageList.get(0).height;
-                             if(scale < 0.75){
-                                 //图文-长图
-                                 type = "6";
-                             }
+        if (!StringUtils.isNullOrEmpty(type)) {
+            if (type.equals("2")) {
+                if (imagelist != null) {
+                    if (imagelist.size() == 1) {
+                        if (selImageList != null && selImageList.get(0) != null) {
+                            int scale = selImageList.get(0).width / selImageList.get(0).height;
+                            if (scale < 0.75) {
+                                //图文-长图
+                                type = "6";
+                            }
                         }
                     }
 
-                    for (int i = 0; i < imagelist.size(); i ++){
+                    for (int i = 0; i < imagelist.size(); i++) {
                         imageStr += imagelist.get(i);
-                        if(imagelist.size() -1 != i){
+                        if (imagelist.size() - 1 != i) {
                             imageStr += ",";
                         }
                     }
                 }
 
-            }else{
-                for (int i = 0; i < videolist.size(); i ++){
+            } else {
+                for (int i = 0; i < videolist.size(); i++) {
                     imageStr += videolist.get(i);
-                    if(videolist.size() -1 != i){
+                    if (videolist.size() - 1 != i) {
                         imageStr += ",";
                     }
                 }
             }
 
-            if(type.equals("2") || type.equals("5") || type.equals("6")){
+            if (type.equals("2") || type.equals("5") || type.equals("6")) {
                 contentStr = uploadVideoContentEdt.getText().toString();
-            }else if(type.equals("3")){
+            } else if (type.equals("3")) {
                 contentStr = uploadVideoTitleEdt.getText().toString();
             }
 
@@ -569,12 +574,11 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
                 if (StringUtils.isNullOrEmpty(contentStr)) {
                     ToastUtil.show(mContext, "请输入文字");
                     return;
-                }else if(StringUtils.isNullOrEmpty(imageStr)){
+                } else if (StringUtils.isNullOrEmpty(imageStr)) {
                     ToastUtil.show(mContext, "请上传视频");
                     return;
                 }
             }
-
 
 
         }
@@ -582,9 +586,9 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
         Log.e(TAG, imageStr);
 
         showLoadingDialog();
-        ((App)getApplication()).getAppComponent()
+        ((App) getApplication()).getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getAddNewsResult("002","1.0","JSON",  App.getId(), contentStr , imageStr, type)
+                .getAddNewsResult("002", "1.0", "JSON", App.getId(), contentStr, imageStr, type)
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<BaseModel>() {  // 将数据绑定到实体类的操作
@@ -601,10 +605,10 @@ public class UploadVideoActivity extends BaseActvity implements ImagePickerAdapt
                     public void onNext(BaseModel baseModel) {
                         dismissLoadingDialog();
 
-                        if(baseModel != null && baseModel.getCode().equals("000")){
+                        if (baseModel != null && baseModel.getCode().equals("000")) {
                             ToastUtil.show(UploadVideoActivity.this, baseModel.getDescription());
                             finish();
-                        }else{
+                        } else {
                             ToastUtil.show(UploadVideoActivity.this, baseModel.getDescription());
                         }
                     }

@@ -460,15 +460,5 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
     }
 
 
-    public interface ConsultationFragmentOpenDialogClickListener {
-        void agreementClick();//运营规范
-
-        void confirmClick();
-    }
-
-    public interface ConsultationFragmentActivateDialogClickListener {
-        void goActivateClick();
-    }
-
 
 }
