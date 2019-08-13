@@ -8,6 +8,7 @@ package com.application.tchapj.utils2.picture.tools;
  * data：2017/3/21
  */
 
+@Deprecated
 public class Constant {
     public final static String ACTION_AC_FINISH = "app.activity.finish";
 

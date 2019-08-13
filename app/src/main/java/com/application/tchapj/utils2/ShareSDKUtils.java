@@ -13,10 +13,8 @@ import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.sina.weibo.SinaWeibo;
 import cn.sharesdk.tencent.qq.QQ;
-import cn.sharesdk.tencent.qzone.QZone;
-import cn.sharesdk.wechat.favorite.WechatFavorite;
 import cn.sharesdk.wechat.friends.Wechat;
-import cn.sharesdk.wechat.moments.WechatMoments;
+
 
 /**
  * 作者：dell or Xiaomi Li
@@ -54,7 +52,7 @@ public class ShareSDKUtils {
      * @param PicUrl   图片
      * @param titleUrl title链接
      */
-    public static void shareQzone(String title, String content, String PicUrl, String titleUrl, PlatformActionListener mPlatformActionListener) {
+/*    public static void shareQzone(String title, String content, String PicUrl, String titleUrl, PlatformActionListener mPlatformActionListener) {
         QZone.ShareParams sp = new QZone.ShareParams();
         sp.setTitle(title);
         sp.setText(content);
@@ -66,7 +64,7 @@ public class ShareSDKUtils {
         qzone.setPlatformActionListener(mPlatformActionListener); // 设置分享事件回调
         // 执行图文分享
         qzone.share(sp);
-    }
+    }*/
 
     /**
      * QQ
@@ -98,6 +96,7 @@ public class ShareSDKUtils {
      * @param PicUrl
      * @param titleUrl
      */
+/*
     public static void shareWXF(String title, String content, String PicUrl, String titleUrl, PlatformActionListener mPlatformActionListener) {
         WechatFavorite.ShareParams sp = new WechatFavorite.ShareParams();
         sp.setTitle(title);
@@ -113,6 +112,7 @@ public class ShareSDKUtils {
         // 执行图文分享
         wxf.share(sp);
     }
+*/
 
 
     /**
@@ -123,7 +123,7 @@ public class ShareSDKUtils {
      * @param PicUrl
      * @param titleUrl
      */
-    public static void shareWXM(String title, String content, String PicUrl, String titleUrl, PlatformActionListener mPlatformActionListener) {
+ /*   public static void shareWXM(String title, String content, String PicUrl, String titleUrl, PlatformActionListener mPlatformActionListener) {
         WechatMoments.ShareParams sp = new WechatMoments.ShareParams();
         sp.setTitle(title);
         sp.setText(content);
@@ -138,7 +138,7 @@ public class ShareSDKUtils {
         // 执行图文分享
         wxm.share(sp);
     }
-
+*/
 
     /**
      * 微信

@@ -59,7 +59,7 @@ public class PasswordLoginFragment extends Fragment {
         mBtnSignIn = view.findViewById(R.id.login_btn_signIn);
         mTvRegister = view.findViewById(R.id.login_tv_register);
         initListener();
-        mEdtUserName.setText("15130514306");
+        mEdtUserName.setText("15610170241");
         mEdtUserPass.setText("123456");
 
 

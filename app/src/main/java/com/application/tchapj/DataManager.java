@@ -11,10 +11,13 @@ import android.util.Log;
 import com.application.tchapj.bean.MemberInfo;
 import com.application.tchapj.bean.UserInfo;
 import com.application.tchapj.login.bean.LoginResult;
+import com.application.tchapj.my.bean.AlipayPrivateKeyBean;
 import com.application.tchapj.utils2.share.SharedPreferencesUtils;
+import com.application.tchapj.widiget.AopUtils;
 
 
 import java.util.HashMap;
+import java.util.Map;
 
 import rx.Observer;
 import rx.Subscriber;
@@ -210,7 +213,7 @@ public class DataManager {
                             if ("000".equals(memberInfo.getCode()) && memberInfo.getData() != null) {
 
                                 //实名认证信息
-                                getDataManager().setMetaDataById(R.string.identity, memberInfo.getData().getIdentity(),true);
+                                getDataManager().setMetaDataById(R.string.identity, memberInfo.getData().getIdentity(), true);
 
                                 //用户名
                                 getDataManager().setMetaDataById(R.string.realname, memberInfo.getData().getRealname(), true);
@@ -248,15 +251,15 @@ public class DataManager {
                                 setMetaDataById(R.string.lingState, memberInfo.getData().getLingState(), true);
 
                                 //媒体
-                                setMetaDataById(R.string.mtState, "2",true);
+                                setMetaDataById(R.string.mtState, "2", true);
                                 // setMetaDataById(R.string.mtState,memberInfo.getData().getMtState());
 
                                 //名人
-                                setMetaDataById(R.string.mrState, "2",true);
+                                setMetaDataById(R.string.mrState, "2", true);
                                 // setMetaDataById(R.string.mtState,memberInfo.getData().getMrState());
 
                                 //维护白影
-                                setMetaDataById(R.string.isAuthor,memberInfo.getData().getIsAuthor(),true);
+                                setMetaDataById(R.string.isAuthor, memberInfo.getData().getIsAuthor(), true);
 
 
                                 if (upDataListener != null) {
@@ -312,14 +315,14 @@ public class DataManager {
                     public void onError(Throwable e) {
 
                         loginListener.login(false);
+                        //  release();
 
                     }
 
                     @Override
                     public void onNext(LoginResult loginResultBean) {
 
-                        Intent intent = new Intent(ACTION_LOGIN);
-                        intent.putExtra("description", loginResultBean.getDescription());
+
                         if ("000".equals(loginResultBean.getCode()) && loginResultBean.getData() != null) {
 
                             UserInfo loginInfoBean = loginResultBean.getData().getLoginInfo();
@@ -332,29 +335,58 @@ public class DataManager {
                             getDataManager().setMetaDataById(R.string.id, loginInfoBean.getId(), true);
 
 
-                            getDataManager().setMetaDataById(R.string.nickName, loginInfoBean.getNick_name());
-
-                            Log.e("DOAING", loginInfoBean.getNick_name() + "?????");
-                            //支付宝绑定信息
-                            getDataManager().setMetaDataById(R.string.alipay, loginInfoBean.getAlipayId(), true);
+                            getDataManager().setMetaDataById(R.string.city, loginInfoBean.getCity());
 
                             //手机号
                             getDataManager().setMetaDataById(R.string.telephone, loginInfoBean.getMobile(), true);
 
-                            //用户名
-                            getDataManager().setMetaDataById(R.string.realname, loginInfoBean.getName(), true);
-
-                            getDataManager().setMetaDataById(R.string.headimgurl, loginInfoBean.getHeadimgurl());
-
-
-                            intent.putExtra("permission", true);
 
                             //登录成功刷新所有缓存数据
                             disposeMember(null);
 
                             loginListener.login(true);
+
+                            //去拿支付宝的私钥
+
+                            Map<String, String> map = new HashMap<>();
+                            map.put("appKey", "002");
+                            map.put("v", "1.0");
+                            map.put("format", "JSON");
+                            String sign1 = AopUtils.sign(map, "abc");
+
+                            // 观察者被观察者模式
+                            // 得到根接口路径
+                            application.getAppComponent()
+                                    .getAPIService() // 所有接口对象
+                                    .getAlipayPrivateKeyBeanResult("002", "1.0", sign1, "JSON") // 得到登录接口
+                                    .subscribeOn(Schedulers.io()) // 订阅方式
+                                    .observeOn(AndroidSchedulers.mainThread()) // 指定线程
+                                    .subscribe(new Subscriber<AlipayPrivateKeyBean>() {  // 将数据绑定到实体类的操作
+                                        @Override
+                                        public void onCompleted() {
+
+                                        }
+
+                                        @Override
+                                        public void onError(Throwable e) {
+
+                                        }
+
+                                        @Override // 得到数据
+                                        public void onNext(AlipayPrivateKeyBean alipayPrivateKeyBean) {
+
+                                            DataManager.getDataManager().setMetaDataById(R.string.RSA2_PRIVATE, alipayPrivateKeyBean.getData().getPrivatekey());
+                                           Log.e("Response:", alipayPrivateKeyBean.getData().getPrivatekey());
+
+                                        }
+                                    });
+
+
+
                         } else {
                             loginListener.login(false);
+
+                            release();
 
                         }
 
@@ -375,15 +407,8 @@ public class DataManager {
     @SuppressLint("CommitPrefEdits")
     public void release() {
 
-        if (map != null) {
-            map.clear();
-        }
-
-        if (sharedPreferences != null) {
-            sharedPreferences.edit().clear().apply();
-        }
-
-
+        map.clear();
+        sharedPreferences.edit().clear().apply();
     }
 
     public interface UpDataListener {

@@ -426,6 +426,10 @@
     <string name="qqId" >qqId</string>
     <string name="attentions" >attentions</string>
     <string name="fans" >fans</string>
+    <string name="province" >province</string>
+
+    <string name="city" >city</string>
+
 
     <string name="lingState" >lingState</string>
 

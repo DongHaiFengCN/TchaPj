@@ -493,9 +493,8 @@ public class MyMoneyActivity extends BaseMvpActivity<IMoneyView, MoneyPresenter>
 
                         Map<String, String> authInfoMap = OrderInfoUtil2_0.buildAuthInfoMap(PID, APPID, TARGET_ID, true);
                         String info = OrderInfoUtil2_0.buildOrderParam(authInfoMap);
-                        //String privateKey = SharedPreferences.getInstance().getString(getString(R.string.RSA2_PRIVATE), "");
-
                         String privateKey = getDataManager().quickGetMetaData(R.string.RSA2_PRIVATE, String.class);
+
                         if ("".equals(privateKey)) {
                             Toast.makeText(MyMoneyActivity.this, "缺失关键参数！", Toast.LENGTH_SHORT).show();
                             return;

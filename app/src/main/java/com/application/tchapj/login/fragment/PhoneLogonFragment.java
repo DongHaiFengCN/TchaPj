@@ -40,6 +40,7 @@ import rx.schedulers.Schedulers;
 import static com.application.tchapj.DataManager.getDataManager;
 import static com.application.tchapj.utils2.Verification.loadSMS;
 import static com.application.tchapj.utils2.Verification.verifyTel;
+import static com.application.tchapj.utils2.picture.tools.VoiceUtils.release;
 
 /**
  * Created by 安卓开发 on 2018/7/30.
@@ -124,6 +125,7 @@ public class PhoneLogonFragment extends Fragment {
                     Toast.makeText(getContext(), "请输入手机号", Toast.LENGTH_SHORT).show();
                 }
 
+
                 //获取验证码
                 ((App) (getActivity().getApplication()))
                         .getAppComponent()
@@ -175,6 +177,8 @@ public class PhoneLogonFragment extends Fragment {
                     return;
                 }
 
+                //getDataManager().release();
+
                 ((App) (getActivity().getApplication()))
                         .getAppComponent()
                         .getAPIService() // 所有接口对象
@@ -190,7 +194,7 @@ public class PhoneLogonFragment extends Fragment {
                             @Override
                             public void onError(Throwable e) {
 
-                                Toast.makeText(getActivity(), "获取验证码失败！", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "登录失败！", Toast.LENGTH_SHORT).show();
 
                             }
 
@@ -236,6 +240,27 @@ public class PhoneLogonFragment extends Fragment {
     }
 
     private void Login(final String type) {
+
+       // getDataManager().release();
+
+   /*     Platform plat = ShareSDK.getPlatform(QQ.NAME);
+        plat.removeAccount(true); //移除授权状态和本地缓存，下次授权会重新授权
+        plat.SSOSetting(false); //SSO授权，传false默认是客户端授权，没有客户端授权或者不支持客户端授权会跳web授权
+        plat.setPlatformActionListener(this);//授权回调监听，监听oncomplete，onerror，oncancel三种状态
+        if(plat.isClientValid()){
+            //判断是否存在授权凭条的客户端，true是有客户端，false是无
+        }
+        if(plat.isAuthValid()){
+//判断是否已经存在授权状态，可以根据自己的登录逻辑设置
+            Toast.makeText(this, "已经授权过了", 0).show();
+            return;
+        }
+        ShareSDK.setActivity(this);//抖音登录适配安卓9.0
+        plat.showUser(null);    //要数据不要功能，主要体现在不会重复出现授权界面
+
+
+        */
+
 
         final Platform plat = ShareSDK.getPlatform(type);
 
@@ -318,7 +343,7 @@ public class PhoneLogonFragment extends Fragment {
         }
 
         //抖音登录适配安卓9.0
-        //ShareSDK.setActivity(getActivity());
+        ShareSDK.setActivity(getActivity());
 
         //要数据不要功能，主要体现在不会重复出现授权界面
         plat.showUser(null);

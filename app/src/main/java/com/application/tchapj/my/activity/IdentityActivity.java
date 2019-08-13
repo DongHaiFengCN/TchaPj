@@ -247,7 +247,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
             @Override
             public void onClick(View v) {
 
-                if ("2".equals(darenState)) {
+                if (!"2".equals(darenState)) {
                     Intent intent = new Intent(IdentityActivity.this, DarenActivity.class);
                     startActivity(intent);
                 }

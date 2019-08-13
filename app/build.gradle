@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'org.greenrobot.greendao'
-
+apply plugin: 'com.mob.sdk'
 
 ext {
     isLibrary = false
@@ -114,15 +114,15 @@ android {
             //输出的为渠道包的名字，例如 xiaomi.apk
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
-                            def outFile = output.outputFile
-                            if (outFile != null && outFile.name.endsWith(".apk")) {
-                                def fileName = "${variant.productFlavors[0].name}" + ".apk"
-                                //def fileName = "微呼百应" + ".apk"
-                              //  output.outputFile = new File(outFile.parent, fileName);
+                    def outFile = output.outputFile
+                    if (outFile != null && outFile.name.endsWith(".apk")) {
+                        def fileName = "${variant.productFlavors[0].name}" + ".apk"
+                        //def fileName = "微呼百应" + ".apk"
+                        //  output.outputFile = new File(outFile.parent, fileName);
 
-                                outputFileName = fileName;
-                            }
-                        }
+                        outputFileName = fileName;
+                    }
+                }
 
             }
 
@@ -308,16 +308,16 @@ dependencies {
     api 'com.github.florent37:viewanimator:1.0.5'
     api files('src/jniLibs/BaiduLBS_Android.jar')
 
-    api files('libs/MobCommons-2017.1024.1907.jar')
-    api files('libs/MobTools-2017.1024.1907.jar')
-    api files('libs/ShareSDK-Core-3.1.1.jar')
-    api files('libs/ShareSDK-QQ-3.1.1.jar')
-    api files('libs/ShareSDK-QZone-3.1.1.jar')
-    api files('libs/ShareSDK-SinaWeibo-3.1.1.jar')
-    api files('libs/ShareSDK-Wechat-3.1.1.jar')
-    api files('libs/ShareSDK-Wechat-Core-3.1.1.jar')
-    api files('libs/ShareSDK-Wechat-Favorite-3.1.1.jar')
-    api files('libs/ShareSDK-Wechat-Moments-3.1.1.jar')
+    /*   api files('libs/MobCommons-2017.1024.1907.jar')
+       api files('libs/MobTools-2017.1024.1907.jar')
+       api files('libs/ShareSDK-Core-3.1.1.jar')
+       api files('libs/ShareSDK-QQ-3.1.1.jar')
+       api files('libs/ShareSDK-QZone-3.1.1.jar')
+       api files('libs/ShareSDK-SinaWeibo-3.1.1.jar')
+       api files('libs/ShareSDK-Wechat-3.1.1.jar')
+       api files('libs/ShareSDK-Wechat-Core-3.1.1.jar')
+       api files('libs/ShareSDK-Wechat-Favorite-3.1.1.jar')
+       api files('libs/ShareSDK-Wechat-Moments-3.1.1.jar')*/
 
     api 'com.tencent.sonic:sdk:2.0.0'
     api 'com.baidu.mobstat:mtj-sdk:latest.integration'//百度统计
@@ -328,9 +328,10 @@ dependencies {
 
     //annotationProcessor 'fm.jiecao:jiecaovideoplayer:5.5'//视频tab页-视频播放
 }
-/*MobSDK {
-    appKey "d580ad56b4b5"
-    appSecret "7fcae59a62342e7e2759e9e397c82bdd"
+/*
+MobSDK {
+    appKey "2852eb4cb9e6c"
+    appSecret "01d8b4243867d3ea8e7b2cbbea21df9f"
 
     ShareSDK {
         devInfo {
@@ -343,18 +344,85 @@ dependencies {
             Wechat {
                 appId "wxff85d5cc9dcfe1eb"
                 appSecret "7b3f049ba3d2651848e7e7d0ff6015fc"
+                Enable = true
+                shareByAppClient true
             }
+            WechatMoments{
+                appId "wxff85d5cc9dcfe1eb"
+                appSecret "7b3f049ba3d2651848e7e7d0ff6015fc"
+                Enable = true
+                shareByAppClient true
+            }
+
             QQ {
                 appId "1107929182"
                 appKey "oZjIKR5CdqoLlXq2"
                 shareByAppClient true
             }
+            QZone{
+                appId "1107929182"
+                appKey "oZjIKR5CdqoLlXq2"
+                shareByAppClient true
+            }
+
             WechatMoments {
                 appKey "wxff85d5cc9dcfe1eb"
                 appSecret "7b3f049ba3d2651848e7e7d0ff6015fc"
                 callbackUri "https://mob.com"
+                Enable = true
+                shareByAppClient true
             }
         }
     }
 
-}*/
+}
+*/
+
+
+MobSDK {
+    appKey "d580ad56b4b5"
+    appSecret "7fcae59a62342e7e2759e9e397c82bdd"
+
+   ShareSDK {
+        devInfo {
+            SinaWeibo {
+                appKey "1490494185"
+                appSecret "0f1fa449af32f75b1a3704775b029eac"
+                callbackUri "http://www.sharesdk.cn"
+                shareByAppClient true
+            }
+            Wechat {
+                appId "wxff85d5cc9dcfe1eb"
+                appSecret "7b3f049ba3d2651848e7e7d0ff6015fc"
+                Enable = true
+                shareByAppClient true
+            }
+            WechatMoments{
+                appId "wxff85d5cc9dcfe1eb"
+                appSecret "7b3f049ba3d2651848e7e7d0ff6015fc"
+                Enable = true
+                shareByAppClient true
+            }
+
+            QQ {
+                appId "1107929182"
+                appKey "oZjIKR5CdqoLlXq2"
+                shareByAppClient true
+            }
+            QZone{
+                appId "1107929182"
+                appKey "oZjIKR5CdqoLlXq2"
+                shareByAppClient true
+            }
+
+            WechatMoments {
+                appKey "wxff85d5cc9dcfe1eb"
+                appSecret "7b3f049ba3d2651848e7e7d0ff6015fc"
+                callbackUri "https://mob.com"
+                Enable = true
+                shareByAppClient true
+            }
+        }
+    }
+
+}

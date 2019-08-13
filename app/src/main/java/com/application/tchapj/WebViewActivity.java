@@ -453,7 +453,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
         oks.setImageUrl(ImgUrl);
         // url仅在微信（包括好友和朋友圈）中使用
-
+        
         Log.e("发出去的地址：", WebUrl);
         oks.setUrl(WebUrl);
         // comment是我对这条分享的评论，仅在人人网和QQ空间使用

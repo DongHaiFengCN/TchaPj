@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: me.drakeet.materialdialog:library:1.3.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/59d3749cf7ff842ff211472924058b1c/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/59d3749cf7ff842ff211472924058b1c/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/51a07d9d3f3702c37cb3aa37ab3c79bd/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.3.1.aar/51a07d9d3f3702c37cb3aa37ab3c79bd/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

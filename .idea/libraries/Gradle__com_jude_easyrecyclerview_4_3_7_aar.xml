@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.jude:easyrecyclerview:4.3.7@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/d121f1333b4ac6ca12dfcebc05edd0d3/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/44787b87171b73c702f45dfba7a275cc/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/d121f1333b4ac6ca12dfcebc05edd0d3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/d121f1333b4ac6ca12dfcebc05edd0d3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/44787b87171b73c702f45dfba7a275cc/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easyrecyclerview-4.3.7.aar/44787b87171b73c702f45dfba7a275cc/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -12,14 +12,14 @@ import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.tencent.qq.QQ;
 import cn.sharesdk.wechat.friends.Wechat;
-import cn.sharesdk.wechat.moments.WechatMoments;
+
 
 
 /**
  * Created by : Z_B on 2017/12/28.
  * Effect :  分享的工具类
  */
-
+@Deprecated
 public class SDKShareUtils {
 
     private static final String TAG = "SDKShareUtils";
@@ -121,7 +121,7 @@ public class SDKShareUtils {
      * @param textUrl
      * @param shareCallBackListener
      */
-    public static void singleShareShow(String shareType,
+  /*  public static void singleShareShow(String shareType,
                                        String title,
                                        String message,
                                        String imageUrl,
@@ -172,7 +172,7 @@ public class SDKShareUtils {
         });
         platform.share(shareParams);
 
-    }
+    }*/
 
 
     public static class ShareCallBackListener {

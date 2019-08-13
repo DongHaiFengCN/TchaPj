@@ -15,7 +15,6 @@ import cn.sharesdk.sina.weibo.SinaWeibo;
 
 import cn.sharesdk.tencent.qzone.QZone;
 
-import cn.sharesdk.wechat.favorite.WechatFavorite;
 import cn.sharesdk.wechat.friends.Wechat;
 import cn.sharesdk.wechat.moments.WechatMoments;
 
@@ -56,10 +55,12 @@ public class PlatformAuthorizeUserInfoManager {
 		doAuthorize(moments);
 	}
 
+/*
 	public void wechatFavoriteAuthorize() {
 		Platform wechatFavorite = ShareSDK.getPlatform(WechatFavorite.NAME);
 		doAuthorize(wechatFavorite);
 	}
+*/
 
 	public void qqShareAuthorize() {
 //		Platform qqShare = ShareSDK.getPlatform(QQ.NAME);

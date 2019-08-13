@@ -88,9 +88,6 @@ public class MainActivity extends BaseActvity implements HomeFragment.HomeFragme
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     /*   Intent intent = new Intent(this, MingrenActivity.class);
-        startActivity(intent);*/
-
         // 动态读取权限
         if (Build.VERSION.SDK_INT >= 23) {
             verifyStoragePermissions(MainActivity.this);

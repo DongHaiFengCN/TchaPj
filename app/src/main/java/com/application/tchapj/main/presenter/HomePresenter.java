@@ -1,6 +1,8 @@
 package com.application.tchapj.main.presenter;
 
 import com.application.tchapj.App;
+import com.application.tchapj.DataManager;
+import com.application.tchapj.R;
 import com.application.tchapj.base.BaseModel;
 import com.application.tchapj.base.BaseMvpPresenter;
 import com.application.tchapj.main.bean.HomeCircleModel;
@@ -29,9 +31,9 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
     }
 
     // 轮播图
-    public void getHomeBanne(){
+    public void getHomeBanne() {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -39,28 +41,28 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getHomeBannerResult("002","1.0","","JSON") // 得到登录接口
+                .getHomeBannerResult("002", "1.0", "", "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<HomeTopData>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(HomeTopData homeTopDataBean) {
-                        LogUtils.d("Response:"+ homeTopDataBean);
+                        LogUtils.d("Response:" + homeTopDataBean);
 
-                        if(homeTopDataBean!=null){
-                            if(isViewAttached())
+                        if (homeTopDataBean != null) {
+                            if (isViewAttached())
                                 getView().onGetHomeBannerResult(homeTopDataBean); // 得到二层数据
                         }
                     }
@@ -68,9 +70,9 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
     }
 
     // 找名人
-    public void getHomePerson(){
+    public void getHomePerson() {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -78,28 +80,28 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getHomePersonResult("002","1.0","","JSON") // 得到登录接口
+                .getHomePersonResult("002", "1.0", "", "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<HomePerson>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(HomePerson homePersonBean) {
-                        LogUtils.d("Response:"+ homePersonBean);
+                        LogUtils.d("Response:" + homePersonBean);
 
-                        if(homePersonBean!=null){
-                            if(isViewAttached())
+                        if (homePersonBean != null) {
+                            if (isViewAttached())
                                 getView().onGetHomePersonResult(homePersonBean); // 得到二层数据
                         }
                     }
@@ -107,9 +109,9 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
     }
 
     // 找媒体
-    public void getHomeMediaList(){
+    public void getHomeMediaList() {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -117,28 +119,28 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getHomeMediaListResult("002","1.0","","JSON") // 得到登录接口
+                .getHomeMediaListResult("002", "1.0", "", "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<HomeMediaList>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(HomeMediaList homeMediaListBean) {
-                        LogUtils.d("Response:"+ homeMediaListBean);
+                        LogUtils.d("Response:" + homeMediaListBean);
 
-                        if(homeMediaListBean!=null){
-                            if(isViewAttached())
+                        if (homeMediaListBean != null) {
+                            if (isViewAttached())
                                 getView().onGetHomeMediaListResult(homeMediaListBean); // 得到二层数据
                         }
                     }
@@ -146,9 +148,9 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
     }
 
     // 找圈子
-    public void getHomeCircleModel(){
+    public void getHomeCircleModel() {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -156,37 +158,38 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getHomeCircleModelResult("002","1.0","","JSON") // 得到登录接口
+                .getHomeCircleModelResult("002", "1.0", "", "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<HomeCircleModel>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(HomeCircleModel homeCircleModelBean) {
-                        LogUtils.d("Response:"+ homeCircleModelBean);
+                        LogUtils.d("Response:" + homeCircleModelBean);
 
-                        if(homeCircleModelBean!=null){
-                            if(isViewAttached())
+                        if (homeCircleModelBean != null) {
+                            if (isViewAttached())
                                 getView().onGetHomeCircleModelResult(homeCircleModelBean); // 得到二层数据
                         }
                     }
                 });
     }
+
     // 七牛token
-    public void onGetQiniuResult(){
+    public void onGetQiniuResult() {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -194,26 +197,26 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getQiniuBeanResult("002","1.0","","JSON") // 得到登录接口
+                .getQiniuBeanResult("002", "1.0", "", "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<QiniuBean>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(QiniuBean qiniuBean) {
-                        LogUtils.d("Response:"+ qiniuBean);
-                        if(isViewAttached())
+                        LogUtils.d("Response:" + qiniuBean);
+                        if (isViewAttached())
                             getView().onGetQiniuBeanResult(qiniuBean); // 得到一层数据
 
                     }
@@ -221,9 +224,9 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
     }
 
     //获取支付宝私钥
-    public void onGetAlipayPrivateKeyBeanResult(){
+    public void onGetAlipayPrivateKeyBeanResult() {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -237,26 +240,28 @@ public class HomePresenter extends BaseMvpPresenter<IHomeView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getAlipayPrivateKeyBeanResult("002","1.0",sign1,"JSON") // 得到登录接口
+                .getAlipayPrivateKeyBeanResult("002", "1.0", sign1, "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<AlipayPrivateKeyBean>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(AlipayPrivateKeyBean alipayPrivateKeyBean) {
-                        com.application.tchapj.widiget.LogUtils.d("Response:"+ alipayPrivateKeyBean);
-                        if(isViewAttached())
+
+                        DataManager.getDataManager().setMetaDataById(R.string.RSA2_PRIVATE, alipayPrivateKeyBean.getData().getPrivatekey());
+                        com.application.tchapj.widiget.LogUtils.d("Response:" + alipayPrivateKeyBean);
+                        if (isViewAttached())
                             getView().onGetAlipayPrivateKeyBeanResult(alipayPrivateKeyBean); // 得到一层数据
 
                     }

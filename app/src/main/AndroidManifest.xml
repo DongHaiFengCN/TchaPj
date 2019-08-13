@@ -99,7 +99,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:allowBackup">
+        tools:replace="android:allowBackup,android:name">
 
         <receiver android:name=".utils2.download.NotificationCancelReceiver" />
 
@@ -570,20 +570,20 @@
 
         <!-- ShareSDK的activity -->
         <!--Mob_ShareSdk 所需Activity<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
-        <activity
+      <!--  <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
 
-            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            &lt;!&ndash; 调用新浪原生SDK，需要注册的回调activity &ndash;&gt;
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <!--qq分享-->
+        &lt;!&ndash;qq分享&ndash;&gt;
         <activity
             android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
             android:launchMode="singleTask"
@@ -598,8 +598,8 @@
             </intent-filter>
         </activity>
 
-        <!--//微信分享-->
-        <!--设置 android:noHistory="true"后，该Activity在statck中不留历史痕迹。默认的值是false。防止微信登录后在小米手机上有微呼百应app空进程-->
+        &lt;!&ndash;//微信分享&ndash;&gt;
+        &lt;!&ndash;设置 android:noHistory="true"后，该Activity在statck中不留历史痕迹。默认的值是false。防止微信登录后在小米手机上有微呼百应app空进程&ndash;&gt;
         <activity
             android:name="com.application.tchapj.wxapi.WXEntryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -607,22 +607,16 @@
             android:launchMode="singleTask"
             android:theme="@style/wx_login_style" />
 
-        <!--&gt;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+        &lt;!&ndash;&gt;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>&ndash;&gt;
 
-        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+        &lt;!&ndash; 填写您从Mob开发者后台中得到的Appkey和AppSecret <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<&ndash;&gt;
         <meta-data
             android:name="Mob-AppKey"
             android:value="2852eb4cb9e6c" />
         <meta-data
             android:name="Mob-AppSecret"
             android:value="01d8b4243867d3ea8e7b2cbbea21df9f" />
-        <!--&gt;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
-
-        <activity
-            android:name="com.tencent.connect.common.AssistActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-&gt;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 
         <!--&lt;!&ndash; ###################添加UmengAppkey###################### &ndash;&gt;
         <meta-data

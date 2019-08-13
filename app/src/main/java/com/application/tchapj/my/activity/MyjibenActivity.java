@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -27,6 +28,7 @@ import android.widget.Toast;
 import com.alipay.sdk.app.AuthTask;
 import com.application.tchapj.App;
 import com.application.tchapj.Constants;
+import com.application.tchapj.DataManager;
 import com.application.tchapj.R;
 import com.application.tchapj.alipay.AuthResult;
 import com.application.tchapj.alipay.OrderInfoUtil2_0;
@@ -201,14 +203,19 @@ public class MyjibenActivity extends BaseMvpActivity<IMyAlipayView, MyAlipayPres
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
 
-        UserInfo userInfo = SharedPreferencesUtils.getInstance().getUserInfo();
+        // UserInfo userInfo = SharedPreferencesUtils.getInstance().getUserInfo();
 
-        headimgurl = userInfo.getHeadimgurl();
-        nickName = userInfo.getNickName();
-        sex = userInfo.getSex();
-        city = userInfo.getCity();
-        birthday = userInfo.getBirthday();
+        //  headimgurl = userInfo.getHeadimgurl();
+        //  nickName = userInfo.getNickName();
+        //  sex = userInfo.getSex();
+        //  city = userInfo.getCity();
+        //   birthday = userInfo.getBirthday();
 
+        headimgurl = DataManager.getDataManager().quickGetMetaData(R.string.headimgurl, String.class);
+        nickName = DataManager.getDataManager().quickGetMetaData(R.string.nickName, String.class);
+        sex = DataManager.getDataManager().quickGetMetaData(R.string.sex, String.class);
+        city = DataManager.getDataManager().quickGetMetaData(R.string.province, String.class);
+        birthday = DataManager.getDataManager().quickGetMetaData(R.string.birthday, String.class);
         toolbarHelper.setTitle("基本资料");
 
     }
@@ -262,9 +269,9 @@ public class MyjibenActivity extends BaseMvpActivity<IMyAlipayView, MyAlipayPres
 
         nicheng_iv.setText(nickName);
 
-        if(sex != null && sex.equals("1")){
+        if (sex != null && sex.equals("m")) {
             xingbie_iv.setText("男");
-        }else {
+        } else {
             xingbie_iv.setText("女");
         }
 
@@ -396,7 +403,7 @@ public class MyjibenActivity extends BaseMvpActivity<IMyAlipayView, MyAlipayPres
                     @Override
                     public void onItemPicked(int index, String item) {
                         sex = index + 1 + "";
-                        Log.e("qiniu++++", "complete: " + index+item);
+                        Log.e("qiniu++++", "complete: " + index + item);
                         xingbie_iv.setText(item);
                     }
                 });
@@ -504,7 +511,7 @@ public class MyjibenActivity extends BaseMvpActivity<IMyAlipayView, MyAlipayPres
 
         if ("000".equals(qiniuBean.getCode())) {
             qiniuBeans = qiniuBean.getData();
-            App.QiniuToken =qiniuBeans.getUploadToken();
+            App.QiniuToken = qiniuBeans.getUploadToken();
         }
     }
 

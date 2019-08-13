@@ -150,6 +150,8 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
         user_id = getDataManager().quickGetMetaData(R.string.id, String.class);
 
 
+        Log.e("DOAING","NICK_NAME"+nickName);
+
         if("".equals(nickName)&&"".equals(user_id)){
             my_logon_tv.setText("点击登录");
             my_logon_tv.setClickable(true);
