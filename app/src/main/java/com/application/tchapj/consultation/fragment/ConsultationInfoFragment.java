@@ -59,11 +59,12 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static com.application.tchapj.DataManager.getDataManager;
 import static com.application.tchapj.utils.SizeUtil.dip2px;
 
 
 // 发现信息页面
-public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoView, ConsultationInfoPresenter> implements IConsultationInfoView ,ConsultationInfoAdapter.ClickItemListener{
+public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoView, ConsultationInfoPresenter> implements IConsultationInfoView, ConsultationInfoAdapter.ClickItemListener {
 
     String TYPE = "TYPE";
     int mPosition;
@@ -109,7 +110,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
 
     private HashMap<Integer, Long> mLastTimes = new HashMap<>();//上次点赞时间。key是position
 
-    public enum  FROM_TYPE{
+    public enum FROM_TYPE {
         CONTENT_MANAGER_ACTIVITY,
         CONSULTATION_FRAGMENT
     }
@@ -141,9 +142,9 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
         layoutManager = new LinearLayoutManager(App.getContext());
         consultation_recyclerview.setLayoutManager(layoutManager);
 
-        consultationInfoAdapter = new ConsultationInfoAdapter(ConsultationInfoFragment.this,getContext(),this);
+        consultationInfoAdapter = new ConsultationInfoAdapter(ConsultationInfoFragment.this, getContext(), this);
 
-        if(fromType == FROM_TYPE.CONTENT_MANAGER_ACTIVITY.ordinal()){
+        if (fromType == FROM_TYPE.CONTENT_MANAGER_ACTIVITY.ordinal()) {
             consultationInfoAdapter.setCurrent_item_style(ConsultationInfoAdapter.ITEM_VIEW_STYLE.ITEM_VIEW_STYLE_SHOW_DELETE.ordinal());
         }
         consultationInfoAdapter.setClickItemListener(this);
@@ -165,7 +166,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
             @Override
             public void onRefresh(@NonNull RefreshLayout consultation_refreshLayout) {
                 pageNum = 1;
-                if (ConsultationInfo!=null){
+                if (ConsultationInfo != null) {
                     ConsultationInfo.clear();
                 }
                 getType();
@@ -219,31 +220,24 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
 
                 if (App.getId() == null) {
                     dialogs();
-                } else  {
-                    getPresenter().getInsertCommentsResult(content,App.getId(),news_id);
+                } else {
+                    getPresenter().getInsertCommentsResult(content, App.getId(), news_id);
                 }
 
                 CommentlogsBean item = new CommentlogsBean();
 
                 item.setContent(content);
 
-                if(SharedPreferencesUtils.getInstance().getNickName()!=null){
-                    item.setMemberId(SharedPreferencesUtils.getInstance().getNickName());
-                }else {
+                String nick = getDataManager().quickGetMetaData(R.string.nickName, String.class);
+                if ("".equals(nick)) {
                     item.setMemberId("微呼百应会员");
+                }else {
+                    item.setMemberId(nick);
                 }
 
                 updateAddComment(commentConfig.circlePosition, item);
                 updateEditTextBodyVisible(View.GONE, null);
 
-                /*CommentsBean commentsBean = null;
-                if (commentConfig.commentType == CommentConfig.Type.PUBLIC) { //自己发表评论
-                    commentsBean = DataTest.createPublicComment(content);
-                } else if (commentConfig.commentType == CommentConfig.Type.REPLY) {//回复别人的评论
-                    commentsBean = DataTest.createReplyComment(commentConfig.replyUser, content);
-                }
-                updateAddComment(commentConfig.circlePosition, commentsBean);
-                updateEditTextBodyVisible(View.GONE, null);*/
 
             }
         });
@@ -251,7 +245,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     }
 
     @Override // 回复评论
-    public void onItemButtonClick(CommentConfig config ,String id,int size) {
+    public void onItemButtonClick(CommentConfig config, String id, int size) {
         commentConfig = config;
         news_id = id;
         if (commentConfig.commentType == CommentConfig.Type.REPLY) {
@@ -263,7 +257,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     //删除文章
     @Override
     public void onDeleteArticleClick(final String news_Id, final int deletePosition) {
-        CommonDialogUtil.consultationDeleteDialog(getActivity(),  new DialogInterface.OnClickListener() {
+        CommonDialogUtil.consultationDeleteDialog(getActivity(), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 getPresenter().deleteNewsResult(news_Id);
                 ConsultationInfoFragment.this.deletePosition = deletePosition;
@@ -271,13 +265,12 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
         });
 
 
-
     }
 
     @Override
     public void onItemClick(int position) {
         //item点击事件，目前只有9图模式有设置
-        if(ConsultationInfo != null && position >= 0 && position < ConsultationInfo.size()){
+        if (ConsultationInfo != null && position >= 0 && position < ConsultationInfo.size()) {
             FindDetailActivity.start(getActivity(), ConsultationInfo.get(position), false);
         }
     }
@@ -285,7 +278,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     //9图模式、长视频 头像一栏点击事件
     @Override
     public void onHeadImgClick(MessageNews news) {
-        if(news != null){
+        if (news != null) {
             //名人/媒体  resourceId http://api.whby.ctrl.cn/weihubaiying/index.html?Id=000&memberId=72376893f972475988cd77fd468ce9bb
             //达人  tid weihubaiying/gerenQZ.html?Id=
 
@@ -304,7 +297,6 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
             intent.putExtra(WebViewActivity.TITLE, "");
             startActivity(intent);
         }
-
 
 
     }
@@ -346,19 +338,19 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     }
 
     // 判断fragment类型
-    private void getType(){
-        if(fromType == FROM_TYPE.CONSULTATION_FRAGMENT.ordinal()){
+    private void getType() {
+        if (fromType == FROM_TYPE.CONSULTATION_FRAGMENT.ordinal()) {
             //发现 tab页
-            if (type.equals("推荐")){
-                getPresenter().getConsultationResultAll(pageNum+"",pageSize+"");
+            if (type.equals("推荐")) {
+                getPresenter().getConsultationResultAll(pageNum + "", pageSize + "");
                 //getPresenter().getConsultationResult("0",pageNum+"",pageSize+"");
-            }else {
-                getPresenter().getConsultationResult(type,pageNum+"",pageSize+"");
+            } else {
+                getPresenter().getConsultationResult(type, pageNum + "", pageSize + "");
                 Log.e("类型", type);
             }
-        }else{
+        } else {
             //内容管理-我的资讯列表
-            getPresenter().getUserNewsList(App.getId(), type, pageNum+"",pageSize+"");
+            getPresenter().getUserNewsList(App.getId(), type, pageNum + "", pageSize + "");
 
         }
 
@@ -373,16 +365,16 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     public void onGetConsultationInfoResultAll(ConsultationNewsModel consultationNewsModel) {
 
         if ("000".equals(consultationNewsModel.getCode())) {
-            if (pageNum==1){
+            if (pageNum == 1) {
                 ConsultationInfo = consultationNewsModel.getData().getNews();
-            }else{
+            } else {
                 ConsultationInfo.addAll(consultationNewsModel.getData().getNews());
             }
             consultationInfoAdapter.setData(ConsultationInfo);
-            if (consultation_refreshLayout.isEnableRefresh()){
+            if (consultation_refreshLayout.isEnableRefresh()) {
                 consultation_refreshLayout.finishRefresh();
             }
-            if (consultation_refreshLayout.isEnableLoadMore()){
+            if (consultation_refreshLayout.isEnableLoadMore()) {
                 consultation_refreshLayout.finishLoadMore();
             }
         }
@@ -392,16 +384,16 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     public void onGetConsultationInfoResult(ConsultationNewsModel consultationNewsModel) {
 
         if ("000".equals(consultationNewsModel.getCode())) {
-            if (pageNum==1){
+            if (pageNum == 1) {
                 ConsultationInfo = consultationNewsModel.getData().getNews();
-            }else{
+            } else {
                 ConsultationInfo.addAll(consultationNewsModel.getData().getNews());
             }
             consultationInfoAdapter.setData(ConsultationInfo);
-            if (consultation_refreshLayout.isEnableRefresh()){
+            if (consultation_refreshLayout.isEnableRefresh()) {
                 consultation_refreshLayout.finishRefresh();
             }
-            if (consultation_refreshLayout.isEnableLoadMore()){
+            if (consultation_refreshLayout.isEnableLoadMore()) {
                 consultation_refreshLayout.finishLoadMore();
             }
         }
@@ -411,15 +403,15 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     @Override
     public void onGetUserModelResult(UserModel userModelBean) {
 
-       // SharedPreferencesUtils.getInstance().setNickName(userModelBean.getData());
+        // SharedPreferencesUtils.getInstance().setNickName(userModelBean.getData());
     }
 
     //删除文章结果
     @Override
     public void onDeleteNewsRespon(BaseModel baseModel) {
-        if(baseModel != null && baseModel.getCode().equals("000")){
+        if (baseModel != null && baseModel.getCode().equals("000")) {
             ToastUtil.show(getActivity(), "删除成功");
-            if(deletePosition >= 0){
+            if (deletePosition >= 0) {
                 ConsultationInfo.remove(deletePosition);
                 consultationInfoAdapter.notifyDataSetChanged();
             }
@@ -463,10 +455,10 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     public void onError(Throwable e) {
         LogUtils.w(e);
 
-        if (consultation_refreshLayout.isEnableRefresh()){
+        if (consultation_refreshLayout.isEnableRefresh()) {
             consultation_refreshLayout.finishRefresh();
         }
-        if (consultation_refreshLayout.isEnableLoadMore()){
+        if (consultation_refreshLayout.isEnableLoadMore()) {
             consultation_refreshLayout.finishLoadMore();
         }
     }
@@ -507,7 +499,7 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
                 mKeyboardStateListeners = new ArrayList<OnSoftKeyboardStateChangedListener>();
                 //如果屏幕高度和Window可见区域高度差值大于整个屏幕高度的1/3，则表示软键盘显示中，否则软键盘为隐藏状态。
                 int heightDifference = screenHeight - (r.bottom - r.top);
-                boolean isKeyboardShowing = heightDifference > screenHeight/3;
+                boolean isKeyboardShowing = heightDifference > screenHeight / 3;
                 //如果之前软键盘状态为显示，现在为关闭，或者之前为关闭，现在为显示，则表示软键盘的状态发生了改变
                 if ((mIsSoftKeyboardShowing && !isKeyboardShowing) || (!mIsSoftKeyboardShowing && isKeyboardShowing)) {
                     mIsSoftKeyboardShowing = isKeyboardShowing;
@@ -540,10 +532,10 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
                     params2.height = dip2px(getContext(), 0);
                     editTextBodyLl.setLayoutParams(params2);
                     return;
-                }else {
+                } else {
                     RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) editTextBodyLl.getLayoutParams();
                     params.width = dip2px(getContext(), bodyLayout.getRootView().getWidth());
-                    params.height = dip2px(getContext(), heightDifference/3-50);
+                    params.height = dip2px(getContext(), heightDifference / 3 - 50);
                     editTextBodyLl.setLayoutParams(params);
 
                 }
@@ -660,9 +652,9 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
     public void updateAddPraise(int position) {
         LikelogsBean addItem = new LikelogsBean();
 
-        if(SharedPreferencesUtils.getInstance().getNickName()!=null){
+        if (SharedPreferencesUtils.getInstance().getNickName() != null) {
             addItem.setNickName(SharedPreferencesUtils.getInstance().getNickName());
-        }else {
+        } else {
             addItem.setNickName("微呼百应会员");
         }
 
