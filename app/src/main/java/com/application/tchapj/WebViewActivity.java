@@ -93,6 +93,8 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
     public static String SHOW_SHARE = "SHOW_SHARE";
     public static String SHOW_TITLE_BAR = "SHOW_TITLE_BAR";
 
+    public static final String head = "https:";
+
     private ChromeClientCallbackManager.ReceivedTitleCallback mCallback = new ChromeClientCallbackManager.ReceivedTitleCallback() {
         @Override
         public void onReceivedTitle(WebView view, String title) {
@@ -221,13 +223,13 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
     // 得到webView请求 URL 地址
     public String getUrl() {
 
-        if(getIntent().getStringExtra(URL_TYPE) != null && getIntent().getStringExtra(URL_TYPE).equals("All")){
+        if (getIntent().getStringExtra(URL_TYPE) != null && getIntent().getStringExtra(URL_TYPE).equals("All")) {
             //不需要拼接url
             Log.e("H5连接路径：", "url===A" + getIntent().getStringExtra(URL_KEY));
             return getIntent().getStringExtra(URL_KEY);
-        }else {
-            Log.e("H5连接路径：", "url===B"+ getIntent().getStringExtra(URL_KEY));
-            return Constants.h5zhengshiUrl +getIntent().getStringExtra(URL_KEY);
+        } else {
+            Log.e("H5连接路径：", "url===B" + getIntent().getStringExtra(URL_KEY));
+            return Constants.h5zhengshiUrl + getIntent().getStringExtra(URL_KEY);
         }
 
 
@@ -305,6 +307,27 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         public void shareTitleContentImgUrlWebUrl(String shareTitle, String Content, String ImgUrl, String WebUrl, String id) {
             Log.e("分享路径：", "titlesss=" + shareTitle + ";Contentsss=" + Content + ";ImgUrlsss=" + ImgUrl + ";WebUrlsss=" + WebUrl + ";IDsss=" + id);
             showShare(shareTitle, Content, ImgUrl, WebUrl);
+
+
+          /*  OnekeyShare oks = new OnekeyShare();
+            //关闭sso授权
+            oks.disableSSOWhenAuthorize();
+
+            // title标题，微信、QQ和QQ空间等平台使用
+            oks.setTitle("测试");
+            // titleUrl QQ和QQ空间跳转链接
+            oks.setTitleUrl("http://sharesdk.cn");
+            // text是分享文本，所有平台都需要这个字段
+            oks.setText("我是分享文本");
+            // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+            oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+            // url在微信、微博，Facebook等平台中使用
+            oks.setUrl("http://sharesdk.cn");
+            // comment是我对这条分享的评论，仅在人人网使用
+            oks.setComment("我是测试评论文本");
+            // 启动分享GUI
+            oks.show(WebViewActivity.this);*/
+
         }
 
         @JavascriptInterface
@@ -440,7 +463,84 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
 
     // 显示分享
     private void showShare(String shareTitle, String Content, String ImgUrl, String WebUrl) {
+
+
         OnekeyShare oks = new OnekeyShare();
+        //关闭sso授权
+        oks.disableSSOWhenAuthorize();
+
+        // title标题，微信、QQ和QQ空间等平台使用
+        oks.setTitle(shareTitle);
+        // titleUrl QQ和QQ空间跳转链接
+        oks.setTitleUrl(WebUrl);
+
+        // text是分享文本，所有平台都需要这个字段
+        oks.setText(Content);
+        String im = ImgUrl;
+
+        String[] line = im.split(":");
+
+        im = head + line[1];
+
+        oks.setImageUrl(im);
+        oks.setSite(Content);
+        oks.setSiteUrl(WebUrl);
+
+        // url在微信、微博，Facebook等平台中使用
+        oks.setUrl(WebUrl);
+
+        oks.setCallback(new PlatformActionListener() {
+            @Override
+            public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
+
+                Log.e("DOAING", "成功");
+            }
+
+            @Override
+            public void onError(Platform platform, int i, Throwable throwable) {
+
+                Log.e("DOAING", "错误信息：" + throwable.getCause().getMessage());
+                Log.e("DOAING", "错误信息：" + throwable.getMessage());
+                Log.e("DOAING", "错误信息：" + throwable.getLocalizedMessage());
+            }
+
+            @Override
+            public void onCancel(Platform platform, int i) {
+                Log.e("DOAING", "取消");
+            }
+        });
+
+        // 启动分享GUI
+        oks.show(this);
+
+
+
+
+
+
+        /*OnekeyShare oks = new OnekeyShare();
+        //关闭sso授权
+        oks.disableSSOWhenAuthorize();
+
+        // title标题，微信、QQ和QQ空间等平台使用
+        oks.setTitle(shareTitle);
+        // titleUrl QQ和QQ空间跳转链接
+        oks.setTitleUrl(WebUrl);
+        // text是分享文本，所有平台都需要这个字段
+        oks.setText(Content);
+        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+        oks.setImagePath(ImgUrl);
+        // url在微信、微博，Facebook等平台中使用
+        oks.setUrl(WebUrl);
+
+        Log.e("DOAING", "外链的===" + WebUrl);
+        // comment是我对这条分享的评论，仅在人人网使用
+        // oks.setComment(Content);
+        // 启动分享GUI
+        oks.show(WebViewActivity.this);*/
+
+
+     /*   OnekeyShare oks = new OnekeyShare();
         //关闭sso授权-
         oks.disableSSOWhenAuthorize();
 
@@ -451,22 +551,22 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         // text是分享文本，所有平台都需要这个字段
         oks.setText(Content);
         // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-        oks.setImageUrl(ImgUrl);
+     //   oks.setImageUrl(ImgUrl);
         // url仅在微信（包括好友和朋友圈）中使用
         
         Log.e("发出去的地址：", WebUrl);
-        oks.setUrl(WebUrl);
+      //  oks.setUrl(WebUrl);
         // comment是我对这条分享的评论，仅在人人网和QQ空间使用
-        oks.setComment(Content);
+       // oks.setComment(Content);
         // site是分享此内容的网站名称，仅在QQ空间使用
-        oks.setSite(Content);
+      //  oks.setSite(Content);
         // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-        oks.setSiteUrl(WebUrl);
+      //  oks.setSiteUrl(WebUrl);
 
         // 设置自定义的外部回调
         oks.setCallback(new WebViewActivity.OneKeyShareCallback());
         // 启动分享GUI
-        oks.show(WebViewActivity.this);
+        oks.show(WebViewActivity.this);*/
 
     }
 
@@ -478,7 +578,8 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         @Override
         public void onComplete(Platform plat, int action,
                                HashMap res) {
-            System.out.println(res.toString());
+
+            Log.e("DOAING", "完成：" + res.toString());
             // 在这里添加分享成功的处理代码
             // 无参数调用
             mAgentWeb.getJsEntraceAccess().quickCallJs("shareSuccess");
@@ -487,6 +588,11 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         @Override
         public void onError(Platform plat, int action, Throwable t) {
             t.printStackTrace();
+
+            Log.e("DOAING", "失败：" + t.getLocalizedMessage());
+            Log.e("DOAING", "失败：" + t.getMessage());
+            Log.e("DOAING", "失败：" + t.getCause().getMessage());
+
             // 在这里添加分享失败的处理代码
             // 无参数调用
             mAgentWeb.getJsEntraceAccess().quickCallJs("shareError('" + "分享失败" + "')");
@@ -496,6 +602,8 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         @Override
         public void onCancel(Platform plat, int action) {
             // 在这里添加取消分享的处理代码
+
+            Log.e("DOAING", "取消：");
         }
     }
 

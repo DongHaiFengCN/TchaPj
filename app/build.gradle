@@ -9,6 +9,20 @@ ext {
 
 android {
 
+    signingConfigs {
+        debug {
+            storeFile file('/Users/dong/sqb.jks')
+            storePassword 'et13406962398'
+            keyAlias = 'key'
+            keyPassword 'et13406962398'
+        }
+        release {
+            storeFile file('/Users/dong/sqb.jks')
+            storePassword "et13406962398"
+            keyAlias "key"
+            keyPassword "et13406962398"
+        }
+    }
     compileSdkVersion 27
     buildToolsVersion '28.0.3'
 
@@ -383,7 +397,7 @@ MobSDK {
     appKey "d580ad56b4b5"
     appSecret "7fcae59a62342e7e2759e9e397c82bdd"
 
-   ShareSDK {
+    ShareSDK {
         devInfo {
             SinaWeibo {
                 appKey "1490494185"
@@ -397,7 +411,7 @@ MobSDK {
                 Enable = true
                 shareByAppClient true
             }
-            WechatMoments{
+            WechatMoments {
                 appId "wxff85d5cc9dcfe1eb"
                 appSecret "7b3f049ba3d2651848e7e7d0ff6015fc"
                 Enable = true
@@ -409,7 +423,7 @@ MobSDK {
                 appKey "oZjIKR5CdqoLlXq2"
                 shareByAppClient true
             }
-            QZone{
+            QZone {
                 appId "1107929182"
                 appKey "oZjIKR5CdqoLlXq2"
                 shareByAppClient true
