@@ -58,6 +58,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerManager;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 import static com.application.tchapj.DataManager.getDataManager;
 import static com.application.tchapj.utils.SizeUtil.dip2px;
@@ -154,6 +156,15 @@ public class ConsultationInfoFragment extends BaseMvpFragment<IConsultationInfoV
         divider.setDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.recycler_view_line_divider));
         consultation_recyclerview.addItemDecoration(divider);
         consultation_recyclerview.setAdapter(consultationInfoAdapter);
+
+        consultation_recyclerview.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                JCVideoPlayerStandard.releaseAllVideos();
+            }
+        });
 
         setViewTreeObserver();
 

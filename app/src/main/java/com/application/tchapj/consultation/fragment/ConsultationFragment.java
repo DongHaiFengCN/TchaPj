@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,6 +55,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import freemarker.template.utility.StringUtil;
 import rx.Subscription;
 import rx.functions.Action1;
@@ -130,6 +132,27 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
             }
         });
 
+        viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                JCVideoPlayerStandard.releaseAllVideos();
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+
+            }
+        });
+
         // 添加的
         mSubscription = RxBus.getDefault().toObserverable(ChangeAnswerEvent.class)
                 .subscribe(new Action1<ChangeAnswerEvent>() {
@@ -158,6 +181,9 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
                             viewPagerFragmentAdapter = new ViewPagerFragmentAdapter(getChildFragmentManager(), fragments, listTitle);
 
                             viewpager.setAdapter(viewPagerFragmentAdapter);
+
+
+
 
                             tabs.setupWithViewPager(viewpager);
                         }
@@ -241,7 +267,7 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
                     showDialog();
                 } else {
 
-                    final Dialog dialog = new Dialog(context,R.style.DialogStyle);
+                    final Dialog dialog = new Dialog(context, R.style.DialogStyle);
                     View view = LayoutInflater.from(context).inflate(R.layout.layout_dialog_consultation_verify_identity, null);
                     dialog.setContentView(view);
                     final RadioButton radioButton = view.findViewById(R.id.dialog_consultation_verify_identity_rdo_btn);
@@ -276,9 +302,9 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
                     radioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                         @Override
                         public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                            if(b){
+                            if (b) {
                                 confirmTv.setBackgroundResource(R.drawable.bg_dialog_consultation_verify_identity_confirm);
-                            }else{
+                            } else {
                                 confirmTv.setBackgroundResource(R.drawable.bg_dialog_consultation_verify_identity_confirm_normal);
                             }
                         }
@@ -288,7 +314,7 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
                         @Override
                         public void onClick(View view) {
                             dialog.dismiss();
-                            if(radioButton.isChecked()){
+                            if (radioButton.isChecked()) {
                                 Intent intent = new Intent(context, WebViewActivity.class);
                                 intent.putExtra(WebViewActivity.URL_KEY, Constants.ACCOUNT_NUMBER_AGREEMENT);
                                 intent.putExtra(WebViewActivity.TITLE, "");
@@ -310,10 +336,10 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
 
 
                 }
-            }else {
+            } else {
 
                 //进行身份认证
-                final Dialog dialog = new Dialog(context,R.style.DialogStyle);
+                final Dialog dialog = new Dialog(context, R.style.DialogStyle);
                 View view = LayoutInflater.from(context).inflate(R.layout.layout_dialog_consultation_verify_identity, null);
                 dialog.setContentView(view);
                 final TextView confirmTv = view.findViewById(R.id.dialog_consultation_verify_identity_confirm_tv);
@@ -355,8 +381,6 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
 
             }
         }
-
-
 
 
     }
@@ -458,7 +482,6 @@ public class ConsultationFragment extends BaseMvpFragment<IConsultationTobView, 
     public void onGetMemberInfo(final UserInfo userInfo) {
         SharedPreferencesUtils.getInstance().setUserInfo(userInfo);
     }
-
 
 
 }
