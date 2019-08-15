@@ -71,7 +71,7 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
     private int fromType = FROM_TYPE.TASK_FRAGMENT.ordinal();
     private String status;//任务分析 全部/进行中/已结束/审核中
 
-    public enum  FROM_TYPE{
+    public enum FROM_TYPE {
         TASK_ANALYSIS_ACTIVITY,//任务分析
         TASK_FRAGMENT//任务广场
     }
@@ -89,7 +89,7 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getArguments() != null){
+        if (getArguments() != null) {
             fromType = getArguments().getInt("from_type");//默认为任务广场
             status = getArguments().getString("status");
         }
@@ -107,7 +107,7 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
 
         taskSquareAdapter = new TaskSquareAdapter(getContext());
         task_square_rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        task_square_rv.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
+        task_square_rv.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         task_square_rv.setAdapter(taskSquareAdapter);
 
         initListener();
@@ -121,7 +121,7 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 pageNum = 1;
-                if (TaskSquareInfo!=null){
+                if (TaskSquareInfo != null) {
                     TaskSquareInfo.clear();
                 }
                 getListData();
@@ -141,16 +141,18 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
         taskSquareAdapter.setOnItemClickLitener(new TaskSquareAdapter.OnItemClickLitener() {
             @Override
             public void onItemClick(View view, int position) {
-                if(StringUtils.isNullOrEmpty(App.getId())){
+                if (StringUtils.isNullOrEmpty(App.getId())) {
                     CommonDialogUtil.showLoginDialog(getActivity());
-                } else{
-                    if(fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()){
+                } else {
+                    if (fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()) {
                         //任务分析
                         //H5的任务详情页
                         String url = Constants.MY_RELEASE_TASK_DETAIL_URL + TaskSquareInfo.get(position).getId();
                         WebViewActivity.start(getActivity(),
-                                "All", url,false, false);
-                    }else{
+                                "All", url, false, false);
+                    } else {
+
+                        Log.e("DOAING", "-------------------------");
                         presenter.getFriendReleaseData(App.getId(), TaskSquareInfo.get(position).getId());
                     }
 
@@ -167,10 +169,10 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
     }
 
     private void getListData() {
-        if(fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()){
-            getPresenter().getTaskAnalysis(App.getId(), status,pageNum+"",pageSize+"");
-        }else{
-            getPresenter().getTaskSquare(App.getId(),pageNum+"",pageSize+"");
+        if (fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()) {
+            getPresenter().getTaskAnalysis(App.getId(), status, pageNum + "", pageSize + "");
+        } else {
+            getPresenter().getTaskSquare(App.getId(), pageNum + "", pageSize + "");
         }
 
     }
@@ -198,17 +200,17 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
 
         if ("000".equals(taskSquareModel.getCode())) {
 
-            if (pageNum==1){
-                if(fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()){
+            if (pageNum == 1) {
+                if (fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()) {
                     TaskSquareInfo = taskSquareModel.getData().getTasks();
-                }else{
+                } else {
                     TaskSquareInfo = taskSquareModel.getData().getlTasks();
                 }
 
-            }else{
-                if(fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()){
+            } else {
+                if (fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()) {
                     TaskSquareInfo.addAll(taskSquareModel.getData().getTasks());
-                }else{
+                } else {
                     TaskSquareInfo.addAll(taskSquareModel.getData().getlTasks());
                 }
 
@@ -217,10 +219,10 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
             taskSquareAdapter.setData(TaskSquareInfo);
 
 
-            if (task_square_rl.isEnableRefresh()){
+            if (task_square_rl.isEnableRefresh()) {
                 task_square_rl.finishRefresh();
             }
-            if (task_square_rl.isEnableLoadMore()){
+            if (task_square_rl.isEnableLoadMore()) {
                 task_square_rl.finishLoadMore();
             }
         }
@@ -231,69 +233,71 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
     public void onGetFriendReleaseData(TaskSquareInfoModel friendReleaseBean) {
 
 
+        Log.e("DOAING", friendReleaseBean.getCode());
+
         if (TextUtils.equals(friendReleaseBean.getCode(), "000")) {
 
             TaskSquareInfoModel.TaskSquareInfoResult.TaskSquareInfo taskBean = friendReleaseBean.getData().getTask();
             String taskType = taskBean.getTaskType();//0是朋友圈,1是微博，2是抖音合拍，3是抖音原创，4是其他 ，5是朋友圈转发链接 6微视合拍 7微视原创
-            String taskstatus =friendReleaseBean.getData().getTaskstatus();//0:未领取 1已领取 2上传资料审核中 3通过 4未通过 Task_type=3时 1为已提交合作
+            String taskstatus = friendReleaseBean.getData().getTaskstatus();//0:未领取 1已领取 2上传资料审核中 3通过 4未通过 Task_type=3时 1为已提交合作
 
             if (TextUtils.equals(taskstatus, "0")) {
-                   if (taskType.equals("0")) {
-                    Intent intent = new Intent(getContext(), LeadTaskWechatActivity.class);
-                    intent.putExtra("ID", taskBean.getId());
-
-                       startActivity(intent);
-                    } else if (taskType.equals("1")) {
-                        Intent intent = new Intent(getContext(), FriendReleaseActivity.class);
-                        intent.putExtra("ID", taskBean.getId());
-                        Log.e("id",taskBean.getId());
-                       startActivity(intent);
-
-                    } else if (taskType.equals("5")){
-                        Intent intent = new Intent(getContext(), CollarTaskCircleFriendLinkActivity.class);
-                        intent.putExtra("ID", taskBean.getId());
-                        Log.e("id",taskBean.getId());
-                        startActivity(intent);
-
-                    } else if(taskType.equals("2")){
-
-                        Intent intent = new Intent(getContext(), TaskSquareDyGpActivity.class);
-                        intent.putExtra("ID", taskBean.getId());
-                        Log.e("id",taskBean.getId());
-                        startActivity(intent);
-                    }else if(taskType.equals("3")){
-
-                        Intent intent = new Intent(getContext(), TaskSquareDyYcActivity.class);
-                        intent.putExtra("ID", taskBean.getId());
-                        Log.e("id",taskBean.getId());
-                        startActivity(intent);
-                    }else if(taskType.equals("6")){
-                        Intent intent = new Intent(getContext(), TaskSquareWsGpActivity.class);
-                        intent.putExtra("ID", taskBean.getId());
-                        Log.e("id",taskBean.getId());
-                        startActivity(intent);
-                    }else if(taskType.equals("7")){
-
-                        Intent intent = new Intent(getContext(), TaskSquareWsYcActivity.class);
-                        intent.putExtra("ID", taskBean.getId());
-                        Log.e("id",taskBean.getId());
-                        startActivity(intent);
-                    }
-
-            } else if(TextUtils.equals(taskstatus, "1")){
                 if (taskType.equals("0")) {
                     Intent intent = new Intent(getContext(), LeadTaskWechatActivity.class);
                     intent.putExtra("ID", taskBean.getId());
 
                     startActivity(intent);
-                } else if(taskType.equals("3") || taskType.equals("7")){//3是抖音原创  7微视原创
+                } else if (taskType.equals("1")) {
+                    Intent intent = new Intent(getContext(), FriendReleaseActivity.class);
+                    intent.putExtra("ID", taskBean.getId());
+                    Log.e("id", taskBean.getId());
+                    startActivity(intent);
+
+                } else if (taskType.equals("5")) {
+                    Intent intent = new Intent(getContext(), CollarTaskCircleFriendLinkActivity.class);
+                    intent.putExtra("ID", taskBean.getId());
+                    Log.e("id", taskBean.getId());
+                    startActivity(intent);
+
+                } else if (taskType.equals("2")) {
+
+                    Intent intent = new Intent(getContext(), TaskSquareDyGpActivity.class);
+                    intent.putExtra("ID", taskBean.getId());
+                    Log.e("id", taskBean.getId());
+                    startActivity(intent);
+                } else if (taskType.equals("3")) {
+
+                    Intent intent = new Intent(getContext(), TaskSquareDyYcActivity.class);
+                    intent.putExtra("ID", taskBean.getId());
+                    Log.e("id", taskBean.getId());
+                    startActivity(intent);
+                } else if (taskType.equals("6")) {
+                    Intent intent = new Intent(getContext(), TaskSquareWsGpActivity.class);
+                    intent.putExtra("ID", taskBean.getId());
+                    Log.e("id", taskBean.getId());
+                    startActivity(intent);
+                } else if (taskType.equals("7")) {
+
+                    Intent intent = new Intent(getContext(), TaskSquareWsYcActivity.class);
+                    intent.putExtra("ID", taskBean.getId());
+                    Log.e("id", taskBean.getId());
+                    startActivity(intent);
+                }
+
+            } else if (TextUtils.equals(taskstatus, "1")) {
+                if (taskType.equals("0")) {
+                    Intent intent = new Intent(getContext(), LeadTaskWechatActivity.class);
+                    intent.putExtra("ID", taskBean.getId());
+
+                    startActivity(intent);
+                } else if (taskType.equals("3") || taskType.equals("7")) {//3是抖音原创  7微视原创
 
                     Intent intent = new Intent(getContext(), TaskSquareDyYcHzActivity.class);
                     intent.putExtra("ID", taskBean.getId());
-                   intent.putExtra("index","1");
+                    intent.putExtra("index", "1");
                     startActivity(intent);
 
-                }else {
+                } else {
 
                     Intent intent = new Intent(getContext(), UploadAuditActivity.class);
                     intent.putExtra("ID", taskBean.getId());
@@ -335,45 +339,45 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
 
                 }
 
-            }else if(TextUtils.equals(taskstatus, "2")){
+            } else if (TextUtils.equals(taskstatus, "2")) {
 
                 if (taskType.equals("0")) {
                     Intent intent = new Intent(getContext(), LeadTaskWechatActivity.class);
                     intent.putExtra("ID", taskBean.getId());
 
                     startActivity(intent);
-                } else if(taskType.equals("3") || taskType.equals("7")){
+                } else if (taskType.equals("3") || taskType.equals("7")) {
                     Intent intent = new Intent(getContext(), TaskSquareDyYcHzActivity.class);
                     intent.putExtra("ID", taskBean.getId());
-                    intent.putExtra("index","3");
+                    intent.putExtra("index", "3");
                     startActivity(intent);
 
-                }else{
+                } else {
                     Intent intent = new Intent(getContext(), TaskReviewprogressActivity.class);
                     startActivity(intent);
                 }
 
-            }else if(TextUtils.equals(taskstatus, "3")){
+            } else if (TextUtils.equals(taskstatus, "3")) {
                 //通过
                 if (taskType.equals("0")) {
                     Intent intent = new Intent(getContext(), LeadTaskWechatActivity.class);
                     intent.putExtra("ID", taskBean.getId());
 
                     startActivity(intent);
-                } else if (taskType.equals("5")){
+                } else if (taskType.equals("5")) {
                     //朋友圈转发链接
                     Intent intent = new Intent(getContext(), CollarTaskCircleFriendLinkActivity.class);
                     intent.putExtra("ID", taskBean.getId());
-                    Log.e("id",taskBean.getId());
+                    Log.e("id", taskBean.getId());
                     startActivity(intent);
 
-                }else{
+                } else {
                     Intent intent = new Intent(getContext(), TaskReviewfinishActivity.class);
-                    intent.putExtra("index","1");
+                    intent.putExtra("index", "1");
                     startActivity(intent);
                 }
 
-            }else if(TextUtils.equals(taskstatus, "4")){
+            } else if (TextUtils.equals(taskstatus, "4")) {
                 //未通过
                 if (taskType.equals("0")) {
                     Intent intent = new Intent(getContext(), LeadTaskWechatActivity.class);
@@ -381,12 +385,11 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
 
                     startActivity(intent);
 
-                }else{
+                } else {
                     Intent intent = new Intent(getContext(), TaskReviewfinishActivity.class);
-                    intent.putExtra("index","2");
+                    intent.putExtra("index", "2");
                     startActivity(intent);
                 }
-
 
 
             }

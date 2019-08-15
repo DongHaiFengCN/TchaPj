@@ -96,6 +96,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.application.tchapj.DataManager.getDataManager;
 import static com.application.tchapj.task.sonic.SonicJavaScriptInterface.PARAM_CLICK_TIME;
 /**
  * Create by zyy on 2019/4/23
@@ -566,8 +567,7 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
                 if(StringUtils.isNullOrEmpty(App.getId())){
                     CommonDialogUtil.showLoginDialog(this);
                 }else{
-                    if(SharedPreferencesUtils.getInstance().getUserInfo() != null && SharedPreferencesUtils.getInstance().getUserInfo().getLingState() != null
-                            && SharedPreferencesUtils.getInstance().getUserInfo().getLingState().equals("2")) {
+                    if("2".equals(getDataManager().quickGetMetaData(R.string.lingState,String.class))) {
                         submitTaskClick(leadTaskStatus);
 
                     }else{

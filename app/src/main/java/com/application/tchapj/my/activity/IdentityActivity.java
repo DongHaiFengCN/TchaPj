@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +37,7 @@ import com.application.tchapj.utils2.share.SharedPreferencesUtils;
 import com.application.tchapj.widiget.ToolbarHelper;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import static com.application.tchapj.DataManager.getDataManager;
 
@@ -41,8 +45,7 @@ import static com.application.tchapj.DataManager.getDataManager;
  * @author 董海峰
  * 身份管理业务界面
  */
-public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter>
-        implements IQiniuView {
+public class IdentityActivity extends AppCompatActivity {
 
     @BindView(R.id.item_daren_rl)
     RelativeLayout item_daren_rl;
@@ -94,48 +97,20 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
     private String wsState = "0";
     private int paddingTop = 16;
 
-    private QiniuBean.QiniuBeanResult qiniuBeans = new QiniuBean.QiniuBeanResult();
-
     @Override
-    protected void initToolbar(ToolbarHelper toolbarHelper) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        toolbarHelper.setTitle("身份管理");
-    }
+        setContentView(R.layout.activity_identity);
+        ButterKnife.bind(this);
 
-    @Override
-    public int getRootViewId() {
-        return R.layout.activity_identity;
-    }
-
-    @Override
-    public void initUI() {
-
-
-
-
-
-
-        getPresenter().onGetQiniuResult();
-
-        item_meiti_rl.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ("2".equals(mingrenState) || "1".equals(mingrenState)) {
 
-                    ToastUtil.show(IdentityActivity.this, "名人身份和媒体身份只能拥有一个");
-
-                } else {
-
-                    Intent intent = new Intent(IdentityActivity.this, MeitiActivity.class);
-                    startActivity(intent);
-                }
+                finish();
             }
         });
-        initView();
-    }
-
-    @Override
-    public void initData() {
 
     }
 
@@ -264,7 +239,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
                 if (!"2".equals(darenState)) {
                     Intent intent = new Intent(IdentityActivity.this, DarenActivity.class);
                     startActivity(intent);
-                }else {
+                } else {
                     Toast.makeText(IdentityActivity.this, "达人已认证", Toast.LENGTH_SHORT).show();
 
                 }
@@ -389,7 +364,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
                     Intent intent = new Intent(IdentityActivity.this, MingrenActivity.class);
                     startActivity(intent);
                 }
-               /* if (mingrenState.equals("0") || mingrenState.equals("3")) {
+                if (mingrenState.equals("0") || mingrenState.equals("3")) {
                     if (meitiState.equals("1") || meitiState.equals("2")) {
                         ToastUtil.show(IdentityActivity.this, "名人身份和媒体身份只能拥有一个");
                     } else {
@@ -399,7 +374,7 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
 
                 } else {
                     dialogs(mingrenState);
-                }*/
+                }
             }
         });
 
@@ -440,6 +415,21 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
             meiti_clv.setText2Color(0xffffffff);
         }
 
+        item_meiti_rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ("2".equals(mingrenState) || "1".equals(mingrenState)) {
+
+                    ToastUtil.show(IdentityActivity.this, "名人身份和媒体身份只能拥有一个");
+
+                } else {
+
+                    Intent intent = new Intent(IdentityActivity.this, MeitiActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
         smrz_clv.setPaddingTop(paddingTop);          // 距离角的边距
         if ("".equals(smState)) {
             smrz_clv.setFillColor(0xffa9a9a9); // 背景色
@@ -472,71 +462,6 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
 
             }
         });
-    }
-
-    @NonNull
-    @Override
-    public QiniuPresenter createPresenter() {
-        return new QiniuPresenter(getApp());
-    }
-
-    @Override
-    public void onGetQiniuBeanResult(QiniuBean qiniuBean) {
-
-        if ("000".equals(qiniuBean.getCode())) {
-            qiniuBeans = qiniuBean.getData();
-            App.QiniuToken = qiniuBeans.getUploadToken();
-        }
-    }
-
-    @Override
-    public void onGetUserModelResult(UserModel userModelBean) {
-        if (userModelBean != null && userModelBean.getCode().equals("000") && userModelBean.getData() != null) {
-            UserInfo userInfo = userModelBean.getData();
-
-            if (!StringUtils.isNullOrEmpty(userInfo.getLingState())) {
-                darenState = userInfo.getLingState();
-            }
-            if (!StringUtils.isNullOrEmpty(userInfo.getFaState())) {
-                guanggaozhuState = userInfo.getFaState();
-            }
-            if (!StringUtils.isNullOrEmpty(userInfo.getMrState())) {
-                mingrenState = userInfo.getMrState();
-            }
-            if (!StringUtils.isNullOrEmpty(userInfo.getMtState())) {
-                meitiState = userInfo.getMtState();
-            }
-
-            if (!StringUtils.isNullOrEmpty(userInfo.getDyState())) {
-                dyState = userInfo.getDyState();
-            }
-            if (!StringUtils.isNullOrEmpty(userInfo.getPyqState())) {
-                pyqState = userInfo.getPyqState();
-            }
-            if (!StringUtils.isNullOrEmpty(userInfo.getWbState())) {
-                wbState = userInfo.getWbState();
-            }
-            if (!StringUtils.isNullOrEmpty(userInfo.getWsState())) {
-                wsState = userInfo.getWsState();
-            }
-
-            initView();
-        }
-    }
-
-    @Override
-    public void showProgress() {
-
-    }
-
-    @Override
-    public void onCompleted() {
-
-    }
-
-    @Override
-    public void onError(Throwable e) {
-
     }
 
     //媒体、广告主、名人

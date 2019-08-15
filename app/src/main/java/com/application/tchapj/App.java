@@ -11,7 +11,6 @@ import com.application.tchapj.base.BaseBean;
 import com.application.tchapj.bean.HomeBean;
 import com.application.tchapj.bean.UserInfo;
 import com.application.tchapj.di.component.AppComponent;
-import com.application.tchapj.di.component.DaggerAppComponent;
 import com.application.tchapj.di.module.AppModule;
 import com.application.tchapj.http.APIService;
 import com.application.tchapj.main.bean.HomeCircleModel;
@@ -88,14 +87,14 @@ public class App extends Application {
 
     private static App instance;
     public static String ordernumber;
-
+/*
     public static String TaskApplyId; // 任务认证id
     public static String LingTaskStatus ="0"; // 达人资料身份认证
     public static String DyState; // 任务认证id
     public static String PyqState; // 任务认证id
     public static String WbState; // 任务认证id
     public static String WsState; // 微视达人认证id
-    public static String OtherState; // 其他达人认证id（达人认证的其他媒体资源）
+    public static String OtherState; // 其他达人认证id（达人认证的其他媒体资源）*/
 
     public static String alipay; // 支付宝状态0:未绑定 1:已绑定
 
@@ -161,7 +160,9 @@ public class App extends Application {
         MobSDK.init(this);
 
         // 接口的根路径
-        mAppComponent = DaggerAppComponent.builder().appModule(new AppModule(this,Constants.BASE_URL2)).build();
+      //  mAppComponent = DaggerAppComponent.builder().appModule(new AppModule(this,Constants.BASE_URL2)).build();
+
+        mAppComponent = new AppModule(this);
 
         // 问题整理
         NeverCrash.init(new NeverCrash.CrashHandler() {

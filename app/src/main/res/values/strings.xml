@@ -427,28 +427,38 @@
     <string name="attentions" >attentions</string>
     <string name="fans" >fans</string>
     <string name="province" >province</string>
-
     <string name="media" >media</string>
-
     <string name="city" >city</string>
 
 
     <string name="lingState" >lingState</string>
-
     <string name="birthday" >birthday</string>
     <string name="authState" >authState</string>
     <string name="headimgurl" >headimgurl</string>
 
 
-    <string name="taskApplyId" >taskApplyId</string>
-    <string name="dyState" >dyState</string>
-    <string name="wsState" >wsState</string>
 
+
+
+    <string name="taskApplyId" >taskApplyId</string>
+
+    <!--抖音-->
+    <string name="dyState" >dyState</string>
+    <!--微视频-->
+    <string name="wsState" >wsState</string>
+    <!--朋友圈-->
+    <string name="pyqState" >pyqState</string>
+    <!--微博-->
     <string name="wbState" >wbState</string>
+
+    <string name="otherState" >otherState</string>
+    <!--拒绝原因-->
+    <string name="refusal" >refusal</string>
+
 
     <!--广告主-->
     <string name="faState" >faState</string>
-    <string name="pyqState" >pyqState</string>
+
     <string name="mtState" >mtState</string>
 
     <string name="mrState" >mrState</string>

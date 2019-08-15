@@ -216,7 +216,11 @@ public class DataManager {
                             if ("000".equals(memberInfo.getCode()) && memberInfo.getData() != null) {
 
                                 //实名认证信息
-                               // getDataManager().setMetaDataById(R.string.identity, memberInfo.getData()., true);
+                                getDataManager().setMetaDataById(R.string.identity, memberInfo.getData().getRealName(), true);
+
+                                //任务id taskApplyId
+                                getDataManager().setMetaDataById(R.string.taskApplyId, memberInfo.getData().getTaskApplyId(), true);
+
 
                                 //用户名
                                 getDataManager().setMetaDataById(R.string.realname, memberInfo.getData().getRealName(), true);
@@ -262,6 +266,25 @@ public class DataManager {
                                 //维护白影
                                 setMetaDataById(R.string.isAuthor, memberInfo.getData().getIsAuthor(), true);
 
+
+                                //朋友圈
+                                setMetaDataById(R.string.pyqState,memberInfo.getData().getPyqState(),true);
+
+                                //微博
+                                setMetaDataById(R.string.wbState,memberInfo.getData().getWbState(),true);
+
+                                //抖音
+                                setMetaDataById(R.string.dyState,memberInfo.getData().getDyState(),true);
+
+                                //卫视
+                                setMetaDataById(R.string.wsState,memberInfo.getData().getWsState(),true);
+
+                                //其他
+                                setMetaDataById(R.string.otherState,memberInfo.getData().getOtherState());
+
+
+                                //拒绝原因
+                                setMetaDataById(R.string.refusal,memberInfo.getData().getRefusal());
 
                                 if (upDataListener != null) {
 
@@ -332,6 +355,7 @@ public class DataManager {
 
                             //memberId
                             getDataManager().setMetaDataById(R.string.id, loginInfoBean.getId(), true);
+
 
 
                             //手机号

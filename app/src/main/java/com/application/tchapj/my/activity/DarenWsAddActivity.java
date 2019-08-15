@@ -47,12 +47,14 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 /**
  * Created by Administrator on 2018\8\21 0021.
  */
 
 public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOnePresenter> implements IDarenOneView
-        , ImagePickerAdapter.OnRecyclerViewItemClickListener{
+        , ImagePickerAdapter.OnRecyclerViewItemClickListener {
 
 
     @BindView(R.id.ws_add_bjet)
@@ -78,16 +80,16 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
 
     private String Id;            // 领任务认证id
     private String MemberId;      // 用户id
-    private String catType ="2";  // 0 朋友圈 1 微博 2 抖音
+    private String catType = "2";  // 0 朋友圈 1 微博 2 抖音
     private String fans;          // 粉丝数
     private String nickName;      // 昵称
     private String price;         // 价格
     private String headimageUrl;  // 七牛图片路径
     private String province;      // 省份
     private String city;          // 城市
-    private String resourcesTypeId="0"; // 圈子分类
+    private String resourcesTypeId = "0"; // 圈子分类
     private String conpanyImgUrl; // 七牛视频路径
-    private String industry="0";      // 行业
+    private String industry = "0";      // 行业
     private String Views;         // 最多播放量
     private String comments;      // 最多评论量
     private String likes;         // 最多点赞量
@@ -120,17 +122,17 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
             @Override
             public void onClick(View v) {
 
-                if(!StringUtils.isNullOrEmpty(uploadingImgStr)){
+                if (!StringUtils.isNullOrEmpty(uploadingImgStr)) {
                     ToastUtil.show(DarenWsAddActivity.this, uploadingImgStr);
                     return;
                 }
 
-                Id = App.TaskApplyId;
+                Id = getDataManager().quickGetMetaData(R.string.taskApplyId, String.class);
                 MemberId = App.getId();
                 catType = "3";
                 price = ws_add_bjet.getText().toString();
                 headimageUrl = imageurl;
-                province="";
+                province = "";
                 city = "";
                 conpanyImgUrl = "";
                 Views = "";
@@ -146,17 +148,17 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
                     return;
                 } else */
                 if (price.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入报价！", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "请输入报价！", Toast.LENGTH_LONG).show();
                     return;
-                }else if (headimageUrl==null) {
-                    Toast.makeText(getApplication(),"请选择图片！", Toast.LENGTH_LONG).show();
+                } else if (headimageUrl == null) {
+                    Toast.makeText(getApplication(), "请选择图片！", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 // 上传达人资料
-                getPresenter().getDarenDataBeanResult(Id,MemberId,catType,fans,nickName,price
-                        ,headimageUrl,province,city,conpanyImgUrl
-                        ,Views,comments,likes);
+                getPresenter().getDarenDataBeanResult(Id, MemberId, catType, fans, nickName, price
+                        , headimageUrl, province, city, conpanyImgUrl
+                        , Views, comments, likes);
 
 
             }
@@ -190,7 +192,7 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
     public void onGetDarenDataBeanResult(DarenDataBean darenDataBean) {
         if ("000".equals(darenDataBean.getCode())) {
 
-            Log.i("sssss",darenDataBean.getCode()+"");
+            Log.i("sssss", darenDataBean.getCode() + "");
             /*Toast.makeText(DarenwsAddActivity.this,darenDataBean.getCode(),Toast.LENGTH_LONG).show();*/
             finish();
         }
@@ -312,7 +314,7 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
 
                     // 进行判断
                     uploadingImgStr = "图片正在上传，请稍后";
-                    for(int i=0;i<images.size();i++){
+                    for (int i = 0; i < images.size(); i++) {
                         upload(images.get(i).path);
                     }
 
@@ -367,14 +369,14 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
                                  JSONObject jsonObject) {
                 if (responseInfo.isOK()) {
 
-                    Log.e("success", "complete:"+responseInfo+jsonObject);
+                    Log.e("success", "complete:" + responseInfo + jsonObject);
 
                     try {
                         String upimg = jsonObject.getString("key");
 
-                        imageurl = "http://"+"qiniuyun2.ctrlmedia.cn/"+upimg;
+                        imageurl = "http://" + "qiniuyun2.ctrlmedia.cn/" + upimg;
 
-                        Log.e("qiniu++++", "complete: "+jsonObject+imageurl);
+                        Log.e("qiniu++++", "complete: " + jsonObject + imageurl);
                         uploadingImgStr = "";
 
                     } catch (JSONException e) {
@@ -382,9 +384,9 @@ public class DarenWsAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
                     }
 
                 } else {
-                    Log.e("failssss", s + responseInfo + jsonObject+imageurl);
+                    Log.e("failssss", s + responseInfo + jsonObject + imageurl);
                 }
-                Log.e("qiniu", "complete: "+jsonObject+imageurl);
+                Log.e("qiniu", "complete: " + jsonObject + imageurl);
 
             }
         }, null);

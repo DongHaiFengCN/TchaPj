@@ -234,7 +234,7 @@ dependencies {
     api 'com.squareup.retrofit2:converter-gson:2.5.0'
     api 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     // Dagger2依赖注入框架App的接口类对象
-    api 'com.google.dagger:dagger:2.9'
+   // api 'com.google.dagger:dagger:2.9'
     // annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
     // annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'

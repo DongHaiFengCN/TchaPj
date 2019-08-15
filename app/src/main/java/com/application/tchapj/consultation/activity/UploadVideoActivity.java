@@ -19,10 +19,7 @@ import com.application.tchapj.Constants;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseActvity;
 import com.application.tchapj.base.BaseModel;
-import com.application.tchapj.consultation.bean.UpdateAuthorModel;
-import com.application.tchapj.di.component.DaggerAppComponent;
-import com.application.tchapj.di.module.AppModule;
-import com.application.tchapj.di.module.AppModule_ProvideAPIServiceFactory;
+
 import com.application.tchapj.my.adpter.GridImageAdapter;
 import com.application.tchapj.my.adpter.ImagePickerAdapter;
 import com.application.tchapj.my.fragment.FullyGridLayoutManager;
@@ -57,7 +54,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import dagger.internal.DoubleCheck;
+
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;

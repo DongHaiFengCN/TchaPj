@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -68,11 +69,15 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
     TextView mediaResourcesStateOtherTv;
 
     private KV kv;                 // 保存缓存数据的对象
-    private String taskApplyId = "";
+    private String taskApplyId = "0";
 
-    private String dyTaskStatus;
-    private String pyqTaskStatus;
-    private String wbTaskStatus;
+    private String dyState = "0";
+    private String pyqState = "0";
+    private String wbState = "0";
+    private String wsState = "0";
+    private String otherState = "0";
+
+
     @BindView(R.id.add_tvdy)
     TextView add_tvdy;
     @BindView(R.id.add_tvpyq)
@@ -86,8 +91,6 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
     @BindView(R.id.daren_refuse_tv)
     TextView refuseTv;//拒绝原因
 
-
-    private UserInfo user;
 
     @Override
     protected void initToolbar(ToolbarHelper toolbarHelper) {
@@ -114,35 +117,68 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
             @Override
             public void upData(boolean getDataSuccess) {
 
-                if(getDataSuccess){
+                //重新刷新所有缓存后，刷新视图
+                dyState = getDataManager().quickGetMetaData(R.string.dyState, String.class);
+                pyqState = getDataManager().quickGetMetaData(R.string.pyqState, String.class);
+                wbState = getDataManager().quickGetMetaData(R.string.wbState, String.class);
+                wsState = getDataManager().quickGetMetaData(R.string.wsState, String.class);
+                otherState = getDataManager().quickGetMetaData(R.string.otherState, String.class);
+                taskApplyId = getDataManager().quickGetMetaData(R.string.taskApplyId, String.class);
 
-
-                }
+                initViewData();
 
             }
         });
-
-        initViewData();
-
 
 
     }
 
     private void initViewData() {
 
-        Intent intent = new Intent(DarenActivity.this, DarenDataOneActivity.class);
-        startActivity(intent);
-
-        App.LingTaskStatus = getDataManager().quickGetMetaData(R.string.lingState, String.class);
-
-
         boolean dyBool = false,
                 pyqBool = false,
                 wbBool = false,
                 wsBool = false,
                 otherBool = false;
+        String lingTaskStatus = getDataManager().quickGetMetaData(R.string.lingState, String.class);
 
-        if (App.LingTaskStatus.equals("0")
+        boolean isClick = false;
+        if (lingTaskStatus.equals("0")) {
+            daren_wanshan_tv.setText("申请达人");
+            isClick = true;
+            refuseTv.setVisibility(View.GONE);
+        } else if (lingTaskStatus.equals("1")) {
+            daren_wanshan_tv.setText("审核中");
+            refuseTv.setVisibility(View.GONE);
+        } else if (lingTaskStatus.equals("2")) {
+            daren_wanshan_tv.setText("已通过");
+            refuseTv.setVisibility(View.GONE);
+        } else {
+            daren_wanshan_tv.setText("申请未通过");
+            isClick = true;
+            if (!TextUtils.isEmpty(getDataManager().quickGetMetaData(R.string.refusal, String.class))) {
+                refuseTv.setVisibility(View.VISIBLE);
+                refuseTv.setText("拒绝原因：" + getDataManager().quickGetMetaData(R.string.refusal, String.class));
+            } else {
+                refuseTv.setVisibility(View.GONE);
+            }
+        }
+
+        if (isClick) {
+            daren_wanshan_tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(DarenActivity.this, DarenDataOneActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+        } else {
+            daren_wanshan_tv.setOnClickListener(null);
+        }
+
+
+        if (lingTaskStatus.equals("0")
                 || "".equals(getDataManager().quickGetMetaData(R.string.lingState, String.class))) {
             // lingState 0-未申请   1-正在审核中  2-已通过  3-未通过
             //未申请达人身份
@@ -160,76 +196,76 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
         } else {
             //0正在审核中，1已通过，2已驳回  null就是未添加
 
-            if (StringUtils.isNullOrEmpty(App.PyqState)) {
+            if (StringUtils.isNullOrEmpty(pyqState)) {
                 mediaResourcesWechatIv.setImageResource(R.mipmap.ic_py_select_normal);
                 pyqBool = true;
-            } else if (App.PyqState.equals("0")) {
+            } else if (pyqState.equals("0")) {
                 mediaResourcesWechatIv.setImageResource(R.mipmap.ic_py_select_normal);
-            } else if (App.PyqState.equals("1")) {
+            } else if (pyqState.equals("1")) {
                 pyqBool = true;
                 mediaResourcesWechatIv.setImageResource(R.mipmap.ic_py_select);
-            } else if (App.PyqState.equals("2")) {
+            } else if (pyqState.equals("2")) {
                 mediaResourcesWechatIv.setImageResource(R.mipmap.ic_py_select_normal);
                 pyqBool = true;
             }
-            setMediaResourcesStateView(App.PyqState, add_tvpyq, mediaResourcesStateWechatTv);
+            setMediaResourcesStateView(pyqState, add_tvpyq, mediaResourcesStateWechatTv);
 
-            if (StringUtils.isNullOrEmpty(App.WbState)) {
+            if (StringUtils.isNullOrEmpty(wbState)) {
                 mediaResourcesWbIv.setImageResource(R.mipmap.ic_wb_select_normal);
                 wbBool = true;
-            } else if (App.WbState.equals("0")) {
+            } else if (wbState.equals("0")) {
                 mediaResourcesWbIv.setImageResource(R.mipmap.ic_wb_select_normal);
-            } else if (App.WbState.equals("1")) {
+            } else if (wbState.equals("1")) {
                 wbBool = true;
                 mediaResourcesWbIv.setImageResource(R.mipmap.ic_wb_select);
-            } else if (App.WbState.equals("2")) {
+            } else if (wbState.equals("2")) {
                 mediaResourcesWbIv.setImageResource(R.mipmap.ic_wb_select_normal);
                 wbBool = true;
             }
-            setMediaResourcesStateView(App.WbState, add_tvwb, mediaResourcesStateWbTv);
+            setMediaResourcesStateView(wbState, add_tvwb, mediaResourcesStateWbTv);
 
-            if (StringUtils.isNullOrEmpty(App.DyState)) {
+            if (StringUtils.isNullOrEmpty(dyState)) {
                 mediaResourcesDyIv.setImageResource(R.mipmap.ic_dy_select_normal);
                 dyBool = true;
-            } else if (App.DyState.equals("0")) {
+            } else if (dyState.equals("0")) {
                 mediaResourcesDyIv.setImageResource(R.mipmap.ic_dy_select_normal);
-            } else if (App.DyState.equals("1")) {
+            } else if (dyState.equals("1")) {
                 dyBool = true;
                 mediaResourcesDyIv.setImageResource(R.mipmap.ic_dy_select);
-            } else if (App.DyState.equals("2")) {
+            } else if (dyState.equals("2")) {
                 mediaResourcesDyIv.setImageResource(R.mipmap.ic_dy_select_normal);
                 dyBool = true;
             }
-            setMediaResourcesStateView(App.DyState, add_tvdy, mediaResourcesStateDyTv);
+            setMediaResourcesStateView(dyState, add_tvdy, mediaResourcesStateDyTv);
 
 
-            if (StringUtils.isNullOrEmpty(App.WsState)) {
+            if (StringUtils.isNullOrEmpty(wsState)) {
                 mediaResourcesWsIv.setImageResource(R.mipmap.ic_ws_select_normal);
                 wsBool = true;
-            } else if (App.WsState.equals("0")) {
+            } else if (wsState.equals("0")) {
                 mediaResourcesWsIv.setImageResource(R.mipmap.ic_ws_select_normal);
-            } else if (App.WsState.equals("1")) {
+            } else if (wsState.equals("1")) {
                 wsBool = true;
                 mediaResourcesWsIv.setImageResource(R.mipmap.ic_ws_select);
-            } else if (App.WsState.equals("2")) {
+            } else if (wsState.equals("2")) {
                 mediaResourcesWsIv.setImageResource(R.mipmap.ic_ws_select_normal);
                 wsBool = true;
             }
-            setMediaResourcesStateView(App.WsState, add_tvws, mediaResourcesStateWsTv);
+            setMediaResourcesStateView(wsState, add_tvws, mediaResourcesStateWsTv);
 
-            if (StringUtils.isNullOrEmpty(App.OtherState)) {
+            if (StringUtils.isNullOrEmpty(otherState)) {
                 mediaResourcesOtherIv.setImageResource(R.mipmap.ic_other_select_normal);
                 otherBool = true;
-            } else if (App.OtherState.equals("0")) {
+            } else if (otherState.equals("0")) {
                 mediaResourcesOtherIv.setImageResource(R.mipmap.ic_other_select_normal);
-            } else if (App.OtherState.equals("1")) {
+            } else if (otherState.equals("1")) {
                 otherBool = true;
                 mediaResourcesOtherIv.setImageResource(R.mipmap.ic_other_select);
-            } else if (App.OtherState.equals("2")) {
+            } else if (otherState.equals("2")) {
                 mediaResourcesOtherIv.setImageResource(R.mipmap.ic_other_select_normal);
                 otherBool = true;
             }
-            setMediaResourcesStateView(App.OtherState, add_tv_other, mediaResourcesStateOtherTv);
+            setMediaResourcesStateView(otherState, add_tv_other, mediaResourcesStateOtherTv);
 
 
             if (dyBool) {
@@ -356,9 +392,10 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
     public void onGetUserModelResult(UserModel userModelBean) {
 
         if ("000".equals(userModelBean.getCode())) {
-            user = userModelBean.getData();
+ /*           user = userModelBean.getData();
             SharedPreferencesUtils.getInstance().setUserInfo(user);
             taskApplyId = user.getTaskApplyId();
+
 
             App.LingTaskStatus = user.getLingState();
 
@@ -367,45 +404,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
             App.WbState = user.getWbState();
             App.WsState = user.getWsState();
             App.OtherState = user.getOtherState();
-
-
-            boolean isClick = false;
-            if (App.LingTaskStatus.equals("0")) {
-                daren_wanshan_tv.setText("申请达人");
-                isClick = true;
-                refuseTv.setVisibility(View.GONE);
-            } else if (App.LingTaskStatus.equals("1")) {
-                daren_wanshan_tv.setText("审核中");
-                refuseTv.setVisibility(View.GONE);
-            } else if (App.LingTaskStatus.equals("2")) {
-                daren_wanshan_tv.setText("已通过");
-                refuseTv.setVisibility(View.GONE);
-            } else {
-                daren_wanshan_tv.setText("申请未通过");
-                isClick = true;
-                if (!TextUtils.isEmpty(user.getRefusal())) {
-                    refuseTv.setVisibility(View.VISIBLE);
-                    refuseTv.setText("拒绝原因：" + user.getRefusal());
-                } else {
-                    refuseTv.setVisibility(View.GONE);
-                }
-            }
-
-            if (isClick) {
-                daren_wanshan_tv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(DarenActivity.this, DarenDataOneActivity.class);
-                        startActivity(intent);
-                    }
-                });
-
-            } else {
-                daren_wanshan_tv.setOnClickListener(null);
-            }
-
-
-
+*/
 
 
         }

@@ -52,6 +52,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 /**
  * Created by Administrator on 2018\8\21 0021.
  * 添加媒体资源-其他
@@ -166,7 +168,7 @@ public class DarenOtherAddActivity extends BaseMvpActivity<IDarenOneView, DarenO
                     return;
                 }
 
-                Id = App.TaskApplyId;
+                Id = getDataManager().quickGetMetaData(R.string.taskApplyId,String.class);
                 MemberId = App.getId();
                 catType = "4";
                 price = other_add_bjet.getText().toString();

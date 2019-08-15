@@ -45,6 +45,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 /**
  * Created by Administrator on 2018\8\21 0021.
  */
@@ -124,7 +126,7 @@ public class DarenDyAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
             @Override
             public void onClick(View v) {
 
-                Id = App.TaskApplyId;
+                Id = getDataManager().quickGetMetaData(R.string.taskApplyId,String.class);
                 MemberId = App.getId();
                 catType = "2";
                 fans = dy_add_fset.getText().toString();
@@ -137,23 +139,6 @@ public class DarenDyAddActivity extends BaseMvpActivity<IDarenOneView, DarenOneP
                 Views = dy_add_blet.getText().toString();
                 comments = dy_add_plet.getText().toString();
                 likes = dy_add_zlet.getText().toString();
-
-                /*if (fans.length() <= 0) {
-                    Toast.makeText(getApplication(),"粉丝量！", Toast.LENGTH_LONG).show();
-                    return;
-                }else if (nickName.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入昵称！", Toast.LENGTH_LONG).show();
-                    return;
-                }else if (Views.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入播放量！", Toast.LENGTH_LONG).show();
-                    return;
-                }else if (comments.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入评论量！", Toast.LENGTH_LONG).show();
-                    return;
-                }else if (likes.length() <= 0) {
-                    Toast.makeText(getApplication(),"请输入点赞量！", Toast.LENGTH_LONG).show();
-                    return;
-                }else*/
                 if (price.length() <= 0) {
                     Toast.makeText(getApplication(), "请输入报价！", Toast.LENGTH_LONG).show();
                     return;

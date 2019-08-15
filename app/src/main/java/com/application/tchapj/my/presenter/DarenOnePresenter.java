@@ -1,5 +1,7 @@
 package com.application.tchapj.my.presenter;
 
+import android.util.Log;
+
 import com.application.tchapj.App;
 import com.application.tchapj.base.BaseMvpPresenter;
 import com.application.tchapj.login.bean.LoginResult;
@@ -73,7 +75,7 @@ public class DarenOnePresenter extends BaseMvpPresenter<IDarenOneView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getDarenDataOneBeanResult("002","1.0","JSON",memberId,nickName,realName,sex,catType,resourcesTypeId,content,screenshotIngUrl,headimageUrl,inviteCodeStr,price,cityId,idNumber) // 得到登录接口
+                .getDarenDataOneBeanResult("002","1.0","JSON",memberId,nickName,realName,sex,catType,resourcesTypeId,content,screenshotIngUrl,headimageUrl,inviteCodeStr,price,cityId) // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<DarenDataOneBean>() {  // 将数据绑定到实体类的操作
@@ -109,6 +111,8 @@ public class DarenOnePresenter extends BaseMvpPresenter<IDarenOneView> {
         if (isViewAttached()) {
             getView().showProgress();
         }
+
+        Log.e("DOAING","++++++++++++++++++++++++++++++++++++++++");
 
         // 观察者被观察者模式
         // 得到根接口路径

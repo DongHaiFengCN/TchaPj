@@ -527,7 +527,6 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         public void onComplete(Platform plat, int action,
                                HashMap res) {
 
-            Log.e("DOAING", "完成：" + res.toString());
             // 在这里添加分享成功的处理代码
             // 无参数调用
             mAgentWeb.getJsEntraceAccess().quickCallJs("shareSuccess");
@@ -536,10 +535,6 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         @Override
         public void onError(Platform plat, int action, Throwable t) {
             t.printStackTrace();
-
-            Log.e("DOAING", "失败：" + t.getLocalizedMessage());
-            Log.e("DOAING", "失败：" + t.getMessage());
-            Log.e("DOAING", "失败：" + t.getCause().getMessage());
 
             // 在这里添加分享失败的处理代码
             // 无参数调用

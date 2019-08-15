@@ -1,9 +1,9 @@
 package com.application.tchapj.di.scope;
 
-import javax.inject.Scope;
 
 
-@Scope
+
+@Deprecated
 public @interface ActivityScope {
 
 }

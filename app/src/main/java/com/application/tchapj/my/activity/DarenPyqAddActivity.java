@@ -59,6 +59,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 
 /**
  * Created by Administrator on 2018\8\21 0021.
@@ -185,7 +187,7 @@ public class DarenPyqAddActivity extends BaseMvpActivity<IDarenOneView, DarenOne
             @Override
             public void onClick(View v) {
 
-                Id = App.TaskApplyId;
+                Id = getDataManager().quickGetMetaData(R.string.taskApplyId,String.class);
                 MemberId = App.getId();
                 catType = "0";
                 price = pyq_add_bj.getText().toString();

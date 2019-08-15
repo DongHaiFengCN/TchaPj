@@ -455,7 +455,6 @@ public interface APIService {
             , @Query("secret") String secret
             , @Query("type") String type);*/
 
-    @FormUrlEncoded
     @POST("app?method=pm.receivetask.apply")
     Observable<DarenDataOneBean> getDarenDataOneBeanResult(
 
@@ -463,18 +462,18 @@ public interface APIService {
             , @Query("v") String v
             , @Query("format") String format
             , @Query("memberId") String memberId
-            , @Field("nickName") String nickName
-            , @Field("realName") String realName
-            , @Field("sex") String sex
+            , @Query("nickName") String nickName
+            , @Query("realName") String realName
+            , @Query("sex") String sex
             , @Query("catType") String catType
             , @Query("resourcesTypeId") String resourcesTypeId
-            , @Field("content") String content
+            , @Query("content") String content
             , @Query("screenshotIngUrl") String screenshotIngUrl
             , @Query("headimageUrl") String headimageUrl
             , @Query("inviteCode") String inviteCode
             , @Query("price") String price
             , @Query("cityId") String cityId
-            , @Query("IDnumber") String IDnumber);
+            );
 
 
     // 达人资料完善
@@ -496,7 +495,9 @@ public interface APIService {
             , @Field("comments") String comments
             , @Field("likes") String likes
 
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
+            , @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("sign") String sign
             , @Query("format") String format);
 
     // 认证资料

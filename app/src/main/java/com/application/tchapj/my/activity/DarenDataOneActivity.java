@@ -88,6 +88,8 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+import static com.application.tchapj.DataManager.getDataManager;
+
 // 达人资料第一页
 public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOnePresenter> implements IDarenOneView
         , ImagePickerAdapter.OnRecyclerViewItemClickListener {
@@ -128,8 +130,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
     MustWriteLinearLayout writeLinearLayout;
     @BindView(R.id.daren_one_invite_et)
     EditText inviteCodeEdt;
-/*    @BindView(R.id.darendataone_media_resources_example_tv)
-    TextView mediaResourcesExampleTv;*/
 
 
     private TagDarenAdapter<String> mSizeTagAdapter;
@@ -181,7 +181,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
     private DarenDataOneBean.DarenDataOneBeanResult darenDataOneBeanResult = new DarenDataOneBean.DarenDataOneBeanResult();
 
-    private KV kv;                 // 保存缓存数据的对象
 
     //添加媒体资源图片选择
     @BindView(R.id.darendataone_media_resources_tip_tv)
@@ -210,8 +209,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
     @Override
     public void initUI() {
 
-        kv = new KV(this);             // 保存基础数据
-
         selImageList = new ArrayList<>();
         adapter = new ImagePickerAdapter(DarenDataOneActivity.this, selImageList, maxImgCount);
         adapter.setOnItemClickListener(this);
@@ -236,27 +233,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
             }
         });
-//        daren_one_code_tv.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                phoneNumber = daren_one_shouji_et.getText().toString();
-//
-//                if (!TextUtils.isEmpty(phoneNumber)) {
-//                    boolean isTel = verifyTel(phoneNumber);
-//                    if (isTel) {
-//                        loadSMS(daren_one_code_tv);
-//                    } else {
-//                        Toast.makeText(DarenDataOneActivity.this, "请正确填写手机号", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                } else {
-//                    Toast.makeText(DarenDataOneActivity.this, "请输入手机号", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                getPresenter().getSmsCodeResult(phoneNumber);
-//            }
-//        });
 
         // 多选
         mSizeTagAdapter = new TagDarenAdapter<>(DarenDataOneActivity.this);
@@ -272,14 +248,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                         positionlist.add(i + 1 + "");
                     }
 
-//                    Snackbar.make(parent, circles.get(position).getName(), Snackbar.LENGTH_LONG)
-//                            .setAction("Action", null).show();
-
-                } else {
-
-                    //tabid = newstypeList.get(0).getId();
-                    /*Snackbar.make(parent, "没有选择标签", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();*/
 
                 }
 
@@ -391,40 +359,9 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
 
                 // 上传达人资料
 
+
                 getPresenter().getDarenDataOneBeanResult(App.getId(), PositionId, Realname, Sex, ""
                         , "", sfzStr, Jieshao, headimageUrl, NameNicheng, catType, mediaPrice, mediaImageUrl, cityId + "", inviteCodeStr);
-/*
-                memberId: getStorage('memberId'),
-                        nickName: this.nickName,
-                        realName: this.realName,
-                        sex: this.gender,
-                        IDnumber: this.IDnumber,
-                        catType: this.mediaType,
-                        resourcesTypeId: this.circleData.join(','),
-                        content: this.content,
-                        headimageUrl: this.headImgUrl,
-                        catType: this.mediaType,
-                        screenshotIngUrl: this.pyqScreen,  //朋友圈截图
-                        inviteCode: this.inviteCode,
-                        price: this.price,
-                        cityId: this.localCity*/
-
-              /*  HashMap hashMap = new HashMap();
-                hashMap.put("memberId", App.getId());
-                hashMap.put("nickName", NameNicheng);
-                hashMap.put("realName", Realname);
-                hashMap.put("sex", Sex);
-                hashMap.put("catType", catType);
-                hashMap.put("resourcesTypeId", PositionId);
-                hashMap.put("content", Jieshao);
-                hashMap.put("screenshotIngUrl", mediaImageUrl);
-                hashMap.put("headimageUrl", headimageUrl);
-                hashMap.put("inviteCode", inviteCodeStr);
-                hashMap.put("price", mediaPrice);
-                hashMap.put("cityId", cityId);
-                hashMap.put("IDnumber", sfzStr);*/
-
-
 
 
             }
@@ -455,7 +392,9 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
     public void onGetDarenDataOneBeanResult(DarenDataOneBean darenDataOneBean) {
         if ("000".equals(darenDataOneBean.getCode())) {
             darenDataOneBeanResult = darenDataOneBean.getData();
-            App.TaskApplyId = darenDataOneBeanResult.getTaskApplyId();//达人的id下一步操作要用
+
+            getDataManager().setMetaDataById(R.string.taskApplyId, darenDataOneBeanResult.getTaskApplyId(), true);
+            // App.TaskApplyId = darenDataOneBeanResult.getTaskApplyId();//达人的id下一步操作要用
             ToastUtil.show(this, "提交成功");
 
             Log.i("sssss", darenDataOneBeanResult.getTaskApplyId() + "");
@@ -492,12 +431,12 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
         ImagePicker imagePicker = ImagePicker.getInstance();
         imagePicker.setImageLoader(new GlideImageLoader());   //设置图片加载器
         imagePicker.setShowCamera(true);                      //显示拍照按钮
-        imagePicker.setCrop(true);                           //允许裁剪（单选才有效）
+        imagePicker.setCrop(false);                           //允许裁剪（单选才有效）
         imagePicker.setSaveRectangle(true);                   //是否按矩形区域保存
 //        imagePicker.setSelectLimit(maxImgCount);              //选中数量限制
         imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
-        imagePicker.setFocusWidth(800);                       //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setFocusHeight(800);                      //裁剪框的高度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusWidth(1000);                       //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusHeight(1000);                      //裁剪框的高度。单位像素（圆形自动取宽高最小值）
         imagePicker.setOutPutX(1000);                         //保存文件的宽度。单位像素
         imagePicker.setOutPutY(1000);                         //保存文件的高度。单位像素
     }
@@ -674,6 +613,8 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                         if (tag == REQUEST_CODE_SELECT) {
                             //上传头像返回
                             headimageUrl = url;
+
+                            Log.e("DOAING+++++++", headimageUrl);
                         } else {
                             //上传媒体资源图片返回
                             if (!StringUtils.isEmpty(mediaImageUrl) && !mediaImageUrl.contains(url)) {
@@ -683,18 +624,18 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                                 mediaImageUrl += url;
                             }
 
+
+                            Log.e("DOAING--------", mediaImageUrl);
                         }
 
-                        Log.e("qiniu++++", "complete: " + jsonObject + imageurl);
+                        //  Log.e("qiniu++++", "complete: " + jsonObject + imageurl);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                 } else {
-                    Log.e("failssss", s + responseInfo + jsonObject + imageurl);
                 }
-                Log.e("qiniu", "complete: " + jsonObject + imageurl);
 
                 dismissLoadingDialog();
 

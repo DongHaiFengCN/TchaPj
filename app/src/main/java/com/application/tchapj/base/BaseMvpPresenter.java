@@ -6,7 +6,7 @@ import com.application.tchapj.di.component.AppComponent;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.king.base.util.LogUtils;
 
-import javax.inject.Inject;
+
 
 // MVP中Presenter的基类
 public class BaseMvpPresenter<V extends BaseMvpView> extends MvpBasePresenter<V> {
@@ -15,7 +15,7 @@ public class BaseMvpPresenter<V extends BaseMvpView> extends MvpBasePresenter<V>
 
     private AppComponent mAppComponent; // 注入框架基类
 
-    @Inject
+
     public BaseMvpPresenter(App app){
         super();
         this.app = app;
