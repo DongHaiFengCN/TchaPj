@@ -329,7 +329,7 @@ public class MainActivity extends BaseActvity implements HomeFragment.HomeFragme
 
     public static class Up implements DataManager.UpDataListener{
         @Override
-        public void updata(boolean getDataSuccess) {
+        public void upData(boolean getDataSuccess) {
 
             if(getDataSuccess){
 

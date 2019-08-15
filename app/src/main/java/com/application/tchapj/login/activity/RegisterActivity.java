@@ -1,3 +1,4 @@
+/*
 package com.application.tchapj.login.activity;
 
 import android.content.Intent;
@@ -144,7 +145,9 @@ public class RegisterActivity extends BaseMvpActivity<ILoginView, LoginPresenter
     public void onGetLoginResult(LoginResult loginResultBean) {
         loginResultBeans3 = loginResultBean;
 
-        /*// 修改个人资料H5调整
+        */
+/*//*
+/ 修改个人资料H5调整
         if (loginResultBeans3.getCode() != null && "000".equals(loginResultBeans3.getCode())) {
 
             //修改个人资料
@@ -152,7 +155,8 @@ public class RegisterActivity extends BaseMvpActivity<ILoginView, LoginPresenter
 
         } else {
             Toast.makeText(RegisterActivity.this, "" + loginResultBeans3.getDescription(), Toast.LENGTH_SHORT).show();
-        }*/
+        }*//*
+
 
     }
 
@@ -231,3 +235,4 @@ public class RegisterActivity extends BaseMvpActivity<ILoginView, LoginPresenter
     }
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.application.tchapj.login.activity;
 
 import android.content.Context;
@@ -177,3 +178,4 @@ public class BindingPhoneActivity extends BaseMvpActivity<IBindingPhoneView, Bin
 
     }
 }
+*/

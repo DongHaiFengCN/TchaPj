@@ -5,7 +5,6 @@ import com.application.tchapj.base.BaseBean;
 import com.application.tchapj.base.BaseModel;
 import com.application.tchapj.bean.BindingPhoneBean;
 import com.application.tchapj.bean.MemberInfo;
-import com.application.tchapj.bean.MemberInfoBean;
 import com.application.tchapj.bean.PromotionPayResultBean;
 import com.application.tchapj.bean.PromotionResultBean;
 import com.application.tchapj.bean.SmsCodeBean;
@@ -17,7 +16,6 @@ import com.application.tchapj.consultation.bean.InsertComments;
 import com.application.tchapj.consultation.bean.IsAuthorModel;
 import com.application.tchapj.consultation.bean.NewsAttentionResultBean;
 import com.application.tchapj.consultation.bean.NewsCommentResultBean;
-import com.application.tchapj.consultation.bean.UpdateAuthorModel;
 import com.application.tchapj.consultation.bean.ZanBean;
 import com.application.tchapj.login.bean.LoginResult;
 import com.application.tchapj.login.bean.NewPhoneLoginResult;
@@ -62,13 +60,17 @@ import com.application.tchapj.task.bean.TaskSquareInfoModel;
 import com.application.tchapj.task.bean.TaskSquareModel;
 import com.application.tchapj.video.bean.VideosModel;
 
-import java.util.jar.Attributes;
+import org.greenrobot.greendao.annotation.Id;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.ResponseBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 import rx.Observable;
 
 // 接口类对象
@@ -410,6 +412,11 @@ public interface APIService {
     Observable<MemberInfo> getMemberModelResult(@Query("memberId") String memberId, @Query("appKey") String appKey
             , @Query("v") String v, @Query("sign") String sign, @Query("format") String format);
 
+
+    // 用户信息
+    @POST("app?method=pm.member.get")
+    Observable<UserModel> getMemberModelResult(@QueryMap Map<String, String> map);
+
     // 支付宝私钥 参数
     @POST("app?method=alipay.app.privatekey")
     Observable<AlipayPrivateKeyBean> getAlipayPrivateKeyBeanResult(
@@ -424,26 +431,51 @@ public interface APIService {
             , @Query("format") String format);
 
     // 达人资料完善
-    @FormUrlEncoded
+  /*  @FormUrlEncoded
     @POST("app?method=pm.receivetask.apply")
     Observable<DarenDataOneBean> getDarenDataOneBeanResult(
 
             @Query("memberId") String memberId
             , @Query("resourcesTypeId") String resourcesTypeId
             , @Field("realName") String realName
+            , @Field("nickName") String nickName
             , @Field("sex") String sex
-            , @Field("age") String age
-            , @Query("phoneNumber") String phoneNumber
             , @Query("IDnumber") String IDnumber
+            , @Query("phoneNumber") String phoneNumber
             , @Field("content") String content
             , @Query("headimageUrl") String headimageUrl
-            , @Field("nickName") String nickName
-
-            , @Query("appKey") String appKey, @Query("v") String v, @Query("sign") String sign
-            , @Query("format") String format, @Field("catType") String catType, @Field("price") String price
+            , @Query("catType") String catType
+            , @Query("price") String price
             , @Query("screenshotIngUrl") String screenshotIngUrl
+            , @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("sign") String sign
+            , @Query("method") String method
+            , @Query("format") String format
+            , @Query("secret") String secret
+            , @Query("type") String type);*/
+
+    @FormUrlEncoded
+    @POST("app?method=pm.receivetask.apply")
+    Observable<DarenDataOneBean> getDarenDataOneBeanResult(
+
+            @Query("appKey") String appKey
+            , @Query("v") String v
+            , @Query("format") String format
+            , @Query("memberId") String memberId
+            , @Field("nickName") String nickName
+            , @Field("realName") String realName
+            , @Field("sex") String sex
+            , @Query("catType") String catType
+            , @Query("resourcesTypeId") String resourcesTypeId
+            , @Field("content") String content
+            , @Query("screenshotIngUrl") String screenshotIngUrl
+            , @Query("headimageUrl") String headimageUrl
+            , @Query("inviteCode") String inviteCode
+            , @Query("price") String price
             , @Query("cityId") String cityId
-            , @Query("inviteCode") String inviteCode);
+            , @Query("IDnumber") String IDnumber);
+
 
     // 达人资料完善
     @FormUrlEncoded

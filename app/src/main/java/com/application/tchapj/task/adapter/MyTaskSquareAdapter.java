@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.application.tchapj.App;
 import com.application.tchapj.R;
-import com.application.tchapj.login.activity.BindingPhoneActivity;
+
 import com.application.tchapj.task.activity.CollarTaskCircleFriendLinkActivity;
 import com.application.tchapj.task.activity.FriendReleaseActivity;
 import com.application.tchapj.task.activity.LeadTaskWechatActivity;
@@ -266,13 +266,7 @@ public class MyTaskSquareAdapter<T> extends RecyclerView.Adapter<RecyclerView.Vi
                     if(StringUtils.isNullOrEmpty(App.getId())){
                         CommonDialogUtil.showLoginDialog(mContext);
                         return;
-                    }else if(TextUtils.isEmpty(SharedPreferencesUtils.getInstance().getUserInfo().getTelephone())){
-
-                        Toast.makeText(mContext, "请绑定手机号", Toast.LENGTH_SHORT).show();
-                        BindingPhoneActivity.start(mContext);
-                        return;
                     }
-
                     String type = bean.getType();//1是领任务，2是发任务
                     String taskstatus = bean.getStatus();
                     String taskType = bean.getTaskType();//0 朋友圈 1 微博 2 抖音跟拍 3 抖音原创 4其他5朋友圈转发链接6微视合拍7微视原创

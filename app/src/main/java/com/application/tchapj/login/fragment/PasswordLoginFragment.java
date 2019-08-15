@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.application.tchapj.DataManager;
 import com.application.tchapj.R;
 import com.application.tchapj.login.activity.PassWordActivity;
-import com.application.tchapj.login.activity.RegisterActivity;
+
 import com.application.tchapj.utils2.Verification;
 
 import java.util.Objects;
@@ -145,13 +145,7 @@ public class PasswordLoginFragment extends Fragment {
             }
         });
 
-        mTvRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                startActivity(new Intent(getContext(), RegisterActivity.class));
-            }
-        });
     }
 
 }

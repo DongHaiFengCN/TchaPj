@@ -1,3 +1,4 @@
+/*
 package com.application.tchapj.login.activity;
 
 import android.app.Dialog;
@@ -158,8 +159,10 @@ public class LoginActivity extends BaseMvpActivity<ILoginView, LoginPresenter> i
                 kv.put(Constants.LOGIN_STATE, "").commit();
             }
 
-            /*kv.put(Constants.LOGIN_NAME, loginName).commit();
-            kv.put(Constants.LOGIN_PWD, loginPwd).commit();*/
+            */
+/*kv.put(Constants.LOGIN_NAME, loginName).commit();
+            kv.put(Constants.LOGIN_PWD, loginPwd).commit();*//*
+
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
 
@@ -177,15 +180,19 @@ public class LoginActivity extends BaseMvpActivity<ILoginView, LoginPresenter> i
 
         userInfols = loginInfo;
         SharedPreferencesUtils.getInstance().setUserInfo(loginInfo);
-       /* App.ID = userInfols.getId();
+       */
+/* App.ID = userInfols.getId();
         App.UseName = userInfols.getName();
         App.headimgurl = userInfols.getHeadimgurl();
         App.SEX = userInfols.getSex();
-        App.media = userInfols.getMedia();*/
+        App.media = userInfols.getMedia();*//*
+
         App.KF = loginResultBeans.getData().getKF();
         App.Type = loginResultBeans.getData().getType();
 
-        /*SharedPreferences.getInstance().getString("id", "");*/
+        */
+/*SharedPreferences.getInstance().getString("id", "");*//*
+
 
         kv.put(Constants.USER_ID, userInfols.getId()).commit();
 
@@ -242,3 +249,4 @@ public class LoginActivity extends BaseMvpActivity<ILoginView, LoginPresenter> i
 
 
 }
+*/

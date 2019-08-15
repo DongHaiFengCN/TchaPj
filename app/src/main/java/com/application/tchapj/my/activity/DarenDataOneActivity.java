@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.application.tchapj.App;
+import com.application.tchapj.DataManager;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
 import com.application.tchapj.login.bean.LoginResult;
@@ -59,6 +60,7 @@ import com.application.tchapj.widiget.DensityUtil;
 import com.application.tchapj.widiget.FlowTagDarenLayout;
 import com.application.tchapj.widiget.FlowTagLayout;
 import com.application.tchapj.widiget.KV;
+import com.application.tchapj.widiget.LogUtils;
 import com.application.tchapj.widiget.MustWriteLinearLayout;
 import com.application.tchapj.widiget.OnTagSelectListener;
 import com.application.tchapj.widiget.TagAdapter;
@@ -77,10 +79,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 // 达人资料第一页
 public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOnePresenter> implements IDarenOneView
@@ -354,8 +360,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                 }
 
 
-                //Toast.makeText(DarenDataOneActivity.this, PositionId, Toast.LENGTH_SHORT).show();
-
                 if (StringUtils.isEmpty(headimageUrl)) {
                     Toast.makeText(getApplication(), "请选择头像", Toast.LENGTH_LONG).show();
                     return;
@@ -386,8 +390,43 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
                 }
 
                 // 上传达人资料
+
                 getPresenter().getDarenDataOneBeanResult(App.getId(), PositionId, Realname, Sex, ""
                         , "", sfzStr, Jieshao, headimageUrl, NameNicheng, catType, mediaPrice, mediaImageUrl, cityId + "", inviteCodeStr);
+/*
+                memberId: getStorage('memberId'),
+                        nickName: this.nickName,
+                        realName: this.realName,
+                        sex: this.gender,
+                        IDnumber: this.IDnumber,
+                        catType: this.mediaType,
+                        resourcesTypeId: this.circleData.join(','),
+                        content: this.content,
+                        headimageUrl: this.headImgUrl,
+                        catType: this.mediaType,
+                        screenshotIngUrl: this.pyqScreen,  //朋友圈截图
+                        inviteCode: this.inviteCode,
+                        price: this.price,
+                        cityId: this.localCity*/
+
+              /*  HashMap hashMap = new HashMap();
+                hashMap.put("memberId", App.getId());
+                hashMap.put("nickName", NameNicheng);
+                hashMap.put("realName", Realname);
+                hashMap.put("sex", Sex);
+                hashMap.put("catType", catType);
+                hashMap.put("resourcesTypeId", PositionId);
+                hashMap.put("content", Jieshao);
+                hashMap.put("screenshotIngUrl", mediaImageUrl);
+                hashMap.put("headimageUrl", headimageUrl);
+                hashMap.put("inviteCode", inviteCodeStr);
+                hashMap.put("price", mediaPrice);
+                hashMap.put("cityId", cityId);
+                hashMap.put("IDnumber", sfzStr);*/
+
+
+
+
             }
         });
 
@@ -420,7 +459,6 @@ public class DarenDataOneActivity extends BaseMvpActivity<IDarenOneView, DarenOn
             ToastUtil.show(this, "提交成功");
 
             Log.i("sssss", darenDataOneBeanResult.getTaskApplyId() + "");
-            /*Toast.makeText(DarenDataOneActivity.this,darenDataOneBeanResult.getTaskApplyId(),Toast.LENGTH_LONG).show();*/
             finish();
         } else {
             ToastUtil.show(this, darenDataOneBean.getDescription());

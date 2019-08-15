@@ -24,9 +24,9 @@ public class DarenOnePresenter extends BaseMvpPresenter<IDarenOneView> {
     }
 
     // 验证码
-    public void getSmsCodeResult(String username){
+    public void getSmsCodeResult(String username) {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -34,26 +34,26 @@ public class DarenOnePresenter extends BaseMvpPresenter<IDarenOneView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getSmsCodeResult(username,"002","1.0","","JSON") // 得到登录接口
+                .getSmsCodeResult(username, "002", "1.0", "", "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<SmsCodeResponse>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(SmsCodeResponse loginResultBean) {
-                        LogUtils.d("Response:"+ loginResultBean);
-                        if(isViewAttached())
+                        LogUtils.d("Response:" + loginResultBean);
+                        if (isViewAttached())
                             getView().onGetSmsCodeResult(loginResultBean); // 得到一层数据
                     }
                 });
@@ -63,9 +63,9 @@ public class DarenOnePresenter extends BaseMvpPresenter<IDarenOneView> {
     public void getDarenDataOneBeanResult(String memberId, String resourcesTypeId
             , String realName, String sex, String age, String phoneNumber
             , String idNumber, String content, String headimageUrl, String nickName
-            , String catType, String price, String screenshotIngUrl, String cityId, String inviteCodeStr){
+            , String catType, String price, String screenshotIngUrl, String cityId, String inviteCodeStr) {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -73,41 +73,40 @@ public class DarenOnePresenter extends BaseMvpPresenter<IDarenOneView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getDarenDataOneBeanResult(memberId,resourcesTypeId,realName
-                        ,sex,age,phoneNumber,idNumber,content,headimageUrl,nickName
-                        ,"002","1.0","","JSON", catType, price
-                        , screenshotIngUrl, cityId, inviteCodeStr) // 得到登录接口
+                .getDarenDataOneBeanResult("002","1.0","JSON",memberId,nickName,realName,sex,catType,resourcesTypeId,content,screenshotIngUrl,headimageUrl,inviteCodeStr,price,cityId,idNumber) // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<DarenDataOneBean>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(DarenDataOneBean darenDataOneBean) {
-                        LogUtils.d("Response:"+ darenDataOneBean);
-                        if(isViewAttached())
+                        LogUtils.d("Response:" + darenDataOneBean);
+                        if (isViewAttached())
                             getView().onGetDarenDataOneBeanResult(darenDataOneBean); // 得到一层数据
                     }
                 });
     }
 
+
+
     // 上传达人频道资料
-    public void getDarenDataBeanResult(String Id,String MemberId,String catType
-            ,String fans,String nickName,String price,String screenshotIngUrl,String province
-            ,String city,String conpanyImgUrl
-            ,String Views,String comments,String likes){
+    public void getDarenDataBeanResult(String Id, String MemberId, String catType
+            , String fans, String nickName, String price, String screenshotIngUrl, String province
+            , String city, String conpanyImgUrl
+            , String Views, String comments, String likes) {
         // isViewAttached()方法判断是否在显示器上显示
-        if(isViewAttached()){
+        if (isViewAttached()) {
             getView().showProgress();
         }
 
@@ -115,28 +114,28 @@ public class DarenOnePresenter extends BaseMvpPresenter<IDarenOneView> {
         // 得到根接口路径
         getAppComponent()
                 .getAPIService() // 所有接口对象
-                .getDarenDataBeanResult(Id,MemberId,catType,fans,nickName,price,screenshotIngUrl
-                        ,province,city,conpanyImgUrl,Views,comments,likes
-                        ,"002","1.0","","JSON") // 得到登录接口
+                .getDarenDataBeanResult(Id, MemberId, catType, fans, nickName, price, screenshotIngUrl
+                        , province, city, conpanyImgUrl, Views, comments, likes
+                        , "002", "1.0", "", "JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
                 .observeOn(AndroidSchedulers.mainThread()) // 指定线程
                 .subscribe(new Subscriber<DarenDataBean>() {  // 将数据绑定到实体类的操作
                     @Override
                     public void onCompleted() {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onCompleted();
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        if(isViewAttached())
+                        if (isViewAttached())
                             getView().onError(e);
                     }
 
                     @Override // 得到数据
                     public void onNext(DarenDataBean darenDataBean) {
-                        LogUtils.d("Response:"+ darenDataBean);
-                        if(isViewAttached())
+                        LogUtils.d("Response:" + darenDataBean);
+                        if (isViewAttached())
                             getView().onGetDarenDataBeanResult(darenDataBean); // 得到一层数据
                     }
                 });

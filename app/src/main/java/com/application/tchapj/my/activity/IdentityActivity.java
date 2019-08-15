@@ -14,10 +14,11 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.application.tchapj.App;
+import com.application.tchapj.DataManager;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
 import com.application.tchapj.bean.UserInfo;
-import com.application.tchapj.login.activity.BindingPhoneActivity;
+
 import com.application.tchapj.login.presenter.BindingPhonePresenter;
 
 import com.application.tchapj.my.bean.QiniuBean;
@@ -109,11 +110,11 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
     @Override
     public void initUI() {
 
-        darenState = getDataManager().quickGetMetaData(R.string.lingState, String.class);
-        guanggaozhuState = getDataManager().quickGetMetaData(R.string.faState, String.class);
-        smState = getDataManager().quickGetMetaData(R.string.identity, String.class);
-        meitiState = getDataManager().quickGetMetaData(R.string.mtState, String.class);
-        mingrenState = getDataManager().quickGetMetaData(R.string.mrState, String.class);
+
+
+
+
+
         getPresenter().onGetQiniuResult();
 
         item_meiti_rl.setOnClickListener(new View.OnClickListener() {
@@ -160,6 +161,20 @@ public class IdentityActivity extends BaseMvpActivity<IQiniuView, QiniuPresenter
             smrz_clv.setText2("已认证");
             smrz_clv.setText2Color(0xffffffff);
         }
+
+        DataManager.getDataManager().disposeMember(new DataManager.UpDataListener() {
+            @Override
+            public void upData(boolean getDataSuccess) {
+
+                darenState = getDataManager().quickGetMetaData(R.string.lingState, String.class);
+                guanggaozhuState = getDataManager().quickGetMetaData(R.string.faState, String.class);
+                smState = getDataManager().quickGetMetaData(R.string.identity, String.class);
+                meitiState = getDataManager().quickGetMetaData(R.string.mtState, String.class);
+                mingrenState = getDataManager().quickGetMetaData(R.string.mrState, String.class);
+
+                initView();
+            }
+        });
 
     }
 

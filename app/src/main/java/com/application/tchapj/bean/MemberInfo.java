@@ -6,12 +6,13 @@ package com.application.tchapj.bean;
  */
 public class MemberInfo {
 
+
     /**
      * method : pm.member.get
      * level : Info
      * code : 000
      * description : 获取用户信息成功！
-     * data : {"birthday":"","sex":"","fans":0,"wxId":"0","proSY":599.99,"faState":"2","city":null,"discount":"1","attentions":0,"qqId":"0","id":"d330ba9341704ee1bbf35cde559b21ef","identity":"370123199007063413","balance":0,"authState":"0","lingState":"0","alipay":"1","nickName":"微呼百应会员4306","province":null,"realname":"777","headimgurl":"https://qiniuyun.ctrlmedia.cn/touxiang.png","isAuthor":"0","telephone":"15130514306","mobile":"13345122570"}
+     * data : {"birthday":"","sex":"1","fans":0,"wxId":"1","proSY":"0.00","faState":"0","city":"","discount":"1","attentions":0,"qqId":"0","id":"2299f39bf07a40c5a644fabde5b21d7d","balance":0,"identity":"","authState":"0","lingState":"0","alipay":"0","nickName":"董海峰","province":"","realName":"","realname":"","headimgurl":"http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLoOWZM3NMkRYFlalBGeiaNVMvGuHw4yGaLrkVgq1Vmcw7hKqwZEEWibEstLsMCRLkmbP9NLFZEVq5g/132","isAuthor":"0","telephone":"","mobile":"13345122570"}
      */
 
     private String method;
@@ -60,30 +61,42 @@ public class MemberInfo {
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return "MemberInfo{" +
+                "method='" + method + '\'' +
+                ", level='" + level + '\'' +
+                ", code='" + code + '\'' +
+                ", description='" + description + '\'' +
+                ", data=" + data +
+                '}';
+    }
+
     public static class DataBean {
         /**
          * birthday :
-         * sex :
+         * sex : 1
          * fans : 0
-         * wxId : 0
-         * proSY : 599.99
-         * faState : 2
-         * city : null
+         * wxId : 1
+         * proSY : 0.00
+         * faState : 0
+         * city :
          * discount : 1
          * attentions : 0
          * qqId : 0
-         * id : d330ba9341704ee1bbf35cde559b21ef
-         * identity : 370123199007063413
-         * balance : 0
+         * id : 2299f39bf07a40c5a644fabde5b21d7d
+         * balance : 0.0
+         * identity :
          * authState : 0
          * lingState : 0
-         * alipay : 1
-         * nickName : 微呼百应会员4306
-         * province : null
-         * realname : 777
-         * headimgurl : https://qiniuyun.ctrlmedia.cn/touxiang.png
+         * alipay : 0
+         * nickName : 董海峰
+         * province :
+         * realName :
+         * realname :
+         * headimgurl : http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLoOWZM3NMkRYFlalBGeiaNVMvGuHw4yGaLrkVgq1Vmcw7hKqwZEEWibEstLsMCRLkmbP9NLFZEVq5g/132
          * isAuthor : 0
-         * telephone : 15130514306
+         * telephone :
          * mobile : 13345122570
          */
 
@@ -91,44 +104,26 @@ public class MemberInfo {
         private String sex;
         private int fans;
         private String wxId;
-        private double proSY;
+        private String proSY;
         private String faState;
-        private Object city;
+        private String city;
         private String discount;
         private int attentions;
         private String qqId;
         private String id;
+        private double balance;
         private String identity;
-        private int balance;
         private String authState;
         private String lingState;
         private String alipay;
         private String nickName;
-        private Object province;
+        private String province;
+        private String realName;
         private String realname;
         private String headimgurl;
         private String isAuthor;
         private String telephone;
         private String mobile;
-
-        public String getMrState() {
-            return mrState;
-        }
-
-        public void setMrState(String mrState) {
-            this.mrState = mrState;
-        }
-
-        public String getMtState() {
-            return mtState;
-        }
-
-        public void setMtState(String mtState) {
-            this.mtState = mtState;
-        }
-
-        private String mrState;
-        private String mtState;
 
         public String getBirthday() {
             return birthday;
@@ -162,11 +157,11 @@ public class MemberInfo {
             this.wxId = wxId;
         }
 
-        public double getProSY() {
+        public String getProSY() {
             return proSY;
         }
 
-        public void setProSY(double proSY) {
+        public void setProSY(String proSY) {
             this.proSY = proSY;
         }
 
@@ -178,11 +173,11 @@ public class MemberInfo {
             this.faState = faState;
         }
 
-        public Object getCity() {
+        public String getCity() {
             return city;
         }
 
-        public void setCity(Object city) {
+        public void setCity(String city) {
             this.city = city;
         }
 
@@ -218,20 +213,20 @@ public class MemberInfo {
             this.id = id;
         }
 
+        public double getBalance() {
+            return balance;
+        }
+
+        public void setBalance(double balance) {
+            this.balance = balance;
+        }
+
         public String getIdentity() {
             return identity;
         }
 
         public void setIdentity(String identity) {
             this.identity = identity;
-        }
-
-        public int getBalance() {
-            return balance;
-        }
-
-        public void setBalance(int balance) {
-            this.balance = balance;
         }
 
         public String getAuthState() {
@@ -266,12 +261,20 @@ public class MemberInfo {
             this.nickName = nickName;
         }
 
-        public Object getProvince() {
+        public String getProvince() {
             return province;
         }
 
-        public void setProvince(Object province) {
+        public void setProvince(String province) {
             this.province = province;
+        }
+
+        public String getRealName() {
+            return realName;
+        }
+
+        public void setRealName(String realName) {
+            this.realName = realName;
         }
 
         public String getRealname() {
@@ -312,6 +315,36 @@ public class MemberInfo {
 
         public void setMobile(String mobile) {
             this.mobile = mobile;
+        }
+
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "birthday='" + birthday + '\'' +
+                    ", sex='" + sex + '\'' +
+                    ", fans=" + fans +
+                    ", wxId='" + wxId + '\'' +
+                    ", proSY='" + proSY + '\'' +
+                    ", faState='" + faState + '\'' +
+                    ", city='" + city + '\'' +
+                    ", discount='" + discount + '\'' +
+                    ", attentions=" + attentions +
+                    ", qqId='" + qqId + '\'' +
+                    ", id='" + id + '\'' +
+                    ", balance=" + balance +
+                    ", identity='" + identity + '\'' +
+                    ", authState='" + authState + '\'' +
+                    ", lingState='" + lingState + '\'' +
+                    ", alipay='" + alipay + '\'' +
+                    ", nickName='" + nickName + '\'' +
+                    ", province='" + province + '\'' +
+                    ", realName='" + realName + '\'' +
+                    ", realname='" + realname + '\'' +
+                    ", headimgurl='" + headimgurl + '\'' +
+                    ", isAuthor='" + isAuthor + '\'' +
+                    ", telephone='" + telephone + '\'' +
+                    ", mobile='" + mobile + '\'' +
+                    '}';
         }
     }
 }

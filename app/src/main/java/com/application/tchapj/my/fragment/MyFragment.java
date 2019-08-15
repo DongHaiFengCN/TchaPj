@@ -145,7 +145,7 @@ public class MyFragment extends BaseMvpFragment<IMyView, MyPresenter> implements
 
         DataManager.getDataManager().disposeMember(new DataManager.UpDataListener() {
             @Override
-            public void updata(boolean getDataSuccess) {
+            public void upData(boolean getDataSuccess) {
 
                 String nickName = getDataManager().quickGetMetaData(R.string.nickName, String.class);
                 String attentions = String.valueOf(getDataManager().quickGetMetaData(R.string.attentions, Integer.class));

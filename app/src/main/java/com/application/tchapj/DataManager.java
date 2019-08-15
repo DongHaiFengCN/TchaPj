@@ -2,18 +2,16 @@ package com.application.tchapj;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.application.tchapj.bean.MemberInfo;
-import com.application.tchapj.bean.UserInfo;
 import com.application.tchapj.login.bean.LoginResult;
 import com.application.tchapj.my.bean.AlipayPrivateKeyBean;
-import com.application.tchapj.utils2.share.SharedPreferencesUtils;
+import com.application.tchapj.my.bean.UserModel;
 import com.application.tchapj.widiget.AopUtils;
+import com.google.gson.Gson;
 
 
 import java.util.HashMap;
@@ -30,6 +28,7 @@ import rx.schedulers.Schedulers;
  */
 public class DataManager {
 
+   private static Gson gson = new Gson();
     private static final int INITIALCAPACITY = 16;
     private static SharedPreferences sharedPreferences;
     private static DataManager dataManager;
@@ -176,12 +175,12 @@ public class DataManager {
 
 
     /**
-     * 通过 memberId 去更新所有数据。
+     * 通过memberId 去刷新说有的配置信息
      *
-     * @return 没有配置信息
+     * @param upDataListener 刷新回调接口，可以用于数据返回成功，更新ui
      */
 
-    public boolean disposeMember(final UpDataListener upDataListener) {
+    public void disposeMember(final UpDataListener upDataListener) {
 
         final String memberId = quickGetMetaData(R.string.id, String.class);
 
@@ -192,10 +191,10 @@ public class DataManager {
             application
                     .getAppComponent()
                     .getAPIService()
-                    .getMemberModelResult(memberId, "002", "1.0", "", "JSON")
+                    .getMemberModelResult(getBaseQuestMap())
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Observer<MemberInfo>() {
+                    .subscribe(new Observer<UserModel>() {
                         @Override
                         public void onCompleted() {
 
@@ -205,29 +204,31 @@ public class DataManager {
                         public void onError(Throwable e) {
                             if (upDataListener != null) {
 
-                                upDataListener.updata(false);
+                                upDataListener.upData(false);
                             }
                         }
 
                         @Override
-                        public void onNext(MemberInfo memberInfo) {
+                        public void onNext(UserModel memberInfo) {
+
+                            Log.e("DOAING++++++++", memberInfo.toString());
 
                             if ("000".equals(memberInfo.getCode()) && memberInfo.getData() != null) {
 
                                 //实名认证信息
-                                getDataManager().setMetaDataById(R.string.identity, memberInfo.getData().getIdentity(), true);
+                               // getDataManager().setMetaDataById(R.string.identity, memberInfo.getData()., true);
 
                                 //用户名
-                                getDataManager().setMetaDataById(R.string.realname, memberInfo.getData().getRealname(), true);
+                                getDataManager().setMetaDataById(R.string.realname, memberInfo.getData().getRealName(), true);
 
                                 //用户昵称
                                 getDataManager().setMetaDataById(R.string.nickName, memberInfo.getData().getNickName(), true);
 
                                 //用户微信id
-                                getDataManager().setMetaDataById(R.string.wxId, memberInfo.getData().getWxId(), true);
+                                //getDataManager().setMetaDataById(R.string.wxId, memberInfo.getData()., true);
 
                                 //QQ
-                                getDataManager().setMetaDataById(R.string.qqId, memberInfo.getData().getQqId(), true);
+                               // getDataManager().setMetaDataById(R.string.qqId, memberInfo.getData(), true);
 
                                 //用户性别
                                 getDataManager().setMetaDataById(R.string.sex, memberInfo.getData().getSex(), true);
@@ -245,7 +246,7 @@ public class DataManager {
                                 getDataManager().setMetaDataById(R.string.attentions, memberInfo.getData().getAttentions(), true);
 
 
-                                //发图
+                                //广告主
                                 getDataManager().setMetaDataById(R.string.faState, memberInfo.getData().getFaState(), true);
 
 
@@ -254,11 +255,9 @@ public class DataManager {
 
                                 //媒体
                                 setMetaDataById(R.string.mtState, memberInfo.getData().getMtState(), true);
-                                // setMetaDataById(R.string.mtState,memberInfo.getData().getMtState());
 
                                 //名人
-                                setMetaDataById(R.string.mrState, memberInfo.getData().getMrState(), true);
-                                // setMetaDataById(R.string.mtState,memberInfo.getData().getMrState());
+                                 setMetaDataById(R.string.mrState, memberInfo.getData().getMrState(), true);
 
                                 //维护白影
                                 setMetaDataById(R.string.isAuthor, memberInfo.getData().getIsAuthor(), true);
@@ -266,28 +265,26 @@ public class DataManager {
 
                                 if (upDataListener != null) {
 
-                                    upDataListener.updata(true);
+                                    upDataListener.upData(true);
                                 }
                             } else {
                                 if (upDataListener != null) {
 
-                                    upDataListener.updata(true);
+                                    upDataListener.upData(true);
                                 }
                             }
 
                         }
                     });
 
-            return true;
 
         }
 
         if (upDataListener != null) {
 
-            upDataListener.updata(false);
+            upDataListener.upData(false);
         }
 
-        return false;
     }
 
 
@@ -327,24 +324,23 @@ public class DataManager {
 
                         if ("000".equals(loginResultBean.getCode()) && loginResultBean.getData() != null) {
 
-                            UserInfo loginInfoBean = loginResultBean.getData().getLoginInfo();
+                            LoginResult.DataBean.LoginInfoBean loginInfoBean = loginResultBean.getData().getLoginInfo();
 
-                            SharedPreferencesUtils.getInstance().setUserInfo(loginInfoBean);
+                            // SharedPreferencesUtils.getInstance().setUserInfo(loginInfoBean);
 
-                            App.setId(loginInfoBean.getId());
+                            //App.setId(loginInfoBean.getId());
 
                             //memberId
                             getDataManager().setMetaDataById(R.string.id, loginInfoBean.getId(), true);
 
 
-                            getDataManager().setMetaDataById(R.string.city, loginInfoBean.getCity());
-
                             //手机号
                             getDataManager().setMetaDataById(R.string.telephone, loginInfoBean.getMobile(), true);
 
 
-                            //登录成功刷新所有缓存数据
-                           // disposeMember(null);
+                            //媒体
+                            getDataManager().setMetaDataById(R.string.media, loginInfoBean.getMedia(), true);
+
 
                             loginListener.login(true);
 
@@ -377,7 +373,7 @@ public class DataManager {
                                         @Override // 得到数据
                                         public void onNext(AlipayPrivateKeyBean alipayPrivateKeyBean) {
 
-                                            DataManager.getDataManager().setMetaDataById(R.string.RSA2_PRIVATE, alipayPrivateKeyBean.getData().getPrivatekey());
+                                            setMetaDataById(R.string.RSA2_PRIVATE, alipayPrivateKeyBean.getData().getPrivatekey());
                                             Log.e("Response:", alipayPrivateKeyBean.getData().getPrivatekey());
 
                                         }
@@ -414,11 +410,25 @@ public class DataManager {
 
     public interface UpDataListener {
 
-        void updata(boolean getDataSuccess);
+        void upData(boolean getDataSuccess);
     }
 
     public interface LoginListener {
 
         void login(boolean isLogin);
+    }
+
+    public HashMap<String,String> getBaseQuestMap(){
+
+        HashMap<String,String> map = new HashMap<>();
+
+        map.put("memberId",quickGetMetaData(R.string.id, String.class));
+        map.put("appKey","002");
+
+        map.put("v","1.0");
+        map.put("sign","");
+        map.put("format","JSON");
+
+        return map;
     }
 }

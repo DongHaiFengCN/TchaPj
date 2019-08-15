@@ -38,4 +38,12 @@ public class UserModel implements Serializable {
     }
 
 
+    @Override
+    public String toString() {
+        return "UserModel{" +
+                "code='" + code + '\'' +
+                ", description='" + description + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }

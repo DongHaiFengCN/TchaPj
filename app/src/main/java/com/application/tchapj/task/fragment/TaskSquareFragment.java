@@ -15,7 +15,7 @@ import com.application.tchapj.Constants;
 import com.application.tchapj.R;
 import com.application.tchapj.WebViewActivity;
 import com.application.tchapj.base.BaseMvpFragment;
-import com.application.tchapj.login.activity.BindingPhoneActivity;
+
 import com.application.tchapj.my.activity.DarenActivity;
 import com.application.tchapj.my.activity.IdentityActivity;
 import com.application.tchapj.my.bean.QiniuBean;
@@ -143,10 +143,6 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
             public void onItemClick(View view, int position) {
                 if(StringUtils.isNullOrEmpty(App.getId())){
                     CommonDialogUtil.showLoginDialog(getActivity());
-                } else if(TextUtils.isEmpty(SharedPreferencesUtils.getInstance().getUserInfo().getTelephone())){
-
-                    showToast("请绑定手机号");
-                    BindingPhoneActivity.start(getActivity());
                 } else{
                     if(fromType == FROM_TYPE.TASK_ANALYSIS_ACTIVITY.ordinal()){
                         //任务分析

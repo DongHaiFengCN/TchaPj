@@ -29,7 +29,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.application.tchapj.base.BaseActvity;
-import com.application.tchapj.login.activity.BindingPhoneActivity;
 import com.application.tchapj.login.activity.LoginMainActivity;
 import com.application.tchapj.main.bean.FlashScreenBean;
 import com.application.tchapj.utils2.AppManager;
@@ -332,7 +331,7 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
 
         @JavascriptInterface
         public void loginpage() {
-            BindingPhoneActivity.start(WebViewActivity.this);
+          //  BindingPhoneActivity.start(WebViewActivity.this);
             finish();
         }
 
@@ -465,11 +464,14 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
     private void showShare(String shareTitle, String Content, String ImgUrl, String WebUrl) {
 
 
+
+        Log.e("DOAING",WebUrl);
         OnekeyShare oks = new OnekeyShare();
         //关闭sso授权
         oks.disableSSOWhenAuthorize();
 
         // title标题，微信、QQ和QQ空间等平台使用
+
         oks.setTitle(shareTitle);
         // titleUrl QQ和QQ空间跳转链接
         oks.setTitleUrl(WebUrl);
@@ -513,60 +515,6 @@ public class WebViewActivity extends BaseActvity implements IWXAPIEventHandler, 
         // 启动分享GUI
         oks.show(this);
 
-
-
-
-
-
-        /*OnekeyShare oks = new OnekeyShare();
-        //关闭sso授权
-        oks.disableSSOWhenAuthorize();
-
-        // title标题，微信、QQ和QQ空间等平台使用
-        oks.setTitle(shareTitle);
-        // titleUrl QQ和QQ空间跳转链接
-        oks.setTitleUrl(WebUrl);
-        // text是分享文本，所有平台都需要这个字段
-        oks.setText(Content);
-        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-        oks.setImagePath(ImgUrl);
-        // url在微信、微博，Facebook等平台中使用
-        oks.setUrl(WebUrl);
-
-        Log.e("DOAING", "外链的===" + WebUrl);
-        // comment是我对这条分享的评论，仅在人人网使用
-        // oks.setComment(Content);
-        // 启动分享GUI
-        oks.show(WebViewActivity.this);*/
-
-
-     /*   OnekeyShare oks = new OnekeyShare();
-        //关闭sso授权-
-        oks.disableSSOWhenAuthorize();
-
-        // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
-        oks.setTitle(shareTitle);
-        // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
-        oks.setTitleUrl(WebUrl);
-        // text是分享文本，所有平台都需要这个字段
-        oks.setText(Content);
-        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-     //   oks.setImageUrl(ImgUrl);
-        // url仅在微信（包括好友和朋友圈）中使用
-        
-        Log.e("发出去的地址：", WebUrl);
-      //  oks.setUrl(WebUrl);
-        // comment是我对这条分享的评论，仅在人人网和QQ空间使用
-       // oks.setComment(Content);
-        // site是分享此内容的网站名称，仅在QQ空间使用
-      //  oks.setSite(Content);
-        // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-      //  oks.setSiteUrl(WebUrl);
-
-        // 设置自定义的外部回调
-        oks.setCallback(new WebViewActivity.OneKeyShareCallback());
-        // 启动分享GUI
-        oks.show(WebViewActivity.this);*/
 
     }
 

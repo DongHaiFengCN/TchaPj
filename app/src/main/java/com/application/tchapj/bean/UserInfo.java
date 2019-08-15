@@ -367,4 +367,48 @@ public class UserInfo implements Serializable {
     }
 
 
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id='" + id + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", city='" + city + '\'' +
+                ", balance=" + balance +
+                ", lingState='" + lingState + '\'' +
+                ", faState='" + faState + '\'' +
+                ", mrState='" + mrState + '\'' +
+                ", mtState='" + mtState + '\'' +
+                ", authState='" + authState + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", province='" + province + '\'' +
+                ", realName='" + realName + '\'' +
+                ", headimgurl='" + headimgurl + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", dyState='" + dyState + '\'' +
+                ", pyqState='" + pyqState + '\'' +
+                ", wbState='" + wbState + '\'' +
+                ", wsState='" + wsState + '\'' +
+                ", otherState='" + otherState + '\'' +
+                ", taskApplyId='" + taskApplyId + '\'' +
+                ", alipay='" + alipay + '\'' +
+                ", attentions='" + attentions + '\'' +
+                ", fans='" + fans + '\'' +
+                ", isAuthor='" + isAuthor + '\'' +
+                ", info='" + info + '\'' +
+                ", refusal='" + refusal + '\'' +
+                ", nick_name='" + nick_name + '\'' +
+                ", media='" + media + '\'' +
+                ", commision=" + commision +
+                ", createTime=" + createTime +
+                ", alipayId='" + alipayId + '\'' +
+                ", faTaskStatus='" + faTaskStatus + '\'' +
+                ", lingTaskStatus='" + lingTaskStatus + '\'' +
+                ", status='" + status + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", code='" + code + '\'' +
+                '}';
+    }
 }

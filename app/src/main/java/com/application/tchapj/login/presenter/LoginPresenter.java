@@ -1,3 +1,4 @@
+/*
 package com.application.tchapj.login.presenter;
 
 import com.application.tchapj.App;
@@ -152,7 +153,8 @@ public class LoginPresenter extends BaseMvpPresenter<ILoginView> {
 
         // 观察者被观察者模式
         // 得到根接口路径
-        /*getAppComponent()
+        */
+/*getAppComponent()
                 .getAPIService() // 所有接口对象
                 .getSmsCodeResult(username,"002","1.0","","JSON") // 得到登录接口
                 .subscribeOn(Schedulers.io()) // 订阅方式
@@ -181,7 +183,8 @@ public class LoginPresenter extends BaseMvpPresenter<ILoginView> {
                                 getView().onGetLoginResultUsInfo(loginResultBean.getData().getLoginInfo()); // 得到二层数据
                         }
                     }
-                });*/
+                });*//*
+
     }
 
     // 新手机验证登录
@@ -282,3 +285,4 @@ public class LoginPresenter extends BaseMvpPresenter<ILoginView> {
     }
 
 }
+*/

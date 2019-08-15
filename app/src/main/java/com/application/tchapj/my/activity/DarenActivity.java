@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.application.tchapj.App;
+import com.application.tchapj.DataManager;
 import com.application.tchapj.R;
 import com.application.tchapj.base.BaseMvpActivity;
 import com.application.tchapj.bean.UserInfo;
@@ -27,6 +28,8 @@ import com.application.tchapj.widiget.ToolbarHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.application.tchapj.DataManager.getDataManager;
 
 // 达人身份认证
 public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> implements IMyView {
@@ -99,29 +102,55 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
 
     @Override
     public void initUI() {
+
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        getPresenter().getUserModelResult(App.getId());
+
+        DataManager.getDataManager().disposeMember(new DataManager.UpDataListener() {
+            @Override
+            public void upData(boolean getDataSuccess) {
+
+                if(getDataSuccess){
+
+
+                }
+
+            }
+        });
+
+        initViewData();
+
+
+
     }
 
     private void initViewData() {
-        if (App.LingTaskStatus == null)// lingState 0-未申请   1-正在审核中  2-已通过  3-未通过
-            App.LingTaskStatus = "0";
+
+        Intent intent = new Intent(DarenActivity.this, DarenDataOneActivity.class);
+        startActivity(intent);
+
+        App.LingTaskStatus = getDataManager().quickGetMetaData(R.string.lingState, String.class);
 
 
-        boolean dyBool = false, pyqBool = false, wbBool = false, wsBool = false, otherBool = false;
+        boolean dyBool = false,
+                pyqBool = false,
+                wbBool = false,
+                wsBool = false,
+                otherBool = false;
 
-        if (App.LingTaskStatus.equals("0")) {
+        if (App.LingTaskStatus.equals("0")
+                || "".equals(getDataManager().quickGetMetaData(R.string.lingState, String.class))) {
             // lingState 0-未申请   1-正在审核中  2-已通过  3-未通过
             //未申请达人身份
-            setMediaResourcesStateView("",add_tvpyq,  mediaResourcesStateWechatTv);
-            setMediaResourcesStateView("",add_tvwb,  mediaResourcesStateWbTv);
-            setMediaResourcesStateView("", add_tvdy,  mediaResourcesStateDyTv);
-            setMediaResourcesStateView("", add_tvws,  mediaResourcesStateWsTv);
-            setMediaResourcesStateView("", add_tv_other,  mediaResourcesStateOtherTv);
+            setMediaResourcesStateView("", add_tvpyq, mediaResourcesStateWechatTv);
+            setMediaResourcesStateView("", add_tvwb, mediaResourcesStateWbTv);
+            setMediaResourcesStateView("", add_tvdy, mediaResourcesStateDyTv);
+            setMediaResourcesStateView("", add_tvws, mediaResourcesStateWsTv);
+            setMediaResourcesStateView("", add_tv_other, mediaResourcesStateOtherTv);
 
             daren_dyadd_ll.setOnClickListener(applyDarenTipsClick);
             daren_pyadd_ll.setOnClickListener(applyDarenTipsClick);
@@ -143,7 +172,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
                 mediaResourcesWechatIv.setImageResource(R.mipmap.ic_py_select_normal);
                 pyqBool = true;
             }
-            setMediaResourcesStateView(App.PyqState,add_tvpyq,  mediaResourcesStateWechatTv);
+            setMediaResourcesStateView(App.PyqState, add_tvpyq, mediaResourcesStateWechatTv);
 
             if (StringUtils.isNullOrEmpty(App.WbState)) {
                 mediaResourcesWbIv.setImageResource(R.mipmap.ic_wb_select_normal);
@@ -157,7 +186,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
                 mediaResourcesWbIv.setImageResource(R.mipmap.ic_wb_select_normal);
                 wbBool = true;
             }
-            setMediaResourcesStateView(App.WbState,add_tvwb,  mediaResourcesStateWbTv);
+            setMediaResourcesStateView(App.WbState, add_tvwb, mediaResourcesStateWbTv);
 
             if (StringUtils.isNullOrEmpty(App.DyState)) {
                 mediaResourcesDyIv.setImageResource(R.mipmap.ic_dy_select_normal);
@@ -171,7 +200,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
                 mediaResourcesDyIv.setImageResource(R.mipmap.ic_dy_select_normal);
                 dyBool = true;
             }
-            setMediaResourcesStateView(App.DyState, add_tvdy,  mediaResourcesStateDyTv);
+            setMediaResourcesStateView(App.DyState, add_tvdy, mediaResourcesStateDyTv);
 
 
             if (StringUtils.isNullOrEmpty(App.WsState)) {
@@ -186,7 +215,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
                 mediaResourcesWsIv.setImageResource(R.mipmap.ic_ws_select_normal);
                 wsBool = true;
             }
-            setMediaResourcesStateView(App.WsState, add_tvws,  mediaResourcesStateWsTv);
+            setMediaResourcesStateView(App.WsState, add_tvws, mediaResourcesStateWsTv);
 
             if (StringUtils.isNullOrEmpty(App.OtherState)) {
                 mediaResourcesOtherIv.setImageResource(R.mipmap.ic_other_select_normal);
@@ -200,7 +229,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
                 mediaResourcesOtherIv.setImageResource(R.mipmap.ic_other_select_normal);
                 otherBool = true;
             }
-            setMediaResourcesStateView(App.OtherState, add_tv_other,  mediaResourcesStateOtherTv);
+            setMediaResourcesStateView(App.OtherState, add_tv_other, mediaResourcesStateOtherTv);
 
 
             if (dyBool) {
@@ -270,8 +299,8 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
     //设置媒体资源后面点击按钮，根据不同状态显示的样式
     private void setMediaResourcesStateView(String mediaResourceState, TextView grayTextView, TextView textView) {
         //mediaResourceState媒体资源状态，0审核中，1已通过，2审核失败  null就是未添加
-        if(!TextUtils.isEmpty(mediaResourceState)){
-            switch (mediaResourceState){
+        if (!TextUtils.isEmpty(mediaResourceState)) {
+            switch (mediaResourceState) {
                 case "0":
                     textView.setVisibility(View.GONE);
                     grayTextView.setText("审核中");
@@ -294,7 +323,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
                     break;
 
             }
-        }else{
+        } else {
             textView.setVisibility(View.VISIBLE);
             grayTextView.setText("");
             textView.setBackgroundResource(R.mipmap.bg_daren_media_resourse_state);
@@ -308,7 +337,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
     View.OnClickListener applyDarenTipsClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-          showToast("请先申请达人身份");
+            showToast("请先申请达人身份");
         }
     };
 
@@ -376,7 +405,7 @@ public class DarenActivity extends BaseMvpActivity<IMyView, MyPresenter> impleme
             }
 
 
-            initViewData();
+
 
 
         }

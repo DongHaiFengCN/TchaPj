@@ -20,11 +20,11 @@ public final class Constants {
     public static final boolean IS_DEBUG = true;
 
     // 正式库
-    public static final String BASE_URL2 = "http://124.133.43.12:8081/whby-api/";
+     public static final String BASE_URL2 = "http://124.133.43.12:8081/whby-api/";
 
     // 测试库
-     //public static final String BASE_URL2 = "http://124.133.43.12:8084/whby-api3/";
-   // public static final String BASE_URL2 = "http://192.168.15.149:8080/whby-api/";
+    // public static final String BASE_URL2 = "http://124.133.43.12:8084/whby-api3/";
+    //public static final String BASE_URL2 = "http://192.168.15.149:8080/whby-api/";
 
 
     //public static final String BASE_URL2 = "http://192.168.0.91:8080/whby-api/";//测试库，文文电脑IP
@@ -36,7 +36,7 @@ public final class Constants {
     //public static final String h5zhengshiUrl = "http://wx.whby.ctrl.cn";
 
     //Debug: h5链接测试地址
-    public static final String h5zhengshiUrl = "http://124.133.43.12:8087";
+    public static final String h5zhengshiUrl = "http://api.whby.ctrl.cn";
 
     //缓存值
     public static final String SERVER_MOBILE = "SERVER_MOBILE"; //客服手机号
