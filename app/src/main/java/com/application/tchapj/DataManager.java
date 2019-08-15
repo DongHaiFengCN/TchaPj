@@ -12,10 +12,12 @@ import com.application.tchapj.my.bean.AlipayPrivateKeyBean;
 import com.application.tchapj.my.bean.UserModel;
 import com.application.tchapj.widiget.AopUtils;
 import com.google.gson.Gson;
+import com.iflytek.cloud.thirdparty.S;
 
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import rx.Observer;
 import rx.Subscriber;
@@ -28,21 +30,14 @@ import rx.schedulers.Schedulers;
  */
 public class DataManager {
 
-   private static Gson gson = new Gson();
+    private Gson gson;
+
     private static final int INITIALCAPACITY = 16;
-    private static SharedPreferences sharedPreferences;
+    private static SharedPreferences accountContent;
+    private static SharedPreferences accountList;
     private static DataManager dataManager;
     private App application;
 
-    /**
-     * 登录广播
-     */
-    public static final String ACTION_LOGIN = "com.application.tchapj.login";
-
-    /**
-     * 缓存刷新广播
-     */
-    public static final String ACTION_FLUSH = "com.application.tchapj.flush";
 
     /**
      * 数据是否持久化
@@ -52,7 +47,9 @@ public class DataManager {
     private DataManager(Context context) {
         application = (App) (context.getApplicationContext());
         map = new HashMap<>(INITIALCAPACITY);
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        gson = new Gson();
+        accountContent = context.getSharedPreferences("content", Context.MODE_PRIVATE);
+        accountList = context.getSharedPreferences("accounts", Context.MODE_PRIVATE);
     }
 
     /**
@@ -77,13 +74,13 @@ public class DataManager {
      * @param key 关键次
      * @param t   数据
      */
-    public void setMetaData(String key, Object t) {
+  /*  public void setMetaData(String key, Object t) {
         setMetaData(key, t, false);
     }
 
     public void setMetaDataById(int keyId, Object t) {
         setMetaDataById(keyId, t, false);
-    }
+    }*/
 
     /**
      * 可持久化的数据
@@ -92,12 +89,12 @@ public class DataManager {
      * @param t             数据
      * @param isPersistence 持久化的标志true持久化 false不持久化
      */
-    private void setMetaData(String key, Object t, boolean isPersistence) {
+/*    private void setMetaData(String key, Object t, boolean isPersistence) {
         map.put(key, t);
         if (isPersistence) {
             sharedPreferencesPut(key, t);
         }
-    }
+    }*/
 
     /**
      * 可持久化的数据
@@ -119,34 +116,34 @@ public class DataManager {
     private void sharedPreferencesPut(String key, Object t) {
 
         if (t instanceof String) {
-            sharedPreferences.edit().putString(key, (String) t).apply();
+            accountContent.edit().putString(key, (String) t).apply();
         } else if (t instanceof Boolean) {
-            sharedPreferences.edit().putBoolean(key, (Boolean) t).apply();
+            accountContent.edit().putBoolean(key, (Boolean) t).apply();
         } else if (t instanceof Float) {
-            sharedPreferences.edit().putFloat(key, (Float) t).apply();
+            accountContent.edit().putFloat(key, (Float) t).apply();
         } else if (t instanceof Integer) {
-            sharedPreferences.edit().putInt(key, (Integer) t).apply();
+            accountContent.edit().putInt(key, (Integer) t).apply();
         } else if (t instanceof Long) {
-            sharedPreferences.edit().putLong(key, (Long) t).apply();
+            accountContent.edit().putLong(key, (Long) t).apply();
         }
     }
 
     private Object sharedPreferencesGet(String key, String type) {
         Object t = null;
         if (type.equals(String.class.getSimpleName())) {
-            t = sharedPreferences.getString(key, "");
+            t = accountContent.getString(key, "");
 
         } else if (type.equals(Boolean.class.getSimpleName())) {
-            t = sharedPreferences.getBoolean(key, true);
+            t = accountContent.getBoolean(key, true);
 
         } else if (type.equals(Float.class.getSimpleName())) {
-            t = sharedPreferences.getFloat(key, 0.0F);
+            t = accountContent.getFloat(key, 0.0F);
 
         } else if (type.equals(Integer.class.getSimpleName())) {
-            t = sharedPreferences.getInt(key, 0);
+            t = accountContent.getInt(key, 0);
 
         } else if (type.equals(Long.class.getSimpleName())) {
-            t = sharedPreferences.getLong(key, 0L);
+            t = accountContent.getLong(key, 0L);
 
         }
 
@@ -236,7 +233,7 @@ public class DataManager {
                                 //getDataManager().setMetaDataById(R.string.wxId, memberInfo.getData()., true);
 
                                 //QQ
-                               // getDataManager().setMetaDataById(R.string.qqId, memberInfo.getData(), true);
+                                // getDataManager().setMetaDataById(R.string.qqId, memberInfo.getData(), true);
 
                                 //用户性别
                                 getDataManager().setMetaDataById(R.string.sex, memberInfo.getData().getSex(), true);
@@ -265,30 +262,30 @@ public class DataManager {
                                 setMetaDataById(R.string.mtState, memberInfo.getData().getMtState(), true);
 
                                 //名人
-                                 setMetaDataById(R.string.mrState, memberInfo.getData().getMrState(), true);
+                                setMetaDataById(R.string.mrState, memberInfo.getData().getMrState(), true);
 
                                 //维护白影
                                 setMetaDataById(R.string.isAuthor, memberInfo.getData().getIsAuthor(), true);
 
 
                                 //朋友圈
-                                setMetaDataById(R.string.pyqState,memberInfo.getData().getPyqState(),true);
+                                setMetaDataById(R.string.pyqState, memberInfo.getData().getPyqState(), true);
 
                                 //微博
-                                setMetaDataById(R.string.wbState,memberInfo.getData().getWbState(),true);
+                                setMetaDataById(R.string.wbState, memberInfo.getData().getWbState(), true);
 
                                 //抖音
-                                setMetaDataById(R.string.dyState,memberInfo.getData().getDyState(),true);
+                                setMetaDataById(R.string.dyState, memberInfo.getData().getDyState(), true);
 
                                 //卫视
-                                setMetaDataById(R.string.wsState,memberInfo.getData().getWsState(),true);
+                                setMetaDataById(R.string.wsState, memberInfo.getData().getWsState(), true);
 
                                 //其他
-                                setMetaDataById(R.string.otherState,memberInfo.getData().getOtherState());
+                                setMetaDataById(R.string.otherState, memberInfo.getData().getOtherState(), false);
 
 
                                 //拒绝原因
-                                setMetaDataById(R.string.refusal,memberInfo.getData().getRefusal());
+                                setMetaDataById(R.string.refusal, memberInfo.getData().getRefusal(), true);
 
                                 if (upDataListener != null) {
 
@@ -318,13 +315,11 @@ public class DataManager {
     /**
      * 登录时调用的方法，获取memberId成功，通过本地广播分发数据到指定的接口
      *
-     * @param name          用户名/手机号
-     * @param passWorld     用户密码
-     * @param isPersistence 是否初持久化
+     * @param name      用户名/手机号
+     * @param passWorld 用户密码
      */
-    public void initMemberInfo(final String name, final String passWorld, boolean isPersistence, final LoginListener loginListener) {
+    public void initMemberInfo(final String name, final String passWorld, final LoginListener loginListener) {
 
-        release();
         //第一步先登录获取memberId
         application.getAppComponent()
                 .getAPIService()
@@ -341,7 +336,6 @@ public class DataManager {
                     public void onError(Throwable e) {
 
                         loginListener.login(false);
-                        //  release();
 
                     }
 
@@ -353,21 +347,20 @@ public class DataManager {
 
                             LoginResult.DataBean.LoginInfoBean loginInfoBean = loginResultBean.getData().getLoginInfo();
 
-                            // SharedPreferencesUtils.getInstance().setUserInfo(loginInfoBean);
-
-                            //App.setId(loginInfoBean.getId());
-
                             //memberId
                             getDataManager().setMetaDataById(R.string.id, loginInfoBean.getId(), true);
-
 
 
                             //手机号
                             getDataManager().setMetaDataById(R.string.telephone, loginInfoBean.getMobile(), true);
 
+                            //登录缓存用户名 手机号 memberId 头像url
+                            @SuppressLint("CommitPrefEdits")
+                            SharedPreferences.Editor editor = accountList.edit();
+/*
+                            Account account = new Account();
 
-                            //媒体
-                            getDataManager().setMetaDataById(R.string.media, loginInfoBean.getMedia(), true);
+                            editor.putString(loginInfoBean.getMobile(),gson );*/
 
 
                             loginListener.login(true);
@@ -401,7 +394,7 @@ public class DataManager {
                                         @Override // 得到数据
                                         public void onNext(AlipayPrivateKeyBean alipayPrivateKeyBean) {
 
-                                            setMetaDataById(R.string.RSA2_PRIVATE, alipayPrivateKeyBean.getData().getPrivatekey());
+                                            setMetaDataById(R.string.RSA2_PRIVATE, alipayPrivateKeyBean.getData().getPrivatekey(), true);
                                             Log.e("Response:", alipayPrivateKeyBean.getData().getPrivatekey());
 
                                         }
@@ -410,8 +403,6 @@ public class DataManager {
 
                         } else {
                             loginListener.login(false);
-
-                            release();
 
                         }
 
@@ -433,7 +424,7 @@ public class DataManager {
     public void release() {
 
         map.clear();
-        sharedPreferences.edit().clear().apply();
+        accountContent.edit().clear().apply();
     }
 
     public interface UpDataListener {
@@ -446,17 +437,25 @@ public class DataManager {
         void login(boolean isLogin);
     }
 
-    public HashMap<String,String> getBaseQuestMap(){
 
-        HashMap<String,String> map = new HashMap<>();
+    /**
+     * 生成基础的请求体
+     *
+     * @return 基础的map
+     */
+    private HashMap<String, String> getBaseQuestMap() {
 
-        map.put("memberId",quickGetMetaData(R.string.id, String.class));
-        map.put("appKey","002");
+        HashMap<String, String> map = new HashMap<>();
 
-        map.put("v","1.0");
-        map.put("sign","");
-        map.put("format","JSON");
+        map.put("memberId", quickGetMetaData(R.string.id, String.class));
+        map.put("appKey", "002");
+
+        map.put("v", "1.0");
+        map.put("sign", "");
+        map.put("format", "JSON");
 
         return map;
     }
+
+
 }
