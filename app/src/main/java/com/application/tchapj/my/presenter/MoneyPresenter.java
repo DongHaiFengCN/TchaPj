@@ -72,7 +72,6 @@ public class MoneyPresenter extends BaseMvpPresenter<IMoneyView> {
                             getView().onError(e);
                         }
 
-                        Log.e("DOAING", e.toString());
                     }
 
                     @Override // 得到数据
@@ -242,7 +241,6 @@ public class MoneyPresenter extends BaseMvpPresenter<IMoneyView> {
             Objects.requireNonNull(getView()).showProgress();
         }
 
-        //todo 1
         getAppComponent()
                 .getAPIService() // 所有接口对象
                 .promotionAdvanceOrder("002", "", "promotion.app.recharge", "1.0", "JSON", "", App.getId(), amount, "", "1")

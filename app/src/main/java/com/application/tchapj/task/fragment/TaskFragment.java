@@ -59,7 +59,7 @@ public class TaskFragment extends BaseMvpFragment<ITaskSquareView, TaskSquarePre
     @Override
     public void initUI() {
 
-        fragments = new ArrayList<Fragment>();
+        fragments = new ArrayList<>();
         top_square_task.setChecked(true);
 
         fragments.add(new TaskSquareFragment());

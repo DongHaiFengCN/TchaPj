@@ -222,6 +222,10 @@ public class DataManager {
                                 getDataManager().setMetaDataById(R.string.taskApplyId, memberInfo.getData().getTaskApplyId(), true);
 
 
+                                //支付宝认证
+                                getDataManager().setMetaDataById(R.string.alipay, memberInfo.getData().getAlipay(), true);
+
+
                                 //用户名
                                 getDataManager().setMetaDataById(R.string.realname, memberInfo.getData().getRealName(), true);
 

@@ -296,6 +296,7 @@ public class CommonDialogUtil {
         final LinearLayout wechatLl = view.findViewById(R.id.dialog_wechat_share_wechat_ll);
         final LinearLayout qqLl = view.findViewById(R.id.dialog_wechat_share_qq_ll);
 
+        final LinearLayout wbLl = view.findViewById(R.id.dialog_weibo_ll);
 
 
         wechatLl.setOnClickListener(new View.OnClickListener() {
@@ -315,6 +316,17 @@ public class CommonDialogUtil {
 
             }
         });
+
+        wbLl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.confirmWb();
+                dialog.dismiss();
+
+            }
+        });
+
+
 
         Window window = dialog.getWindow();
         WindowManager.LayoutParams dialogParams = window.getAttributes();

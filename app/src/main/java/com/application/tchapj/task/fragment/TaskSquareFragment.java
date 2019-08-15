@@ -152,7 +152,6 @@ public class TaskSquareFragment extends BaseMvpFragment<ITaskSquareView, TaskSqu
                                 "All", url, false, false);
                     } else {
 
-                        Log.e("DOAING", "-------------------------");
                         presenter.getFriendReleaseData(App.getId(), TaskSquareInfo.get(position).getId());
                     }
 

@@ -11,5 +11,6 @@ public class CommonDialogListenerUtil {
     public interface ReleaseTaskListener{
         void confirmWechat();
         void confirmQQ();
+        void confirmWb();
     }
 }

@@ -90,6 +90,11 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
+import cn.sharesdk.sina.weibo.SinaWeibo;
+import cn.sharesdk.tencent.qq.QQ;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -98,11 +103,12 @@ import io.reactivex.schedulers.Schedulers;
 
 import static com.application.tchapj.DataManager.getDataManager;
 import static com.application.tchapj.task.sonic.SonicJavaScriptInterface.PARAM_CLICK_TIME;
+
 /**
  * Create by zyy on 2019/4/23
  * Description: 领任务图文  朋友圈/qq空间图文
  */
-public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaView, DailyTaskDouyinFaPresenter> implements DailyTaskDouyinFaView, ImagePickerAdapter.OnRecyclerViewItemClickListener{
+public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaView, DailyTaskDouyinFaPresenter> implements DailyTaskDouyinFaView, ImagePickerAdapter.OnRecyclerViewItemClickListener {
 
     @BindView(R.id.taskdyStateOff2)
     ImageView taskdyStateOff2;
@@ -197,16 +203,16 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
 
 
     private long timeDiffer = 0L;
-    Handler handler=new Handler();
+    Handler handler = new Handler();
     Runnable mRunnerable = new Runnable() {
         @Override
         public void run() {
-            if(!submitTv.isClickable()){
+            if (!submitTv.isClickable()) {
                 timeDiffer--;
-                if(timeDiffer > 0){
-                    String timeDifferStr= CommonUtils.getTimeStampDiffer(timeDiffer * 1000);
+                if (timeDiffer > 0) {
+                    String timeDifferStr = CommonUtils.getTimeStampDiffer(timeDiffer * 1000);
                     countDownSubmitTv.setText(String.format(getResources().getString(R.string.upload_audit_time_str), timeDifferStr));
-                }else{
+                } else {
                     countDownSubmitTv.setText("");
                     submitTv.setBackgroundResource(R.drawable.bg_gradient1);
                     submitTv.setClickable(true);
@@ -243,6 +249,7 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
 
         initRecyclerView();
         initData();
+
     }
 
     @Override
@@ -259,10 +266,10 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
 
     @Override
     public void ledTask(BaseBean baseBean) {
-        if(baseBean != null && baseBean.getCode().equals("000")){
+        if (baseBean != null && baseBean.getCode().equals("000")) {
             ToastUtil.show(this, "领取成功");
 
-            if(!TextUtils.isEmpty(taskSquareInfoResult.getIsDoTask()) && taskSquareInfoResult.getIsDoTask().equals("1")){
+            if (!TextUtils.isEmpty(taskSquareInfoResult.getIsDoTask()) && taskSquareInfoResult.getIsDoTask().equals("1")) {
                 //1需要提醒，说明没领过任务
 //                Handler handler = new Handler();
 //                handler.postDelayed(new Runnable() {
@@ -274,14 +281,14 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
 //                    }
 //                }, 3000);//3秒自动关闭任务提醒dialog
                 showTaskRemindDialog();//显示任务提醒dialog
-            }else{
+            } else {
                 showWechatQQDialog();
             }
 
 
-        }else{
+        } else {
             String toastInfo = "领取失败";
-            if(!StringUtils.isNullOrEmpty(baseBean.getDescription())){
+            if (!StringUtils.isNullOrEmpty(baseBean.getDescription())) {
                 toastInfo = toastInfo + ":" + baseBean.getDescription();
             }
             ToastUtil.show(this, toastInfo);
@@ -343,18 +350,54 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
                     finish();
                 }
             }
+
+            @Override
+            public void confirmWb() {
+                final OnekeyShare oks = new OnekeyShare();
+                //指定分享的平台，如果为空，还是会调用九宫格的平台列表界面
+              /*  if (platform != null) {
+                    oks.setPlatform(platform);
+                }*/
+
+                oks.setPlatform(SinaWeibo.NAME);
+                //关闭sso授权
+                oks.disableSSOWhenAuthorize();
+                // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
+                oks.setTitle("标题");
+                // titleUrl是标题的网络链接，仅在Linked-in,QQ和QQ空间使用
+                // oks.setTitleUrl("http://sharesdk.cn");
+                // text是分享文本，所有平台都需要这个字段
+                oks.setText("");
+                //分享网络图片，新浪微博分享网络图片需要通过审核后申请高级写入接口，否则请注释掉测试新浪微博
+
+                String[] strings = taskBean.getImgUrl().split(":");
+                oks.setImageUrl("https:" + strings[1]);
+                // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+                //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+                // url仅在微信（包括好友和朋友圈）中使用
+                //  oks.setUrl("http://sharesdk.cn");
+                // comment是我对这条分享的评论，仅在人人网和QQ空间使用
+                // oks.setComment("我是测试评论文本");
+                // site是分享此内容的网站名称，仅在QQ空间使用
+                //  oks.setSite("ShareSDK");
+                // siteUrl是分享此内容的网站地址，仅在QQ空间使用
+                //  oks.setSiteUrl("http://sharesdk.cn");
+
+                //启动分享
+                oks.show(LeadTaskWechatActivity.this);
+            }
         });
     }
 
     //做任务第2步，提交审核资料回调
     @Override
     public void submitAuditData(BaseBean baseBean) {
-        if(baseBean != null && baseBean.getCode().equals("000")){
+        if (baseBean != null && baseBean.getCode().equals("000")) {
             showToast("提交申请成功");
             finish();
-        }else{
+        } else {
             String toastInfo = "领取失败";
-            if(!StringUtils.isNullOrEmpty(baseBean.getDescription())){
+            if (!StringUtils.isNullOrEmpty(baseBean.getDescription())) {
                 toastInfo = toastInfo + ":" + baseBean.getDescription();
             }
             showToast(toastInfo);
@@ -419,7 +462,7 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
                 activityRequireTv.setText(taskBean.getRequire());
             }
             if (!StringUtils.isNullOrEmpty(taskBean.getTaskGuidance())) {
-              activityGuideTv.setText(taskBean.getTaskGuidance());
+                activityGuideTv.setText(taskBean.getTaskGuidance());
             }
 
             disposable1 = Observable.interval(1, TimeUnit.SECONDS).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
@@ -564,13 +607,13 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
                 Toast.makeText(this, "文本复制成功", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.lead_task_wechat_submit_tv:
-                if(StringUtils.isNullOrEmpty(App.getId())){
+                if (StringUtils.isNullOrEmpty(App.getId())) {
                     CommonDialogUtil.showLoginDialog(this);
-                }else{
-                    if("2".equals(getDataManager().quickGetMetaData(R.string.lingState,String.class))) {
+                } else {
+                    if ("2".equals(getDataManager().quickGetMetaData(R.string.lingState, String.class))) {
                         submitTaskClick(leadTaskStatus);
 
-                    }else{
+                    } else {
                         CommonDialogUtil.identityDialog(this, "请先申请达人身份");
                     }
                 }
@@ -580,10 +623,11 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
 
     /**
      * 根据任务status调不同接口
+     *
      * @param leadTaskStatus 0未领取 1已领取 2上传资料审核中 3通过 4 未通过
      */
     private void submitTaskClick(String leadTaskStatus) {
-        switch (leadTaskStatus){
+        switch (leadTaskStatus) {
             case "0":
                 //复制文案，保存图片
                 CommonUtils.copyTextToClipboard(this, releasefDownloadValueTv1.getText().toString().trim());
@@ -610,13 +654,14 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
 
     /**
      * 根据任务status展示view
+     *
      * @param leadTaskStatus 0未领取 1已领取 2上传资料审核中 3通过 4 未通过
      */
     private void setViewAccordingStatus(String leadTaskStatus) {
-        if(TextUtils.isEmpty(leadTaskStatus))
+        if (TextUtils.isEmpty(leadTaskStatus))
             return;
 
-        switch (leadTaskStatus){
+        switch (leadTaskStatus) {
             case "0":
                 //未领取任务
                 submitDataLl.setVisibility(View.GONE);
@@ -634,33 +679,33 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
 
                 //可以提交资料的时间判断。
                 timeDiffer = taskSquareInfoResult.getCountDownTime();
-                if(leadTaskStatus.equals("4")){
+                if (leadTaskStatus.equals("4")) {
                     timeDiffer = 0;//未通过，就不显示倒计时直接可以提
                 }
 
-                if(timeDiffer <= 0 ){
+                if (timeDiffer <= 0) {
                     //大于X个小时 可以提交资料
                     submitTv.setBackgroundResource(R.drawable.bg_gradient1);
                     submitTv.setClickable(true);
-                }else{
+                } else {
                     submitTv.setBackgroundResource(R.drawable.bg_gradient1_gray);
                     submitTv.setClickable(false);
                     submitTv.setVisibility(View.VISIBLE);
 
-                    String timeDifferStr= CommonUtils.getTimeStampDiffer(timeDiffer * 1000);
+                    String timeDifferStr = CommonUtils.getTimeStampDiffer(timeDiffer * 1000);
                     countDownSubmitTv.setText(String.format(getResources().getString(R.string.upload_audit_time_str), timeDifferStr));
                     countDownSubmitTv.setVisibility(View.VISIBLE);
-                    handler.postDelayed(mRunnerable,1000);
+                    handler.postDelayed(mRunnerable, 1000);
 
                 }
-                if(leadTaskStatus.equals("4")){
+                if (leadTaskStatus.equals("4")) {
                     //审核被拒
-                    if(!TextUtils.isEmpty(taskSquareInfoResult.getRefusal())){
+                    if (!TextUtils.isEmpty(taskSquareInfoResult.getRefusal())) {
                         auditRefuseTv.setVisibility(View.VISIBLE);
                         auditRefuseTv.setText("审核未通过原因：" + taskSquareInfoResult.getRefusal());
                     }
                     submitTv.setText(getResources().getString(R.string.re_submit));
-                }else{
+                } else {
                     submitTv.setText(getResources().getString(R.string.submit));
                 }
                 break;
@@ -733,7 +778,7 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
         switch (position) {
             case IMAGE_ITEM_ADD:
 
-                if(!submitTv.isClickable()){
+                if (!submitTv.isClickable()) {
                     showToast("未到时间，暂时不能上传图片");
                     return;
                 }
@@ -809,8 +854,10 @@ public class LeadTaskWechatActivity extends BaseMvpActivity<DailyTaskDouyinFaVie
             disposable1.dispose();
         }
     }
+
     private ArrayList<ImageItem> images = null;
-    ArrayList<ImageItem>  selImageList; // 当前上传所有图片
+    ArrayList<ImageItem> selImageList; // 当前上传所有图片
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

@@ -236,7 +236,7 @@ public class MyMoneyActivity extends BaseMvpActivity<IMoneyView, MoneyPresenter>
                                 @Override
                                 public void onClick(View clickedView, View contentView) {
 
-                                    // my_money_value.setText(moneyInfoBeanResults.getData().getSy());
+                                    //my_money_value.setText(moneyInfoBeanResults.getData().getSy());
                                     getPresenter().onGetMoneyTransferBeanResult(App.money, alipayId, App.getId(), new BigDecimal(moneyInfoBeanResults.getData().getSy()), MyMoneyActivity.this);
                                 }
                             })
@@ -808,19 +808,44 @@ public class MyMoneyActivity extends BaseMvpActivity<IMoneyView, MoneyPresenter>
 
         if ("000".equals(moneyInfoBean.getCode())) {
             moneyInfoBeanResults = moneyInfoBean;
+
             alipayId = moneyInfoBean.getData().getAlipayId();
+
+            //推广金
             promotionFundTv.setText(moneyInfoBean.getData().getProSY() + "");
 
-           //xz Log.e("DOAING", moneyInfoBean.getData().getProSY() + "");
+            //任务占用
             taskOccupyTv.setText(moneyInfoBean.getData().getOccupy() + " 元");
-          //  Log.e("DOAING", moneyInfoBean.getData().getOccupy() + " 元");
-            sy_tv.setText(moneyInfoBean.getData().getSy() + "");
-           // Log.e("DOAING", moneyInfoBean.getData().getSy() + "");
-            my_money_value.setText(moneyInfoBean.getData().getSy() + "");
-            sy_tv.setText(moneyInfoBean.getData().getSalary() + "");
-           // Log.e("DOAING", moneyInfoBean.getData().getSalary() + "");
 
-            // dj_tv.setText(moneyInfoBean.getData().getDj() + "");
+
+            //v币
+
+            String v = moneyInfoBean.getData().getSy();
+
+            if (!"".equals(v)) {
+
+                Double v1 = Double.valueOf(v);
+                v1 = v1 * 10;
+                my_money_value.setText(v1 + "");
+
+            } else {
+                my_money_value.setText("0.0");
+            }
+
+
+            //总收益
+            String sy = moneyInfoBean.getData().getSalary();
+            if (!"".equals(sy)) {
+
+                Double sy1 = Double.valueOf(sy) * 10;
+
+                sy_tv.setText(sy1 + "");
+
+            } else {
+                sy_tv.setText("0.0");
+            }
+
+
             //冻结的钱 包含已付款未审核的任务的钱。会和V币解冻列表页有按钮（灰色和彩色按钮）的数据钱相加不一样
             transferStatus = moneyInfoBean.getData().getTransferStatus();
 
